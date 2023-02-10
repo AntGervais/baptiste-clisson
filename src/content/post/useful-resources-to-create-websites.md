@@ -1,12 +1,12 @@
 ---
-publishDate: 2023-01-09T00:00:00Z
 title: Useful tools and resources to create a professional website
-excerpt: Sint sit cillum pariatur eiusmod nulla pariatur ipsum. Sit laborum anim qui mollit tempor pariatur.
-image: ~/assets/images/tools.jpg
+excerpt: Sint sit cillum pariatur eiusmod nulla pariatur ipsum. Sit laborum anim
+  qui mollit tempor pariatur.
+description: Lorem ipsum dolor sit amet
+image: /assets/images/do-more.jpg
 tags:
-  - front-end
-  - tools
-  - resources
+  - rénovation
+publishDate: 2023-01-09T00:00:00.000Z
 ---
 
 ## Magna nunc senectus torquent per fusce sapien ligula tempus cra

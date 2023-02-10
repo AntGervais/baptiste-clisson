@@ -95,7 +95,6 @@ Inside AstroWind template, you'll see the following folders and files:
 │   │   └── ...
 │   ├── pages/
 │   │   ├── [...blog]/
-│   │   │   ├── [category]/
 │   │   │   ├── [tag]/
 │   │   │   ├── [...page].astro
 │   │   │   └── index.astro
@@ -176,7 +175,7 @@ const CONFIG = {
     postsPerPage: 4,
 
     post: {
-      permalink: '/%slug%', // variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
+      permalink: '/%slug%', // variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%,
       noindex: false,
       disabled: false,
     },
@@ -184,12 +183,6 @@ const CONFIG = {
     list: {
       pathname: 'blog', // Blog main path, you can change this to "articles" (/articles)
       noindex: false,
-      disabled: false,
-    },
-
-    category: {
-      pathname: 'category', // Category main path /category/some-category
-      noindex: true,
       disabled: false,
     },
 

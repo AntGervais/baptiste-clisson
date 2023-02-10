@@ -4,24 +4,16 @@ export interface Post {
 
   publishDate: Date;
   title: string;
-  description?: string;
+  description: string;
 
-  image?: string;
+  image: string;
 
-  canonical?: string | URL;
   permalink?: string;
 
   draft?: boolean;
 
   excerpt?: string;
-  category?: string;
   tags?: Array<string>;
-  author?: string;
-
-  Content: unknown;
-  content?: string;
-
-  readingTime?: number;
 }
 
 export interface MetaSEO {
