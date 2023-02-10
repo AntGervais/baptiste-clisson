@@ -1,7 +1,5 @@
 ---
 title: How to customize AstroWind template to suit your branding
-excerpt: Sint sit cillum pariatur eiusmod nulla pariatur ipsum. Sit laborum anim
-  qui mollit tempor pariatur.
 description: Lorem ipsum dolor sit amet
 image: /assets/images/stickers.jpg
 tags:

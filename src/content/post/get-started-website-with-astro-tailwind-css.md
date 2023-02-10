@@ -1,7 +1,5 @@
 ---
 title: Get started with AstroWind to create a website using Astro and Tailwind CSS
-excerpt: Sint sit cillum pariatur eiusmod nulla pariatur ipsum. Sit laborum anim
-  qui mollit tempor pariatur.
 description: Lorem ipsum dolor sit amet
 image: /assets/images/default.png
 tags:

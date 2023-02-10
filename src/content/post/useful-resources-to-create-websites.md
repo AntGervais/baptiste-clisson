@@ -1,7 +1,5 @@
 ---
 title: Useful tools and resources to create a professional website
-excerpt: Sint sit cillum pariatur eiusmod nulla pariatur ipsum. Sit laborum anim
-  qui mollit tempor pariatur.
 description: Lorem ipsum dolor sit amet
 image: /assets/images/do-more.jpg
 tags:

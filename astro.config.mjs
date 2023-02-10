@@ -9,7 +9,6 @@ import image from '@astrojs/image';
 import mdx from '@astrojs/mdx';
 import partytown from '@astrojs/partytown';
 import compress from 'astro-compress';
-import { readingTimeRemarkPlugin } from './src/utils/frontmatter.mjs';
 import NetlifyCMS from 'astro-netlify-cms';
 
 import { SITE } from './src/config.mjs';
@@ -27,7 +26,7 @@ export default defineConfig({
   output: 'static',
 
   markdown: {
-    remarkPlugins: [readingTimeRemarkPlugin],
+    // remarkPlugins: [readingTimeRemarkPlugin],
   },
 
   integrations: [
@@ -88,22 +87,21 @@ export default defineConfig({
                 required: true,
               },
               {
-                name: 'excerpt',
-                widget: 'string',
-                label: 'Résumé',
+                name: 'image',
+                widget: 'image',
+                label: 'Image principale',
                 required: true,
               },
               {
                 name: 'description',
-                widget: 'markdown',
+                widget: 'string',
                 label: 'Description',
                 required: true,
               },
               {
-                name: 'image',
-                widget: 'image',
-                label: 'Image',
-                required: true,
+                name: 'body',
+                widget: 'markdown',
+                label: 'body',
               },
               {
                 name: 'tags',
@@ -120,6 +118,12 @@ export default defineConfig({
                 date_format: 'DD MMM YYYY',
                 time_format: false,
                 label: 'Publish Date',
+              },
+              {
+                name: 'accueil',
+                widget: 'boolean',
+                label: 'Afficher page accueil',
+                required: false,
               },
             ],
           },

@@ -10,10 +10,12 @@ export interface Post {
 
   permalink?: string;
 
-  draft?: boolean;
+  accueil?: boolean;
 
-  excerpt?: string;
   tags?: Array<string>;
+
+  Content: unknown;
+  content?: string;
 }
 
 export interface MetaSEO {

@@ -1,6 +1,5 @@
 ---
 title: AstroWind template in depth
-excerpt: résumé Lorem ipsum dolor sit amet
 description: description Lorem ipsum dolor sit amet
 image: /assets/images/colors.jpg
 tags:

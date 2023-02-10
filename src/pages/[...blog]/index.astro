@@ -8,6 +8,7 @@ import ToBlogLink from '~/components/blog/ToBlogLink.astro';
 import { getCanonical, getPermalink } from '~/utils/permalinks';
 import { fetchPosts } from '~/utils/blog';
 import { findImage } from '~/utils/images';
+import { Post } from '~/types';
 
 export async function getStaticPaths() {
   if (BLOG?.disabled || BLOG?.post?.disabled) return [];
@@ -17,6 +18,10 @@ export async function getStaticPaths() {
     },
     props: { post },
   }));
+}
+
+export interface Props {
+  post: Post;
 }
 
 const { post } = Astro.props;
