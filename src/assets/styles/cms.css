@@ -286,10 +286,21 @@ blockquote .source {
 .frame-content{
   max-width: 48rem;
 }
-img[role=presentation]{
+
+img[role=presentation], .frame-content img{
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 1.5rem;
   border-radius: 0.375rem;
   max-width: 48rem;
+}
+
+.css-yilgkd-WidgetPreviewContainer li{
+  margin: 0.5rem;
+  display: inline-block;
+  background-color: rgb(243 244 246 / 0.5);
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
 }

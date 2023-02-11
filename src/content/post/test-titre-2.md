@@ -7,6 +7,7 @@ categories:
   - nouveau
 tags:
   - charpente
+  - rénovation
 ---
 Coucou je suis un test
 
