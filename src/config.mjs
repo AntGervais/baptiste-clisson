@@ -14,7 +14,7 @@ const CONFIG = {
 
   defaultTheme: 'system', // Values: "system" | "light" | "dark" | "light:only" | "dark:only"
 
-  language: 'en',
+  language: 'fr',
   textDirection: 'ltr',
 
   dateFormatter: new Intl.DateTimeFormat('en', {
@@ -29,10 +29,10 @@ const CONFIG = {
 
   blog: {
     disabled: false,
-    postsPerPage: 4,
+    postsPerPage: 5,
 
     post: {
-      permalink: '/%slug%', // Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
+      permalink: '/%slug%', // Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%
       noindex: false,
       disabled: false,
     },
