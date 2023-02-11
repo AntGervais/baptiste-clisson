@@ -20,12 +20,12 @@ const meta = {
       {...headerData}
       actions={[
         {
-          type: "ghost",
+          type: 'ghost',
           text: 'Login',
           href: '#',
         },
         {
-          type: "primary",
+          type: 'primary',
           text: 'Sign Up',
           href: '#',
         },
@@ -39,7 +39,7 @@ const meta = {
   <Hero2
     callToAction={{ text: 'Get template', href: 'https://github.com/onwidget/astrowind', icon: 'tabler:download' }}
     callToAction2={{ text: 'Learn more', href: '#features' }}
-    image={{ src: import('~/assets/images/hero.png'), alt: 'AstroWind Hero Image' }}
+    image={{ src: import('/public/images/hero.png'), alt: 'AstroWind Hero Image' }}
   >
     <Fragment slot="title">
       Free template for <br />
@@ -48,8 +48,8 @@ const meta = {
 
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
-        <span class="font-semibold">AstroWind</span> is a free, customizable and production-ready template for Astro 2.0 +
-        Tailwind CSS.</span
+        <span class="font-semibold">AstroWind</span> is a free, customizable and production-ready template for Astro 2.0
+        + Tailwind CSS.</span
       >
       <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span> Suitable for Startups,
       Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs.
@@ -78,7 +78,7 @@ const meta = {
       },
     ]}
     image={{
-      src: import('~/assets/images/caos.jpg'),
+      src: import('/public/images/caos.jpg'),
       alt: 'Colorful Image',
     }}
   >
@@ -110,7 +110,7 @@ const meta = {
       },
     ]}
     image={{
-      src: import('~/assets/images/caos.jpg'),
+      src: import('/public/images/caos.jpg'),
       alt: 'Colorful Image',
     }}
   >
@@ -143,7 +143,7 @@ const meta = {
       },
     ]}
     image={{
-      src: import('~/assets/images/caos.jpg'),
+      src: import('/public/images/caos.jpg'),
       alt: 'Colorful Image',
     }}
   >

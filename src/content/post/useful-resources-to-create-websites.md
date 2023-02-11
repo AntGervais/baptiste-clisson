@@ -1,7 +1,7 @@
 ---
 title: Useful tools and resources to create a professional website
 description: Lorem ipsum dolor sit amet
-image: /assets/images/do-more.jpg
+image: /public/images/do-more.jpg
 tags:
   - rénovation
 publishDate: 2023-01-09T00:00:00.000Z

@@ -1,7 +1,7 @@
 ---
 title: Test titre
 description: Test description
-image: /assets/images/default.png
+image: /public/images/default.png
 tags:
   - charpente
   - rénovationP

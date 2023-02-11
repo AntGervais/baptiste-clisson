@@ -1,7 +1,7 @@
 ---
 title: How to customize AstroWind template to suit your branding
 description: Lorem ipsum dolor sit amet
-image: /assets/images/stickers.jpg
+image: /public/images/stickers.jpg
 tags:
   - charpente
   - rénovation

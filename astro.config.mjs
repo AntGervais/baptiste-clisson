@@ -68,8 +68,8 @@ export default defineConfig({
           branch: 'main',
         },
         // Configure where our media assets are stored & served from
-        media_folder: '/src/assets/images',
-        public_folder: '/assets/images',
+        media_folder: '/public/images',
+        public_folder: '/public/images',
         // Configure the content collections
         collections: [
           {

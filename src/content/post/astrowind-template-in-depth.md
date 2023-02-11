@@ -1,7 +1,7 @@
 ---
 title: AstroWind template in depth
 description: description Lorem ipsum dolor sit amet
-image: /assets/images/colors.jpg
+image: /public/images/colors.jpg
 tags:
   - nouveau
 publishDate: 2023-01-08T00:00:00.000Z

@@ -1,7 +1,7 @@
 ---
 title: Get started with AstroWind to create a website using Astro and Tailwind CSS
 description: Lorem ipsum dolor sit amet
-image: /assets/images/default.png
+image: /public/images/default.png
 tags:
   - charpente
 publishDate: 2023-01-12T00:00:00.000Z
