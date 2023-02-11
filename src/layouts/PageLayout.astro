@@ -22,9 +22,10 @@ const { meta } = Astro.props;
   <slot name="header">
     <Header {...headerData} isSticky showRssFeed showToggleTheme />
   </slot>
-  <main>
+  <main id="swup">
     <slot />
   </main>
+  <script src="~/js/transition.js"></script>
   <slot name="footer">
     <Footer {...footerData} />
   </slot>
