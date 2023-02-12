@@ -73,6 +73,22 @@ export default defineConfig({
         // Configure the content collections
         collections: [
           {
+            name: 'carousel',
+            label: 'Carousel',
+            label_singular: 'Image',
+            folder: 'src/content/carousel',
+            create: true,
+            delete: true,
+            fields: [
+              {
+                name: 'image',
+                widget: 'image',
+                label: 'Image principale',
+                required: true,
+              },
+            ],
+          },
+          {
             name: 'posts',
             label: 'Posts',
             label_singular: 'Post',
