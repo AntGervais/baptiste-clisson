@@ -1,0 +1,77 @@
+---
+import { Picture } from '@astrojs/image/components';
+import { findImage } from '~/utils/images';
+
+interface Image {
+  image: string;
+  description: string;
+}
+
+export interface Props {
+  images: Image[];
+}
+const { images } = Astro.props;
+---
+
+<style>
+  .swiper {
+    padding: 12px 0px;
+  }
+</style>
+
+<div class="swiper">
+  <div class="swiper-wrapper">
+    {
+      images.map(async (image: Image) => {
+        if (!image) return;
+        const src = await findImage(image.image);
+        if (!src) return;
+        return (
+          <div class="swiper-slide">
+            <Picture
+              src={src}
+              class="rounded-md shadow-lg bg-gray-400 dark:bg-slate-700"
+              widths={[400, 768]}
+              sizes="(max-width: 767px) 400px, 768px"
+              alt="Hero Image"
+              aspectRatio="16:9"
+              loading="eager"
+              alt={image.description}
+            />
+          </div>
+        );
+      })
+    }
+  </div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+</div>
+
+<script>
+  import Swiper, { Navigation } from 'swiper';
+  import 'swiper/css';
+  import 'swiper/css/navigation';
+
+  console.log('swiper load');
+
+  new Swiper('.swiper', {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    modules: [Navigation],
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    rewind: true,
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+    },
+  });
+</script>

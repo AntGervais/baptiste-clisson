@@ -73,10 +73,10 @@ export default defineConfig({
         // Configure the content collections
         collections: [
           {
-            name: 'carousel',
-            label: 'Carousel',
-            label_singular: 'Image',
-            folder: 'src/content/carousel',
+            name: 'imageAccueil',
+            label: 'Images accueil',
+            label_singular: 'image',
+            folder: 'src/content/imageAccueil',
             create: true,
             delete: true,
             fields: [
@@ -84,6 +84,12 @@ export default defineConfig({
                 name: 'image',
                 widget: 'image',
                 label: 'Image principale',
+                required: true,
+              },
+              {
+                name: 'description',
+                widget: 'string',
+                label: 'Description',
                 required: true,
               },
             ],

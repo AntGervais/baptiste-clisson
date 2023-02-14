@@ -51,14 +51,14 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
   };
 };
 
-const load = async function (): Promise<Array<Post>> {
+const loadPosts = async function (): Promise<Array<Post>> {
   const posts = await getCollection('post');
   const normalizedPosts = posts.map(async (post) => await getNormalizedPost(post));
 
-  const results = (await Promise.all(normalizedPosts))
-    .sort((a, b) => b.publishDate.valueOf() - a.publishDate.valueOf())
-    .filter((post) => !post.draft);
-
+  const results = (await Promise.all(normalizedPosts)).sort(
+    (a, b) => b.publishDate.valueOf() - a.publishDate.valueOf()
+  );
+  // .filter((post) => !post.draft)
   return results;
 };
 
@@ -67,7 +67,7 @@ let _posts: Array<Post>;
 /** */
 export const fetchPosts = async (): Promise<Array<Post>> => {
   if (!_posts) {
-    _posts = await load();
+    _posts = await loadPosts();
   }
 
   return _posts;

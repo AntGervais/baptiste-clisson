@@ -1,4 +1,4 @@
----
+W---
 title: AstroWind template in depth
 description: description Lorem ipsum dolor sit amet
 image: /public/images/colors.jpg
