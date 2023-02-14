@@ -63,7 +63,7 @@ export default defineConfig({
     react(),
 
     NetlifyCMS({
-      previewStyles: ['https://fonts.googleapis.com/css2?family=Roboto&display=swap', '/src/assets/styles/cms.css'],
+      previewStyles: ['https://fonts.googleapis.com/css2?family=Roboto&display=swap', '/src/styles/cms.css'],
       config: {
         // Use Netlify’s “Git Gateway” authentication and target our default branch
         backend: {
