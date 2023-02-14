@@ -44,7 +44,6 @@ export default function TextArea({
             'px-2.5',
             'pb-2.5',
             'pt-4',
-            'text-sm',
             'text-gray-900',
             Boolean(error) ? 'focus:border-red-500' : 'focus:border-green-600',
             'focus:outline-none',

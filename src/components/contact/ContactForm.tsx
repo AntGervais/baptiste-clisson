@@ -78,21 +78,21 @@ export default function ContactForm() {
           <div className="flex flex-col gap-2">
             <Input
               name="firstName"
-              label="First name"
+              label="Prénom"
               required
               bg="bg-gray-100"
               {...register('firstName')}
             />
             <Input
               name="lastName"
-              label="Last name"
+              label="Nom"
               required
               bg="bg-gray-100"
               {...register('lastName')}
             />
             <Input
               name="email"
-              label="Email address"
+              label="Email"
               required
               bg="bg-gray-100"
               {...register('email')}
