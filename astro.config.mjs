@@ -10,6 +10,7 @@ import mdx from '@astrojs/mdx';
 import partytown from '@astrojs/partytown';
 import compress from 'astro-compress';
 import NetlifyCMS from 'astro-netlify-cms';
+import react from '@astrojs/react';
 
 import { SITE } from './src/config.mjs';
 
@@ -58,6 +59,8 @@ export default defineConfig({
 
       logger: 1,
     }),
+
+    react(),
 
     NetlifyCMS({
       previewStyles: ['https://fonts.googleapis.com/css2?family=Roboto&display=swap', '/src/assets/styles/cms.css'],
@@ -157,7 +160,7 @@ export default defineConfig({
   vite: {
     resolve: {
       alias: {
-        '~': path.resolve(__dirname, './src'),
+        '@': path.resolve(__dirname, './src'),
       },
     },
   },

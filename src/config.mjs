@@ -1,15 +1,15 @@
 import defaultImage from './../public/images/default.png';
 
 const CONFIG = {
-  name: 'AstroWind',
+  name: 'Charpente Bois Debout',
 
-  origin: 'https://astrowind.vercel.app',
+  origin: 'https://charpenteboisdebout.fr',
   basePathname: '/',
   trailingSlash: false,
 
-  title: 'AstroWind — Free template for create a website with Astro + Tailwind CSS',
+  title: 'Charpente Bois Debout — Artisan Charpentier à Saulgé (86) - Baptiste Clisson',
   description:
-    '🚀 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs.',
+    'Entreprise de Charpentes traditionnelles - Ossatures et planchers bois - Escaliers massifs sur mesure. Rénovation du bâti ancien.',
   defaultImage: defaultImage,
 
   defaultTheme: 'system', // Values: "system" | "light" | "dark" | "light:only" | "dark:only"
@@ -27,7 +27,7 @@ const CONFIG = {
   googleAnalyticsId: false, // or "G-XXXXXXXXXX",
   googleSiteVerificationId: 'orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M',
 
-  blog: {
+  realisations: {
     disabled: false,
     postsPerPage: 5,
 
@@ -38,7 +38,7 @@ const CONFIG = {
     },
 
     list: {
-      pathname: 'blog', // Blog main path, you can change this to "articles" (/articles)
+      pathname: 'realisations', // realisation main path, you can change this to "articles" (/articles)
       noindex: false,
       disabled: false,
     },
@@ -51,6 +51,6 @@ const CONFIG = {
   },
 };
 
-export const SITE = { ...CONFIG, blog: undefined };
-export const BLOG = CONFIG.blog;
+export const SITE = { ...CONFIG, realisations: undefined };
+export const REALISATIONS = CONFIG.realisations;
 export const DATE_FORMATTER = CONFIG.dateFormatter;

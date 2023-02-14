@@ -1,8 +1,8 @@
 ---
-import { getPermalink } from '~/utils/permalinks';
+import { getPermalink } from '@/utils/permalinks';
 
-import { BLOG } from '~/config.mjs';
-import type { Post } from '~/types';
+import { REALISATIONS } from '@/config.mjs';
+import type { Post } from '@/types';
 
 export interface Props {
   tags: Post['tags'];
@@ -17,7 +17,7 @@ const { tags, class: className = 'text-sm' } = Astro.props;
     <ul class={className}>
       {tags.map((tag) => (
         <li class="bg-gray-100 dark:bg-slate-700 inline-block mr-2 mb-2 py-0.5 px-2 lowercase font-medium">
-          {BLOG?.tag?.disabled ? (
+          {REALISATIONS?.tag?.disabled ? (
             tag
           ) : (
             <a

@@ -1,18 +1,18 @@
 ---
-import { SITE } from '~/config.mjs';
-import Layout from '~/layouts/PageLayout.astro';
+import { SITE } from '@/config.mjs';
+import Layout from '@/layouts/PageLayout.astro';
 
-import Hero from '~/components/widgets/Hero.astro';
-import Note from '~/components/widgets/Note.astro';
-import Swiper from '~/components/widgets/Swiper.astro';
-import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
-import Steps from '~/components/widgets/Steps.astro';
-import Content from '~/components/widgets/Content.astro';
-import LatestPosts from '~/components/blog/LatestPosts.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
-import Stats from '~/components/widgets/Stats.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
+import Hero from '@/components/widgets/Hero.astro';
+import Note from '@/components/widgets/Note.astro';
+import Swiper from '@/components/widgets/Swiper.astro';
+import Features from '@/components/widgets/Features.astro';
+import Features2 from '@/components/widgets/Features2.astro';
+import Steps from '@/components/widgets/Steps.astro';
+import Content from '@/components/widgets/Content.astro';
+import LatestPosts from '@/components/realisations/LatestPosts.astro';
+import FAQs from '@/components/widgets/FAQs.astro';
+import Stats from '@/components/widgets/Stats.astro';
+import CallToAction from '@/components/widgets/CallToAction.astro';
 
 import { getCollection } from 'astro:content';
 
@@ -272,7 +272,7 @@ const meta = {
 
   <LatestPosts
     title="Find out more content in our Blog"
-    information={`The blog is used to display AstroWind documentation.
+    information={`The realisations is used to display AstroWind documentation.
 			Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
 			Astro is a very interesting technology. Thanks.
 		`}

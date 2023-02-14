@@ -1,7 +1,6 @@
+import { SITE, REALISATIONS } from '@/config.mjs';
+import { trim } from '@/utils/utils';
 import slugify from 'limax';
-
-import { SITE, BLOG } from '~/config.mjs';
-import { trim } from '~/utils/utils';
 
 export const trimSlash = (s: string) => trim(trim(s, '/'));
 const createPath = (...params: string[]) => {
@@ -20,10 +19,10 @@ export const cleanSlug = (text = '') =>
     .map((slug) => slugify(slug))
     .join('/');
 
-export const POST_PERMALINK_PATTERN = trimSlash(BLOG?.post?.permalink || '/%slug%');
+export const POST_PERMALINK_PATTERN = trimSlash(REALISATIONS?.post?.permalink || '/%slug%');
 
-export const BLOG_BASE = cleanSlug(BLOG?.list?.pathname);
-export const TAG_BASE = cleanSlug(BLOG?.tag?.pathname) || 'tag';
+export const REALISATIONS_BASE = cleanSlug(REALISATIONS?.list?.pathname);
+export const TAG_BASE = cleanSlug(REALISATIONS?.tag?.pathname) || 'tag';
 
 /** */
 export const getCanonical = (path = ''): string | URL => new URL(path, SITE.origin);
@@ -54,7 +53,7 @@ export const getPermalink = (slug = '', type = 'page'): string => {
 export const getHomePermalink = (): string => getPermalink('/');
 
 /** */
-export const getBlogPermalink = (): string => getPermalink(BLOG_BASE);
+export const getRealisationsPermalink = (): string => getPermalink(REALISATIONS_BASE);
 
 /** */
 export const getAsset = (path: string): string =>

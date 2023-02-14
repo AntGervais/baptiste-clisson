@@ -1,11 +1,11 @@
 ---
 import { Picture } from '@astrojs/image/components';
 
-import { BLOG } from '~/config.mjs';
-import type { Post } from '~/types';
+import { REALISATIONS } from '@/config.mjs';
+import type { Post } from '@/types';
 
-import { findImage } from '~/utils/images';
-import { getPermalink } from '~/utils/permalinks';
+import { findImage } from '@/utils/images';
+import { getPermalink } from '@/utils/permalinks';
 
 export interface Props {
   post: Post;
@@ -36,7 +36,7 @@ const image = await findImage(post.image);
   </div>
   <h3 class="mb-2 text-xl font-bold leading-tight sm:text-2xl font-heading">
     {
-      BLOG?.post?.disabled ? (
+      REALISATIONS?.post?.disabled ? (
         post.title
       ) : (
         <a

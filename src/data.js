@@ -1,4 +1,4 @@
-import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
+import { getPermalink, getRealisationsPermalink, getAsset } from './utils/permalinks';
 
 export const headerData = {
   links: [
@@ -36,7 +36,7 @@ export const headerData = {
         },
         {
           text: 'Contact',
-          href: '#',
+          href: getPermalink('/contact'),
         },
         {
           text: 'Terms',
@@ -49,19 +49,17 @@ export const headerData = {
       ],
     },
     {
-      text: 'Widgets',
-      href: '#',
+      text: 'Réalisations',
+      href: getRealisationsPermalink(),
     },
     {
-      text: 'Blog',
-      href: getBlogPermalink(),
+      text: 'Contact',
+      href: getPermalink('/contact'),
     },
   ],
-  actions: [
-    { type: 'button', text: 'Download', href: 'https://github.com/onwidget/astrowind' }
-  ],
+  actions: [{ type: 'button', text: 'Download', href: 'https://github.com/onwidget/astrowind' }],
 };
-  
+
 export const footerData = {
   links: [
     {
@@ -83,7 +81,7 @@ export const footerData = {
         { text: 'Partners', href: '#' },
         { text: 'Atom', href: '#' },
         { text: 'Electron', href: '#' },
-        { text: 'AstroWind Desktop', href: '#' },
+        { text: 'Desktop', href: '#' },
       ],
     },
     {
@@ -121,7 +119,7 @@ export const footerData = {
     { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/onwidget/astrowind' },
   ],
   footNote: `
-    <span class="w-5 h-5 md:w-6 md:h-6 md:-mt-0.5 bg-cover mr-1.5 float-left rounded-sm bg-[url(https://onwidget.com/favicon/favicon-32x32.png)]"></span>
-    Made by <a class="text-blue-600 hover:underline dark:text-gray-200" href="https://onwidget.com/"> onWidget</a> · All rights reserved.
+    
+    Made by <a class="text-blue-600 hover:underline dark:text-gray-200" href="https://linkedin.com/in/antoine-gervais">Antoine Gervais</a> · All rights reserved.
   `,
 };

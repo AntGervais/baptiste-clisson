@@ -4,7 +4,7 @@ description: Test description
 image: /public/images/default.png
 tags:
   - charpente
-  - rénovationP
+  - rénovation
 publishDate: 10 Feb 2023
 ---
 

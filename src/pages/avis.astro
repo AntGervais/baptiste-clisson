@@ -1,0 +1,24 @@
+---
+import { SITE } from '@/config.mjs';
+import Layout from '@/layouts/PageLayout.astro';
+
+const meta = {
+  title: SITE.title,
+  description: SITE.description,
+  dontUseTitleTemplate: true,
+};
+---
+
+<Layout {meta}>
+  <main>
+    <section class="py-16 pb-32 mt-8 centered flex-col lg:flex-row gap-32">
+      <div class="flex flex-col lg:gap-8">
+        <div class="text-center">
+          <h2 class="text-4xl capitalize font-bold text-gray-600">
+            Let's talk. <br class="lg:hidden" />but you first!
+          </h2>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

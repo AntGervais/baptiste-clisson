@@ -1,0 +1,37 @@
+---
+import { SITE, REALISATIONS } from '@/config.mjs';
+
+import Layout from '@/layouts/PageLayout.astro';
+import BlogList from '@/components/realisations/List.astro';
+import Headline from '@/components/realisations/Headline.astro';
+import Pagination from '@/components/realisations/Pagination.astro';
+
+import { fetchPosts } from '@/utils/realisations';
+import { REALISATIONS_BASE } from '@/utils/permalinks';
+
+export async function getStaticPaths({ paginate }) {
+  if (REALISATIONS?.disabled || REALISATIONS?.list?.disabled) return [];
+  return paginate(await fetchPosts(), {
+    params: { realisations: REALISATIONS_BASE || undefined },
+    pageSize: REALISATIONS.postsPerPage,
+  });
+}
+
+const { page } = Astro.props;
+const currentPage = page.currentPage ?? 1;
+
+const meta = {
+  title: `Réalisations${currentPage > 1 ? ` — Page ${currentPage}` : ''}`,
+  description: SITE.description,
+  noindex: REALISATIONS?.list?.noindex || currentPage > 1,
+  ogType: 'realisation',
+};
+---
+
+<Layout {meta}>
+  <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
+    <Headline subtitle={meta.description}>Réalisations</Headline>
+    <BlogList posts={page.data} />
+    <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
+  </section>
+</Layout>

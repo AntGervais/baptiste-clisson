@@ -1,16 +1,16 @@
 ---
-import { SITE, BLOG } from '~/config.mjs';
+import { SITE, REALISATIONS } from '@/config.mjs';
 
-import Layout from '~/layouts/PageLayout.astro';
-import BlogList from '~/components/blog/List.astro';
-import Pagination from '~/components/blog/Pagination.astro';
+import Layout from '@/layouts/PageLayout.astro';
+import BlogList from '@/components/realisations/List.astro';
+import Pagination from '@/components/realisations/Pagination.astro';
 
-import { fetchPosts } from '~/utils/blog';
-import { TAG_BASE } from '~/utils/permalinks';
-import Headline from '~/components/blog/Headline.astro';
+import { fetchPosts } from '@/utils/realisations';
+import { TAG_BASE } from '@/utils/permalinks';
+import Headline from '@/components/realisations/Headline.astro';
 
 export async function getStaticPaths({ paginate }) {
-  if (BLOG?.disabled || BLOG?.tag?.disabled) return [];
+  if (REALISATIONS?.disabled || REALISATIONS?.tag?.disabled) return [];
 
   const posts = await fetchPosts();
   const tags = new Set();
@@ -22,8 +22,8 @@ export async function getStaticPaths({ paginate }) {
     paginate(
       posts.filter((post) => Array.isArray(post.tags) && post.tags.find((elem) => elem.toLowerCase() === tag)),
       {
-        params: { tag: tag, blog: TAG_BASE || undefined },
-        pageSize: BLOG.postsPerPage,
+        params: { tag: tag, realisations: TAG_BASE || undefined },
+        pageSize: REALISATIONS.postsPerPage,
         props: { tag },
       }
     )
@@ -36,7 +36,7 @@ const currentPage = page.currentPage ?? 1;
 const meta = {
   title: `Posts by tag '${tag}'${currentPage > 1 ? ` — Page ${currentPage} ` : ''}`,
   description: SITE.description,
-  noindex: BLOG?.tag?.noindex,
+  noindex: REALISATIONS?.tag?.noindex,
 };
 ---
 
