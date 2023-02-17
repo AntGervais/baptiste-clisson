@@ -53,10 +53,11 @@ const meta = {
 
   <Note />
 
-  {images && <Swiper images={images} />}
+  <div data-aos="fade-up">
+    {images && <Swiper images={images} />}
+  </div>
 
   <!-- Features Widget *************** -->
-
   <Features
     highlight="Features"
     title="What you get with AstroWind"
@@ -330,14 +331,16 @@ const meta = {
 
   <!-- Stats Widget ****************** -->
 
-  <Stats
-    items={[
-      { name: 'Downloads', value: '132K' },
-      { name: 'Stars', value: '24.8K' },
-      { name: 'Forks', value: '10.3K' },
-      { name: 'Users', value: '48.4K' },
-    ]}
-  />
+  <div data-aos="fade-up">
+    <Stats
+      items={[
+        { name: 'Downloads', value: '132K' },
+        { name: 'Stars', value: '24.8K' },
+        { name: 'Forks', value: '10.3K' },
+        { name: 'Users', value: '48.4K' },
+      ]}
+    />
+  </div>
 
   <!-- CallToAction Widget *********** -->
 
