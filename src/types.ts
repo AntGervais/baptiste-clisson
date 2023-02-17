@@ -10,8 +10,6 @@ export interface Post {
 
   permalink?: string;
 
-  accueil?: boolean;
-
   tags?: Array<string>;
 
   Content: unknown;

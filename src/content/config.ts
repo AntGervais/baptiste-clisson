@@ -5,7 +5,6 @@ const post = defineCollection({
     title: z.string(),
     description: z.string(),
     image: z.string(),
-    accueil: z.boolean().optional(),
     tags: z.array(z.string()).optional(),
     publishDate: z.date().or(z.string()).optional(),
   }),
