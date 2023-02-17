@@ -66,6 +66,7 @@ export default defineConfig({
           name: 'git-gateway',
           branch: 'main',
         },
+        base_url: 'https://charpenteboisdebout.fr/',
         // Configure where our media assets are stored & served from
         media_folder: '/public/images',
         public_folder: '/public/images',
@@ -151,6 +152,7 @@ export default defineConfig({
         ],
       },
       previewStyles: ['https://fonts.googleapis.com/css2?family=Roboto&display=swap', '/src/styles/cms.css'],
+      disableIdentityWidgetInjection: true,
     }),
   ],
 
