@@ -152,7 +152,6 @@ export default defineConfig({
         ],
       },
       previewStyles: ['https://fonts.googleapis.com/css2?family=Roboto&display=swap', '/src/styles/cms.css'],
-      disableIdentityWidgetInjection: true,
     }),
   ],
 
