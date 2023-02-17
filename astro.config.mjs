@@ -58,6 +58,7 @@ export default defineConfig({
       logger: 1,
     }),
 
+    react(),
     NetlifyCMS({
       config: {
         // Use Netlify’s “Git Gateway” authentication and target our default branch
@@ -151,8 +152,6 @@ export default defineConfig({
       },
       previewStyles: ['https://fonts.googleapis.com/css2?family=Roboto&display=swap', '/src/styles/cms.css'],
     }),
-
-    react(),
   ],
 
   vite: {
