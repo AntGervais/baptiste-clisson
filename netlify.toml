@@ -3,3 +3,12 @@
   command = "npm run build"
 [functions]
   directory = './src/functions'
+# Request bots not to index the admin section.
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+  for = "/admin/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"

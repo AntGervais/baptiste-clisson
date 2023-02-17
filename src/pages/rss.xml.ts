@@ -1,8 +1,8 @@
 import rss from '@astrojs/rss';
 
-import { SITE, REALISATIONS } from '@/config.mjs';
-import { fetchPosts } from '@/utils/realisations';
-import { getPermalink } from '@/utils/permalinks';
+import { SITE, REALISATIONS } from '~/config.mjs';
+import { fetchPosts } from '~/utils/realisations';
+import { getPermalink } from '~/utils/permalinks';
 
 export const get = async () => {
   if (REALISATIONS.disabled) {

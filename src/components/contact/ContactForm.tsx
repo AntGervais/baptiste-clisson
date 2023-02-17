@@ -1,7 +1,7 @@
 
-import { useForm } from '@/utils/useForm';
-import sanitize from '@/utils/sanitize';
-import validations from '@/utils/validations';
+import { useForm } from '~/utils/useForm';
+import sanitize from '~/utils/sanitize';
+import validations from '~/utils/validations';
 import { useState } from 'react';
 import Input from './Input';
 import PulseSpinner from '../common/PulseSpinner';

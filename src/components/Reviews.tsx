@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import PulseSpinner from '@/components/common/PulseSpinner'
+import PulseSpinner from '~/components/common/PulseSpinner'
 
 type ReviewsProps = {
   initialReviews?: Review[]

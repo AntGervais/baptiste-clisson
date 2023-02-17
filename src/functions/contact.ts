@@ -1,8 +1,8 @@
 import type { Handler } from '@netlify/functions';
 
 import fetch from 'node-fetch';
-import sanitize from '@/utils/sanitize';
-import validations from '@/utils/validations';
+import sanitize from '~/utils/sanitize';
+import validations from '~/utils/validations';
 
 if (!process.env.SENDINBLUE_API_KEY) {
   throw new Error('Missing SENDINBLUE_API_KEY');

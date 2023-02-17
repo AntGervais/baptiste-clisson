@@ -1,14 +1,14 @@
 ---
-import { REALISATIONS } from '@/config.mjs';
+import { REALISATIONS } from '~/config.mjs';
 
-import Layout from '@/layouts/PageLayout.astro';
-import SinglePost from '@/components/realisations/SinglePost.astro';
-import ToBlogLink from '@/components/realisations/ToBlogLink.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import SinglePost from '~/components/realisations/SinglePost.astro';
+import ToBlogLink from '~/components/realisations/ToBlogLink.astro';
 
-import { getCanonical, getPermalink } from '@/utils/permalinks';
-import { fetchPosts } from '@/utils/realisations';
-import { findImage } from '@/utils/images';
-import { Post } from '@/types';
+import { getCanonical, getPermalink } from '~/utils/permalinks';
+import { fetchPosts } from '~/utils/realisations';
+import { findImage } from '~/utils/images';
+import { Post } from '~/types';
 
 export async function getStaticPaths() {
   if (REALISATIONS?.disabled || REALISATIONS?.post?.disabled) return [];

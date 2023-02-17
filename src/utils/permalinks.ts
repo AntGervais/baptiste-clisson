@@ -1,5 +1,5 @@
-import { SITE, REALISATIONS } from '@/config.mjs';
-import { trim } from '@/utils/utils';
+import { SITE, REALISATIONS } from '~/config.mjs';
+import { trim } from '~/utils/utils';
 import slugify from 'limax';
 
 export const trimSlash = (s: string) => trim(trim(s, '/'));

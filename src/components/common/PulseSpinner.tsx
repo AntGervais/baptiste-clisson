@@ -1,4 +1,4 @@
-import '@/styles/pulseSpinner.css'
+import '~/styles/pulseSpinner.css'
 
 export default function PulseSpinner() {
   return (

@@ -1,6 +1,6 @@
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
-import type { Post } from '@/types';
+import type { Post } from '~/types';
 import { cleanSlug, trimSlash, POST_PERMALINK_PATTERN } from './permalinks';
 
 const generatePermalink = async ({ id, slug, publishDate }) => {
