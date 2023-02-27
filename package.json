@@ -16,7 +16,6 @@
   "devDependencies": {
     "@astrojs/image": "0.13.0",
     "@astrojs/partytown": "^1.0.3",
-    "@astrojs/rss": "^2.1.1",
     "@astrojs/sitemap": "^1.1.0",
     "@astrojs/tailwind": "3.0.0",
     "@astrolib/analytics": "^0.3.0",
