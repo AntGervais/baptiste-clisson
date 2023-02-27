@@ -1,4 +1,4 @@
-import { getPermalink, getRealisationsPermalink, getAsset } from './utils/permalinks';
+import { getPermalink, getRealisationsPermalink } from './utils/permalinks';
 
 export const headerData = {
   links: [
@@ -23,22 +23,6 @@ export const headerData = {
       text: 'Pages',
       links: [
         {
-          text: 'Features',
-          href: '#',
-        },
-        {
-          text: 'Pricing',
-          href: '#',
-        },
-        {
-          text: 'About us',
-          href: '#',
-        },
-        {
-          text: 'Contact',
-          href: getPermalink('/contact'),
-        },
-        {
           text: 'Terms',
           href: getPermalink('/terms'),
         },
@@ -57,7 +41,7 @@ export const headerData = {
       href: getPermalink('/contact'),
     },
   ],
-  actions: [{ type: 'button', text: 'Download', href: 'https://github.com/onwidget/astrowind' }],
+  actions: [{ type: 'button', text: 'Téléphone', href: 'tel:+33630481737', icon: 'tabler:phone' }],
 };
 
 export const footerData = {

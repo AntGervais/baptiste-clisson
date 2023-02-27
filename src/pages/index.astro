@@ -15,6 +15,7 @@ import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 import { getCollection } from 'astro:content';
+import { getPermalink, getRealisationsPermalink } from '~/utils/permalinks';
 
 const imagesAccueil = await getCollection('imageAccueil');
 const images = imagesAccueil.map((imageAccueil) => imageAccueil.data);
@@ -30,32 +31,85 @@ const meta = {
   <!-- Hero Widget ******************* -->
 
   <Hero
-    callToAction={{ text: 'Get template', href: 'https://github.com/onwidget/astrowind', icon: 'tabler:download' }}
-    callToAction2={{ text: 'Learn more', href: '#features' }}
-    image={{ src: import('/public/images/hero.png'), alt: 'AstroWind Hero Image' }}
+    callToAction={{
+      text: 'Mes réalisations',
+      href: getRealisationsPermalink(),
+      // icon: 'tabler:carpenter',
+    }}
+    callToAction2={{ text: 'Me contacter', href: getPermalink('/contact') }}
   >
     <Fragment slot="title">
-      Free template for <span class="hidden lg:inline">create your website <br class="2xl:hidden" /> with</span>
-      <span class="text-accent dark:text-white highlight"> Astro 2.0</span> + Tailwind CSS
+      Baptiste Clisson,
+      <span class="text-accent dark:text-white highlight"> artisan charpentier</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      <span class="hidden sm:inline">
-        <span class="font-semibold">AstroWind</span> is a free, customizable and production-ready template for Astro 2.0
-        + Tailwind CSS.</span
-      >
-      <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span> Suitable for Startups,
-      Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs.
+      <span class="subtitle"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.</span>
+    </Fragment>
+
+    <Fragment slot="activities">
+      <div class="grid gap-6 row-gap-5 md:grid-cols-2 lg:grid-cols-4 my-8">
+        <article class="mb-6 transition">
+          <div class="flex justify-center">
+            <a href="#" class="hover:scale-105 transition">
+              <div class="block max-w-sm rounded-lg bg-white shadow-lg dark:bg-neutral-700">
+                <img class="rounded-t-lg object-cover h-64 w-80" src="/public/images/do-more.jpg" alt="" />
+                <div class="p-2">
+                  <h3 class="font-bold">Charpentes traditionnelles</h3>
+                </div>
+              </div>
+            </a>
+          </div>
+        </article>
+
+        <article class="mb-6 transition">
+          <div class="flex justify-center">
+            <a href="#" class="hover:scale-105 transition">
+              <div class="block max-w-sm rounded-lg bg-white shadow-lg dark:bg-neutral-700">
+                <img
+                  class="rounded-t-lg object-cover h-64 w-80"
+                  src="https://tecdn.b-cdn.net/img/new/standard/nature/186.jpg"
+                  alt=""
+                />
+                <div class="p-2">
+                  <h3 class="font-bold">Ossatures et planchers bois</h3>
+                </div>
+              </div>
+            </a>
+          </div>
+        </article>
+
+        <article class="mb-6 transition">
+          <div class="flex justify-center">
+            <a href="#" class="hover:scale-105 transition">
+              <div class="block max-w-sm rounded-lg bg-white shadow-lg dark:bg-neutral-700">
+                <img class="rounded-t-lg object-cover h-64 w-80" src="/public/images/tools.jpg" alt="" />
+                <div class="p-2">
+                  <h3 class="font-bold">Escaliers massifs sur mesure</h3>
+                </div>
+              </div>
+            </a>
+          </div>
+        </article>
+
+        <article class="mb-6 transition">
+          <div class="flex justify-center">
+            <a href="#" class="hover:scale-105 transition">
+              <div class="block max-w-sm rounded-lg bg-white shadow-lg dark:bg-neutral-700">
+                <img class="rounded-t-lg object-cover h-64 w-80" src="/public/images/vintage.jpg" alt="" />
+                <div class="p-2">
+                  <h3 class="font-bold">Rénovation du bâti ancien</h3>
+                </div>
+              </div>
+            </a>
+          </div>
+        </article>
+      </div>
     </Fragment>
   </Hero>
 
   <!-- Note Widget ******************* -->
-
-  <Note />
-
-  <div data-aos="fade-up">
-    {images && <Swiper images={images} />}
-  </div>
+  <!-- <Note /> -->
 
   <!-- Features Widget *************** -->
   <Features
@@ -106,8 +160,12 @@ const meta = {
     ]}
   />
 
-  <!-- Content Widget **************** -->
+  <!-- Swiper Widget **************** -->
+  <div data-aos="fade-up" class="px-6">
+    {images && <Swiper images={images} />}
+  </div>
 
+  <!-- Content Widget **************** -->
   <Content
     highlight="Inside template"
     title="And what's inside? ..."
@@ -346,9 +404,9 @@ const meta = {
 
   <CallToAction
     callToAction={{
-      text: 'Get template',
-      href: 'https://github.com/onwidget/astrowind',
-      icon: 'tabler:download',
+      text: 'Mes réalisations',
+      href: getRealisationsPermalink(),
+      icon: 'tabler:carpenter',
     }}
   >
     <Fragment slot="title">

@@ -29,19 +29,13 @@ export interface Props {
   position?: string;
 }
 
-const {
-  links = [],
-  actions = [],
-  isSticky = false,
-  showToggleTheme = false,
-  position = 'center',
-} = Astro.props;
+const { links = [], actions = [], isSticky = false, showToggleTheme = false, position = 'center' } = Astro.props;
 ---
 
 <header
   class:list={[
     { sticky: isSticky, relative: !isSticky },
-    'top-0 z-40 flex-none mx-auto w-full transition-all ease-in duration-100',
+    'navbar top-0 z-40 flex-none mx-auto w-full transition-all ease-in duration-100',
   ]}
   id="header"
 >
@@ -101,7 +95,7 @@ const {
         {
           actions?.length ? (
             <span class="ml-4">
-              {actions.map(({ text, href, type }) => (
+              {actions.map(({ text, href, type, icon }) => (
                 <a
                   class:list={[
                     'btn ml-2 py-2.5 px-5.5 md:px-6 font-semibold shadow-none text-sm',
@@ -109,6 +103,7 @@ const {
                   ]}
                   href={href}
                 >
+                  {icon && <Icon name={icon} class="w-4 h-4 mr-1 inline-block" />}
                   <Fragment set:html={text} />
                 </a>
               ))}
