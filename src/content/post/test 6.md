@@ -3,7 +3,7 @@ title: AstroWind template in depth
 description: description Lorem ipsum dolor sit amet
 image: /public/images/colors.jpg
 tags:
-  - nouveau
+  - rénovation
 publishDate: 2023-01-08T00:00:00.000Z
 ---
 

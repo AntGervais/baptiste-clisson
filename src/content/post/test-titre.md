@@ -3,7 +3,7 @@ title: Test titre
 description: Test description
 image: /public/images/default.png
 tags:
-  - charpente
+  - ossature
   - rénovation
 publishDate: 10 Feb 2023
 ---

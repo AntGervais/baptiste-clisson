@@ -1,5 +1,7 @@
 ---
 image: /public/images/do-more.jpg
-description: Image3
+title: Image3
+tag: renovation
 ---
 
+Image3
