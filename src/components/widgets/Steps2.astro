@@ -64,19 +64,19 @@ const {
 ---
 
 <section>
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 overflow-hidden">
+  <div class="mx-auto max-w-7xl overflow-hidden px-4 sm:px-6">
     <div class="py-12 md:py-20">
       <div class="py-4 sm:py-6 lg:py-8">
         <div class="flex flex-wrap md:-mx-8">
-          <div class="w-full lg:w-1/2 px-0 sm:px-8 mb-12">
+          <div class="mb-12 w-full px-0 sm:px-8 lg:w-1/2">
             <div>
               {
                 highlight && (
-                  <p class="text-base text-primary  font-semibold tracking-wide uppercase" set:html={highlight} />
+                  <p class="text-primary text-base  font-semibold uppercase tracking-wide" set:html={highlight} />
                 )
               }
-              {title && <h2 class="mb-4 text-3xl lg:text-4xl font-bold font-heading" set:html={title} />}
-              {subtitle && <p class="mb-8 text-xl text-muted " set:html={subtitle} />}
+              {title && <h2 class="font-heading mb-4 text-3xl font-bold lg:text-4xl" set:html={title} />}
+              {subtitle && <p class="text-muted mb-8 text-xl " set:html={subtitle} />}
 
               <div class="w-full">
                 {
@@ -87,7 +87,7 @@ const {
                     callToAction.text &&
                     callToAction.href && (
                       <a class="btn btn-primary mb-4 sm:mb-0" href={callToAction.href} target="_blank" rel="noopener">
-                        {callToAction.icon && <Icon name={callToAction.icon} class="w-5 h-5 mr-1 -ml-1.5" />}
+                        {callToAction.icon && <Icon name={callToAction.icon} class="mr-1 -ml-1.5 h-5 w-5" />}
                         {callToAction.text}
                       </a>
                     )
@@ -96,19 +96,19 @@ const {
               </div>
             </div>
           </div>
-          <div class="w-full lg:w-1/2 px-0 sm:px-8">
+          <div class="w-full px-0 sm:px-8 lg:w-1/2">
             <ul class="space-y-10">
               {
                 items && items.length
                   ? items.map(({ title: title2, description, icon }, index) => (
                       <li class="flex md:-mx-4">
                         <div class="pr-4 sm:pl-4">
-                          <span class="flex w-16 h-16 mx-auto items-center justify-center text-2xl font-bold rounded-full bg-blue-100 text-primary">
-                            {icon ? <Icon name={icon} class="w-6 h-6 icon-bold" /> : index + 1}
+                          <span class="text-primary mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-blue-100 text-2xl font-bold">
+                            {icon ? <Icon name={icon} class="icon-bold h-6 w-6" /> : index + 1}
                           </span>
                         </div>
                         <div class="pl-4">
-                          <h3 class="mb-4 text-xl font-semibold font-heading" set:html={title2} />
+                          <h3 class="font-heading mb-4 text-xl font-semibold" set:html={title2} />
                           <p class="text-muted " set:html={description} />
                         </div>
                       </li>

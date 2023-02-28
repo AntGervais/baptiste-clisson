@@ -35,30 +35,25 @@ const {
   <div class="max-w-xl sm:mx-auto lg:max-w-2xl">
     {
       (title || subtitle || highlight) && (
-        <div class="mb-10 md:mx-auto text-center md:mb-12 max-w-3xl">
+        <div class="mb-10 max-w-3xl text-center md:mx-auto md:mb-12">
           {highlight && (
-            <p
-              class="text-base text-primary  font-semibold tracking-wide uppercase"
-              set:html={highlight}
-            />
+            <p class="text-primary text-base  font-semibold uppercase tracking-wide" set:html={highlight} />
           )}
           {title && (
             <h2
-              class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading"
+              class="leading-tighter font-heading mb-4 text-4xl font-bold tracking-tighter md:text-5xl"
               set:html={title}
             />
           )}
 
-          {subtitle && (
-            <p class="max-w-3xl mx-auto sm:text-center text-xl text-muted " set:html={subtitle} />
-          )}
+          {subtitle && <p class="text-muted mx-auto max-w-3xl text-xl sm:text-center " set:html={subtitle} />}
         </div>
       )
     }
   </div>
   <div class="mx-auto max-w-7xl p-4 md:px-8">
     <div class={`md:flex ${isReversed ? 'md:flex-row-reverse' : ''} md:gap-16`}>
-      <div class="md:basis-1/2 self-center">
+      <div class="self-center md:basis-1/2">
         {content && <div class="mb-12 text-lg " set:html={content} />}
 
         {
@@ -67,13 +62,13 @@ const {
               {items.map(({ title: title2, description, icon }) => (
                 <div class="flex">
                   <div class="flex-shrink-0">
-                    <div class="flex h-7 w-7 items-center justify-center rounded-full bg-primary text-gray-50">
-                      <Icon name={icon ? icon : 'tabler:check'} class="w-5 h-5" />
+                    <div class="bg-primary flex h-7 w-7 items-center justify-center rounded-full text-gray-50">
+                      <Icon name={icon ? icon : 'tabler:check'} class="h-5 w-5" />
                     </div>
                   </div>
                   <div class="ml-4">
                     {title2 && <h3 class="text-lg font-medium leading-6 ">{title2}</h3>}
-                    {description && <p class="mt-2 text-muted " set:html={description} />}
+                    {description && <p class="text-muted mt-2 " set:html={description} />}
                   </div>
                 </div>
               ))}

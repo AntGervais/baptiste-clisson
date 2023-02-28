@@ -23,33 +23,33 @@ const {
 ---
 
 <section class="scroll-mt-16" id="features">
-  <div class="px-4 py-16 mx-auto max-w-6xl lg:px-8 lg:py-20">
+  <div class="mx-auto max-w-6xl px-4 py-16 lg:px-8 lg:py-20">
     {
       (title || subtitle || highlight) && (
-        <div class="mb-10 md:mx-auto text-center md:mb-12 max-w-3xl">
+        <div class="mb-10 max-w-3xl text-center md:mx-auto md:mb-12">
           {highlight && (
-            <p class="text-base text-primary  font-semibold tracking-wide uppercase" set:html={highlight} />
+            <p class="text-primary text-base  font-semibold uppercase tracking-wide" set:html={highlight} />
           )}
           {title && (
             <h2
-              class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading"
+              class="leading-tighter font-heading mb-4 text-4xl font-bold tracking-tighter md:text-5xl"
               set:html={title}
             />
           )}
 
-          {subtitle && <p class="max-w-3xl mx-auto sm:text-center text-xl text-muted " set:html={subtitle} />}
+          {subtitle && <p class="text-muted mx-auto max-w-3xl text-xl sm:text-center " set:html={subtitle} />}
         </div>
       )
     }
-    <div class="grid mx-auto space-y-6 md:grid-cols-2 md:space-y-0">
+    <div class="mx-auto grid space-y-6 md:grid-cols-2 md:space-y-0">
       {
         items.map((subitems) => (
           <div class="space-y-8 sm:px-8">
             {subitems.map(({ title, description, icon }) => (
-              <div class="flex flex-row max-w-md">
+              <div class="flex max-w-md flex-row">
                 <div class="mb-4 mr-4">
-                  <div class="flex items-center justify-center w-12 h-12 rounded-full bg-primary ">
-                    {icon && <Icon name={icon} class="w-6 h-6 text-white icon-light" />}
+                  <div class="bg-primary flex h-12 w-12 items-center justify-center rounded-full ">
+                    {icon && <Icon name={icon} class="icon-light h-6 w-6 text-white" />}
                   </div>
                 </div>
                 <div>

@@ -1,5 +1,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 const colors = require('tailwindcss/colors');
+const prettier = require('prettier-plugin-tailwindcss');
+const typo = require('@tailwindcss/typography');
 
 module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,md,svelte,ts,tsx,vue}'],
@@ -17,6 +19,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require('@tailwindcss/typography')],
-  darkMode: 'class',
+  plugins: [prettier, typo],
 };

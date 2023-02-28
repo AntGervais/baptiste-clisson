@@ -12,17 +12,17 @@ const meta = {
 
 <Layout {meta}>
   <main>
-    <section class="py-16 pb-32 mt-8 centered flex-col lg:flex-row gap-32">
+    <section class="centered mt-8 flex-col gap-32 py-16 pb-32 lg:flex-row">
       <div class="flex flex-col lg:gap-8">
         <div class="text-center">
-          <h2 class="text-4xl capitalize font-bold text-gray-600">
+          <h2 class="text-4xl font-bold capitalize text-gray-600">
             Let's talk. <br class="lg:hidden" />but you first!
           </h2>
         </div>
         <ContactForm client:visible />
       </div>
 
-      <div class="shadow-lg rounded-md bg-gray-100 mx-4">
+      <div class="mx-4 rounded-md bg-gray-100 shadow-lg">
         <div class="flex flex-col gap-8 px-8 py-12">
           <div class="flex gap-4">
             <svg class="fill-green-700" xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 512 512">
@@ -31,7 +31,7 @@ const meta = {
               ></path>
             </svg>
             <div class="flex flex-col gap-2">
-              <h4 class="text-2xl font-semibold text-gray-700 capitalize">Contact Phone</h4>
+              <h4 class="text-2xl font-semibold capitalize text-gray-700">Contact Phone</h4>
 
               <span class="text-lg font-medium text-gray-600">
                 <a href="tel:833-364-6653">833-364-6653 aka 833-FOG-MOLD <br /> (Call or text)</a>
@@ -53,8 +53,8 @@ const meta = {
                 ></path>
               </svg>
               <div class="flex flex-col gap-2">
-                <h4 class="text-2xl font-semibold text-gray-700 capitalize">Email address</h4>
-                <a href="mailto:lisa@purafog.com" class="text-gray-600 text-lg font-medium"> Lisa@purafog.com</a>
+                <h4 class="text-2xl font-semibold capitalize text-gray-700">Email address</h4>
+                <a href="mailto:lisa@purafog.com" class="text-lg font-medium text-gray-600"> Lisa@purafog.com</a>
               </div>
             </div>
           </div>
