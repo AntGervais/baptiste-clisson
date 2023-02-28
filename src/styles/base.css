@@ -60,28 +60,22 @@
   @apply rotate-45 translate-y-[-8px] translate-x-[14px];
 }
 
-.navbar {
-  opacity: 0;
-  animation: navbarFadeIn 0.5s ease-in-out forwards;
-  transform: translateY(-10%);
-}
-
 .title{
   animation: titleFadeIn  0.5s ease-in-out forwards;
-  animation-delay: 300ms;
+  animation-delay: 50ms;
   transform: translateY(130%);
 }
 
 .subtitle{
   animation: titleFadeIn  0.5s ease-in-out forwards;
-  animation-delay: 550ms;
+  animation-delay: 350ms;
   transform: translateY(100%);
 }
 
 .activites{
   opacity: 0;
   animation: activitesFadeIn  0.5s ease-in-out forwards;
-  animation-delay: 1000ms;
+  animation-delay: 800ms;
 }
 
 
@@ -94,18 +88,6 @@
   100% {
     opacity: 1;
     transform: translateY(0%);
-  }
-}
-
-@keyframes navbarFadeIn {
-  0% {
-    transform: translateY(-10%);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translateY(0%);
-    opacity: 1;
   }
 }
 
