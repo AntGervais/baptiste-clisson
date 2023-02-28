@@ -21,7 +21,7 @@ const { language = 'en', textDirection = 'ltr' } = SITE;
     <MetaTags {...meta} />
   </head>
 
-  <body class="antialiased text-page bg-light dark:text-slate-300 tracking-tight dark:bg-dark">
+  <body class="antialiased text-page bg-light tracking-tight">
     <slot />
     <BasicScripts />
     <style is:global>
@@ -41,35 +41,18 @@ const { language = 'en', textDirection = 'ltr' } = SITE;
         animatedClassName: 'aos-animate', // class applied on animation
         useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
         disableMutationObserver: false, // disables automatic mutations' detections (advanced)
-        debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
-        throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+        // debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+        // throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
 
         // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
-        offset: 100, // offset (in px) from the original trigger point
-        delay: 100, // values from 0 to 3000, with step 50ms
-        duration: 500, // values from 0 to 3000, with step 50ms
-        easing: 'ease', // default easing for AOS animations
-        once: false, // whether animation should happen only once - while scrolling down
-        mirror: false, // whether elements should animate out while scrolling past them
-        anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+        // offset: 100, // offset (in px) from the original trigger point
+        // delay: 100, // values from 0 to 3000, with step 50ms
+        // duration: 500, // values from 0 to 3000, with step 50ms
+        // easing: 'ease', // default easing for AOS animations
+        // once: false, // whether animation should happen only once - while scrolling down
+        // mirror: false, // whether elements should animate out while scrolling past them
+        // anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
       });
-    </script>
-    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <script>
-      declare global {
-        interface Window {
-          netlifyIdentity: any;
-        }
-      }
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on('init', (user: any) => {
-          if (!user) {
-            window.netlifyIdentity.on('login', () => {
-              document.location.href = '/admin/';
-            });
-          }
-        });
-      }
     </script>
   </body>
 </html>

@@ -9,7 +9,7 @@
 
 ## Features
 
-- ✅ Integration with **Tailwind CSS** ([@astrojs/tailwind](https://docs.astro.build/en/guides/integrations-guide/tailwind/)) supporting **Dark mode**.
+- ✅ Integration with **Tailwind CSS** ([@astrojs/tailwind](https://docs.astro.build/en/guides/integrations-guide/tailwind/))
 - ✅ **Production-ready** scores in [Lighthouse](https://web.dev/measure/) and [PageSpeed Insights](https://pagespeed.web.dev/) reports.
 - ✅ **Fast and SEO friendly blog** with automatic, [**MDX** support](https://docs.astro.build/en/guides/integrations-guide/mdx/), **Categories & Tags**, **Social Share**, ...
 - ✅ **Image optimization** ([@astrojs/images](https://docs.astro.build/en/guides/integrations-guide/image/)) and **Font optimization**.
@@ -153,7 +153,7 @@ const CONFIG = {
   description: 'This is the homepage description of Example', // Default seo description
   defaultImage: 'image.jpg', // Default seo image
 
-  defaultTheme: 'system', // Values: "system" | "light" | "dark" | "light:only" | "dark:only"
+  defaultTheme: 'light', // Values: "system" | "light" | "dark" | "light:only" | "dark:only"
 
   language: 'en', // Default language
   textDirection: 'ltr', // Default html text direction

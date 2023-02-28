@@ -12,7 +12,7 @@ const CONFIG = {
     'Entreprise de Charpentes traditionnelles - Ossatures et planchers bois - Escaliers massifs sur mesure. Rénovation du bâti ancien.',
   defaultImage: defaultImage,
 
-  defaultTheme: 'system', // Values: "system" | "light" | "dark" | "light:only" | "dark:only"
+  defaultTheme: 'light', // Values: "system" | "light" | "dark" | "light:only" | "dark:only"
 
   language: 'fr',
   textDirection: 'ltr',

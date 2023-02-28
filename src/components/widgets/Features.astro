@@ -28,10 +28,7 @@ const {
       (title || subtitle || highlight) && (
         <div class="mb-10 md:mx-auto text-center md:mb-12 max-w-3xl">
           {highlight && (
-            <p
-              class="text-base text-primary dark:text-blue-200 font-semibold tracking-wide uppercase"
-              set:html={highlight}
-            />
+            <p class="text-base text-primary  font-semibold tracking-wide uppercase" set:html={highlight} />
           )}
           {title && (
             <h2
@@ -40,9 +37,7 @@ const {
             />
           )}
 
-          {subtitle && (
-            <p class="max-w-3xl mx-auto sm:text-center text-xl text-muted dark:text-slate-400" set:html={subtitle} />
-          )}
+          {subtitle && <p class="max-w-3xl mx-auto sm:text-center text-xl text-muted " set:html={subtitle} />}
         </div>
       )
     }
@@ -53,13 +48,13 @@ const {
             {subitems.map(({ title, description, icon }) => (
               <div class="flex flex-row max-w-md">
                 <div class="mb-4 mr-4">
-                  <div class="flex items-center justify-center w-12 h-12 rounded-full bg-primary dark:bg-blue-700">
+                  <div class="flex items-center justify-center w-12 h-12 rounded-full bg-primary ">
                     {icon && <Icon name={icon} class="w-6 h-6 text-white icon-light" />}
                   </div>
                 </div>
                 <div>
                   <h3 class="mb-3 text-xl font-bold">{title}</h3>
-                  <p class="text-muted dark:text-slate-400" set:html={description} />
+                  <p class="text-muted " set:html={description} />
                 </div>
               </div>
             ))}
