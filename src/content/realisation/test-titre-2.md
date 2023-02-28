@@ -1,6 +1,7 @@
 ---
 title: Auam nec venenatis lobortis
-image: /public/images/stickers.jpg
+image: >-
+  https://assets.tina.io/dc844836-6c1e-4dc0-a9df-64ebe536212b/22b93dddbdb068d3f1574c2bfc358867bdd4e7c9.jpeg
 publishDate: '2023-02-10T04:00:00.000Z'
 categories:
   - nouveau
