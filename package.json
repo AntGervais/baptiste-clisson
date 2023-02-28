@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "pnpm tinacms dev -c 'astro dev'",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "tinacms build && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "format": "prettier -w .",
