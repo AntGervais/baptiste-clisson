@@ -62,20 +62,19 @@
 
 .title{
   animation: titleFadeIn  0.5s ease-in-out forwards;
-  animation-delay: 50ms;
   transform: translateY(130%);
 }
 
 .subtitle{
   animation: titleFadeIn  0.5s ease-in-out forwards;
-  animation-delay: 350ms;
+  animation-delay: 300ms;
   transform: translateY(100%);
 }
 
 .activites{
   opacity: 0;
   animation: activitesFadeIn  0.5s ease-in-out forwards;
-  animation-delay: 800ms;
+  animation-delay: 700ms;
 }
 
 
