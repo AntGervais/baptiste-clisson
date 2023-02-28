@@ -1,11 +1,12 @@
 ---
-title: Test titre
-description: Test description
-image: /public/images/default.png
+title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit'
+image: /public/images/do-more.jpg
 tags:
-  - ossature
-  - rénovation
-publishDate: 10 Feb 2023
+  - escalier
+publishDate: '2023-01-09T00:00:00.000Z'
+accroche: >-
+  Morbi sagittis, quam nec venenatis lobortis, Lorem ipsum dolor sit amet,
+  consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis.
 ---
 
 ## Magna nunc senectus torquent per fusce sapien ligula tempus cra
@@ -16,13 +17,10 @@ Tristique eleifend enim praesent mollis sem leo, molestie dictum penatibus sodal
 
 ## Magna lacus tortor luctus platea co
 
-- Luctus molestie taciti aliquam dictumst imperdiet, donec torquent nisi.
-
-- Montes cursus habitant risus platea senectus, lectus sagittis mi.
-
-- Eleifend facilisi quam ultricies, accumsan aliquet euismod velit, sem tortor.
-
-- Senectus nisl potenti congue sociosqu at, porttitor habitant vivamus.
+* Luctus molestie taciti aliquam dictumst imperdiet, donec torquent nisi.
+* Montes cursus habitant risus platea senectus, lectus sagittis mi.
+* Eleifend facilisi quam ultricies, accumsan aliquet euismod velit, sem tortor.
+* Senectus nisl potenti congue sociosqu at, porttitor habitant vivamus.
 
 Nostra dictum porta consequat quisque diam nisl iaculis velit varius, placerat curabitur risus commodo condimentum morbi eros dictumst phasellus, tempor duis libero ultrices est rhoncus mattis nam. Quisque lectus massa lobortis nulla enim, praesent eu ut elementum. Felis placerat nibh donec erat platea rutrum taciti cursus, elementum metus semper feugiat risus tellus nulla, aliquam hendrerit faucibus inceptos commodo justo porta.
 

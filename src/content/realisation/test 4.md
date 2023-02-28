@@ -1,11 +1,11 @@
 ---
-title: How to customize AstroWind template to suit your branding
-description: Lorem ipsum dolor sit amet
+title: Consectetur adipiscing eli morbi sagittis
 image: /public/images/stickers.jpg
 tags:
   - charpente
   - rénovation
-publishDate: 2023-01-06T00:00:00.000Z
+publishDate: '2023-01-06T00:00:00.000Z'
+accroche: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis.'
 ---
 
 ## Congue justo vulputate nascetur convallis varius orci fringilla nulla pharetr
@@ -16,13 +16,10 @@ Accumsan torquent vitae convallis duis cras risus pretium nulla mi litora socios
 
 ## Mauris velit laoreet vitae cursus augue
 
-- Massa egestas consequat nisl id volutpat, varius neque aenean.
-
-- Venenatis tincidunt eros pretium viverra lacinia convallis, turpis orci condimentum fusce.
-
-- Pellentesque in aliquet nisi gravida netus, commodo aptent volutpat.
-
-- Nisi rutrum eros euismod, parturient ullamcorper mattis a, dapibus vestibulum.
+* Massa egestas consequat nisl id volutpat, varius neque aenean.
+* Venenatis tincidunt eros pretium viverra lacinia convallis, turpis orci condimentum fusce.
+* Pellentesque in aliquet nisi gravida netus, commodo aptent volutpat.
+* Nisi rutrum eros euismod, parturient ullamcorper mattis a, dapibus vestibulum.
 
 Senectus fermentum tristique egestas bibendum per dictumst purus pharetra cras dictum pulvinar, vitae nec eros montes dis quis nullam duis netus litora, feugiat cubilia mollis porttitor velit ligula metus ante risus eu.
 

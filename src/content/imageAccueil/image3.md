@@ -1,7 +1,7 @@
 ---
 image: /public/images/do-more.jpg
-title: Image3
-tag: renovation
+title: Escaliers massifs sur mesure
+tag: escalier
 ---
 
-Image3
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis.

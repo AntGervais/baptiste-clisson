@@ -6,12 +6,12 @@ import BlogList from '~/components/realisations/List.astro';
 import Headline from '~/components/realisations/Headline.astro';
 import Pagination from '~/components/realisations/Pagination.astro';
 
-import { fetchPosts } from '~/utils/realisations';
+import { fetchRealisations } from '~/utils/realisations';
 import { REALISATIONS_BASE } from '~/utils/permalinks';
 
 export async function getStaticPaths({ paginate }) {
   if (REALISATIONS?.disabled || REALISATIONS?.list?.disabled) return [];
-  return paginate(await fetchPosts(), {
+  return paginate(await fetchRealisations(), {
     params: { realisations: REALISATIONS_BASE || undefined },
     pageSize: REALISATIONS.postsPerPage,
   });

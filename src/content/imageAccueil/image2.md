@@ -1,7 +1,7 @@
 ---
 image: /public/images/colors.jpg
-title: Image2
+title: Ossatures et planchers bois
 tag: ossature
 ---
 
-Image2
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis.

@@ -1,10 +1,10 @@
 ---
-title: AstroWind template in depth
-description: description Lorem ipsum dolor sit amet
+title: Blablabla Lorem ipsum dolor sit amet
 image: /public/images/colors.jpg
 tags:
   - rénovation
-publishDate: 2023-01-08T00:00:00.000Z
+publishDate: '2023-01-08T00:00:00.000Z'
+accroche: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
 ---
 
 ## Dictum integer fusce ac ridiculus et odio sollicitudin diam at
@@ -15,13 +15,10 @@ Ornare cum cursus laoreet sagittis nunc fusce posuere per euismod dis vehicula a
 
 ## Sodales hendrerit malesuada et vestibulum
 
-- Luctus euismod pretium nisi et, est dui enim.
-
-- Curae eget inceptos malesuada, fermentum class.
-
-- Porttitor vestibulum aliquam porta feugiat velit, potenti eu placerat.
-
-- Ligula lacus tempus ac porta, vel litora.
+* Luctus euismod pretium nisi et, est dui enim.
+* Curae eget inceptos malesuada, fermentum class.
+* Porttitor vestibulum aliquam porta feugiat velit, potenti eu placerat.
+* Ligula lacus tempus ac porta, vel litora.
 
 Torquent non nisi lacinia faucibus nibh tortor taciti commodo porttitor, mus hendrerit id leo scelerisque mollis habitasse orci tristique aptent, lacus at molestie cubilia facilisis porta accumsan condimentum. Metus lacus suscipit porttitor integer facilisi torquent, nostra nulla platea at natoque varius venenatis, id quam pharetra aliquam leo. Dictum orci himenaeos quam mi fusce lacinia maecenas ac magna eleifend laoreet, vivamus enim curabitur ullamcorper est ultrices convallis suscipit nascetur. Ornare fames pretium ante ac eget nisi tellus vivamus, convallis mauris sapien imperdiet sollicitudin aliquet taciti quam, lacinia tempor primis magna iaculis at eu. Est facilisi proin risus eleifend orci torquent ultricies platea, quisque nullam vel porttitor euismod sociis non, maecenas sociosqu interdum arcu sed pharetra potenti. Aliquet risus tempus hendrerit sapien tellus eget cursus enim etiam dui, lobortis nostra pellentesque odio posuere morbi ad neque senectus arcu eu, turpis proin ac felis purus fames magnis dis dignissim.
 

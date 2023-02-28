@@ -1,7 +1,7 @@
 ---
-image: /public/images/default.png
-title: Image1
+image: /images/do-more.jpg
+title: Charpentes traditionnelles
 tag: charpente
 ---
 
-Image1
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis.

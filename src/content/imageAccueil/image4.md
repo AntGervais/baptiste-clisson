@@ -1,7 +1,7 @@
 ---
 image: /public/images/stickers.jpg
-title: Image4
-tag: escalier
+title: Rénovation du bâti ancien
+tag: rénovation
 ---
 
-Image4
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis.

@@ -2,17 +2,17 @@
 import { REALISATIONS } from '~/config.mjs';
 
 import Layout from '~/layouts/PageLayout.astro';
-import SinglePost from '~/components/realisations/SinglePost.astro';
+import SingleRealisation from '~/components/realisations/SingleRealisation.astro';
 import ToBlogLink from '~/components/realisations/ToBlogLink.astro';
 
 import { getCanonical, getPermalink } from '~/utils/permalinks';
-import { fetchPosts } from '~/utils/realisations';
+import { fetchRealisations } from '~/utils/realisations';
 import { findImage } from '~/utils/images';
-import { Post } from '~/types';
+import { Realisation } from '~/types';
 
 export async function getStaticPaths() {
   if (REALISATIONS?.disabled || REALISATIONS?.post?.disabled) return [];
-  return (await fetchPosts()).map((post) => ({
+  return (await fetchRealisations()).map((post) => ({
     params: {
       realisations: post.permalink,
     },
@@ -21,11 +21,11 @@ export async function getStaticPaths() {
 }
 
 export interface Props {
-  post: Post;
+  post: Realisation;
 }
 
 const { post } = Astro.props;
-const url = getCanonical(getPermalink(post.permalink, 'post'));
+const url = getCanonical(getPermalink(post.permalink, 'realisation'));
 
 const meta = {
   title: post.title,
@@ -38,6 +38,6 @@ const meta = {
 ---
 
 <Layout {meta}>
-  <SinglePost post={{ ...post, image: meta.image }} url={url} />
+  <SingleRealisation post={{ ...post, image: meta.image }} url={url} />
   <ToBlogLink />
 </Layout>

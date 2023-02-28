@@ -1,6 +1,6 @@
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
-import type { Post } from '~/types';
+import type { Realisation } from '~/types';
 import { cleanSlug, trimSlash, POST_PERMALINK_PATTERN } from './permalinks';
 
 const generatePermalink = async ({ id, slug, publishDate }) => {
@@ -27,7 +27,7 @@ const generatePermalink = async ({ id, slug, publishDate }) => {
     .join('/');
 };
 
-const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> => {
+const getNormalizedRealisation = async (post: CollectionEntry<'realisation'>): Promise<Realisation> => {
   const { id, slug: rawSlug = '', data } = post;
   const { Content } = await post.render();
 
@@ -51,36 +51,36 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
   };
 };
 
-const loadPosts = async function (): Promise<Array<Post>> {
-  const posts = await getCollection('post');
-  const normalizedPosts = posts.map(async (post) => await getNormalizedPost(post));
+const loadRealisations = async function (): Promise<Array<Realisation>> {
+  const realisations = await getCollection('realisation');
+  const normalizedRealisations = realisations.map(async (realisation) => await getNormalizedRealisation(realisation));
 
-  const results = (await Promise.all(normalizedPosts)).sort(
+  const results = (await Promise.all(normalizedRealisations)).sort(
     (a, b) => b.publishDate.valueOf() - a.publishDate.valueOf()
   );
   // .filter((post) => !post.draft)
   return results;
 };
 
-let _posts: Array<Post>;
+let _posts: Array<Realisation>;
 
 /** */
-export const fetchPosts = async (): Promise<Array<Post>> => {
+export const fetchRealisations = async (): Promise<Array<Realisation>> => {
   if (!_posts) {
-    _posts = await loadPosts();
+    _posts = await loadRealisations();
   }
 
   return _posts;
 };
 
 /** */
-export const findPostsBySlugs = async (slugs: Array<string>): Promise<Array<Post>> => {
+export const findRealisationsBySlugs = async (slugs: Array<string>): Promise<Array<Realisation>> => {
   if (!Array.isArray(slugs)) return [];
 
-  const posts = await fetchPosts();
+  const posts = await fetchRealisations();
 
-  return slugs.reduce(function (r: Array<Post>, slug: string) {
-    posts.some(function (post: Post) {
+  return slugs.reduce(function (r: Array<Realisation>, slug: string) {
+    posts.some(function (post: Realisation) {
       return slug === post.slug && r.push(post);
     });
     return r;
@@ -88,13 +88,13 @@ export const findPostsBySlugs = async (slugs: Array<string>): Promise<Array<Post
 };
 
 /** */
-export const findPostsByIds = async (ids: Array<string>): Promise<Array<Post>> => {
+export const findRealisationsByIds = async (ids: Array<string>): Promise<Array<Realisation>> => {
   if (!Array.isArray(ids)) return [];
 
-  const posts = await fetchPosts();
+  const posts = await fetchRealisations();
 
-  return ids.reduce(function (r: Array<Post>, id: string) {
-    posts.some(function (post: Post) {
+  return ids.reduce(function (r: Array<Realisation>, id: string) {
+    posts.some(function (post: Realisation) {
       return id === post.id && r.push(post);
     });
     return r;
@@ -102,9 +102,9 @@ export const findPostsByIds = async (ids: Array<string>): Promise<Array<Post>> =
 };
 
 /** */
-export const findLatestPosts = async ({ count }: { count?: number }): Promise<Array<Post>> => {
+export const findLatestRealisations = async ({ count }: { count?: number }): Promise<Array<Realisation>> => {
   const _count = count || 4;
-  const posts = await fetchPosts();
+  const posts = await fetchRealisations();
 
   return posts ? posts.slice(0, _count) : [];
 };

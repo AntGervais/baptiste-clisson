@@ -1,10 +1,10 @@
 ---
-title: Get started with AstroWind to create a website using Astro and Tailwind CSS
-description: Lorem ipsum dolor sit amet
+title: Consectetur adipiscing elit
 image: /public/images/default.png
 tags:
   - charpente
-publishDate: 2023-01-12T00:00:00.000Z
+publishDate: '2023-01-12T00:00:00.000Z'
+accroche: 'Morbi sagittis, quam nec venenatis lobortis. Consectetur adipiscing elit.'
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -17,13 +17,10 @@ Iaculis arcu commodo dis proin vitae himenaeos, ante tristique potenti magna lig
 
 ## Praesent tellus ad sapien erat or
 
-- Quam orci nostra mi nulla, hac a.
-
-- Interdum iaculis quis tellus sociis orci nulla, quam rutrum conubia tortor primis.
-
-- Non felis sem placerat aenean duis, ornare turpis nostra.
-
-- Habitasse duis sociis sagittis cursus, ante dictumst commodo.
+* Quam orci nostra mi nulla, hac a.
+* Interdum iaculis quis tellus sociis orci nulla, quam rutrum conubia tortor primis.
+* Non felis sem placerat aenean duis, ornare turpis nostra.
+* Habitasse duis sociis sagittis cursus, ante dictumst commodo.
 
 Duis maecenas massa habitasse inceptos imperdiet scelerisque at condimentum ultrices, nam dui leo enim taciti varius cras habitant pretium rhoncus, ut hac euismod nostra metus sagittis mi aenean. Quam eleifend aliquet litora eget a tempor, ultricies integer vestibulum non felis sodales, eros diam massa libero iaculis.
 

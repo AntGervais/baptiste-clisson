@@ -23,7 +23,7 @@ export default defineConfig({
     collections: [
       {
         name: 'imageAccueil',
-        label: 'imageAccueil',
+        label: 'Catégories Accueil',
         path: 'src/content/imageAccueil',
         fields: [
           {
@@ -56,9 +56,9 @@ export default defineConfig({
         ],
       },
       {
-        name: 'post',
-        label: 'Posts',
-        path: 'src/content/post',
+        name: 'realisation',
+        label: 'Realisations',
+        path: 'src/content/realisation',
         fields: [
           {
             type: 'string',

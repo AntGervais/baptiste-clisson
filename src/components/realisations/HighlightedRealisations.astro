@@ -2,25 +2,25 @@
 import Grid from '~/components/realisations/Grid.astro';
 
 import { getRealisationsPermalink } from '~/utils/permalinks';
-import { findPostsByIds } from '~/utils/realisations';
+import { findRealisationsByIds } from '~/utils/realisations';
 
 export interface Props {
   title?: string;
-  allPostsText?: string;
-  allPostsLink?: string | URL;
+  allRealisationsText?: string;
+  allRealisationsLink?: string | URL;
   information?: string;
   postIds: string[];
 }
 
 const {
   title = await Astro.slots.render('title'),
-  allPostsText = 'View all posts',
-  allPostsLink = getRealisationsPermalink(),
+  allRealisationsText = 'View all posts',
+  allRealisationsLink = getRealisationsPermalink(),
   information = await Astro.slots.render('information'),
   postIds = [],
 } = Astro.props;
 
-const posts = await findPostsByIds(postIds);
+const posts = await findRealisationsByIds(postIds);
 ---
 
 <section class="mx-auto max-w-7xl px-4 py-16 lg:py-20">
@@ -35,12 +35,12 @@ const posts = await findPostsByIds(postIds);
         )
       }
       {
-        allPostsText && allPostsLink && (
+        allRealisationsText && allRealisationsLink && (
           <a
             class="text-muted hover:text-primary mb-6 block transition duration-200 ease-in md:mb-0"
-            href={allPostsLink}
+            href={allRealisationsLink}
           >
-            {allPostsText} »
+            {allRealisationsText} »
           </a>
         )
       }

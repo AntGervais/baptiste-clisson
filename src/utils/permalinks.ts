@@ -36,7 +36,7 @@ export const getPermalink = (slug = '', type = 'page'): string => {
       permalink = createPath(TAG_BASE, trimSlash(slug));
       break;
 
-    case 'post':
+    case 'realisation':
       permalink = createPath(trimSlash(slug));
       break;
 
