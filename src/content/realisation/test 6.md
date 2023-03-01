@@ -1,6 +1,6 @@
 ---
 title: Blablabla Lorem ipsum dolor sit amet
-image: /public/images/colors.jpg
+image: /images/colors.jpg
 tags:
   - rénovation
 publishDate: '2023-01-08T00:00:00.000Z'

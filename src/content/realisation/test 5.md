@@ -1,7 +1,6 @@
 ---
 title: Lorem dipiscing elit
-image: >-
-  https://assets.tina.io/dc844836-6c1e-4dc0-a9df-64ebe536212b/22b93dddbdb068d3f1574c2bfc358867bdd4e7c9.jpeg
+image: /images/22b93dddbdb068d3f1574c2bfc358867bdd4e7c9.jpeg
 tags:
   - escalier
 publishDate: '2023-01-09T00:00:00.000Z'

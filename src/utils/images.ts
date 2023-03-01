@@ -18,6 +18,7 @@ export const fetchLocalImages = async () => {
 
 /** */
 export const findImage = async (imagePath?: string) => {
+  let path = imagePath;
   if (typeof imagePath !== 'string') {
     return null;
   }
@@ -26,7 +27,12 @@ export const findImage = async (imagePath?: string) => {
     return imagePath;
   }
 
+  if (imagePath.startsWith('/images/')) {
+    // add public folder to path
+    path = `/public${imagePath}`;
+  }
+
   const images = await fetchLocalImages();
 
-  return typeof images[imagePath] === 'function' ? (await images[imagePath]())['default'] : null;
+  return typeof images[path] === 'function' ? (await images[path]())['default'] : null;
 };
