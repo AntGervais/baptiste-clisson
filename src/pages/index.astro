@@ -179,6 +179,30 @@ const meta = {
     </div>
   </div>
 
+  <div class="relative mx-auto my-24 flex h-80 max-w-5xl rounded-xl bg-blue-100 shadow-lg">
+    <div class="flex flex-wrap">
+      <div class="m-10 w-full lg:w-3/5">
+        <div class="m-6">
+          <p class="mb-2 text-xl font-semibold text-neutral-800">Baptiste Clisson</p>
+          <p class="mb-0 font-semibold text-neutral-500">Artisan Charpentier</p>
+          <p class="mb-6 font-light text-neutral-500">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id quam sapiente molestiae numquam quas,
+            voluptates omnis nulla ea odio quia similique corrupti magnam.
+          </p>
+        </div>
+      </div>
+      <div class="w-full p-10 lg:w-2/5 lg:p-0">
+        <img
+          class="rounded-xl shadow-lg lg:absolute lg:-top-16 lg:right-8 lg:w-80"
+          src="/images/caos.jpg"
+          data-aos="fade-left"
+          data-aos-offset="400"
+          data-aos-delay="300"
+        />
+      </div>
+    </div>
+  </div>
+
   <!-- Container for demo purpose -->
 
   <div>
@@ -221,6 +245,9 @@ const meta = {
                 id="cta-img-nml-50"
                 style="z-index: 10"
                 alt=""
+                data-aos="fade-right"
+                data-aos-offset="400"
+                data-aos-delay="300"
               />
             </div>
           </div>
@@ -355,31 +382,11 @@ const meta = {
     </div>
   </div>
 
-  <div class="relative mx-auto flex h-80 max-w-5xl rounded-xl bg-blue-100 shadow-lg">
-    <div class="flex flex-wrap">
-      <div class="m-10 w-full lg:w-3/5">
-        <div class="m-6">
-          <p class="mb-2 text-xl font-semibold text-neutral-800">Baptiste Clisson</p>
-          <p class="mb-0 font-semibold text-neutral-500">Artisan Charpentier</p>
-          <p class="mb-6 font-light text-neutral-500">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id quam sapiente molestiae numquam quas,
-            voluptates omnis nulla ea odio quia similique corrupti magnam.
-          </p>
-        </div>
-      </div>
-      <div class="w-full p-10 lg:w-2/5 lg:p-0">
-        <img class="rounded-xl shadow-lg lg:absolute lg:-top-16 lg:right-8 lg:w-80" src="/images/caos.jpg" />
-      </div>
-    </div>
-  </div>
-
   <!-- Swiper Widget **************** -->
   {
     images && (
       <div class="container my-24 mx-auto px-6">
-        <div data-aos="fade-up">
-          <Swiper images={images} />
-        </div>
+        <Swiper images={images} />
       </div>
     )
   }
@@ -770,16 +777,7 @@ const meta = {
 
   <!-- HighlightedRealisations Widget ******* -->
 
-  <LatestRealisations
-    title="Find out more content in our Blog"
-    information={`Lorem ipsum`}
-    postIds={[
-      'get-started-website-with-astro-tailwind-css.md',
-      'how-to-customize-astrowind-to-your-brand.md',
-      'useful-resources-to-create-websites.md',
-      'astrowind-template-in-depth.md',
-    ]}
-  />
+  <LatestRealisations title="Mes dernieres réalisations" information={`Lorem ipsum`} />
 
   <!-- FAQs Widget ******************* -->
 

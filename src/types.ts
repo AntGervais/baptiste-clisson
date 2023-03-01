@@ -4,6 +4,8 @@ export interface Realisation {
 
   publishDate: Date;
   title: string;
+  accroche: string;
+
   description: string;
 
   image: string;

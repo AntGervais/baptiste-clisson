@@ -29,7 +29,7 @@ const url = getCanonical(getPermalink(post.permalink, 'realisation'));
 
 const meta = {
   title: post.title,
-  description: post.description,
+  description: post.accroche,
   url: url,
   image: await findImage(post.image),
   noindex: REALISATIONS?.post?.noindex,

@@ -6,6 +6,7 @@ import type { Realisation } from '~/types';
 
 import { findImage } from '~/utils/images';
 import { getPermalink } from '~/utils/permalinks';
+import Tags from '~/components/realisations/Tags.astro';
 
 export interface Props {
   post: Realisation;
@@ -13,40 +14,57 @@ export interface Props {
 
 const { post } = Astro.props;
 const image = await findImage(post.image);
+
+const link = !REALISATIONS?.post?.disabled ? getPermalink(post.permalink, 'realisation') : '';
 ---
 
 <article class="mb-6 transition">
-  <div class="relative mb-6 rounded bg-gray-400 shadow-lg md:h-64">
+  <div class="h-full overflow-hidden rounded-lg border-2 border-gray-200 border-opacity-60">
     {
       image && (
         <Picture
           src={image}
-          class="w-full rounded bg-gray-400 shadow-lg md:h-full md:w-auto md:object-cover "
-          widths={[400, 900]}
-          width={400}
-          height={224}
-          sizes="(max-width: 900px) 400px, 900px"
+          class="w-full object-cover object-center md:h-64 lg:h-80"
+          widths={[480]}
+          width={480}
+          height={240}
+          sizes="(max-width: 480px) 240px, 480px"
           alt={post.title}
-          aspectRatio="16:9"
+          aspectRatio="4:3"
           loading="lazy"
           decoding="async"
         />
       )
     }
-  </div>
-  <h3 class="mb-2 font-heading text-xl font-bold leading-tight sm:text-2xl">
-    {
-      REALISATIONS?.post?.disabled ? (
-        post.title
-      ) : (
-        <a
-          href={getPermalink(post.permalink, 'realisation')}
-          class="hover:text-primary   transition duration-200 ease-in"
-        >
-          {post.title}
+
+    <div class="p-6 pb-4">
+      <h1 class="title-font mb-3 text-lg font-medium text-gray-900">
+        {post.title}
+      </h1>
+      <p class="mb-3 leading-relaxed">
+        {post.accroche}
+      </p>
+      <div class="flex flex-wrap items-center">
+        <a class="inline-flex items-center text-indigo-500 md:mb-2 lg:mb-0" href={link}
+          >Lire l'article
+          <svg
+            class="ml-2 h-4 w-4"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M5 12h14"></path>
+            <path d="M12 5l7 7-7 7"></path>
+          </svg>
         </a>
-      )
-    }
-  </h3>
-  <p class="text-muted text-lg">{post.description}</p>
+      </div>
+
+      <div class="pt-6">
+        <Tags tags={post.tags} />
+      </div>
+    </div>
+  </div>
 </article>

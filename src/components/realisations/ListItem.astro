@@ -1,7 +1,7 @@
 ---
 import { Icon } from 'astro-icon';
 import { Picture } from '@astrojs/image/components';
-import RealisationTags from '~/components/realisations/Tags.astro';
+import Tags from '~/components/realisations/Tags.astro';
 
 import { REALISATIONS } from '~/config.mjs';
 import type { Realisation } from '~/types';
@@ -74,9 +74,9 @@ const link = !REALISATIONS?.post?.disabled ? getPermalink(post.permalink, 'reali
       </h2>
     </header>
 
-    {post.description && <p class="text-muted flex-grow text-lg">{post.description}</p>}
+    {post.accroche && <p class="text-muted flex-grow text-lg">{post.accroche}</p>}
     <footer class="mt-5">
-      <RealisationTags tags={post.tags} />
+      <Tags tags={post.tags} />
     </footer>
   </div>
 </article>
