@@ -1,6 +1,8 @@
 ---
+import Reviews from '~/components/avis/Reviews';
 import { SITE } from '~/config.mjs';
 import Layout from '~/layouts/PageLayout.astro';
+// import initialReviews from '~/initialReviews'; initialReviews
 
 const meta = {
   title: SITE.title,
@@ -17,8 +19,9 @@ const meta = {
           <h2 class="text-4xl font-bold capitalize text-gray-600">Votre satisfaction est notre moteur au quotidien</h2>
         </div>
       </div>
-
-      <div></div>
+      <div>
+        <Reviews initialReviews={} client:load />
+      </div>
     </section>
   </main>
 </Layout>

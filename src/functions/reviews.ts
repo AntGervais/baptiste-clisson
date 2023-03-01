@@ -4,7 +4,8 @@ import fetch from 'node-fetch';
 const { GOOGLE_MAPS_API_KEY } = process.env;
 const headers = { 'Content-Type': 'application/json' };
 const placesUrl = 'https://maps.googleapis.com/maps/api/place/details/json';
-const placesQuery = `${placesUrl}?place_id=ChIJT7DvfEBzkVQRvLh_ESdvfGg&key=${GOOGLE_MAPS_API_KEY}&reviews_sort=newest&fields=reviews`;
+const placeId = 'ChIJYUP_4IVGE4wRc0TaeTT6fBM';
+const placesQuery = `${placesUrl}?place_id=${placeId}=${GOOGLE_MAPS_API_KEY}&reviews_sort=newest&fields=reviews`;
 
 /**
  * Middleman function to fetch reviews from Google Places API because it
