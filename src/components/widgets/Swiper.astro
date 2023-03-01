@@ -27,10 +27,9 @@ const { images } = Astro.props;
               class="rounded-md bg-gray-400 shadow-lg "
               widths={[400, 768]}
               sizes="(max-width: 767px) 400px, 768px"
-              alt="Hero Image"
               aspectRatio="16:9"
               loading="eager"
-              alt={image.description}
+              alt={image.description || 'Image Hero'}
             />
           </div>
         );
