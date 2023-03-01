@@ -2,7 +2,7 @@
 import Reviews from '~/components/avis/Reviews';
 import { SITE } from '~/config.mjs';
 import Layout from '~/layouts/PageLayout.astro';
-// import initialReviews from '~/initialReviews'; initialReviews
+import initialReviews from '~/initialReviews';
 
 const meta = {
   title: SITE.title,
@@ -20,7 +20,7 @@ const meta = {
         </div>
       </div>
       <div>
-        <Reviews initialReviews={} client:load />
+        <Reviews initialReviews={initialReviews} client:load />
       </div>
     </section>
   </main>

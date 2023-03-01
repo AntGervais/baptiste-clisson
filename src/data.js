@@ -3,24 +3,7 @@ import { getPermalink, getRealisationsPermalink } from './utils/permalinks';
 export const headerData = {
   links: [
     {
-      text: 'Landing',
-      links: [
-        {
-          text: 'Sass',
-          href: getPermalink('/landing/saas'),
-        },
-        {
-          text: 'Startup',
-          href: getPermalink('/landing/startup'),
-        },
-        {
-          text: 'Mobile App',
-          href: getPermalink('/landing/mobile-app'),
-        },
-      ],
-    },
-    {
-      text: 'Pages',
+      text: 'Pages Exemple',
       links: [
         {
           text: 'Terms',
