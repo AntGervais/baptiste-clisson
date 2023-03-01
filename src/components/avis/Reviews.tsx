@@ -15,14 +15,14 @@ export default function Reviews({ initialReviews }: ReviewsProps) {
 
       try {
         const res = await fetch('/.netlify/functions/reviews').then((res) => res.json())
-
+        console.log(`getReviews 🦊 res:`, res)
         if ('error_message' in res) {
           console.error(res)
         } else {
           setReviews((initialReviews) => res.concat(initialReviews))
         }
       } catch (err) {
-        console.error(err)
+        throw new Error(err);
       }
 
       setLoading(false)
