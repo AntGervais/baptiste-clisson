@@ -37,7 +37,7 @@ export default function ContactForm() {
   })
 
   return (
-    <div className="container max-w-sm sm:max-w-lg my-2 lg:my-0 bg-gray-100">
+    <div className="my-2 lg:my-0 bg-gray-100 rounded-xl">
       <div className="form-container relative w-full rounded-xl shadow-lg bg-blackAlpha-600">
         <div
           className={[
@@ -58,13 +58,8 @@ export default function ContactForm() {
         <form
           onSubmit={handleSubmit}
           noValidate
-          className="relative w-full p-4 px-6 sm:py-6 md:py-8 md:px-10"
+          className="relative w-full p-4 sm:py-6 md:py-8 md:px-10"
         >
-          <div className="pb-6 px-12 text-center">
-            <span className="text-gray-600 font-semibold text-lg text-center">
-              Enter your contact info and we will get back to as soon as possible!
-            </span>
-          </div>
           {serverError && (
             <div className="mb-4 sm:mb-6 bg-red-500 py-4 rounded-md text-center">
               <h3 className="text2xl text-white">{serverError}</h3>
@@ -76,19 +71,13 @@ export default function ContactForm() {
             </div>
           )}
           <div className="flex flex-col gap-2">
+
             <Input
-              name="firstName"
-              label="Prénom"
-              required
-              bg="bg-gray-100"
-              {...register('firstName')}
-            />
-            <Input
-              name="lastName"
+              name="name"
               label="Nom"
               required
               bg="bg-gray-100"
-              {...register('lastName')}
+              {...register('name')}
             />
             <Input
               name="email"
@@ -101,14 +90,14 @@ export default function ContactForm() {
             <TextArea
               name="message"
               label="Message"
-              height="h-48"
+              height="h-40"
               required
               bg="bg-gray-100"
               {...register('message')}
             />
           </div>
 
-          <div className="py-4 mt-4">
+          <div className="mt-4">
             <button
               type="submit"
               disabled={submitting || submitted}
@@ -117,6 +106,11 @@ export default function ContactForm() {
               Send message
             </button>
           </div>
+          {submitted && (
+            <div className="mb-4 sm:mb-6 bg-green-500 py-4 rounded-md text-center">
+              <h3 className="text2xl text-white">Message successfully sent!</h3>
+            </div>
+          )}
         </form>
       </div>
     </div>

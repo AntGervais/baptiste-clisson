@@ -2,14 +2,7 @@ import { nameRegex, phoneRegex, emailRegex, messageRegex } from './regex';
 import type { Validations } from './useForm';
 
 const validations: Validations<Contact> = {
-  firstName: {
-    required: 'Vous devez entrer votre prénom',
-    pattern: {
-      value: nameRegex,
-      message: 'Prénom invalide',
-    },
-  },
-  lastName: {
+  name: {
     required: 'Vous devez entrer votre nom',
     pattern: {
       value: nameRegex,

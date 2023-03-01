@@ -20,15 +20,14 @@ if (!process.env.TEMPLATE_ID) {
   throw new Error('Missing TEMPLATE_ID');
 }
 
-const KEYS: (keyof Contact)[] = ['firstName', 'lastName', 'email', 'message'];
+const KEYS: (keyof Contact)[] = ['name', 'email', 'message'];
 const headers = {
   accept: 'application/json',
   'Content-Type': 'application/json',
 };
 
 const createMessage = (data: Contact) => {
-  const { firstName, lastName, phone, email, message } = data;
-  const name = `${firstName} ${lastName}`;
+  const { name, phone, email, message } = data;
 
   return JSON.stringify({
     sender: {

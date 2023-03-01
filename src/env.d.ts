@@ -11,7 +11,7 @@ declare global {
     text: string;
   };
 
-  export type Contact = Record<'firstName' | 'lastName' | 'email' | 'phone' | 'message', string>;
+  export type Contact = Record<'name' | 'email' | 'phone' | 'message', string>;
 }
 
 export {};

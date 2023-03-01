@@ -15,46 +15,28 @@ const meta = {
     <section class="centered mt-8 flex-col gap-32 py-16 pb-32 lg:flex-row">
       <div class="flex flex-col lg:gap-8">
         <div class="text-center">
-          <h2 class="text-4xl font-bold capitalize text-gray-600">
-            Let's talk. <br class="lg:hidden" />but you first!
-          </h2>
+          <h2 class="text-4xl font-bold capitalize text-gray-600">On rencontre en contact ?</h2>
         </div>
-        <ContactForm client:visible />
-      </div>
 
-      <div class="mx-4 rounded-md bg-gray-100 shadow-lg">
-        <div class="flex flex-col gap-8 px-8 py-12">
-          <div class="flex gap-4">
-            <svg class="fill-green-700" xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 512 512">
-              <path
-                d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 442 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"
-              ></path>
-            </svg>
-            <div class="flex flex-col gap-2">
-              <h4 class="text-2xl font-semibold capitalize text-gray-700">Contact Phone</h4>
-
-              <span class="text-lg font-medium text-gray-600">
-                <a href="tel:833-364-6653">833-364-6653 aka 833-FOG-MOLD <br /> (Call or text)</a>
-              </span>
+        <div class="relative mx-auto my-24 flex h-80 max-w-5xl rounded-xl bg-blue-100 shadow-lg">
+          <div class="flex flex-wrap">
+            <div class="m-10 w-full lg:w-2/5">
+              <div class="m-6">
+                <p class="mb-2 text-xl font-semibold text-neutral-800">Baptiste Clisson</p>
+                <p class="mb-0 font-semibold text-neutral-500">Artisan Charpentier</p>
+                <p class="mb-6 font-light text-neutral-500">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id quam sapiente molestiae numquam quas,
+                  voluptates omnis nulla ea odio quia similique corrupti magnam.
+                </p>
+              </div>
             </div>
-          </div>
-
-          <div class="flex flex-col">
-            <div class="flex gap-4">
-              <svg
-                class="fill-green-700"
-                xmlns="http://www.w3.org/2000/svg"
-                width="42"
-                height="42"
-                viewBox="0 0 512 512"
+            <div class="w-full p-10 lg:w-3/5 lg:p-0">
+              <div
+                class="relative rounded-xl shadow-lg lg:absolute lg:-top-24 lg:right-8 lg:w-96"
+                data-aos="fade-left"
+                data-aos-delay="300"
               >
-                <path
-                  d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"
-                ></path>
-              </svg>
-              <div class="flex flex-col gap-2">
-                <h4 class="text-2xl font-semibold capitalize text-gray-700">Email address</h4>
-                <a href="mailto:lisa@purafog.com" class="text-lg font-medium text-gray-600"> Lisa@purafog.com</a>
+                <ContactForm client:visible />
               </div>
             </div>
           </div>

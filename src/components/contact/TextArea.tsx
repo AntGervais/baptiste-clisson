@@ -4,6 +4,7 @@ export type TextAreaProps = {
   height?: string
   placeholder?: string
   required?: boolean
+  size?: 'sm' | 'md' | 'lg'
   onChange?: (e?: any) => void
   onBlur?: (e?: any) => void
   error?: string
@@ -16,6 +17,7 @@ export default function TextArea({
   height,
   placeholder,
   required = false,
+  size = 'md',
   onChange,
   onBlur,
   error = '',
@@ -65,7 +67,7 @@ export default function TextArea({
             'select-none',
             bg ? bg : 'bg-white',
             'px-2',
-            'text-sm',
+            size === 'sm' ? 'text-sm' : size === 'md' ? 'text-md' : 'text-lg',
             Boolean(error) ? 'text-red-500' : 'text-gray-500',
             'duration-300',
             'peer-placeholder-shown:top-6',

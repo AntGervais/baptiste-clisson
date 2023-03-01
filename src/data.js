@@ -37,6 +37,10 @@ export const headerData = {
       href: getRealisationsPermalink(),
     },
     {
+      text: 'Avis clients',
+      href: getPermalink('/avis'),
+    },
+    {
       text: 'Contact',
       href: getPermalink('/contact'),
     },
