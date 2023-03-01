@@ -11,7 +11,7 @@ if (!GOOGLE_MAPS_PLACE_ID) {
 }
 const headers = { 'Content-Type': 'application/json' };
 const placesUrl = 'https://maps.googleapis.com/maps/api/place/details/json';
-const placesQuery = `${placesUrl}?place_id=${GOOGLE_MAPS_PLACE_ID}&key=${GOOGLE_MAPS_API_KEY}&reviews_sort=newest&fields=reviews`;
+const placesQuery = `${placesUrl}?place_id=${GOOGLE_MAPS_PLACE_ID}&key=${GOOGLE_MAPS_API_KEY}&reviews_sort=newest&fields=reviews&reviews_no_translations=true`;
 
 /**
  * Middleman function to fetch reviews from Google Places API because it

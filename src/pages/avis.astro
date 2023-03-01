@@ -19,8 +19,17 @@ const meta = {
           <h2 class="text-4xl font-bold text-gray-600">Votre satisfaction est notre moteur au quotidien</h2>
         </div>
       </div>
-      <div>
-        <Reviews initialReviews={initialReviews} client:load />
+
+      <div class="container mx-auto">
+        <div class="flex flex-wrap">
+          <div class="w-full shrink-0 grow-0 basis-auto p-5 lg:w-5/12">
+            <img class="rounded-lg object-cover" src="/images/do-more.jpg" alt="" />
+          </div>
+
+          <div class="w-full shrink-0 grow-0 basis-auto p-5 lg:w-7/12">
+            <Reviews initialReviews={initialReviews} client:load />
+          </div>
+        </div>
       </div>
     </section>
   </main>
