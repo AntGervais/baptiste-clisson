@@ -21,7 +21,6 @@ export default function ContactForm() {
             'Content-Type': 'application/json',
           },
         })
-        console.log(`onSubmit: 🦊 res:`, res)
 
         if (!res.ok) {
           throw new Error(JSON.stringify(await res.json()))
