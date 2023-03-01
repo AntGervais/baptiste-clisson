@@ -27,17 +27,13 @@ const handler: Handler = async ({ httpMethod }) => {
       body: JSON.stringify({ error: 'Method Not Allowed' }),
     };
   }
-  console.log(`placesQuery:`, placesQuery);
   return await fetch(placesQuery)
     .then((res) => res.json())
-    .then((data: any) => {
-      console.log(`data:`, data);
-      return {
-        headers,
-        statusCode: 200,
-        body: JSON.stringify(data.result?.reviews),
-      };
-    })
+    .then((data: any) => ({
+      headers,
+      statusCode: 200,
+      body: JSON.stringify(data.result?.reviews),
+    }))
     .catch((err) => {
       console.error(err);
       return {
