@@ -3,19 +3,6 @@ import { getPermalink, getRealisationsPermalink } from './utils/permalinks';
 export const headerData = {
   links: [
     {
-      text: 'Pages Exemple',
-      links: [
-        {
-          text: 'Terms',
-          href: getPermalink('/terms'),
-        },
-        {
-          text: 'Privacy policy',
-          href: getPermalink('/privacy'),
-        },
-      ],
-    },
-    {
       text: 'Réalisations',
       href: getRealisationsPermalink(),
     },

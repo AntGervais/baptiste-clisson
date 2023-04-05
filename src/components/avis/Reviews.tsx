@@ -33,13 +33,13 @@ export default function Reviews({ initialReviews }: ReviewsProps) {
   return <div
     className=""
   >
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col">
       <div></div>
 
       {reviews.map((review) => (
         <div
           key={`${review.text}${review.author_name}`}
-          className="review flex flex-col gap-4 px-8 py-6 bg-gray-100 rounded-md"
+          className="review flex flex-col gap-4 px-8 py-6 bg-gray-100 rounded-md mb-6"
         >
           <div className="flex gap-4 items-center">
             <div>

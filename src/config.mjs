@@ -1,4 +1,4 @@
-import defaultImage from './../public/images/default.png';
+import defaultImage from './../public/images/do-more.jpg';
 
 const CONFIG = {
   name: 'Charpente Bois Debout',
@@ -29,7 +29,7 @@ const CONFIG = {
 
   realisations: {
     disabled: false,
-    postsPerPage: 5,
+    postsPerPage: 10,
 
     post: {
       permalink: '/%slug%', // Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%
