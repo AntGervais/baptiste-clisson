@@ -5,13 +5,10 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Swiper from '~/components/widgets/Swiper.astro';
 import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
 import LatestRealisations from '~/components/realisations/LatestRealisations.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
-import Stats from '~/components/widgets/Stats.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
 
 import { getCollection } from 'astro:content';
 import { getPermalink, getRealisationsPermalink } from '~/utils/permalinks';
@@ -38,12 +35,14 @@ const meta = {
     callToAction2={{ text: 'Me contacter', href: getPermalink('/contact') }}
   >
     <Fragment slot="title">
-      Baptiste Clisson,
-      <span class="highlight text-accent"> artisan charpentier</span>
+      Bois Debout,
+      <span class="highlight text-accent"> entreprise de charpentes traditionnelles</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      <span class="subtitle"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.</span>
+      <span class="subtitle">
+        Charpentes traditionnelles, ossatures et planchers bois, escaliers sur mesure et rénovation du bâti ancien.
+      </span>
     </Fragment>
 
     <Fragment slot="activities">
@@ -52,8 +51,12 @@ const meta = {
           <div class="flex justify-center">
             <a href="#" class="transition hover:scale-105">
               <div class="relative block max-w-sm">
-                <img class="h-56 w-96 rounded-lg object-cover" src="/images/do-more.jpg" alt="" />
-                <div class="absolute bottom-0 left-0 h-16 w-full rounded-lg bg-gradient-to-t from-black to-transparent">
+                <img
+                  class="h-56 w-96 rounded-md object-cover"
+                  src="/images/realisations/Charpente Manoir Bel Noe/1.png"
+                  alt="Charpentes traditionnelles"
+                />
+                <div class="absolute bottom-0 left-0 h-16 w-full rounded-md bg-gradient-to-t from-black to-transparent">
                 </div>
                 <h3 class="absolute bottom-2 w-full text-center font-bold text-white">Charpentes traditionnelles</h3>
               </div>
@@ -66,11 +69,11 @@ const meta = {
             <a href="#" class="transition hover:scale-105">
               <div class="relative block max-w-sm">
                 <img
-                  class="h-56 w-96 rounded-lg object-cover"
-                  src="https://tecdn.b-cdn.net/img/new/standard/nature/186.jpg"
-                  alt=""
+                  class="h-56 w-96 rounded-md object-cover"
+                  src="/images/images_stock/construction-d-une-maison-ossature-de-bois.webp"
+                  alt="Ossature bois"
                 />
-                <div class="absolute bottom-0 left-0 h-16 w-full rounded-lg bg-gradient-to-t from-black to-transparent">
+                <div class="absolute bottom-0 left-0 h-16 w-full rounded-md bg-gradient-to-t from-black to-transparent">
                 </div>
                 <h3 class="absolute bottom-2 w-full text-center font-bold text-white">Ossatures et planchers bois</h3>
               </div>
@@ -82,8 +85,12 @@ const meta = {
           <div class="flex justify-center">
             <a href="#" class="transition hover:scale-105">
               <div class="relative block max-w-sm">
-                <img class="h-56 w-96 rounded-lg object-cover" src="/images/tools.jpg" alt="" />
-                <div class="absolute bottom-0 left-0 h-16 w-full rounded-lg bg-gradient-to-t from-black to-transparent">
+                <img
+                  class="h-56 w-96 rounded-md object-cover"
+                  src="/images/realisations/Escalier 1/5.webp"
+                  alt="Escalier massif sur mesure"
+                />
+                <div class="absolute bottom-0 left-0 h-16 w-full rounded-md bg-gradient-to-t from-black to-transparent">
                 </div>
                 <h3 class="absolute bottom-2 w-full text-center font-bold text-white">Escaliers massifs sur mesure</h3>
               </div>
@@ -95,8 +102,12 @@ const meta = {
           <div class="flex justify-center">
             <a href="#" class="transition hover:scale-105">
               <div class="relative block max-w-sm">
-                <img class="h-56 w-96 rounded-lg object-cover" src="/images/vintage.jpg" alt="" />
-                <div class="absolute bottom-0 left-0 h-16 w-full rounded-lg bg-gradient-to-t from-black to-transparent">
+                <img
+                  class="h-56 w-96 rounded-md object-cover"
+                  src="/images/realisations/Debord de toit avec sa ferme d’apparat - Vergnault/4.webp"
+                  alt="Rénovation"
+                />
+                <div class="absolute bottom-0 left-0 h-16 w-full rounded-md bg-gradient-to-t from-black to-transparent">
                 </div>
                 <h3 class="absolute bottom-2 w-full text-center font-bold text-white">Rénovation du bâti ancien</h3>
               </div>
@@ -106,6 +117,96 @@ const meta = {
       </div>
     </Fragment>
   </Hero>
+
+  <div class="activites py-4">
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6">
+      <div class="row-gap-5 my-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <article class="mb-6 transition">
+          <div class="flex justify-center">
+            <a href="#" class="transition hover:scale-105">
+              <div class="block max-w-sm rounded-md bg-white shadow-lg">
+                <img
+                  class="h-64 w-96 rounded-t-lg object-cover"
+                  src="/images/realisations/Charpente Manoir Bel Noe/1.png"
+                  alt="Charpentes traditionnelles"
+                />
+                <div class="w-full p-4">
+                  <h3 class="mb-2 font-bold">Charpentes traditionnelles</h3>
+                  <p class="text-sm">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis
+                    lobortis.
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </article>
+
+        <article class="mb-6 transition">
+          <div class="flex justify-center">
+            <a href="#" class="transition hover:scale-105">
+              <div class="block max-w-sm rounded-md bg-white shadow-lg">
+                <img
+                  class="h-64 w-96 rounded-t-lg object-cover"
+                  src="/images/images_stock/construction-d-une-maison-ossature-de-bois.webp"
+                  alt="Ossature bois"
+                />
+                <div class="w-full p-4">
+                  <h3 class="mb-2 font-bold">Ossatures et planchers bois</h3>
+                  <p class="text-sm">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis
+                    lobortis.
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </article>
+
+        <article class="mb-6 transition">
+          <div class="flex justify-center">
+            <a href="#" class="transition hover:scale-105">
+              <div class="block max-w-sm rounded-md bg-white shadow-lg">
+                <img
+                  class="h-64 w-96 rounded-t-lg object-cover"
+                  src="/images/realisations/Escalier 1/5.webp"
+                  alt="Escalier massif sur mesure"
+                />
+                <div class="w-full p-4">
+                  <h3 class="mb-2 font-bold">Escaliers massifs sur mesure</h3>
+                  <p class="text-sm">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis
+                    lobortis.
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </article>
+
+        <article class="mb-6 transition">
+          <div class="flex justify-center">
+            <a href="#" class="transition hover:scale-105">
+              <div class="block max-w-sm rounded-md bg-white shadow-lg">
+                <img
+                  class="h-64 w-96 rounded-t-lg object-cover"
+                  src="/images/realisations/Debord de toit avec sa ferme d’apparat - Vergnault/4.webp"
+                  alt="Rénovation"
+                />
+                <div class="w-full p-4">
+                  <h3 class="mb-2 font-bold">Rénovation du bâti ancien</h3>
+                  <p class="text-sm">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis
+                    lobortis.
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
 
   <!-- HighlightedRealisations Widget ******* -->
   <section class="background_wood">
@@ -121,8 +222,8 @@ const meta = {
           <div class="mb-12 w-full shrink-0 grow-0 basis-auto lg:mb-0 lg:w-5/12">
             <div class="flex lg:py-12">
               <img
-                src="/images/Baptiste Clisson/Baptiste Clisson.jpeg"
-                class="w-full rounded-lg shadow-lg lg:ml-12"
+                src="/images/Baptiste Clisson/Baptiste Clisson.webp"
+                class="w-full rounded-md shadow-lg lg:ml-12"
                 id="cta-img-nml-50"
                 style="z-index: 10"
                 alt=""
@@ -134,7 +235,7 @@ const meta = {
           </div>
 
           <div class="w-full shrink-0 grow-0 basis-auto lg:w-7/12">
-            <div class="flex h-full items-center rounded-lg bg-blue-50 p-6 text-center shadow-lg lg:pl-12 lg:text-left">
+            <div class="flex h-full items-center rounded-md bg-blue-50 p-6 text-center shadow-lg lg:pl-12 lg:text-left">
               <div class="lg:pl-12">
                 <h2 class="mb-6 text-3xl font-bold">Baptiste Clisson, artisan charpentier</h2>
                 <p class="mb-6 pb-2 lg:pb-0">
@@ -210,7 +311,7 @@ const meta = {
           <div class="w-full p-10 lg:w-2/5 lg:p-0">
             <img
               class="rounded-xl shadow-lg lg:absolute lg:-top-16 lg:right-8 lg:w-96"
-              src="/images/Baptiste Clisson/Baptiste Clisson.jpeg"
+              src="/images/Baptiste Clisson/Baptiste Clisson.webp"
               data-aos="fade-left"
               data-aos-offset="300"
               data-aos-delay="300"
@@ -298,84 +399,12 @@ const meta = {
     }}
   />
 
-  <div class="relative mx-auto max-w-7xl px-4 sm:px-6">
-    <div class="row-gap-5 my-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-      <article class="mb-6 transition">
-        <div class="flex justify-center">
-          <a href="#" class="transition hover:scale-105">
-            <div class="block max-w-sm rounded-lg bg-white shadow-lg">
-              <img class="h-64 w-96 rounded-t-lg object-cover" src="/images/do-more.jpg" alt="" />
-              <div class="w-full p-4">
-                <h3 class="mb-2 font-bold">Charpentes traditionnelles</h3>
-                <p class="text-sm">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis.
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
-      </article>
-
-      <article class="mb-6 transition">
-        <div class="flex justify-center">
-          <a href="#" class="transition hover:scale-105">
-            <div class="block max-w-sm rounded-lg bg-white shadow-lg">
-              <img
-                class="h-64 w-96 rounded-t-lg object-cover"
-                src="https://tecdn.b-cdn.net/img/new/standard/nature/186.jpg"
-                alt=""
-              />
-              <div class="w-full p-4">
-                <h3 class="mb-2 font-bold">Ossatures et planchers bois</h3>
-                <p class="text-sm">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis.
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
-      </article>
-
-      <article class="mb-6 transition">
-        <div class="flex justify-center">
-          <a href="#" class="transition hover:scale-105">
-            <div class="block max-w-sm rounded-lg bg-white shadow-lg">
-              <img class="h-64 w-96 rounded-t-lg object-cover" src="/images/tools.jpg" alt="" />
-              <div class="w-full p-4">
-                <h3 class="mb-2 font-bold">Escaliers massifs sur mesure</h3>
-                <p class="text-sm">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis.
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
-      </article>
-
-      <article class="mb-6 transition">
-        <div class="flex justify-center">
-          <a href="#" class="transition hover:scale-105">
-            <div class="block max-w-sm rounded-lg bg-white shadow-lg">
-              <img class="h-64 w-96 rounded-t-lg object-cover" src="/images/vintage.jpg" alt="" />
-              <div class="w-full p-4">
-                <h3 class="mb-2 font-bold">Rénovation du bâti ancien</h3>
-                <p class="text-sm">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis.
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
-      </article>
-    </div>
-  </div>
-
   <div>
     <div class="container my-24 mx-auto px-6">
       <div class="row-gap-5 my-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         <article class="mb-6 transition">
           <div class="flex justify-center">
-            <div class="block max-w-sm rounded-lg bg-white shadow-lg">
+            <div class="block max-w-sm rounded-md bg-white shadow-lg">
               <a href="#!">
                 <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/nature/184.jpg" alt="" />
               </a>
@@ -398,7 +427,7 @@ const meta = {
         </article>
         <article class="mb-6 transition">
           <div class="flex justify-center">
-            <div class="block max-w-sm rounded-lg bg-white shadow-lg">
+            <div class="block max-w-sm rounded-md bg-white shadow-lg">
               <a href="#!">
                 <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/nature/184.jpg" alt="" />
               </a>
@@ -421,7 +450,7 @@ const meta = {
         </article>
         <article class="mb-6 transition">
           <div class="flex justify-center">
-            <div class="block max-w-sm rounded-lg bg-white shadow-lg">
+            <div class="block max-w-sm rounded-md bg-white shadow-lg">
               <a href="#!">
                 <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/nature/184.jpg" alt="" />
               </a>
@@ -466,21 +495,21 @@ const meta = {
           <div class="w-1/2 p-1 md:p-2">
             <img
               alt="gallery"
-              class="block h-full w-full rounded-lg object-cover object-center"
+              class="block h-full w-full rounded-md object-cover object-center"
               src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(70).webp"
             />
           </div>
           <div class="w-1/2 p-1 md:p-2">
             <img
               alt="gallery"
-              class="block h-full w-full rounded-lg object-cover object-center"
+              class="block h-full w-full rounded-md object-cover object-center"
               src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(72).webp"
             />
           </div>
           <div class="w-full p-1 md:p-2">
             <img
               alt="gallery"
-              class="block h-full w-full rounded-lg object-cover object-center"
+              class="block h-full w-full rounded-md object-cover object-center"
               src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
             />
           </div>
@@ -489,21 +518,21 @@ const meta = {
           <div class="w-full p-1 md:p-2">
             <img
               alt="gallery"
-              class="block h-full w-full rounded-lg object-cover object-center"
+              class="block h-full w-full rounded-md object-cover object-center"
               src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(74).webp"
             />
           </div>
           <div class="w-1/2 p-1 md:p-2">
             <img
               alt="gallery"
-              class="block h-full w-full rounded-lg object-cover object-center"
+              class="block h-full w-full rounded-md object-cover object-center"
               src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(75).webp"
             />
           </div>
           <div class="w-1/2 p-1 md:p-2">
             <img
               alt="gallery"
-              class="block h-full w-full rounded-lg object-cover object-center"
+              class="block h-full w-full rounded-md object-cover object-center"
               src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(77).webp"
             />
           </div>
