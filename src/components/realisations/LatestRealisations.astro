@@ -13,7 +13,7 @@ export interface Props {
 
 const {
   title = await Astro.slots.render('title'),
-  allRealisationsText = 'View all posts',
+  allRealisationsText = 'Voir mes autres réalisations',
   allRealisationsLink = getRealisationsPermalink(),
   information = await Astro.slots.render('information'),
   count = 3,
@@ -33,20 +33,23 @@ const posts = await findLatestRealisations({ count });
           />
         )
       }
-      {
-        allRealisationsText && allRealisationsLink && (
-          <a
-            class="text-muted  hover:text-primary mb-6 block transition duration-200 ease-in lg:mb-0"
-            href={allRealisationsLink}
-          >
-            {allRealisationsText} »
-          </a>
-        )
-      }
     </div>
 
     {information && <p class="text-muted  lg:max-w-md lg:text-sm" set:html={information} />}
   </div>
 
   <Grid posts={posts} />
+
+  <div class="float-right mt-4">
+    {
+      allRealisationsText && allRealisationsLink && (
+        <a
+          class="text-muted  hover:text-primary mb-6 block transition duration-200 ease-in lg:mb-0"
+          href={allRealisationsLink}
+        >
+          {allRealisationsText} »
+        </a>
+      )
+    }
+  </div>
 </section>

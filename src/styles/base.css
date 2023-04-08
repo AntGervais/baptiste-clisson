@@ -77,6 +77,12 @@
   animation-delay: 700ms;
 }
 
+.background_wood{
+  background: url(../images/images_stock/fond_ecorce.png) #ffffff;;
+  background-size: cover;
+  /* height: 70vh; */
+
+}
 
 @keyframes activitesFadeIn {
   0% {

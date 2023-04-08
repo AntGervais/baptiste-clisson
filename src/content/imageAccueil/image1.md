@@ -1,5 +1,5 @@
 ---
-image: /images/images accueil/creativity.jpg
+image: /images/creativity.jpg
 title: Charpentes traditionnelles
 tag: charpente
 ---

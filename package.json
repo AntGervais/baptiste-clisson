@@ -1,7 +1,7 @@
 {
   "name": "@onwidget/astrowind",
-  "description": "A template to make your website using Astro + Tailwind CSS.",
-  "version": "0.9.8",
+  "description": "Website of Baptiste Clisson - Charpente Bois Debout — Artisan Charpentier à Saulgé (86)",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "pnpm tinacms dev -c 'astro dev'",
