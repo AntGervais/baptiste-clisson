@@ -11,12 +11,12 @@ module.exports = {
         primary: 'var(--aw-color-primary)',
         secondary: 'var(--aw-color-secondary)',
         accent: 'var(--aw-color-accent)',
-        beige: 'var(--aw-color-bg-beige)',
+        beige: 'var(--aw-color-beige)',
       },
       backgroundColor: {
         primary: 'var(--aw-color-primary)',
         secondary: 'var(--aw-color-secondary)',
-        beige: 'var(--aw-color-bg-beige)',
+        beige: 'var(--aw-color-beige)',
       },
       fontFamily: {
         sans: ['Buenard', ...defaultTheme.fontFamily.sans],

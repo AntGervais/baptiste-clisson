@@ -6,6 +6,7 @@ import Hero from '~/components/widgets/Hero.astro';
 import Swiper from '~/components/widgets/Swiper.astro';
 import Features from '~/components/widgets/Features.astro';
 import Steps from '~/components/widgets/Steps.astro';
+import Category from '~/components/widgets/Category.astro';
 import Content from '~/components/widgets/Content.astro';
 import LatestRealisations from '~/components/realisations/LatestRealisations.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
@@ -27,8 +28,8 @@ const meta = {
 
   <Hero>
     <Fragment slot="title">
-      Bois Debout,
-      <span class="highlight text-accent"> entreprise de charpentes traditionnelles</span>
+      <span class="text-primary">Bois Debout,</span>
+      <span class="text-accent"> entreprise de charpentes traditionnelles</span>
     </Fragment>
 
     <Fragment slot="subtitle">
@@ -39,73 +40,13 @@ const meta = {
     </Fragment>
 
     <Fragment slot="activities">
-      <div class="row-gap-5 my-4 grid gap-6 md:grid-cols-1 lg:grid-cols-3">
-        <article class="mb-6 transition">
-          <div class="flex justify-center">
-            <a href="#" class="transition hover:scale-105">
-              <div class="block max-w-sm rounded-sm bg-white shadow-lg">
-                <img
-                  class="h-72 w-96 rounded-t-sm object-cover"
-                  src="/images/realisations/Charpente Manoir Bel Noe/1.png"
-                  alt="Charpentes traditionnelles"
-                />
-                <div class="w-full p-4">
-                  <h3 class="mb-2 font-bold">Charpentes traditionnelles</h3>
-                  <p class="text-sm">
-                    La charpente bois dite traditionnelle est composée de plusieurs pièces maîtresses assemblées entre
-                    elles. Apparents ou cachés, planchers, murs-ossature et charpente constituent les éléments
-                    essentiels d'un bâtiment. Conception, taille et mise en œuvre sont réalisées avec rigueur pour
-                    garantir la pérennité de l'ouvrage.
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-        </article>
-
-        <article class="mb-6 transition">
-          <div class="flex justify-center">
-            <a href="#" class="transition hover:scale-105">
-              <div class="block max-w-sm rounded-sm bg-white shadow-lg">
-                <img
-                  class="h-72 w-96 rounded-t-sm object-cover"
-                  src="/images/realisations/Escalier 1/5.webp"
-                  alt="Escalier massif sur mesure"
-                />
-                <div class="w-full p-4">
-                  <h3 class="mb-2 font-bold">Escaliers massifs sur mesure</h3>
-                  <p class="text-sm">
-                    Un escalier répond à des contraintes techniques spécifiques. Adapté à chaque bâtiment, cet ouvrage
-                    unique associe esthétique et confort d'usage.
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-        </article>
-
-        <article class="mb-6 transition">
-          <div class="flex justify-center">
-            <a href="#" class="transition hover:scale-105">
-              <div class="block max-w-sm rounded-sm bg-white shadow-lg">
-                <img
-                  class="h-72 w-96 rounded-t-sm object-cover"
-                  src="/images/realisations/Debord de toit avec sa ferme d’apparat - Vergnault/4.webp"
-                  alt="RéRestauration et réhabilitationnovation"
-                />
-                <div class="w-full p-4">
-                  <h3 class="mb-2 font-bold">Restauration et réhabilitation du bâti ancien</h3>
-                  <p class="text-sm">
-                    L'intervention sur du bâti ancien dépend de la nature de votre projet. Chaque bâtiment est unique et
-                    doté d'un récit propre. Pour intervenir sur tout ou partie de l'ouvrage, il conviendra de se
-                    questionner ensemble sur son usage. L'utilisation de bois de réemploi vous assure de donner du
-                    cachet et de préserver le caractère authentique de votre bâtiment.
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-        </article>
+      <div class="row-gap-5 my-14 grid gap-6 md:grid-cols-1 lg:grid-cols-3">
+        <Category title="Charpentes traditionnelles" image="/images/realisations/Charpente Manoir Bel Noe/1.png" />
+        <Category title="Escaliers massifs sur mesure" image="/images/realisations/Escalier 1/5.webp" />
+        <Category
+          title="Restauration et réhabilitation"
+          image="/images/realisations/Debord de toit avec sa ferme d’apparat - Vergnault/4.webp"
+        />
       </div>
     </Fragment>
   </Hero>

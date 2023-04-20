@@ -1,0 +1,27 @@
+---
+export interface Props {
+  title?: string;
+  subtitle?: string;
+  image?: string;
+}
+
+const {
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  image = await Astro.slots.render('image'),
+} = Astro.props;
+---
+
+<article class="mb-6 transition">
+  <div class="flex justify-center">
+    <a href="#" class="transition hover:scale-105">
+      <div class="block max-w-sm rounded-sm bg-white shadow-lg">
+        <img class="h-72 w-96 rounded-t-sm object-cover" src={image} alt={title} />
+        <div class="w-full p-4">
+          <h2 class="text-xl">{title}</h2>
+          {subtitle && <p class="text-sm">{subtitle}</p>}
+        </div>
+      </div>
+    </a>
+  </div>
+</article>
