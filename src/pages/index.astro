@@ -28,8 +28,10 @@ const meta = {
 
   <Hero>
     <Fragment slot="title">
-      <span class="text-primary">Bois Debout,</span>
-      <span class="text-accent"> entreprise de charpentes traditionnelles</span>
+      <span class="leading-tight">
+        <span class="text-primary">Bois Debout,</span>
+        <span class="text-accent"> entreprise de charpentes traditionnelles</span>
+      </span>
     </Fragment>
 
     <Fragment slot="subtitle">
@@ -40,7 +42,7 @@ const meta = {
     </Fragment>
 
     <Fragment slot="activities">
-      <div class="row-gap-5 my-14 grid gap-6 md:grid-cols-1 lg:grid-cols-3">
+      <div class="row-gap-5 my-12 grid gap-6 md:grid-cols-1 lg:grid-cols-3">
         <Category title="Charpentes traditionnelles" image="/images/realisations/Charpente Manoir Bel Noe/1.png" />
         <Category title="Escaliers massifs sur mesure" image="/images/realisations/Escalier 1/5.webp" />
         <Category
@@ -55,10 +57,10 @@ const meta = {
     <!-- Container for demo purpose -->
     <div class="container my-6 mx-auto px-6">
       <!-- Section: Design Block -->
-      <section class="mb-2">
+      <section class="my-12">
         <div class="flex flex-wrap">
-          <div class="mb-12 w-full shrink-0 grow-0 basis-auto lg:mb-0 lg:w-5/12">
-            <div class="flex lg:py-12">
+          <div class="w-full shrink-0 grow-0 basis-auto lg:w-5/12">
+            <div class="flex">
               <img
                 src="/images/Baptiste Clisson/Baptiste Clisson.webp"
                 class="w-full rounded-sm shadow-lg lg:ml-12"
@@ -72,10 +74,10 @@ const meta = {
             </div>
           </div>
 
-          <div class="w-full shrink-0 grow-0 basis-auto lg:w-7/12">
-            <div class="flex h-full items-center rounded-sm bg-beige p-6 text-center shadow-lg lg:pl-12 lg:text-left">
-              <div class="lg:pl-12">
-                <h2 class="mb-6 text-3xl font-bold">Baptiste Clisson, artisan charpentier</h2>
+          <div class="w-full shrink-0 grow-0 basis-auto lg:w-7/12 lg:py-24">
+            <div class="rounded-sm bg-beige text-center shadow-lg lg:text-left">
+              <div class="flex flex-wrap lg:p-12 lg:pl-24">
+                <h2 class="mb-6 font-heading text-3xl font-bold">Baptiste Clisson, artisan charpentier</h2>
                 <p class="mb-6 pb-2 lg:pb-0">
                   Bienvenue sur le site internet de Bois Debout, mon entreprise de charpente traditionnelle située à
                   Saulgé, dans la Vienne.

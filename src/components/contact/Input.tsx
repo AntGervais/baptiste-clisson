@@ -42,7 +42,7 @@ export default function Input({
             'block',
             'w-full',
             'appearance-none',
-            'rounded-lg',
+            'rounded-sm',
             'border',
             'border-1',
             Boolean(error) ? 'border-red-400' : 'border-gray-300',

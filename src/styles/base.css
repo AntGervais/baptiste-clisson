@@ -2,6 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@layer base {
+  @font-face {
+    font-family: 'Buenard';
+    src: url('/fonts/Buenard-Regular.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+
+  @font-face {
+    font-family: 'Satisfy';
+    src: url('/fonts/Satisfy-Regular.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+}
+
 @layer components {
   .text-page {
     color: var(--aw-color-text-page);
@@ -61,6 +80,7 @@
 }
 
 .title{
+  line-height: 1.1;
   animation: titleFadeIn  0.5s ease-in-out forwards;
   transform: translateY(130%);
 }

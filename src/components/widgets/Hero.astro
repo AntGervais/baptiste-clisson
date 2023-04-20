@@ -25,76 +25,78 @@ const {
 } = Astro.props;
 ---
 
-<section class="relative md:-mt-[76px]">
+<section class="relative">
   <div class="pointer-events-none absolute inset-0" aria-hidden="true"></div>
-  <div class="relative mx-auto max-w-7xl px-4 sm:px-6">
-    <div class="pointer-events-none pt-0 md:pt-[76px]"></div>
-    <div class="py-12 md:py-20">
-      <div class="mx-auto max-w-7xl text-center">
-        {
-          title && (
-            <div class="overflow-hidden">
-              <h1 class="title font-heading pb-2 text-4xl md:text-5xl" set:html={title} />
-            </div>
-          )
-        }
-        <div class="mx-auto">
+  <div class="background_wood">
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6">
+      <div class="pointer-events-none pt-0 md:pt-[76px]"></div>
+      <div class="py-5">
+        <div class="mx-auto max-w-7xl text-center">
           {
-            subtitle && (
+            title && (
               <div class="overflow-hidden">
-                <p class="subtitle text-muted pb-2 text-xl " set:html={subtitle} />
+                <h1 class="title font-heading pb-2 text-4xl md:text-5xl" set:html={title} />
               </div>
             )
           }
-        </div>
+          <div class="mx-auto">
+            {
+              subtitle && (
+                <div class="overflow-hidden">
+                  <p class="subtitle text-muted pb-2 text-xl" set:html={subtitle} />
+                </div>
+              )
+            }
+          </div>
 
-        {
-          activities && (
-            <div class="activites">
-              <Fragment set:html={activities} />
-            </div>
-          )
-        }
+          {
+            activities && (
+              <div class="activites">
+                <Fragment set:html={activities} />
+              </div>
+            )
+          }
 
-        <div class="m-auto flex max-w-xs flex-col flex-nowrap gap-4 sm:max-w-md sm:flex-row sm:justify-center">
-          {
-            callToAction && (
-              <div class="flex w-full sm:w-auto">
-                {typeof callToAction === 'string' ? (
-                  <Fragment set:html={callToAction} />
-                ) : (
-                  <a class="btn btn-primary w-full sm:mb-0" href={callToAction?.href} target="_blank" rel="noopener">
-                    {callToAction?.icon && (
-                      <>
-                        <Icon name={callToAction.icon} class="mr-1 -ml-1.5 h-5 w-5" />{' '}
-                      </>
-                    )}
-                    {callToAction?.text}
-                  </a>
-                )}
-              </div>
-            )
-          }
-          {
-            callToAction2 && (
-              <div class="flex w-full sm:w-auto">
-                {typeof callToAction2 === 'string' ? (
-                  <Fragment set:html={callToAction2} />
-                ) : (
-                  <a class="btn w-full" href={callToAction2?.href}>
-                    {callToAction2?.icon && (
-                      <>
-                        <Icon name={callToAction2.icon} class="mr-1 -ml-1.5 h-5 w-5" />{' '}
-                      </>
-                    )}
-                    {callToAction2.text}
-                  </a>
-                )}
-              </div>
-            )
-          }
+          <div class="m-auto flex max-w-xs flex-col flex-nowrap gap-4 sm:max-w-md sm:flex-row sm:justify-center">
+            {
+              callToAction && (
+                <div class="flex w-full sm:w-auto">
+                  {typeof callToAction === 'string' ? (
+                    <Fragment set:html={callToAction} />
+                  ) : (
+                    <a class="btn btn-primary w-full sm:mb-0" href={callToAction?.href} target="_blank" rel="noopener">
+                      {callToAction?.icon && (
+                        <>
+                          <Icon name={callToAction.icon} class="mr-1 -ml-1.5 h-5 w-5" />{' '}
+                        </>
+                      )}
+                      {callToAction?.text}
+                    </a>
+                  )}
+                </div>
+              )
+            }
+            {
+              callToAction2 && (
+                <div class="flex w-full sm:w-auto">
+                  {typeof callToAction2 === 'string' ? (
+                    <Fragment set:html={callToAction2} />
+                  ) : (
+                    <a class="btn w-full" href={callToAction2?.href}>
+                      {callToAction2?.icon && (
+                        <>
+                          <Icon name={callToAction2.icon} class="mr-1 -ml-1.5 h-5 w-5" />{' '}
+                        </>
+                      )}
+                      {callToAction2.text}
+                    </a>
+                  )}
+                </div>
+              )
+            }
+          </div>
+          {content && <Fragment set:html={content} />}
         </div>
-        {content && <Fragment set:html={content} />}
       </div>
     </div>
   </div>

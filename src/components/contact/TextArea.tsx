@@ -38,7 +38,7 @@ export default function TextArea({
             'block',
             'w-full',
             'appearance-none',
-            'rounded-lg',
+            'rounded-sm',
             'border',
             'border-1',
             Boolean(error) ? 'border-red-500' : 'border-gray-300',

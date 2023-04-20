@@ -7,6 +7,11 @@ module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,md,svelte,ts,tsx,vue}'],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Buenard', ...defaultTheme.fontFamily.sans],
+        serif: ['Satisfy', ...defaultTheme.fontFamily.serif],
+        heading: ['var(--aw-font-heading)', ...defaultTheme.fontFamily.sans],
+      },
       colors: {
         primary: 'var(--aw-color-primary)',
         secondary: 'var(--aw-color-secondary)',
@@ -17,11 +22,6 @@ module.exports = {
         primary: 'var(--aw-color-primary)',
         secondary: 'var(--aw-color-secondary)',
         beige: 'var(--aw-color-beige)',
-      },
-      fontFamily: {
-        sans: ['Buenard', ...defaultTheme.fontFamily.sans],
-        serif: ['Satisfy', ...defaultTheme.fontFamily.serif],
-        heading: ['var(--aw-font-heading)', ...defaultTheme.fontFamily.sans],
       },
     },
   },
