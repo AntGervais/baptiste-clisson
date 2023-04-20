@@ -61,12 +61,12 @@ export default function ContactForm() {
           className="relative w-full p-4 sm:py-6 md:py-8 md:px-10"
         >
           {serverError && (
-            <div className="mb-4 sm:mb-6 bg-red-500 py-4 rounded-md text-center">
+            <div className="mb-4 sm:mb-6 bg-red-500 py-4 rounded-sm text-center">
               <h3 className="text2xl text-white">{serverError}</h3>
             </div>
           )}
           {submitted && (
-            <div className="mb-4 sm:mb-6 bg-green-500 py-4 rounded-md text-center">
+            <div className="mb-4 sm:mb-6 bg-green-500 py-4 rounded-sm text-center">
               <h3 className="text2xl text-white">Message successfully sent!</h3>
             </div>
           )}
@@ -101,13 +101,13 @@ export default function ContactForm() {
             <button
               type="submit"
               disabled={submitting || submitted}
-              className="w-full px-2 py-4 rounded-md text-white text-lg font-semibold uppercase bg-green-600 hover:bg-green-700 disabled:bg-green-900 disabled:text-gray-300"
+              className="w-full px-2 py-4 rounded-sm text-white text-lg font-semibold uppercase bg-green-600 hover:bg-green-700 disabled:bg-green-900 disabled:text-gray-300"
             >
               Send message
             </button>
           </div>
           {submitted && (
-            <div className="mb-4 sm:mb-6 bg-green-500 py-4 rounded-md text-center">
+            <div className="mb-4 sm:mb-6 bg-green-500 py-4 rounded-sm text-center">
               <h3 className="text2xl text-white">Message successfully sent!</h3>
             </div>
           )}

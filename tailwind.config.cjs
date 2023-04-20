@@ -11,13 +11,19 @@ module.exports = {
         primary: 'var(--aw-color-primary)',
         secondary: 'var(--aw-color-secondary)',
         accent: 'var(--aw-color-accent)',
+        beige: 'var(--aw-color-bg-beige)',
+      },
+      backgroundColor: {
+        primary: 'var(--aw-color-primary)',
+        secondary: 'var(--aw-color-secondary)',
+        beige: 'var(--aw-color-bg-beige)',
       },
       fontFamily: {
-        sans: ['var(--aw-font-sans)', ...defaultTheme.fontFamily.sans],
-        serif: ['var(--aw-font-serif)', ...defaultTheme.fontFamily.serif],
+        sans: ['Buenard', ...defaultTheme.fontFamily.sans],
+        serif: ['Satisfy', ...defaultTheme.fontFamily.serif],
         heading: ['var(--aw-font-heading)', ...defaultTheme.fontFamily.sans],
       },
     },
   },
-  plugins: [prettier, typo],
+  plugins: [prettier, typo, colors],
 };

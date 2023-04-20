@@ -22,9 +22,9 @@ export default defineConfig({
   schema: {
     collections: [
       {
-        name: 'imageAccueil',
+        name: 'image_accueil',
         label: 'Catégories Accueil',
-        path: 'src/content/imageAccueil',
+        path: 'src/content/image_accueil',
         fields: [
           {
             type: 'image',
@@ -51,7 +51,7 @@ export default defineConfig({
             name: 'tag',
             label: 'Tag',
             required: true,
-            options: ['charpente', 'ossature', 'rénovation', 'escalier'],
+            options: ['charpente', 'restauration', 'escalier'],
           },
         ],
       },
@@ -89,7 +89,7 @@ export default defineConfig({
             name: 'tags',
             label: 'Tags',
             list: true,
-            options: ['charpente', 'ossature', 'rénovation', 'escalier'],
+            options: ['charpente', 'ossature', 'restauration', 'escalier'],
           },
           {
             name: 'publishDate',

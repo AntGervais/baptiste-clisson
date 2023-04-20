@@ -7,6 +7,8 @@ import BasicScripts from '~/components/common/BasicScripts.astro';
 import { MetaSEO } from '~/types';
 import { SITE } from '~/config.mjs';
 
+import { GoogleFontsOptimizer } from 'astro-google-fonts-optimizer';
+
 export interface Props {
   meta?: MetaSEO;
 }
@@ -19,6 +21,8 @@ const { language = 'en', textDirection = 'ltr' } = SITE;
 <html lang={language} dir={textDirection} class="2xl:text-[20px]">
   <head>
     <MetaTags {...meta} />
+    <GoogleFontsOptimizer url="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" />
+    <GoogleFontsOptimizer url="https://fonts.googleapis.com/css2?family=Buenard:wght@400;700&display=swap" />
   </head>
 
   <body class="text-page bg-light tracking-tight antialiased">

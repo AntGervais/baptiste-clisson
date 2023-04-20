@@ -39,7 +39,7 @@ const { post, url } = Astro.props;
         post.image ? (
           <Picture
             src={post.image}
-            class="mx-auto mb-6 max-w-full bg-gray-400 sm:rounded-md lg:max-w-6xl "
+            class="mx-auto mb-6 max-w-full bg-gray-400 sm:rounded-sm lg:max-w-6xl "
             widths={[400, 900]}
             sizes="(max-width: 900px) 400px, 900px"
             alt={post.title || post.accroche || ''}
@@ -59,7 +59,7 @@ const { post, url } = Astro.props;
       }
     </header>
     <div
-      class="prose-md prose-headings:leading-tighter prose prose-lg mx-auto mt-8 max-w-3xl px-6 lg:prose-xl prose-headings:font-heading prose-headings:font-bold prose-headings:tracking-tighter prose-a:text-primary prose-img:rounded-md prose-img:shadow-lg sm:px-6"
+      class="prose-md prose-headings:leading-tighter prose prose-lg mx-auto mt-8 max-w-3xl px-6 lg:prose-xl prose-headings:font-heading prose-headings:font-bold prose-headings:tracking-tighter prose-a:text-primary prose-img:rounded-sm prose-img:shadow-lg sm:px-6"
     >
       <>
         {/* @ts-ignore */}

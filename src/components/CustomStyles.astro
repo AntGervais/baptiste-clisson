@@ -6,16 +6,32 @@ import '@fontsource/inter/variable.css';
 ---
 
 <style is:inline is:global>
-  :root {
-    --aw-font-sans: 'InterVariable';
-    --aw-font-serif: var(--aw-font-sans);
-    --aw-font-heading: var(--aw-font-sans);
+  @font-face {
+    font-family: 'Buenard';
+    src: url('/fonts/Buenard-Regular.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
 
-    --aw-color-primary: rgb(30 64 175);
-    --aw-color-secondary: rgb(30 58 138);
-    --aw-color-accent: rgb(122, 170, 25);
-    --aw-color-text-page: rgb(17 24 39);
+  @font-face {
+    font-family: 'Satisfy';
+    src: url('/fonts/Satisfy-Regular.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  :root {
+    --aw-font-sans: 'Buenard';
+    --aw-font-serif: 'Satisfy';
+    --aw-font-heading: var(--aw-font-serif);
+
+    --aw-color-primary: #135a4c;
+    --aw-color-secondary: #606c38;
+    --aw-color-accent: #bc6c25;
+    --aw-color-text-page: rgb(20, 22, 20);
     --aw-color-text-muted: rgb(75 85 99);
-    --aw-color-bg-page: rgb(255 255 255);
+    --aw-color-bg-white: rgb(255 255 255);
+    --aw-color-bg-beige: #fce8dd;
   }
 </style>
