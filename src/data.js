@@ -81,6 +81,6 @@ export const footerData = {
   ],
   footNote: `
     
-    Made by <a class="text-blue-600 hover:underline" href="https://linkedin.com/in/antoine-gervais">Antoine Gervais</a> · All rights reserved.
+    Made by <a class="text-primary hover:underline" href="https://linkedin.com/in/antoine-gervais">Antoine Gervais</a> · All rights reserved.
   `,
 };
