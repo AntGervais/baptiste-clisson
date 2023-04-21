@@ -1,5 +1,5 @@
 import { getPermalink } from './utils/permalinks';
-import { SITE } from './src/config.mjs';
+import { SITE } from './config.mjs';
 
 export const headerData = {
   links: [
