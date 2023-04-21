@@ -4,4 +4,5 @@ title: Charpentes traditionnelles
 tag: charpente
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis.
+La charpente bois dite traditionnelle est composée de plusieurs pièces maîtresses assemblées entre elles. Apparents ou cachés, planchers, murs-ossature et charpente constituent les éléments essentiels d'un bâtiment.
+Conception, taille et mise en œuvre sont réalisées avec rigueur pour garantir la pérennité de l'ouvrage.

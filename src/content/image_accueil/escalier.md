@@ -4,4 +4,4 @@ title: Escaliers massifs sur mesure
 tag: escalier
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis.
+Un escalier répond à des contraintes techniques spécifiques. Adapté à chaque bâtiment, cet ouvrage unique associe esthétique et confort d'usage.

@@ -4,7 +4,7 @@ import Logo from '~/components/Logo.astro';
 import ToggleTheme from '~/components/common/ToggleTheme.astro';
 import ToggleMenu from '~/components/common/ToggleMenu.astro';
 
-import { getHomePermalink, getAsset } from '~/utils/permalinks';
+import { getHomePermalink } from '~/utils/permalinks';
 
 interface Link {
   text?: string;
@@ -35,25 +35,25 @@ const { links = [], actions = [], isSticky = false, showToggleTheme = false, pos
 <header
   class:list={[
     { sticky: isSticky, relative: !isSticky },
-    'top-0 z-40 flex-none mx-auto w-full transition-all ease-in duration-100',
+    'top-0 z-40 flex-none mx-auto w-full transition-all ease-in duration-250 bg-primary text-beige py-3 px-3 md:py-3.5 md:px-4',
   ]}
   id="header"
 >
-  <div class="mx-auto w-full max-w-7xl py-3 px-3 md:flex md:justify-between md:py-3.5 md:px-4">
+  <div class="mx-auto w-full max-w-7xl md:flex md:justify-between">
     <div class:list={[{ 'mr-auto': position === 'right' }, 'flex justify-between']}>
       <a class="flex items-center" href={getHomePermalink()}>
         <Logo />
       </a>
       <div class="flex items-center md:hidden">
-        <ToggleTheme />
+        {showToggleTheme && <ToggleTheme />}
         <ToggleMenu />
       </div>
     </div>
     <nav
-      class="hidden h-[calc(100vh-72px)] w-full items-center overflow-y-auto md:mx-5 md:flex md:h-auto md:w-auto md:overflow-visible"
+      class="hidden h-[calc(100vh-72px)] w-full items-center overflow-y-auto font-heading md:mx-5 md:flex md:h-auto md:w-auto md:overflow-visible"
       aria-label="Main navigation"
     >
-      <ul class="flex w-full flex-col pt-8 text-xl md:w-auto md:flex-row md:self-center md:pt-0 md:text-base">
+      <ul class="flex w-full flex-col pt-8 text-xl md:w-auto md:flex-row md:self-center md:pt-0">
         {
           links.map(({ text, href, links }) => (
             <li class={links?.length ? 'dropdown' : ''}>
@@ -66,7 +66,7 @@ const { links = [], actions = [], isSticky = false, showToggleTheme = false, pos
                     {links.map(({ text: text2, href: href2 }) => (
                       <li>
                         <a
-                          class="whitespace-no-wrap block py-2  px-5 first:rounded-t last:rounded-b md:hover:bg-gray-200"
+                          class="whitespace-no-wrap block py-2 px-5 first:rounded-t last:rounded-b md:hover:bg-gray-200"
                           href={href2}
                         >
                           {text2}
@@ -77,7 +77,7 @@ const { links = [], actions = [], isSticky = false, showToggleTheme = false, pos
                 </>
               ) : (
                 <a
-                  class="flex items-center  px-4 py-3 font-medium transition duration-150 ease-in-out hover:text-gray-900"
+                  class="flex items-center px-8 py-3 font-medium transition duration-150 ease-in-out hover:scale-105 hover:text-white md:px-4"
                   href={href}
                 >
                   {text}
@@ -98,7 +98,7 @@ const { links = [], actions = [], isSticky = false, showToggleTheme = false, pos
               {actions.map(({ text, href, type, icon }) => (
                 <a
                   class:list={[
-                    'btn ml-2 py-2.5 px-5.5 md:px-6 font-semibold shadow-none text-sm',
+                    'btn ml-2 py-2.5 px-5.5 md:px-6 text-sm bg-beige border-none hover:bg-beige-100 text-primary hover:text-primary-100 transition duration-150 ease-in-out',
                     { 'btn-ghost': type === 'ghost', 'btn-primary': type === 'primary' },
                   ]}
                   href={href}

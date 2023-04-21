@@ -28,7 +28,7 @@ export default function Input({
   bg,
 }: InputProps) {
   return (
-    <div className="text-input">
+    <div className="text-input font-sans">
       <div className="relative mt-2 w-full">
         <input
           type={type}
@@ -38,6 +38,7 @@ export default function Input({
           onInput={onChange}
           onBlur={onBlur}
           className={[
+            'font-sans',
             'peer',
             'block',
             'w-full',
@@ -60,6 +61,7 @@ export default function Input({
         <label
           htmlFor={name}
           className={[
+            'font-sans',
             'absolute',
             'top-2',
             'left-1',

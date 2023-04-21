@@ -1,4 +1,18 @@
 ---
+import { Picture } from '@astrojs/image/components';
+import { findImage } from '~/utils/images';
+
+const image = await findImage('/images/logo/BoisDebout-Creme.png');
 ---
 
-<span class="ml-2 self-center whitespace-nowrap text-2xl font-bold text-gray-900 md:text-xl"> 🪚 Bois Debout</span>
+<Picture
+  src={image}
+  class="w-full object-cover object-center md:h-10 lg:h-12"
+  widths={[480]}
+  width={480}
+  height={240}
+  sizes="(max-width: 480px) 240px, 480px"
+  alt={'Bois Debout Logo'}
+  loading="lazy"
+  decoding="async"
+/>

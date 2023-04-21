@@ -39,7 +39,7 @@ export default function Reviews({ initialReviews }: ReviewsProps) {
       {reviews.map((review) => (
         <div
           key={`${review.text}${review.author_name}`}
-          className="review flex flex-col gap-4 px-8 py-6 bg-gray-100 rounded-sm mb-6"
+          className="review flex flex-col gap-2 px-8 py-6 bg-gray-100 rounded-sm mb-6"
         >
           <div className="flex gap-4 items-center">
             <div>
@@ -108,7 +108,7 @@ export default function Reviews({ initialReviews }: ReviewsProps) {
         </div>
       ))}
     </div>
-    {loading && <div className="py-12 flex flex-col gap-4">
+    {loading && <div className="py-4 flex flex-col gap-4">
       <PulseSpinner />
     </div>}
   </div>

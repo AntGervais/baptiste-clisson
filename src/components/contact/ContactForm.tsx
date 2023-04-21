@@ -37,15 +37,15 @@ export default function ContactForm() {
   })
 
   return (
-    <div className="my-2 lg:my-0 bg-gray-100 rounded-xl">
-      <div className="form-container relative w-full rounded-xl shadow-lg bg-blackAlpha-600">
+    <div className="my-2 lg:my-0 bg-gray-100 rounded-sm">
+      <div className="form-container relative w-full rounded-sm shadow-lg bg-blackAlpha-600">
         <div
           className={[
             'form-overlay',
             'absolute',
             'h-full',
             'inset-0',
-            'rounded-xl',
+            'rounded-sm',
             'z-20',
             'bg-gray-900',
             'opacity-70',
@@ -86,7 +86,7 @@ export default function ContactForm() {
               bg="bg-gray-100"
               {...register('email')}
             />
-            <Input name="phone" label="Phone number" bg="bg-gray-100" {...register('phone')} />
+            <Input name="phone" label="Numéro de téléphone" bg="bg-gray-100" {...register('phone')} />
             <TextArea
               name="message"
               label="Message"
@@ -101,9 +101,9 @@ export default function ContactForm() {
             <button
               type="submit"
               disabled={submitting || submitted}
-              className="w-full px-2 py-4 rounded-sm text-white text-lg font-semibold uppercase bg-green-600 hover:bg-green-700 disabled:bg-green-900 disabled:text-gray-300"
+              className="btn w-full px-2 py-2 rounded-sm bg-secondary hover:text-primary text-beige font-semibold uppercase  disabled:text-gray-300"
             >
-              Send message
+              Envoyer !
             </button>
           </div>
           {submitted && (

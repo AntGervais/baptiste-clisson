@@ -52,8 +52,26 @@
   }
 }
 
+.decale-ancre {
+  position: relative;
+}
+
+.decale-ancre::before {
+  content: "";
+  display: block;
+  height: 60px; /* Hauteur de décalage souhaitée */
+  margin-top: -60px; /* Négation de la hauteur de décalage */
+  visibility: hidden;
+}
+
+.mur-rugeux {
+  background-image: url('images/images_stock/paper_texture.webp');
+}
+
 #header.scroll {
-  @apply shadow-md md:shadow-lg bg-white md:bg-white/90 md:backdrop-blur-sm ;
+  @apply shadow-md md:shadow-lg bg-primary md:backdrop-blur-sm ;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
 }
 
 .dropdown:hover .dropdown-menu {

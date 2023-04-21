@@ -1,18 +1,22 @@
-import { getPermalink, getRealisationsPermalink } from './utils/permalinks';
+import { getPermalink } from './utils/permalinks';
 
 export const headerData = {
   links: [
     {
+      text: 'Présentation',
+      href: '#presentation',
+    },
+    {
       text: 'Réalisations',
-      href: getRealisationsPermalink(),
+      href: '#realisations',
     },
     {
       text: 'Avis clients',
-      href: getPermalink('/avis'),
+      href: '#avis-clients',
     },
     {
       text: 'Contact',
-      href: getPermalink('/contact'),
+      href: '#contact',
     },
   ],
   actions: [{ type: 'button', text: 'Téléphone', href: 'tel:+33630481737', icon: 'tabler:phone' }],
