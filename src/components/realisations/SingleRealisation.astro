@@ -21,10 +21,10 @@ const { post, url } = Astro.props;
   <article>
     <header class={post.image ? '' : ''}>
       <div class="mx-auto mt-0 mb-2 flex max-w-3xl flex-col justify-between px-4 sm:flex-row sm:items-center sm:px-6">
-        <p>
+        <!-- <p>
           <Icon name="tabler:clock" class="w-4 h-4 inline-block -mt-0.5" />
           <time datetime={String(post.publishDate)}>{getFormattedDate(post.publishDate)}</time>
-        </p>
+        </p> -->
       </div>
       <h1 class="leading-tighter mx-auto max-w-3xl px-4 font-heading text-4xl text-accent sm:px-6 md:text-5xl">
         {post.title}
