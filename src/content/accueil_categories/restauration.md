@@ -1,9 +1,9 @@
 ---
-image: /public/images/realisations/Debord de toit avec sa ferme d’apparat - Vergnault/4.webp"
+image: /public/images/realisations/Debord_de_toit_ferme_apparat/4.webp
 title: Restauration et réhabilitation
 tag: restauration
 ---
 
-L'intervention sur du bâti ancien dépend de la nature de votre projet. 
+L'intervention sur du bâti ancien dépend de la nature de votre projet.
 Chaque bâtiment est unique et doté d'un récit propre. Pour intervenir sur tout ou partie de l'ouvrage, il conviendra de se questionner ensemble sur son usage.
 L'utilisation de bois de réemploi vous assure de donner du cachet et de préserver le caractère authentique de votre bâtiment.

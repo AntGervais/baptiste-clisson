@@ -3,7 +3,6 @@ import { SITE } from '~/config.mjs';
 import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
-import Swiper from '~/components/widgets/Swiper.astro';
 import Features from '~/components/widgets/Features.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Category from '~/components/widgets/Category.astro';
@@ -17,7 +16,7 @@ import { getCollection } from 'astro:content';
 import { getPermalink } from '~/utils/permalinks';
 
 const imagesAccueil = await getCollection('accueil_categories');
-const images = imagesAccueil.map((accueil_categories) => accueil_categories.data);
+const categories = imagesAccueil.map((accueil_categories) => accueil_categories.data);
 
 const meta = {
   title: SITE.title,
@@ -46,21 +45,11 @@ const meta = {
     @
     <Fragment slot="activities">
       <div class="row-gap-5 mt-12 mb-3 grid gap-6 md:grid-cols-1 lg:grid-cols-3">
-        <Category
-          title="Charpentes traditionnelles"
-          image="/images/realisations/Charpente Manoir Bel Noe/1.png"
-          link={getPermalink('charpente', 'tag')}
-        />
-        <Category
-          title="Escaliers massifs sur mesure"
-          image="/images/realisations/Escalier 1/5.webp"
-          link={getPermalink('escalier', 'tag')}
-        />
-        <Category
-          title="Restauration et réhabilitation"
-          image="/images/realisations/Debord de toit avec sa ferme d’apparat - Vergnault/4.webp"
-          link={getPermalink('restauration', 'tag')}
-        />
+        {
+          categories.map((category) => (
+            <Category title={category.title} image={category.image} link={getPermalink(category.tag, 'tag')} />
+          ))
+        }
       </div>
     </Fragment>
   </Hero>
@@ -239,17 +228,6 @@ const meta = {
       alt: 'Steps image',
     }}
   />
-
-  <!-- Swiper Widget **************** -->
-  <div class="mt-60">
-    {
-      images && (
-        <div class="container my-24 mx-auto px-6">
-          <Swiper images={images} />
-        </div>
-      )
-    }
-  </div>
 
   <!-- Container for demo purpose -->
 

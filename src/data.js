@@ -1,22 +1,23 @@
 import { getPermalink } from './utils/permalinks';
+import { SITE } from './src/config.mjs';
 
 export const headerData = {
   links: [
     {
       text: 'Présentation',
-      href: '#presentation',
+      href: SITE.basePathname + '#presentation',
     },
     {
       text: 'Réalisations',
-      href: '#realisations',
+      href: SITE.basePathname + '#realisations',
     },
     {
       text: 'Contact',
-      href: '#contact',
+      href: SITE.basePathname + '#contact',
     },
     {
       text: 'Avis clients',
-      href: '#avis-clients',
+      href: SITE.basePathname + '#avis-clients',
     },
   ],
   actions: [{ type: 'button', text: 'Téléphone', href: 'tel:+33630481737', icon: 'tabler:phone' }],

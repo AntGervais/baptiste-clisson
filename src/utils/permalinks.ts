@@ -11,7 +11,7 @@ const createPath = (...params: string[]) => {
   return '/' + paths + (SITE.trailingSlash && paths ? '/' : '');
 };
 
-const BASE_PATHNAME = SITE.basePathname;
+ const BASE_PATHNAME = SITE.basePathname;
 
 export const cleanSlug = (text = '') =>
   trimSlash(text)
