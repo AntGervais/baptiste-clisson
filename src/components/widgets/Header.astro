@@ -44,7 +44,7 @@ const { links = [], actions = [], isSticky = false, showToggleTheme = false, pos
       <a class="flex items-center transition" href={getHomePermalink()}>
         <Logo />
       </a>
-      <div class="flex items-center md:hidden">
+      <div class="flex hidden items-center">
         {showToggleTheme && <ToggleTheme />}
         <ToggleMenu />
       </div>

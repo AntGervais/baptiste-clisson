@@ -11,12 +11,12 @@ export const headerData = {
       href: '#realisations',
     },
     {
-      text: 'Avis clients',
-      href: '#avis-clients',
-    },
-    {
       text: 'Contact',
       href: '#contact',
+    },
+    {
+      text: 'Avis clients',
+      href: '#avis-clients',
     },
   ],
   actions: [{ type: 'button', text: 'Téléphone', href: 'tel:+33630481737', icon: 'tabler:phone' }],
