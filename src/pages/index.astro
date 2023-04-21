@@ -16,8 +16,8 @@ import FAQs from '~/components/widgets/FAQs.astro';
 import { getCollection } from 'astro:content';
 import { getPermalink } from '~/utils/permalinks';
 
-const imagesAccueil = await getCollection('image_accueil');
-const images = imagesAccueil.map((image_accueil) => image_accueil.data);
+const imagesAccueil = await getCollection('accueil_categories');
+const images = imagesAccueil.map((accueil_categories) => accueil_categories.data);
 
 const meta = {
   title: SITE.title,
@@ -249,88 +249,6 @@ const meta = {
       alt: 'Steps image',
     }}
   />
-
-  <div>
-    <div class="container my-24 mx-auto px-6">
-      <div class="row-gap-5 my-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <article class="mb-6 transition">
-          <div class="flex justify-center">
-            <div class="block max-w-sm rounded-sm bg-white shadow-lg">
-              <a href="#!">
-                <img class="rounded-t-sm" src="https://tecdn.b-cdn.net/img/new/standard/nature/184.jpg" alt="" />
-              </a>
-              <div class="p-6">
-                <h5 class="mb-2 text-xl font-medium leading-tight text-neutral-800">
-                  Restauration et réhabilitation du bâti ancien
-                </h5>
-                <p class="mb-4 text-base text-neutral-600">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis.
-                </p>
-                <button
-                  type="button"
-                  class="hover:bg-primary-600 focus:bg-primary-600 active:bg-primary-700 inline-block rounded bg-primary px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]"
-                  data-te-ripple-init
-                  data-te-ripple-color="light"
-                >
-                  Button
-                </button>
-              </div>
-            </div>
-          </div>
-        </article>
-        <article class="mb-6 transition">
-          <div class="flex justify-center">
-            <div class="block max-w-sm rounded-sm bg-white shadow-lg">
-              <a href="#!">
-                <img class="rounded-t-sm" src="https://tecdn.b-cdn.net/img/new/standard/nature/184.jpg" alt="" />
-              </a>
-              <div class="p-6">
-                <h5 class="mb-2 text-xl font-medium leading-tight text-neutral-800">
-                  Restauration et réhabilitation du bâti ancien
-                </h5>
-                <p class="mb-4 text-base text-neutral-600">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis.
-                </p>
-                <button
-                  type="button"
-                  class="hover:bg-primary-600 focus:bg-primary-600 active:bg-primary-700 inline-block rounded bg-primary px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]"
-                  data-te-ripple-init
-                  data-te-ripple-color="light"
-                >
-                  Button
-                </button>
-              </div>
-            </div>
-          </div>
-        </article>
-        <article class="mb-6 transition">
-          <div class="flex justify-center">
-            <div class="block max-w-sm rounded-sm bg-white shadow-lg">
-              <a href="#!">
-                <img class="rounded-t-sm" src="https://tecdn.b-cdn.net/img/new/standard/nature/184.jpg" alt="" />
-              </a>
-              <div class="p-6">
-                <h5 class="mb-2 text-xl font-medium leading-tight text-neutral-800">
-                  Restauration et réhabilitation du bâti ancien
-                </h5>
-                <p class="mb-4 text-base text-neutral-600">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis.
-                </p>
-                <button
-                  type="button"
-                  class="hover:bg-primary-600 focus:bg-primary-600 active:bg-primary-700 inline-block rounded bg-primary px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]"
-                  data-te-ripple-init
-                  data-te-ripple-color="light"
-                >
-                  Button
-                </button>
-              </div>
-            </div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </div>
 
   <!-- Swiper Widget **************** -->
   <div class="mt-60">

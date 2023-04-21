@@ -27,7 +27,7 @@ const generatePermalink = async ({ id, slug, publishDate }) => {
     .join('/');
 };
 
-const getNormalizedRealisation = async (post: CollectionEntry<'realisation'>): Promise<Realisation> => {
+const getNormalizedRealisation = async (post: CollectionEntry<'realisations'>): Promise<Realisation> => {
   const { id, slug: rawSlug = '', data } = post;
   const { Content } = await post.render();
 
@@ -52,7 +52,7 @@ const getNormalizedRealisation = async (post: CollectionEntry<'realisation'>): P
 };
 
 const loadRealisations = async function (): Promise<Array<Realisation>> {
-  const realisations = await getCollection('realisation');
+  const realisations = await getCollection('realisations');
   const normalizedRealisations = realisations.map(async (realisation) => await getNormalizedRealisation(realisation));
 
   const results = (await Promise.all(normalizedRealisations)).sort(

@@ -17,7 +17,7 @@ export interface Props {
 const { post } = Astro.props;
 const image = await findImage(post.image);
 
-const link = !REALISATIONS?.post?.disabled ? getPermalink(post.permalink, 'realisation') : '';
+const link = !REALISATIONS?.post?.disabled ? getPermalink(post.permalink, 'realisations') : '';
 ---
 
 <article class={`max-w-md mx-auto md:max-w-none grid gap-6 md:gap-8 ${image ? 'md:grid-cols-2' : ''}`}>

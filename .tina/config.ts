@@ -22,9 +22,9 @@ export default defineConfig({
   schema: {
     collections: [
       {
-        name: 'image_accueil',
+        name: 'accueil_categories',
         label: 'Catégories Accueil',
-        path: 'src/content/image_accueil',
+        path: 'src/content/accueil_categories',
         fields: [
           {
             type: 'image',
@@ -56,9 +56,9 @@ export default defineConfig({
         ],
       },
       {
-        name: 'realisation',
+        name: 'realisations',
         label: 'Realisations',
-        path: 'src/content/realisation',
+        path: 'src/content/realisations',
         fields: [
           {
             type: 'string',

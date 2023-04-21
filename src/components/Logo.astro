@@ -1,17 +1,13 @@
 ---
-import { Picture } from '@astrojs/image/components';
+import { Image } from '@astrojs/image/components';
 import { findImage } from '~/utils/images';
 
 const image = await findImage('/images/logo/BoisDebout-Creme.png');
 ---
 
-<Picture
+<Image
   src={image}
-  class="w-full object-cover object-center md:h-10 lg:h-12"
-  widths={[480]}
-  width={480}
-  height={240}
-  sizes="(max-width: 480px) 240px, 480px"
+  class="logo block h-10 lg:h-14 w-auto transition ease-in duration-250"
   alt={'Bois Debout Logo'}
   loading="lazy"
   decoding="async"

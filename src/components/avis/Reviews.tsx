@@ -30,7 +30,7 @@ export default function Reviews({ initialReviews }: ReviewsProps) {
     getReviews()
   }, [])
 
-  return <div
+  return (<div
     className=""
   >
     <div className="flex flex-col">
@@ -111,5 +111,5 @@ export default function Reviews({ initialReviews }: ReviewsProps) {
     {loading && <div className="py-4 flex flex-col gap-4">
       <PulseSpinner />
     </div>}
-  </div>
+  </div>)
 }

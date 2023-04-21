@@ -25,7 +25,7 @@ export interface Props {
 }
 
 const { post } = Astro.props;
-const url = getCanonical(getPermalink(post.permalink, 'realisation'));
+const url = getCanonical(getPermalink(post.permalink, 'realisations'));
 
 const meta = {
   title: post.title,

@@ -16,7 +16,7 @@ const { tags, class: className = 'text-sm' } = Astro.props;
   tags && Array.isArray(tags) && (
     <ul class={className}>
       {tags.map((tag) => (
-        <li class="text-muted mr-2 mb-2 inline-block rounded-sm  bg-gray-100  font-medium lowercase hover:bg-gray-800 hover:text-gray-100">
+        <li class="text-muted hover:bg-accent mr-2 mb-2 inline-block  rounded-sm  bg-gray-100 font-medium lowercase hover:text-gray-100">
           {REALISATIONS?.tag?.disabled ? (
             tag
           ) : (

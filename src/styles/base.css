@@ -70,8 +70,12 @@
 
 #header.scroll {
   @apply shadow-md md:shadow-lg bg-primary md:backdrop-blur-sm ;
-  padding-top: 0.4rem;
-  padding-bottom: 0.4rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+}
+
+#header.scroll .logo{
+  @apply lg:h-10 transition-all;
 }
 
 .dropdown:hover .dropdown-menu {

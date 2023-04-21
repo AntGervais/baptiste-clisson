@@ -21,6 +21,7 @@ module.exports = {
       backgroundColor: {
         primary: 'var(--aw-color-primary)',
         secondary: 'var(--aw-color-secondary)',
+        accent: 'var(--aw-color-accent)',
         beige: 'var(--aw-color-beige)',
       },
     },

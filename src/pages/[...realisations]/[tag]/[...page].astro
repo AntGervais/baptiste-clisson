@@ -8,6 +8,7 @@ import Pagination from '~/components/realisations/Pagination.astro';
 import { fetchRealisations } from '~/utils/realisations';
 import { TAG_BASE } from '~/utils/permalinks';
 import Headline from '~/components/realisations/Headline.astro';
+import { getCollection } from 'astro:content';
 
 export async function getStaticPaths({ paginate }) {
   if (REALISATIONS?.disabled || REALISATIONS?.tag?.disabled) return [];
@@ -32,6 +33,11 @@ export async function getStaticPaths({ paginate }) {
 
 const { page, tag } = Astro.props;
 
+const categories = await getCollection('accueil_categories');
+
+// Get accueil_categories content from tag
+const categorie_tag_content = categories.find((item) => item.data.tag === tag);
+
 const currentPage = page.currentPage ?? 1;
 const meta = {
   title: `Realisations by tag '${tag}'${currentPage > 1 ? ` — Page ${currentPage} ` : ''}`,
@@ -42,7 +48,7 @@ const meta = {
 
 <Layout meta={meta}>
   <section class="mx-auto max-w-3xl px-6 py-12 sm:px-6 sm:py-16 lg:py-20">
-    <Headline>Tag: {tag}</Headline>
+    <Headline subtitle={categorie_tag_content.body}>{tag}</Headline>
     <BlogList posts={page.data} />
     <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
   </section>
