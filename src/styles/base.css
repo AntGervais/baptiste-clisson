@@ -50,13 +50,15 @@
 }
 
 #header.scroll {
-  @apply shadow-md md:shadow-lg bg-primary md:backdrop-blur-sm ;
-  padding-top: 0.2rem;
-  padding-bottom: 0.2rem;
+  @apply shadow-md md:shadow-lg bg-primary md:backdrop-blur-sm py-2 lg:py-1;
+}
+
+#header.scroll .btn-tel{
+  @apply lg:top-auto top-1.5 py-2;
 }
 
 #header.scroll .logo{
-  @apply lg:h-10 transition-all;
+  @apply lg:h-10 transition-all h-8;
 }
 
 .dropdown:hover .dropdown-menu {

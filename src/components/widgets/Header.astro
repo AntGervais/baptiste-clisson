@@ -89,7 +89,7 @@ const { links = [], actions = [], isSticky = false, showToggleTheme = false, pos
       </ul>
     </nav>
     <div class:list={[{ 'ml-auto': position === 'left' }, 'md:self-center flex items-center md:mb-0']}>
-      <div class="hidden items-center md:flex">
+      <div class="flex items-center">
         {showToggleTheme && <ToggleTheme iconClass="w-5 h-5" />}
 
         {
@@ -98,7 +98,7 @@ const { links = [], actions = [], isSticky = false, showToggleTheme = false, pos
               {actions.map(({ text, href, type, icon }) => (
                 <a
                   class:list={[
-                    'btn ml-2 py-2.5 px-5.5 md:px-6 text-sm bg-beige border-none hover:bg-beige-100 text-primary hover:text-primary-100 transition duration-150 ease-in-out',
+                    'absolute top-3 right-2 md:top-auto md:right-auto md:relative btn-tel btn ml-2 py-2.5 px-5.5 md:px-6 text-sm bg-beige border-none hover:bg-beige-100 text-primary hover:text-primary-100 transition duration-150 ease-in-out',
                     { 'btn-ghost': type === 'ghost', 'btn-primary': type === 'primary' },
                   ]}
                   href={href}

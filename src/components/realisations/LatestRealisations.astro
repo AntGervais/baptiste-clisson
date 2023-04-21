@@ -22,22 +22,22 @@ const {
 const posts = await findLatestRealisations({ count });
 ---
 
-<section class="mx-auto max-w-7xl px-4 py-16 lg:py-20">
+<section class="mx-auto max-w-7xl px-4 py-20 lg:py-24">
   <div class="mb-8 flex flex-col lg:flex-row lg:justify-between">
     <div class="md:max-w-lg">
       {title && <h2 class="font-heading text-accent mb-2 text-3xl sm:text-4xl" set:html={title} />}
     </div>
 
-    {information && <p class="text-muted  lg:max-w-md lg:text-sm" set:html={information} />}
+    {information && <p class="text-muted lg:max-w-md lg:text-sm" set:html={information} />}
   </div>
 
   <Grid posts={posts} />
 
-  <div class="float-right mt-4">
+  <div class="my-4 mt-8 text-center">
     {
       allRealisationsText && allRealisationsLink && (
         <a
-          class="text-muted  hover:text-primary mb-6 block transition duration-200 ease-in lg:mb-0"
+          class="btn bg-primary text-beige hover:text-secondary mb-6 text-lg transition duration-200 ease-in lg:mb-0"
           href={allRealisationsLink}
         >
           {allRealisationsText} »
