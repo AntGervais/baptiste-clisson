@@ -2,25 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-@layer base {
-  @font-face {
-    font-family: 'Buenard';
-    src: url('/fonts/Buenard-Regular.ttf') format('ttf');
-    font-weight: normal;
-    font-style: normal;
-    font-display: block;
-  }
-
-  @font-face {
-    font-family: 'Satisfy';
-    src: url('/fonts/Satisfy-Regular.ttf') format('ttf');
-    font-weight: normal;
-    font-style: normal;
-    font-display: block;
-  }
-}
-
 @layer components {
   .text-page {
     color: var(--aw-color-text-page);
@@ -65,7 +46,7 @@
 }
 
 .mur-rugeux {
-  background-image: url('images/images_stock/paper_texture.webp');
+  background: url(../images/images_stock/paper_texture.webp) antiquewhite;
 }
 
 #header.scroll {
@@ -120,10 +101,8 @@
 }
 
 .background_wood{
-  background: url(../images/images_stock/fond_ecorce.png) #ffffff;;
+  background: url(../images/images_stock/fond_ecorce.png) #ffffff;
   background-size: cover;
-  /* height: 70vh; */
-
 }
 
 @keyframes activitesFadeIn {
