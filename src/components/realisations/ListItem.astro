@@ -18,10 +18,13 @@ const image = await findImage(post.image);
 const link = !REALISATIONS?.post?.disabled ? getPermalink(post.permalink, 'realisations') : '';
 ---
 
-<article class={`max-w-md mx-auto md:max-w-none grid gap-6 md:gap-8 ${image ? 'md:grid-cols-2' : ''}`}>
+<article
+  class={`max-w-md mx-auto md:max-w-none grid gap-6 md:gap-8 hover:scale-105 transition 
+  ${image ? 'md:grid-cols-2' : ''}`}
+>
   {
     image && (
-      <a class="group relative block" href={link ?? 'javascript:void(0)'}>
+      <a class="group relative block" href={link}>
         <div class="relative h-0 overflow-hidden rounded bg-gray-400 pb-[56.25%] shadow-lg md:h-72  md:pb-[75%] lg:pb-[56.25%]">
           {image && (
             <Picture
@@ -39,30 +42,36 @@ const link = !REALISATIONS?.post?.disabled ? getPermalink(post.permalink, 'reali
       </a>
     )
   }
-  <div class="mt-2">
+  <div class="flex flex-col">
     <header>
-      <!-- <div class="mb-1">
-        <span class="text-sm">
-          <Icon name="tabler:clock" class="w-3.5 h-3.5 inline-block -mt-0.5" />
-          <time datetime={String(post.publishDate)}>{getFormattedDate(post.publishDate)}</time>
-        </span>
-      </div> -->
-      <h2 class="mb-2 font-heading text-xl leading-tight sm:text-2xl">
-        {
-          link ? (
-            <a class="hover:text-primary transition duration-200 ease-in" href={link}>
-              {post.title}
-            </a>
-          ) : (
-            post.title
-          )
-        }
-      </h2>
-    </header>
+      <a href={link}>
+        <h2 class="mb-2 font-heading text-xl leading-tight sm:text-2xl">
+          {link ? <span class="hover:text-primary">{post.title}</span> : post.title}
+        </h2>
 
-    {post.accroche && <p class="text-muted flex-grow text-lg">{post.accroche}</p>}
-    <footer class="mt-5">
-      <Tags tags={post.tags} />
-    </footer>
+        <div class="h-full">
+          {post.accroche && <p class="text-muted flex-grow text-lg">{post.accroche}</p>}
+        </div>
+      </a>
+      <footer class="">
+        <a class="mb-4 inline-flex items-center text-accent transition hover:scale-105" href={link}
+          >Voir plus de photos
+          <svg
+            class="ml-2 h-4 w-4"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M5 12h14"></path>
+            <path d="M12 5l7 7-7 7"></path>
+          </svg>
+        </a>
+
+        <Tags tags={post.tags} />
+      </footer>
+    </header>
   </div>
 </article>
