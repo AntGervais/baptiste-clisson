@@ -1,4 +1,4 @@
-import defaultImage from './../public/images/do-more.jpg';
+import defaultImage from './../public/images/logo/BoisDebout-Creme-avec-fond.png';
 
 const CONFIG = {
   name: 'Charpente Bois Debout',

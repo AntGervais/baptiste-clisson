@@ -130,7 +130,6 @@
 }
 
 /* Swipper */
-
 .swiper-button-next,
 .swiper-button-prev {
   color: var(--aw-color-primary);
@@ -154,10 +153,10 @@
   }
 
   .swiper-button-prev {
-    left: -40px; /* Ajuster la valeur en fonction de la distance souhaitée */
+    left: -32px; /* Ajuster la valeur en fonction de la distance souhaitée */
   }
 
   .swiper-button-next {
-    right: -40px; /* Ajuster la valeur en fonction de la distance souhaitée */
+    right: -32px; /* Ajuster la valeur en fonction de la distance souhaitée */
   }
 }
