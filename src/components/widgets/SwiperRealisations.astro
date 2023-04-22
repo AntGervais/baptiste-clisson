@@ -1,0 +1,53 @@
+---
+import { getPermalink } from '~/utils/permalinks';
+import type { Realisation } from '~/types';
+import GridItem from '../realisations/GridItem.astro';
+
+export interface Props {
+  posts: Array<Realisation>;
+}
+
+const { posts } = Astro.props;
+---
+
+<div class="relative">
+  <div class="swiper py-3">
+    <div class="swiper-wrapper">
+      {
+        posts.map(async (post) => (
+          <div class="swiper-slide">
+            <GridItem post={post} />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+</div>
+
+<script>
+  import Swiper, { Navigation } from 'swiper';
+  import 'swiper/css';
+  import 'swiper/css/navigation';
+
+  new Swiper('.swiper', {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    modules: [Navigation],
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      clickable: true,
+    },
+    rewind: true,
+    breakpoints: {
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 50,
+      },
+    },
+  });
+</script>

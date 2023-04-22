@@ -1,5 +1,5 @@
 ---
-import Item from '~/components/realisations/GridItem.astro';
+import GridItem from '~/components/realisations/GridItem.astro';
 import type { Realisation } from '~/types';
 
 export interface Props {
@@ -10,5 +10,5 @@ const { posts } = Astro.props;
 ---
 
 <div class="row-gap-5 -mb-6 grid gap-6 md:grid-cols-1 lg:grid-cols-3">
-  {posts.map((post) => <Item post={post} />)}
+  {posts.map((post) => <GridItem post={post} />)}
 </div>

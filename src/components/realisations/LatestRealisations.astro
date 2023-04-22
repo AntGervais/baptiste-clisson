@@ -3,6 +3,7 @@ import Grid from '~/components/realisations/Grid.astro';
 
 import { getRealisationsPermalink } from '~/utils/permalinks';
 import { findLatestRealisations } from '~/utils/realisations';
+import SwiperRealisations from '../widgets/SwiperRealisations.astro';
 
 export interface Props {
   title?: string;
@@ -16,13 +17,13 @@ const {
   allRealisationsText = 'Voir mes autres réalisations',
   allRealisationsLink = getRealisationsPermalink(),
   information = await Astro.slots.render('information'),
-  count = 3,
+  count = 6,
 } = Astro.props;
 
 const posts = await findLatestRealisations({ count });
 ---
 
-<section class="mx-auto max-w-7xl px-4 py-20 lg:py-24">
+<section class="mx-auto max-w-6xl px-4 py-20 lg:py-24">
   <div class="mb-8 flex flex-col lg:flex-row lg:justify-between">
     <div class="md:max-w-lg">
       {title && <h2 class="font-heading text-accent mb-2 text-3xl font-bold sm:text-4xl" set:html={title} />}
@@ -31,7 +32,9 @@ const posts = await findLatestRealisations({ count });
     {information && <p class="text-muted lg:max-w-md lg:text-sm" set:html={information} />}
   </div>
 
-  <Grid posts={posts} />
+  <!-- <Grid posts={posts} /> -->
+
+  <SwiperRealisations posts={posts} />
 
   <div class="my-4 mt-8 text-center">
     {
