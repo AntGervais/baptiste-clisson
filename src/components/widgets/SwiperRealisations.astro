@@ -1,5 +1,4 @@
 ---
-import { getPermalink } from '~/utils/permalinks';
 import type { Realisation } from '~/types';
 import GridItem from '../realisations/GridItem.astro';
 
@@ -11,7 +10,7 @@ const { posts } = Astro.props;
 ---
 
 <div class="relative">
-  <div class="swiper py-3">
+  <div class="swiper p-5">
     <div class="swiper-wrapper">
       {
         posts.map(async (post) => (

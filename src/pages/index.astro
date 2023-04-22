@@ -43,7 +43,7 @@ const meta = {
     </Fragment>
     @
     <Fragment slot="activities">
-      <div class="mt-12 mb-3">
+      <div class="mt-10 mb-3">
         <SwiperCategories categories={categories} />
       </div>
     </Fragment>
@@ -58,7 +58,7 @@ const meta = {
           <div class="flex">
             <img
               src="/images/Baptiste Clisson/Baptiste Clisson.webp"
-              class="w-full rounded-sm shadow-lg lg:ml-12"
+              class="hidden w-full rounded-sm shadow-lg lg:ml-12 lg:block"
               alt="Baptiste Clisson - Charpentier"
               data-aos="fade-right"
             />
@@ -69,10 +69,19 @@ const meta = {
           <div class="mur-rugeux rounded-sm shadow-lg lg:text-left">
             <div class="flex flex-wrap p-6 lg:p-12 lg:pl-24">
               <h2 class="mb-6 font-heading text-3xl font-bold text-secondary">Baptiste Clisson, artisan charpentier</h2>
-              <p class="mb-6 pb-2 lg:pb-0">
+              <p class="mb-6">
                 Bienvenue sur le site internet de Bois Debout, mon entreprise de charpente traditionnelle située à
                 Saulgé, dans la Vienne.
               </p>
+
+              <div class="flex h-full w-full items-center justify-center">
+                <img
+                  src="/images/Baptiste Clisson/Baptiste Clisson Small.webp"
+                  class="mb-6 block w-96 rounded-sm shadow-lg lg:hidden"
+                  alt="Baptiste Clisson - Charpentier"
+                />
+              </div>
+
               <p>
                 Je m'appelle Baptiste Clisson et je suis passionné par mon métier. Fort de mon expérience et de ma
                 maîtrise des techniques traditionnelles, je réalise toutes sortes de projets de charpente, d'ossature et
