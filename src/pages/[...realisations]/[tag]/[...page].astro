@@ -36,7 +36,7 @@ const { page, tag } = Astro.props;
 const categories = await getCollection('accueil_categories');
 
 // Get accueil_categories content from tag
-const categorie_tag_content = categories.find((item) => item.data.tag === tag);
+const categorie = categories.find((item) => item.data.tag === tag);
 
 const currentPage = page.currentPage ?? 1;
 const meta = {
@@ -48,7 +48,7 @@ const meta = {
 
 <Layout meta={meta}>
   <section class="mx-auto max-w-3xl px-6 py-12 sm:px-6 sm:py-16 lg:py-20">
-    <Headline subtitle={categorie_tag_content.body}>{tag}</Headline>
+    <Headline subtitle={categorie.body}>{tag}</Headline>
     <BlogList posts={page.data} />
     <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
   </section>

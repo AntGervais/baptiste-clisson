@@ -1,0 +1,63 @@
+---
+import { getPermalink } from '~/utils/permalinks';
+import Category from './Category.astro';
+
+interface CategoryAccueil {
+  title?: string;
+  subtitle?: string;
+  image?: string;
+  tag?: string;
+}
+
+export interface Props {
+  categories: CategoryAccueil[];
+}
+const { categories } = Astro.props;
+---
+
+<style>
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: var(--aw-color-primary);
+  }
+</style>
+
+<div class="swiper py-3">
+  <div class="swiper-wrapper">
+    {
+      categories.map(async (cate: CategoryAccueil) => (
+        <div class="swiper-slide">
+          <Category title={cate.title} image={cate.image} link={getPermalink(cate.tag, 'tag')} />
+        </div>
+      ))
+    }
+  </div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+</div>
+
+<script>
+  import Swiper, { Navigation } from 'swiper';
+  import 'swiper/css';
+  import 'swiper/css/navigation';
+
+  new Swiper('.swiper', {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    modules: [Navigation],
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      clickable: true,
+    },
+    rewind: true,
+    breakpoints: {
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 50,
+      },
+    },
+  });
+</script>

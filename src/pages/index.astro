@@ -5,7 +5,6 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Features from '~/components/widgets/Features.astro';
 import Steps from '~/components/widgets/Steps.astro';
-import Category from '~/components/widgets/Category.astro';
 import Content from '~/components/widgets/Content.astro';
 import LatestRealisations from '~/components/realisations/LatestRealisations.astro';
 import Review from '~/components/review/Review.astro';
@@ -13,7 +12,7 @@ import Contact from '~/components/contact/Contact.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 
 import { getCollection } from 'astro:content';
-import { getPermalink } from '~/utils/permalinks';
+import SwiperCategories from '~/components/widgets/SwiperCategories.astro';
 
 const imagesAccueil = await getCollection('accueil_categories');
 const categories = imagesAccueil.map((accueil_categories) => accueil_categories.data);
@@ -44,12 +43,8 @@ const meta = {
     </Fragment>
     @
     <Fragment slot="activities">
-      <div class="row-gap-5 mt-12 mb-3 grid gap-6 md:grid-cols-1 lg:grid-cols-3">
-        {
-          categories.map((category) => (
-            <Category title={category.title} image={category.image} link={getPermalink(category.tag, 'tag')} />
-          ))
-        }
+      <div class="mt-12 mb-3">
+        <SwiperCategories categories={categories} />
       </div>
     </Fragment>
   </Hero>
