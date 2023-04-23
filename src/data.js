@@ -26,7 +26,7 @@ export const headerData = {
 export const footerData = {
   links: [
     {
-      title: 'Product',
+      title: 'Plan du site',
       links: [
         { text: 'Présentation', href: SITE.basePathname + '#presentation' },
         { text: 'Réalisations', href: SITE.basePathname + '#realisations' },

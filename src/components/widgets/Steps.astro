@@ -9,15 +9,25 @@ interface Item {
   icon?: string;
 }
 
+
+interface Image {
+  src: string;
+  alt?: string;
+}
+
 export interface Props {
   title?: string;
   items: Array<Item>;
-  image?: string | any; // TODO: find HTMLElementProps
+  image?: Image;
 }
 
-const { title = await Astro.slots.render('title'), items = [], image } = Astro.props;
+const { 
+  title = await Astro.slots.render('title'), 
+  items = [], 
+  image 
+} = Astro.props;
 
-const img = await findImage(image);
+const img = await findImage(image.src);
 ---
 
 <section class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">

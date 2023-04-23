@@ -3,8 +3,8 @@ import { Picture } from '@astrojs/image/components';
 import { findImage } from '~/utils/images';
 
 interface Image {
-  image: string;
-  description: string;
+  src: string;
+  alt: string;
 }
 
 export interface Props {
@@ -18,7 +18,7 @@ const { images } = Astro.props;
     {
       images.map(async (image: Image) => {
         if (!image) return;
-        const src = await findImage(image.image);
+        const src = await findImage(image.src);
         if (!src) return;
         return (
           <div class="swiper-slide">
@@ -29,7 +29,7 @@ const { images } = Astro.props;
               sizes="(max-width: 767px) 400px, 768px"
               aspectRatio="16:9"
               loading="eager"
-              alt={image.description || 'Image Hero'}
+              alt={image.alt || 'Image Hero'}
             />
           </div>
         );
