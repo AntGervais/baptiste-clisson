@@ -32,14 +32,7 @@ const {
     <div class="pointer-events-none pt-0 md:pt-[76px]"></div>
     <div class="py-12 md:py-20 lg:flex lg:h-screen lg:items-center lg:gap-8 lg:py-0">
       <div class="mx-auto basis-1/2 pb-10 text-center md:pb-16 lg:text-left">
-        {
-          title && (
-            <h1
-              class="leading-tighter font-heading mb-4 text-5xl font-bold tracking-tighter md:text-6xl "
-              set:html={title}
-            />
-          )
-        }
+        {title && <h1 class="leading-tighter font-heading mb-4 text-5xl font-bold md:text-6xl " set:html={title} />}
         <div class="mx-auto max-w-3xl lg:max-w-none">
           {subtitle && <p class="text-muted mb-6 text-xl " set:html={subtitle} />}
           <div

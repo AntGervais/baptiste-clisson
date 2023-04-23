@@ -39,12 +39,7 @@ const {
           {highlight && (
             <p class="text-primary text-base  font-semibold uppercase tracking-wide" set:html={highlight} />
           )}
-          {title && (
-            <h2
-              class="leading-tighter font-heading mb-4 text-4xl font-bold tracking-tighter md:text-5xl"
-              set:html={title}
-            />
-          )}
+          {title && <h2 class="leading-tighter font-heading mb-4 text-4xl font-bold md:text-5xl" set:html={title} />}
 
           {subtitle && <p class="text-muted mx-auto max-w-3xl text-xl sm:text-center " set:html={subtitle} />}
         </div>
