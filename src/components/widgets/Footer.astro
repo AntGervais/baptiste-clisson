@@ -32,7 +32,7 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '' } = Ast
     <div class="grid grid-cols-12 gap-4 gap-y-8 py-8 sm:gap-8 md:py-12">
       <div class="col-span-12 lg:col-span-4">
         <div class="mb-2">
-          <a class="inline-block text-xl font-bold" href={getHomePermalink()}>{SITE?.name}</a>
+          <a class="inline-block text-xl font-bold" href={getHomePermalink()} title="Accueil">{SITE?.name}</a>
         </div>
         <div class="text-muted text-sm">
           {
@@ -41,6 +41,7 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '' } = Ast
                 class="text-muted mr-2  transition duration-150 ease-in-out hover:text-gray-700 hover:underline"
                 href={href}
                 set:html={text}
+                title="lien secondaire"
               />
             ))
           }
@@ -58,6 +59,7 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '' } = Ast
                       class="text-muted transition duration-150  ease-in-out hover:text-gray-700 hover:underline"
                       href={href}
                       aria-label={ariaLabel}
+                      title="lien footer"
                     >
                       <Fragment set:html={text} />
                     </a>
@@ -79,6 +81,7 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '' } = Ast
                   class="text-muted  inline-flex items-center rounded-sm p-2.5  text-sm hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200"
                   aria-label={ariaLabel}
                   href={href}
+                  title="lien social"
                 >
                   {icon && <Icon name={icon} class="h-5 w-5" />}
                   <Fragment set:html={text} />

@@ -21,7 +21,7 @@ const link = !REALISATIONS?.post?.disabled ? getPermalink(post.permalink, 'reali
 <article class="mb-6 transition hover:scale-105">
   <div class="flex justify-center">
     <div class="block w-full max-w-sm rounded-sm bg-white shadow-lg">
-      <a href={link}>
+      <a href={link} title={post.title || post.accroche || ''}>
         {
           image && (
             <Picture
@@ -52,7 +52,11 @@ const link = !REALISATIONS?.post?.disabled ? getPermalink(post.permalink, 'reali
               <Tags tags={post.tags} />
             </div>
             <div class="flex w-full justify-end">
-              <a class="mb-2 inline-flex items-center text-primary" href={link}
+              <a
+                class="mb-2 inline-flex items-center text-primary"
+                href={link}
+                title={post.title || post.accroche || ''}
+              >
                 >Plus de photos
                 <svg
                   class="ml-2 h-4 w-4"

@@ -56,7 +56,7 @@ export default function Reviews({ initialReviews }: ReviewsProps) {
               }
             </div>
             {review.author_url && review.author_url.length > 0 ?
-              <a href={review.author_url}>
+              <a href={review.author_url} title="Auteur">
                 <span className="text-lg font-medium capitalize">
                   {review.author_name}
                 </span>

@@ -16,13 +16,21 @@ const { prevUrl, nextUrl, prevText = 'Newer posts', nextText = 'Older posts' } =
   (prevUrl || nextUrl) && (
     <div class="container flex">
       <div class="container mx-auto flex flex-row justify-between">
-        <a href={getPermalink(prevUrl)} class={`btn btn-ghost mr-2 px-3 md:px-3 ${!prevUrl ? 'invisible' : ''}`}>
+        <a
+          href={getPermalink(prevUrl)}
+          class={`btn btn-ghost mr-2 px-3 md:px-3 ${!prevUrl ? 'invisible' : ''}`}
+          title="Page précédente"
+        >
           <div class="flex flex-row align-middle">
             <Icon name="tabler:chevron-left" class="h-6 w-6" />
             <p class="ml-2">{prevText}</p>
           </div>
         </a>
-        <a href={getPermalink(nextUrl)} class={`btn btn-ghost px-3 md:px-3 ${!nextUrl ? 'invisible' : ''}`}>
+        <a
+          href={getPermalink(nextUrl)}
+          class={`btn btn-ghost px-3 md:px-3 ${!nextUrl ? 'invisible' : ''}`}
+          title="Page suivante"
+        >
           <div class="flex flex-row align-middle">
             <span class="mr-2">{nextText}</span>
             <Icon name="tabler:chevron-right" class="h-6 w-6" />

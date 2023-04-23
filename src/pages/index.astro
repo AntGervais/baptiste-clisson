@@ -11,6 +11,8 @@ import Review from '~/components/review/Review.astro';
 import Contact from '~/components/contact/Contact.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 
+import { Image } from '@astrojs/image/components';
+
 import { getCollection } from 'astro:content';
 import SwiperCategories from '~/components/widgets/SwiperCategories.astro';
 
@@ -75,10 +77,14 @@ const meta = {
               </p>
 
               <div class="flex h-full w-full items-center justify-center">
-                <img
+                <Image
                   src="/images/Baptiste Clisson/Baptiste Clisson Small.webp"
                   class="mb-6 block w-96 rounded-sm shadow-lg lg:hidden"
                   alt="Baptiste Clisson - Charpentier"
+                  width={384}
+                  height={270}
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
 

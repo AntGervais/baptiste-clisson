@@ -86,7 +86,13 @@ const {
                     callToAction &&
                     callToAction.text &&
                     callToAction.href && (
-                      <a class="btn btn-primary mb-4 sm:mb-0" href={callToAction.href} target="_blank" rel="noopener">
+                      <a
+                        class="btn btn-primary mb-4 sm:mb-0"
+                        href={callToAction.href}
+                        target="_blank"
+                        rel="noopener"
+                        title={callToAction?.text || 'Call to action'}
+                      >
                         {callToAction.icon && <Icon name={callToAction.icon} class="mr-1 -ml-1.5 h-5 w-5" />}
                         {callToAction.text}
                       </a>
