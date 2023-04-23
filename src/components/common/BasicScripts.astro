@@ -95,13 +95,15 @@ import { SITE } from '~/config.mjs';
     appyHeaderStylesOnScroll();
 
     attachEvent([document], 'scroll', function () {
-      lastKnownScrollPosition = window.scrollY;
+      if (window.scrollY > lastKnownScrollPosition + 30 || window.scrollY < lastKnownScrollPosition - 30) {
+        lastKnownScrollPosition = window.scrollY;
 
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          appyHeaderStylesOnScroll();
-        });
-        ticking = true;
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            appyHeaderStylesOnScroll();
+          });
+          ticking = true;
+        }
       }
     });
   };
