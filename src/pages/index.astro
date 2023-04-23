@@ -157,7 +157,6 @@ const meta = {
   </div>
 
   <!-- FAQs Widget ******************* -->
-
   <FAQs
     title="Frequently Asked Questions"
     subtitle="Duis turpis dui, fringilla mattis sem nec, fringilla euismod neque. Morbi tincidunt lacus nec tortor scelerisque pulvinar."
@@ -200,6 +199,71 @@ const meta = {
     ]}
   />
 
+  <!-- Content Widget **************** -->
+  <div class="background_wood">
+    <Content
+      highlight="Inside template"
+      title="And what's inside? ..."
+      items={[
+        {
+          title: 'Per ei quaeque sensibus',
+          description:
+            'Ex usu illum iudico molestie. Pro ne agam facete mediocritatem, ridens labore facete mea ei. Pro id apeirian dignissim.',
+        },
+        {
+          title: 'Cu imperdiet posidonium sed',
+          description:
+            'Amet utinam aliquando ut mea, malis admodum ocurreret nec et, elit tibique cu nec. Nec ex maluisset inciderint, ex quis.',
+        },
+        {
+          title: 'Nulla omittam sadipscing mel ne',
+          description:
+            'At sed possim oporteat probatus, justo graece ne nec, minim commodo legimus ut vix. Ut eos iudico quando soleat, nam modus.',
+        },
+      ]}
+      image={{
+        src: import('/public/images/images_stock/personne-prenant-mesures-bois.webp'),
+        alt: 'personne prenant mesures bois',
+      }}
+    >
+      <Fragment slot="content">
+        <h3 class="mb-2 text-2xl font-bold tracking-tight sm:text-3xl">Ad vix debet docendi</h3>
+        Ne dicta praesent ocurreret has, diam theophrastus at pro. Eos etiam regione ut, persius eripuit quo id. Sit te euismod
+        tacimates.
+      </Fragment>
+    </Content>
+
+    <!-- Content Widget **************** -->
+    <Content
+      isReversed
+      isAfterContent
+      items={[
+        {
+          title: 'Per ei quaeque sensibus',
+        },
+        {
+          title: 'Cu imperdiet posidonium sed',
+        },
+        {
+          title: 'Nulla omittam sadipscing mel ne',
+        },
+        {
+          title: 'Per ei quaeque sensibus',
+        },
+        {
+          title: 'Cu imperdiet posidonium sed',
+        },
+        {
+          title: 'Nulla omittam sadipscing mel ne',
+        },
+      ]}
+      image={{
+        src: import('/public/images/images_stock/artisan-aide-scie-circulaire.png'),
+        alt: 'Artisan aide scie circulaire',
+      }}
+    />
+  </div>
+
   <!-- Steps Widget ****************** -->
   <Steps
     title="Get your dream website up and running in no time with AstroWind."
@@ -228,14 +292,14 @@ const meta = {
       },
     ]}
     image={{
-      src: import('/public/images/creativity.jpg'),
-      alt: 'Steps image',
+      src: import('/public/images/images_stock/outils-menuiserie-bois.webp'),
+      alt: 'Outils menuiserie bois',
     }}
   />
 
   <!-- Container for demo purpose -->
 
-  <section class="mt-60 text-neutral-700">
+  <section class="mt-2">
     <div class="container mx-auto px-5 py-2 lg:px-12 lg:pt-12">
       <div class="-m-1 flex flex-wrap md:-m-2">
         <div class="flex w-1/2 flex-wrap">
@@ -243,21 +307,21 @@ const meta = {
             <img
               alt="gallery"
               class="block h-full w-full rounded-sm object-cover object-center"
-              src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(70).webp"
+              src="/public/images/images_stock/outils-menuiserie-bois.webp"
             />
           </div>
           <div class="w-1/2 p-1 md:p-2">
             <img
               alt="gallery"
               class="block h-full w-full rounded-sm object-cover object-center"
-              src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(72).webp"
+              src="/public/images/images_stock/amenagement-equipements-pour-travaux-artisanaux.webp"
             />
           </div>
           <div class="w-full p-1 md:p-2">
             <img
               alt="gallery"
               class="block h-full w-full rounded-sm object-cover object-center"
-              src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
+              src="/public/images/images_stock/artisan-creant-piece-bois.png"
             />
           </div>
         </div>
@@ -266,21 +330,21 @@ const meta = {
             <img
               alt="gallery"
               class="block h-full w-full rounded-sm object-cover object-center"
-              src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(74).webp"
+              src="/public/images/images_stock/lame-scie-circulaire.png"
             />
           </div>
           <div class="w-1/2 p-1 md:p-2">
             <img
               alt="gallery"
               class="block h-full w-full rounded-sm object-cover object-center"
-              src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(75).webp"
+              src="/public/images/images_stock/pile-planches-bois-dans-cour-bois-scierie.webp"
             />
           </div>
           <div class="w-1/2 p-1 md:p-2">
             <img
               alt="gallery"
               class="block h-full w-full rounded-sm object-cover object-center"
-              src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(77).webp"
+              src="/public/images/images_stock/panneaux-mdf-interieur-entrepot.webp"
             />
           </div>
         </div>
@@ -335,68 +399,5 @@ const meta = {
         },
       ],
     ]}
-  />
-
-  <!-- Content Widget **************** -->
-  <Content
-    highlight="Inside template"
-    title="And what's inside? ..."
-    items={[
-      {
-        title: 'Per ei quaeque sensibus',
-        description:
-          'Ex usu illum iudico molestie. Pro ne agam facete mediocritatem, ridens labore facete mea ei. Pro id apeirian dignissim.',
-      },
-      {
-        title: 'Cu imperdiet posidonium sed',
-        description:
-          'Amet utinam aliquando ut mea, malis admodum ocurreret nec et, elit tibique cu nec. Nec ex maluisset inciderint, ex quis.',
-      },
-      {
-        title: 'Nulla omittam sadipscing mel ne',
-        description:
-          'At sed possim oporteat probatus, justo graece ne nec, minim commodo legimus ut vix. Ut eos iudico quando soleat, nam modus.',
-      },
-    ]}
-    image={{
-      src: import('/public/images/caos.jpg'),
-      alt: 'Colorful Image',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="mb-2 text-2xl font-bold tracking-tight sm:text-3xl">Ad vix debet docendi</h3>
-      Ne dicta praesent ocurreret has, diam theophrastus at pro. Eos etiam regione ut, persius eripuit quo id. Sit te euismod
-      tacimates.
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget **************** -->
-  <Content
-    isReversed
-    isAfterContent
-    items={[
-      {
-        title: 'Per ei quaeque sensibus',
-      },
-      {
-        title: 'Cu imperdiet posidonium sed',
-      },
-      {
-        title: 'Nulla omittam sadipscing mel ne',
-      },
-      {
-        title: 'Per ei quaeque sensibus',
-      },
-      {
-        title: 'Cu imperdiet posidonium sed',
-      },
-      {
-        title: 'Nulla omittam sadipscing mel ne',
-      },
-    ]}
-    image={{
-      src: import('/public/images/vintage.jpg'),
-      alt: 'Vintage Image',
-    }}
   />
 </Layout>
