@@ -1,11 +1,17 @@
 ---
 import { Icon } from 'astro-icon';
 import { Picture } from '@astrojs/image/components';
+import { findImage } from '~/utils/images';
 
 interface Item {
   title: string;
   description?: string;
   icon?: string;
+}
+
+interface Image {
+  src: string;
+  alt?: string;
 }
 
 export interface Props {
@@ -14,7 +20,7 @@ export interface Props {
   highlight?: string;
   content?: string;
   items?: Array<Item>;
-  image?: string | any; // TODO: find HTMLElementProps
+  image?: Image;
   isReversed?: boolean;
   isAfterContent?: boolean;
 }
@@ -25,10 +31,12 @@ const {
   highlight,
   content = await Astro.slots.render('content'),
   items = [],
-  image = await Astro.slots.render('image'),
+  image,
   isReversed = false,
   isAfterContent = false,
 } = Astro.props;
+
+const img = await findImage(image.src);
 ---
 
 <section class:list={[{ 'pt-0 md:pt-0': isAfterContent }, 'py-16 md:py-20']}>
@@ -75,19 +83,18 @@ const {
         {
           image && (
             <div class="relative m-auto max-w-4xl">
-              {typeof image === 'string' ? (
-                <Fragment set:html={image} />
-              ) : (
-                <Picture
-                  class="mx-auto w-full rounded-sm bg-gray-500 shadow-lg"
-                  width={500}
-                  height={500}
-                  widths={[400, 768]}
-                  sizes="(max-width: 768px) 100vw, 432px"
-                  aspectRatio="500:500"
-                  {...image}
-                />
-              )}
+              <Picture
+                src={img}
+                alt={title}
+                class="mx-auto w-full rounded-sm bg-gray-500 shadow-lg"
+                width={500}
+                height={500}
+                widths={[400, 768]}
+                sizes="(max-width: 768px) 100vw, 432px"
+                aspectRatio="500:500"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
           )
         }

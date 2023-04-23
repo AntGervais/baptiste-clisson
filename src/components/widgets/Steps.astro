@@ -1,6 +1,7 @@
 ---
 import { Icon } from 'astro-icon';
 import { Picture } from '@astrojs/image/components';
+import { findImage } from '~/utils/images';
 
 interface Item {
   title: string;
@@ -14,11 +15,9 @@ export interface Props {
   image?: string | any; // TODO: find HTMLElementProps
 }
 
-const {
-  title = await Astro.slots.render('title'),
-  items = [],
-  image = await Astro.slots.render('image'),
-} = Astro.props;
+const { title = await Astro.slots.render('title'), items = [], image } = Astro.props;
+
+const img = await findImage(image);
 ---
 
 <section class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
@@ -54,20 +53,20 @@ const {
     </div>
     <div class="relative">
       {
-        image &&
-          (typeof image === 'string' ? (
-            <Fragment set:html={image} />
-          ) : (
-            <Picture
-              class="inset-0 w-full rounded-sm bg-gray-400 shadow-lg md:absolute md:h-full "
-              widths={[400, 768]}
-              sizes="(max-width: 768px) 100vw, 432px"
-              aspectRatio="432:768"
-              width={432}
-              height={768}
-              {...image}
-            />
-          ))
+        img && (
+          <Picture
+            alt={title}
+            src={img}
+            class="inset-0 w-full rounded-sm bg-gray-400 shadow-lg md:absolute md:h-full "
+            widths={[400, 768]}
+            sizes="(max-width: 768px) 100vw, 432px"
+            aspectRatio="432:768"
+            width={432}
+            height={768}
+            loading="lazy"
+            decoding="async"
+          />
+        )
       }
     </div>
   </div>
