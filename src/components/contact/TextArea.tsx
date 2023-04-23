@@ -42,7 +42,7 @@ export default function TextArea({
             'border',
             'border-1',
             Boolean(error) ? 'border-red-500' : 'border-gray-300',
-            'bg-transparent',
+            bg ? bg : 'bg-white', // The bg must be the color of the input's background
             'px-2.5',
             'pb-2.5',
             'pt-4',
@@ -55,6 +55,7 @@ export default function TextArea({
         <label
           htmlFor={name}
           className={[
+            'font-sans',
             'absolute',
             'top-2',
             'left-1',
@@ -65,8 +66,9 @@ export default function TextArea({
             'transform',
             'cursor-text',
             'select-none',
-            bg ? bg : 'bg-white',
-            'px-2',
+            'rounded-sm',
+            bg ? bg : 'bg-white', // The bg must be the color of the input's background
+            'px-2', 'py-2',
             size === 'sm' ? 'text-sm' : size === 'md' ? 'text-md' : 'text-lg',
             Boolean(error) ? 'text-red-500' : 'text-gray-500',
             'duration-300',

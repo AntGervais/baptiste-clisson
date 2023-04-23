@@ -47,12 +47,11 @@ export default function Input({
             'border',
             'border-1',
             Boolean(error) ? 'border-red-400' : 'border-gray-300',
-            'bg-transparent',
+            bg ? bg : 'bg-white', // The bg must be the color of the input's background
             'px-2.5',
             'pb-2.5',
             'pt-4',
             size === 'sm' ? 'text-sm' : size === 'md' ? 'text-md' : 'text-lg',
-            color === 'light' ? 'text-gray-800' : 'text-gray-50',
             Boolean(error) ? 'focus:border-red-400' : 'focus:border-green-600',
             'focus:outline-none',
             'focus:ring-0',
@@ -72,7 +71,8 @@ export default function Input({
             'transform',
             'cursor-text',
             'select-none',
-            bg ? bg : 'bg-purple-500', // The bg must be the color of the input's background
+            'rounded-sm',
+            bg ? bg : 'bg-white', // The bg must be the color of the input's background
             'px-2',
             size === 'sm' ? 'text-sm' : size === 'md' ? 'text-md' : 'text-lg',
             Boolean(error) ? 'text-red-400' : 'text-gray-500',

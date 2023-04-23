@@ -77,23 +77,24 @@ export default function ContactForm() {
                 name="name"
                 label="Nom"
                 required
-                bg="bg-gray-100"
                 {...register('name')}
               />
               <Input
                 name="email"
                 label="Email"
                 required
-                bg="bg-gray-100"
                 {...register('email')}
               />
-              <Input name="phone" label="Numéro de téléphone" bg="bg-gray-100" {...register('phone')} />
+              <Input
+                name="phone"
+                label="Numéro de téléphone"
+                {...register('phone')}
+              />
               <TextArea
                 name="message"
                 label="Message"
                 height="h-40"
                 required
-                bg="bg-gray-100"
                 {...register('message')}
               />
             </div>
