@@ -14,9 +14,9 @@ const { tags, class: className = 'text-base' } = Astro.props;
 
 {
   tags && Array.isArray(tags) && (
-    <ul class={className}>
+    <div class={className}>
       {tags.map((tag) => (
-        <li class="text-primary hover:bg-accent mr-2 mb-2 inline-block rounded-sm  bg-gray-100 font-medium lowercase hover:text-gray-100">
+        <div class="text-primary hover:bg-accent mr-2 mb-2 inline-block rounded-sm  bg-gray-100 font-medium lowercase hover:text-gray-100">
           {REALISATIONS?.tag?.disabled ? (
             tag
           ) : (
@@ -24,8 +24,8 @@ const { tags, class: className = 'text-base' } = Astro.props;
               {tag}
             </a>
           )}
-        </li>
+        </div>
       ))}
-    </ul>
+    </div>
   )
 }
