@@ -1,4 +1,5 @@
 ---
+import { Image } from '@astrojs/image/components';
 export interface Props {
   title?: string;
   subtitle?: string;
@@ -18,7 +19,15 @@ const {
   <div class="flex justify-center">
     <a href={link} class="transition hover:scale-105" title={title}>
       <div class="block w-full max-w-sm rounded-sm bg-white shadow-lg">
-        <img class="h-80 w-96 rounded-t-sm object-cover" src={image} alt={title} />
+        <Image
+          src={image}
+          alt={title}
+          class="h-80 w-96 rounded-t-sm object-cover"
+          loading="lazy"
+          decoding="async"
+          width={410}
+          height={400}
+        />
         <div class="w-full p-4">
           <h2 class="text-xl">{title}</h2>
           {subtitle && <p class="text-sm">{subtitle}</p>}

@@ -28,11 +28,10 @@ const link = !REALISATIONS?.post?.disabled ? getPermalink(post.permalink, 'reali
               src={image}
               class="w-full object-cover object-center md:h-72 lg:h-80"
               widths={[480]}
-              width={480}
-              height={240}
-              sizes="(max-width: 480px) 240px, 480px"
+              width={430}
+              height={400}
+              sizes="(max-width: 430) 400px, 430px"
               alt={post.title || post.accroche || ''}
-              aspectRatio="4:3"
               loading="lazy"
               decoding="async"
             />
