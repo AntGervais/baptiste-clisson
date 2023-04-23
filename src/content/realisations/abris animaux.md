@@ -4,8 +4,10 @@ image: /images/realisations/Abris_Animaux/5.jpeg
 tags:
   - charpente
 publishDate: '2023-01-12T00:00:00.000Z'
-accroche: Fabrication d'un abri pour les animaux
+accroche: Demi-fermes avec tronc d'acacia - Assemblages traditionnels
 ---
+
+Demi-fermes avec tronc d'acacia - Assemblages traditionnels
 
 ![](/images/realisations/Abris_Animaux/1.jpeg)
 
