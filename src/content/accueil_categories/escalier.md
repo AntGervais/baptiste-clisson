@@ -1,5 +1,5 @@
 ---
-image: /images/realisations/Escalier1/5.webp
+image: /images/images_stock/escalier-home.webp
 title: Escaliers massifs sur mesure
 tag: escalier
 ---

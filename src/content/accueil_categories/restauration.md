@@ -1,5 +1,5 @@
 ---
-image: /images/realisations/Debord_de_toit_ferme_apparat/4.webp
+image: /images/realisations/Charpente_Manoir_Bel_Noe/1.webp
 title: Restauration et réhabilitation
 tag: restauration
 ---
