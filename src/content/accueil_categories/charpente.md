@@ -1,5 +1,5 @@
 ---
-image: /images/realisations/Charpente_Manoir_Bel_Noe/1.png
+image: /images/realisations/Charpente_Manoir_Bel_Noe/1.webp
 title: Charpentes traditionnelles
 tag: charpente
 ---
