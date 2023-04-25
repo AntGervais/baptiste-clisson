@@ -36,8 +36,8 @@ const { images } = Astro.props;
       })
     }
   </div>
-  <div class="swiper-btn-next"></div>
-  <div class="swiper-btn-prev"></div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
 </div>
 
 <script>
@@ -51,8 +51,8 @@ const { images } = Astro.props;
     spaceBetween: 10,
     modules: [Navigation, Pagination],
     navigation: {
-      nextEl: '.swiper-btn-next',
-      prevEl: '.swiper-btn-prev',
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
     },
     pagination: {
       clickable: true,

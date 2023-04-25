@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import PulseSpinner from '../common/PulseSpinner';
 import Review from './Review';
 
 // Import Swiper React components
@@ -16,12 +15,9 @@ type ReviewsProps = {
 
 export default function Reviews({ initialReviews }: ReviewsProps) {
   const [reviews, setReviews] = useState<Review[]>(initialReviews || [])
-  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     const getReviews = async () => {
-      setLoading(true)
-
       try {
         const res = await fetch('/.netlify/functions/reviews').then((res) => res.json())
         if ('error_message' in res) {
@@ -32,8 +28,6 @@ export default function Reviews({ initialReviews }: ReviewsProps) {
       } catch (err) {
         throw new Error(err);
       }
-
-      setLoading(false)
     }
 
     getReviews()
@@ -62,8 +56,5 @@ export default function Reviews({ initialReviews }: ReviewsProps) {
         )}
       </> : null}
     </Swiper>
-    {loading && <div className="py-4 flex flex-col gap-4">
-      <PulseSpinner />
-    </div>}
   </div>)
 }
