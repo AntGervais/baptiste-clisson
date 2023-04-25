@@ -8,14 +8,6 @@ const data: Review[] = [
     text: "J'ai fait appel à Baptiste et son entreprise Bois Debout pour la rénovation de la charpente de ma maison ancienne. Le travail réalisé est tout simplement remarquable! Baptiste a su allier tradition et modernité pour donner une nouvelle vie à notre charpente. Je recommande vivement Bois Debout à quiconque cherchant un charpentier passionné et compétent.",
   },
   {
-    author_name: 'Sophie Corbelin',
-    author_url: '',
-    profile_photo_url: '',
-    relative_time_description: 'il y a deux mois',
-    rating: 5,
-    text: "Nous avons sollicité Bois Debout pour la création d'un escalier sur mesure dans notre maison. Le résultat est superbe et s'intègre parfaitement à notre intérieur. Baptiste a été à l'écoute de nos besoins et a su nous conseiller tout au long du projet. Un grand merci à lui et à son équipe !",
-  },
-  {
     author_name: 'Pierre Tisserand',
     author_url: '',
     profile_photo_url: '',
@@ -24,7 +16,7 @@ const data: Review[] = [
     text: 'Bois Debout a réalisé la charpente de notre extension et nous sommes très satisfaits du travail accompli. Baptiste est un artisan sérieux et consciencieux qui a su respecter les délais et le budget. La qualité de son travail et son savoir-faire traditionnel sont indéniables. Je recommande sans hésitation!',
   },
   {
-    author_name: 'Julien Méliès',
+    author_name: 'Sophie Corbelin',
     author_url: '',
     profile_photo_url: '',
     relative_time_description: 'il y a trois mois',
