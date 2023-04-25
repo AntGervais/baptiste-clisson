@@ -15,11 +15,14 @@ export default function Reviews({ initialReviews }: ReviewsProps) {
   useEffect(() => {
     const getReviews = async () => {
       try {
-        const res = await fetch('/.netlify/functions/reviews').then((res) => res.json())
-        if ('error_message' in res) {
-          console.error(res)
+        const result = await fetch('/.netlify/functions/reviews').then((res) => res.json())
+        if ('error_message' in result) {
+          console.error(result)
         } else {
-          setReviews((initialReviews) => res.concat(initialReviews))
+          setReviews((initialReviews) => {
+            const filteredRes = result.filter((item) => item.text && item.text.trim() !== '');
+            return [...filteredRes, ...initialReviews];
+          });
         }
       } catch (err) {
         throw new Error(err);
