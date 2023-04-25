@@ -89,7 +89,7 @@ export default defineConfig({
             name: 'tags',
             label: 'Tags',
             list: true,
-            options: ['charpente', 'ossature', 'restauration', 'escalier'],
+            options: ['charpente', 'restauration', 'escalier'],
           },
           {
             name: 'publishDate',
