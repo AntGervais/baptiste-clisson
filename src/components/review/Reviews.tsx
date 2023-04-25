@@ -5,10 +5,6 @@ import Review from './Review';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper';
 
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-
 type ReviewsProps = {
   initialReviews?: Review[]
 }

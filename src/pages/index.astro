@@ -10,8 +10,8 @@ import LatestRealisations from '~/components/realisations/LatestRealisations.ast
 import Reviews from '~/components/review/Reviews.astro';
 import Contact from '~/components/contact/Contact.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
-
-import { Image } from '@astrojs/image/components';
+import Gallery from '~/components/widgets/Gallery.astro';
+import Presentation from '~/components/widgets/Presentation.astro';
 
 import { getCollection } from 'astro:content';
 import SwiperCategories from '~/components/widgets/SwiperCategories.astro';
@@ -51,68 +51,19 @@ const meta = {
     </Fragment>
   </Hero>
 
-  <!-- Container for demo purpose -->
+  <!-- Container for presentation-->
   <div id="presentation" class="decale-ancre container mx-auto px-6">
-    <!-- Section: Design Block -->
-    <section class="mb-12 lg:my-12">
-      <div class="flex flex-wrap">
-        <div class="w-full shrink-0 grow-0 basis-auto lg:w-1/3">
-          <div class="flex">
-            <img
-              src="/images/Baptiste Clisson/Baptiste Clisson 600px.webp"
-              class="hidden w-full rounded-sm shadow-lg lg:ml-12 lg:block"
-              alt="Baptiste Clisson - Charpentier"
-              data-aos="fade-right"
-            />
-          </div>
-        </div>
-
-        <div class="w-full shrink-0 grow-0 basis-auto py-0 lg:w-2/3 lg:py-8">
-          <div class="mur-rugeux rounded-sm shadow-lg lg:text-left">
-            <div class="flex flex-wrap p-6 lg:p-12 lg:pl-24">
-              <h2 class="mb-5 font-heading text-3xl font-bold text-secondary">Baptiste Clisson, artisan charpentier</h2>
-              <!-- <p class="mb-5">
-                Bienvenue sur le site internet de Bois Debout, mon entreprise de charpente traditionnelle située à
-                Saulgé, dans la Vienne.
-              </p> -->
-
-              <div class="flex h-full w-full items-center justify-center">
-                <Image
-                  src="/images/Baptiste Clisson/Baptiste Clisson Small.webp"
-                  class="mb-6 block w-96 rounded-sm shadow-lg lg:hidden"
-                  alt="Baptiste Clisson - Charpentier"
-                  width={384}
-                  height={270}
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-
-              <p class="mb-5 pb-2 lg:pb-0">
-                Depuis 10 ans, je multiplie les expériences et acquiers des compétences en tant que charpentier. Un
-                brevet professionnel en poche, j'ai eu la chance de participer à des ouvrages ambitieux et variés au
-                sein d'entreprises de qualité et d'équipes passionnées. La restauration de bâtiments en pans de bois
-                dans le centre historique de Rennes, la réhabilitation d'une maison sur le Vieux Port de Montréal, mais
-                aussi la création de charpentes et d'escaliers sont autant de projets que j'ai menés et qui ont
-                confirmés ma passion de ce métier.
-              </p>
-
-              <p class="mb-5 pb-2 lg:pb-0">
-                Aujourd'hui, de retour dans ma région natale à Saulgé, dans la Vienne, j'ai créé l'entreprise Bois
-                Debout afin de poursuivre ma carrière de manière indépendante. j'ai à cœur de travailler sur un
-                territoire rural et de mettre à profit mon expérience pour répondre aux demandes de tous.
-              </p>
-
-              <p>
-                J'accorde une grande importance à la préservation des méthodes traditionnelles tout en sélectionnant
-                avec soin les matériaux pour garantir un travail de qualité.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Section: Design Block -->
+    <Presentation
+      title="Baptiste Clisson, artisan charpentier"
+      image={{
+        src: '/images/Baptiste Clisson/Baptiste Clisson 600px.webp',
+        alt: 'Baptiste Clisson - Charpentier Traditionnel',
+      }}
+      imageSmall={{
+        src: '/images/Baptiste Clisson/Baptiste Clisson Small.webp',
+        alt: 'Baptiste Clisson - Charpentier Traditionnel',
+      }}
+    />
   </div>
 
   <!-- HighlightedRealisations Widget ******* -->
@@ -133,6 +84,9 @@ const meta = {
       <Reviews />
     </section>
   </div>
+
+  <!-- Container for demo purpose -->
+  <Gallery />
 
   <!-- FAQs Widget ******************* -->
   <FAQs
@@ -274,61 +228,6 @@ const meta = {
       alt: 'Outils menuiserie bois',
     }}
   />
-
-  <!-- Container for demo purpose -->
-
-  <section class="mt-2">
-    <div class="container mx-auto px-5 py-2 lg:px-12 lg:pt-12">
-      <div class="-m-1 flex flex-wrap md:-m-2">
-        <div class="flex w-1/2 flex-wrap">
-          <div class="w-1/2 p-1 md:p-2">
-            <img
-              alt="gallery"
-              class="block h-full w-full rounded-sm object-cover object-center"
-              src="/images/images_stock/outils-menuiserie-bois.webp"
-            />
-          </div>
-          <div class="w-1/2 p-1 md:p-2">
-            <img
-              alt="gallery"
-              class="block h-full w-full rounded-sm object-cover object-center"
-              src="/images/images_stock/amenagement-equipements-pour-travaux-artisanaux.webp"
-            />
-          </div>
-          <div class="w-full p-1 md:p-2">
-            <img
-              alt="gallery"
-              class="block h-full w-full rounded-sm object-cover object-center"
-              src="/images/images_stock/artisan-creant-piece-bois.webp"
-            />
-          </div>
-        </div>
-        <div class="flex w-1/2 flex-wrap">
-          <div class="w-full p-1 md:p-2">
-            <img
-              alt="gallery"
-              class="block h-full w-full rounded-sm object-cover object-center"
-              src="/images/images_stock/lame-scie-circulaire.webp"
-            />
-          </div>
-          <div class="w-1/2 p-1 md:p-2">
-            <img
-              alt="gallery"
-              class="block h-full w-full rounded-sm object-cover object-center"
-              src="/images/images_stock/pile-planches-bois-dans-cour-bois-scierie.webp"
-            />
-          </div>
-          <div class="w-1/2 p-1 md:p-2">
-            <img
-              alt="gallery"
-              class="block h-full w-full rounded-sm object-cover object-center"
-              src="/images/images_stock/panneaux-mdf-interieur-entrepot.webp"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- Features Widget *************** -->
   <Features

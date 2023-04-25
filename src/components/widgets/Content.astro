@@ -2,16 +2,12 @@
 import { Icon } from 'astro-icon';
 import { Picture } from '@astrojs/image/components';
 import { findImage } from '~/utils/images';
+import { ImagePath } from '~/types';
 
 interface Item {
   title: string;
   description?: string;
   icon?: string;
-}
-
-interface Image {
-  src: string;
-  alt?: string;
 }
 
 export interface Props {
@@ -20,7 +16,7 @@ export interface Props {
   highlight?: string;
   content?: string;
   items?: Array<Item>;
-  image?: Image;
+  image?: ImagePath;
   isReversed?: boolean;
   isAfterContent?: boolean;
 }

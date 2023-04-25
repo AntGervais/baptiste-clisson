@@ -1,0 +1,66 @@
+---
+import { Image } from '@astrojs/image/components';
+import { ImagePath } from '~/types';
+
+export interface Props {
+  title?: string;
+  image?: ImagePath;
+  imageSmall?: ImagePath;
+}
+
+const { title = await Astro.slots.render('title'), image, imageSmall } = Astro.props;
+---
+
+<section class="mb-12 lg:my-12">
+  <div class="flex flex-wrap">
+    <div class="w-full shrink-0 grow-0 basis-auto lg:w-1/3">
+      <div class="flex">
+        <img src={image.src} class="hidden w-full rounded-sm shadow-lg lg:ml-12 lg:block" alt={image.alt} />
+      </div>
+    </div>
+
+    <div class="w-full shrink-0 grow-0 basis-auto py-0 lg:w-2/3 lg:py-8">
+      <div class="mur-rugeux rounded-sm shadow-lg lg:text-left">
+        <div class="flex flex-wrap p-6 lg:p-12 lg:pl-24">
+          <h2 class="mb-5 font-heading text-3xl font-bold text-secondary">{title}</h2>
+          <!-- <p class="mb-5">
+            Bienvenue sur le site internet de Bois Debout, mon entreprise de charpente traditionnelle située à
+            Saulgé, dans la Vienne.
+          </p> -->
+
+          <div class="flex h-full w-full items-center justify-center">
+            <Image
+              src={imageSmall.src}
+              class="mb-6 block w-96 rounded-sm shadow-lg lg:hidden"
+              alt={imageSmall.alt}
+              width={384}
+              height={270}
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+
+          <p class="mb-5 pb-2 lg:pb-0">
+            Depuis 10 ans, je multiplie les expériences et acquiers des compétences en tant que charpentier. Un brevet
+            professionnel en poche, j'ai eu la chance de participer à des ouvrages ambitieux et variés au sein
+            d'entreprises de qualité et d'équipes passionnées. La restauration de bâtiments en pans de bois dans le
+            centre historique de Rennes, la réhabilitation d'une maison sur le Vieux Port de Montréal, mais aussi la
+            création de charpentes et d'escaliers sont autant de projets que j'ai menés et qui ont confirmés ma passion
+            de ce métier.
+          </p>
+
+          <p class="mb-5 pb-2 lg:pb-0">
+            Aujourd'hui, de retour dans ma région natale à Saulgé, dans la Vienne, j'ai créé l'entreprise Bois Debout
+            afin de poursuivre ma carrière de manière indépendante. j'ai à cœur de travailler sur un territoire rural et
+            de mettre à profit mon expérience pour répondre aux demandes de tous.
+          </p>
+
+          <p>
+            J'accorde une grande importance à la préservation des méthodes traditionnelles tout en sélectionnant avec
+            soin les matériaux pour garantir un travail de qualité.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

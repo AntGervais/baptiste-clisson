@@ -1,0 +1,81 @@
+---
+import { Image } from '@astrojs/image/components';
+---
+
+<!-- Container for demo purpose -->
+<section class="mt-2">
+  <div class="container mx-auto px-5 py-2 lg:px-12 lg:pt-12">
+    <div class="-m-1 flex flex-wrap md:-m-2">
+      <div class="flex w-1/2 flex-wrap">
+        <div class="w-1/2 p-1 md:p-2">
+          <Image
+            src="/images/images_stock/outils-menuiserie-bois.webp"
+            class="block h-full w-full rounded-sm object-cover object-center"
+            alt="outils menuiserie bois"
+            width={340}
+            height={510}
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <div class="w-1/2 p-1 md:p-2">
+          <Image
+            class="block h-full w-full rounded-sm object-cover object-center"
+            src="/images/images_stock/amenagement-equipements-pour-travaux-artisanaux.webp"
+            alt="amenagement equipements pour travaux artisanaux"
+            width={340}
+            height={510}
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <div class="w-full p-1 md:p-2">
+          <Image
+            class="block h-full w-full rounded-sm object-cover object-center"
+            src="/images/images_stock/artisan-creant-piece-bois.webp"
+            alt="artisan creant piece bois"
+            width={700}
+            height={470}
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </div>
+      <div class="flex w-1/2 flex-wrap">
+        <div class="w-full p-1 md:p-2">
+          <Image
+            class="block h-full w-full rounded-sm object-cover object-center"
+            src="/images/images_stock/lame-scie-circulaire.webp"
+            alt="lame scie circulaire"
+            width={700}
+            height={610}
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <div class="w-1/2 p-1 md:p-2">
+          <Image
+            class="block h-full w-full rounded-sm object-cover object-center"
+            src="/images/images_stock/pile-planches-bois-dans-cour-bois-scierie.webp"
+            alt="pile planches bois dans cour bois scierie"
+            width={340}
+            height={370}
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <div class="w-1/2 p-1 md:p-2">
+          <Image
+            class="block h-full w-full rounded-sm object-cover object-center"
+            src="/images/images_stock/panneaux-mdf-interieur-entrepot.webp"
+            alt="panneaux mdf interieur entrepot"
+            width={340}
+            height={370}
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
