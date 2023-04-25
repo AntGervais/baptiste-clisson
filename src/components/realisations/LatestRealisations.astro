@@ -26,7 +26,7 @@ const posts = await findLatestRealisations({ count });
 <section class="mx-auto max-w-6xl py-16 lg:py-20">
   <div class="mb-4 flex flex-col lg:flex-row lg:justify-between">
     <div class="pl-6 md:max-w-lg">
-      {title && <h2 class="font-heading text-accent text-3xl font-bold sm:text-4xl" set:html={title} />}
+      {title && <h2 class="font-heading text-accent text-3xl sm:text-4xl" set:html={title} />}
     </div>
 
     {information && <p class="text-muted lg:max-w-md lg:text-sm" set:html={information} />}

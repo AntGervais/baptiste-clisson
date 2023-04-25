@@ -8,7 +8,7 @@ L'intervention sur du bâti ancien dépend de la nature de votre projet. Chaque 
 
 L'utilisation de bois de réemploi vous assure de donner du cachet et de préserver le caractère authentique de votre bâtiment.
 
-##Restauration / Réhabilitation, quelles sont les différences ?
+Restauration / Réhabilitation, quelles sont les différences ?
 
 La restauration du patrimoine a pour but de conserver le bâtiment dans ses caractéristiques historiques, basée sur un travail de recherche et du respect de son aspect d'origine. À la recherche d'un compromis entre l'ancien et le moderne.
 
