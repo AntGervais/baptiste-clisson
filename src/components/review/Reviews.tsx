@@ -50,9 +50,11 @@ export default function Reviews({ initialReviews }: ReviewsProps) {
     >
       {reviews ? <>
         {reviews.map((review) =>
-          <SwiperSlide>
-            <Review review={review} />
-          </SwiperSlide>
+          <div key={review.author_url}>
+            <SwiperSlide >
+              <Review review={review} />
+            </SwiperSlide>
+          </div>
         )}
       </> : null}
     </Swiper>
