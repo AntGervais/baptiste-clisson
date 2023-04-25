@@ -1,5 +1,5 @@
 ---
-image: /images/realisations/Charpente_Manoir_Bel_Noe/2.webp
+image: /images/realisations/realisations_restauration.webp
 title: Restauration et réhabilitation
 tag: restauration
 ---

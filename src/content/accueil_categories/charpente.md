@@ -1,5 +1,5 @@
 ---
-image: /images/realisations/Debord_de_toit_ferme_apparat/4.webp
+image: /images/realisations/Rehabilitation_maison_montreal/4.jpg
 title: Charpentes traditionnelles
 tag: charpente
 ---
