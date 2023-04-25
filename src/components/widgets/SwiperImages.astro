@@ -1,14 +1,10 @@
 ---
 import { Picture } from '@astrojs/image/components';
+import { ImagePath } from '~/types';
 import { findImage } from '~/utils/images';
 
-interface Image {
-  src: string;
-  alt: string;
-}
-
 export interface Props {
-  images: Image[];
+  images: ImagePath[];
 }
 const { images } = Astro.props;
 ---
@@ -16,7 +12,7 @@ const { images } = Astro.props;
 <div class="swiper p-5">
   <div class="swiper-wrapper">
     {
-      images.map(async (image: Image) => {
+      images.map(async (image: ImagePath) => {
         if (!image) return;
         const src = await findImage(image.src);
         if (!src) return;
