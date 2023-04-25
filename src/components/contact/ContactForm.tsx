@@ -103,7 +103,7 @@ export default function ContactForm() {
               <button
                 type="submit"
                 disabled={submitting || submitted}
-                className="btn w-full px-2 py-2 rounded-sm bg-secondary hover:text-primary text-beige font-semibold uppercase  disabled:text-gray-300"
+                className="btn w-full px-2 py-2 rounded-sm bg-primary hover:text-primary text-beige font-semibold uppercase  disabled:text-gray-300"
               >
                 Envoyer !
               </button>

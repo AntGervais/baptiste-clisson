@@ -73,7 +73,7 @@ export default function Input({
             'select-none',
             'rounded-sm',
             bg ? bg : 'bg-white', // The bg must be the color of the input's background
-            'px-2',
+            'px-2', 'py-1',
             size === 'sm' ? 'text-sm' : size === 'md' ? 'text-md' : 'text-lg',
             Boolean(error) ? 'text-red-400' : 'text-gray-500',
             'duration-300',
@@ -84,6 +84,7 @@ export default function Input({
             'peer-focus:-translate-y-5',
             'peer-focus:scale-75',
             'peer-focus:px-2',
+            'peer-focus:py-0',
             Boolean(error) ? 'focus:text-red-400' : 'peer-focus:text-green-600',
           ].join(' ')}
         >

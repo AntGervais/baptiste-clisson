@@ -131,12 +131,15 @@
 
 /* Swipper */
 .swiper-button-next,
-.swiper-button-prev {
+.swiper-button-prev,
+.swiper-btn-next,
+.swiper-btn-prev  {
   color: var(--aw-color-primary);
 }
 
-.swiper-button-prev:after,
-.swiper-button-next:after {
+
+.swiper-btn-prev:after,
+.swiper-btn-next:after {
   padding: 5px;
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.7);
@@ -144,19 +147,33 @@
 
 @media (min-width: 1024px) {
   /* Ajouter un style pour positionner les boutons à l'extérieur du slider */
-  .swiper-button-prev,
-  .swiper-button-next {
+  .swiper-btn-prev,
+  .swiper-btn-next {
     position: absolute;
     top: 45%;
     transform: translateY(-50%);
     z-index: 10;
   }
 
-  .swiper-button-prev {
+  .swiper-btn-prev {
     left: -32px; /* Ajuster la valeur en fonction de la distance souhaitée */
   }
 
-  .swiper-button-next {
+  .swiper-btn-next {
     right: -32px; /* Ajuster la valeur en fonction de la distance souhaitée */
   }
+}
+
+/* Review */
+.review-header {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  position: relative;
+}
+
+.review-header::after {
+  background-image: url(https://cdn.trustindex.io/assets/platform/Google/icon.svg);
+  background-size: 100% 100%;
 }

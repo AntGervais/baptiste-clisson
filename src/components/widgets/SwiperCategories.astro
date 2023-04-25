@@ -15,13 +15,6 @@ export interface Props {
 const { categories } = Astro.props;
 ---
 
-<style>
-  .swiper-button-next,
-  .swiper-button-prev {
-    color: var(--aw-color-primary);
-  }
-</style>
-
 <div class="swiper p-5">
   <div class="swiper-wrapper">
     {
@@ -32,8 +25,8 @@ const { categories } = Astro.props;
       ))
     }
   </div>
-  <div class="swiper-button-next"></div>
-  <div class="swiper-button-prev"></div>
+  <div class="swiper-btn-next"></div>
+  <div class="swiper-btn-prev"></div>
 </div>
 
 <script>
@@ -46,8 +39,8 @@ const { categories } = Astro.props;
     spaceBetween: 20,
     modules: [Navigation],
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: '.swiper-btn-next',
+      prevEl: '.swiper-btn-prev',
     },
     rewind: true,
     breakpoints: {

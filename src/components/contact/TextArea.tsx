@@ -75,10 +75,11 @@ export default function TextArea({
             'peer-placeholder-shown:top-6',
             'peer-placeholder-shown:-translate-y-1/2',
             'peer-placeholder-shown:scale-100',
-            'peer-focus:top-2',
+            'peer-focus:top-1',
             'peer-focus:-translate-y-4',
             'peer-focus:scale-75',
             'peer-focus:px-2',
+            'peer-focus:py-0',
             Boolean(error) ? 'focus:text-red-500' : 'peer-focus:text-green-600',
           ].join(' ')}
         >

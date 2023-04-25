@@ -26,11 +26,11 @@ const link = !REALISATIONS?.post?.disabled ? getPermalink(post.permalink, 'reali
           image && (
             <Picture
               src={image}
-              class="w-full object-cover object-center md:h-72 lg:h-80"
-              widths={[480]}
+              class="max-h-80 w-full object-cover object-center"
+              widths={[430]}
               width={430}
               height={400}
-              sizes="(max-width: 430) 400px, 430px"
+              sizes="(max-width: 430px) 400px, 430px"
               alt={post.title || post.accroche || ''}
               loading="lazy"
               decoding="async"

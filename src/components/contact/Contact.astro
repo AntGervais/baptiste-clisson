@@ -1,21 +1,28 @@
 ---
+import { Icon } from 'astro-icon';
 import ContactForm from '~/components/contact/ContactForm';
 ---
 
 <div class="container mx-auto px-6 pb-12">
-  <div class="text-center">
-    <h2 class="py-8 font-heading text-4xl font-bold text-secondary">Contactez moi !</h2>
-  </div>
-
   <div class="flex flex-wrap">
     <div class="w-full shrink-0 grow-0 basis-auto py-2 lg:w-2/3 lg:py-24">
       <div class="mur-rugeux rounded-sm shadow-lg">
         <div class="flex flex-wrap p-6 lg:p-12">
-          <p class="mb-2 text-xl font-semibold text-neutral-800">Blablabla</p>
-          <p class="mb-6">
+          <p class="mb-5 font-heading text-3xl font-bold text-secondary">Contactez moi !</p>
+          <p class="mb-5">
             Vous pouvez me faire part de votre projet par téléphone ou à en remplissant le formulaire ci-joint.
           </p>
-          <p class="mb-6">Je réalise une visite pour effectuer un devis sur mesure.</p>
+          <p class="mb-5">Je réalise une visite pour effectuer un devis sur mesure.</p>
+          <div class="w-full pt-2">
+            <a
+              class="btn-tel btn relative border-none bg-primary py-2.5 px-6 text-beige transition duration-150 ease-in-out hover:bg-beige hover:text-primary"
+              href="tel:+33630481737"
+              title="lien téléphone"
+            >
+              <Icon name="tabler:phone" class="mr-1 inline-block h-4 w-4" />
+              Téléphone
+            </a>
+          </div>
         </div>
       </div>
     </div>

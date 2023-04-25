@@ -7,7 +7,7 @@ import Features from '~/components/widgets/Features.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
 import LatestRealisations from '~/components/realisations/LatestRealisations.astro';
-import Review from '~/components/review/Review.astro';
+import Reviews from '~/components/review/Reviews.astro';
 import Contact from '~/components/contact/Contact.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 
@@ -67,14 +67,14 @@ const meta = {
           </div>
         </div>
 
-        <div class="w-full shrink-0 grow-0 basis-auto py-0 lg:w-2/3 lg:py-6">
+        <div class="w-full shrink-0 grow-0 basis-auto py-0 lg:w-2/3 lg:py-8">
           <div class="mur-rugeux rounded-sm shadow-lg lg:text-left">
             <div class="flex flex-wrap p-6 lg:p-12 lg:pl-24">
-              <h2 class="mb-6 font-heading text-3xl font-bold text-secondary">Baptiste Clisson, artisan charpentier</h2>
-              <p class="mb-6">
+              <h2 class="mb-5 font-heading text-3xl font-bold text-secondary">Baptiste Clisson, artisan charpentier</h2>
+              <!-- <p class="mb-5">
                 Bienvenue sur le site internet de Bois Debout, mon entreprise de charpente traditionnelle située à
                 Saulgé, dans la Vienne.
-              </p>
+              </p> -->
 
               <div class="flex h-full w-full items-center justify-center">
                 <Image
@@ -88,53 +88,25 @@ const meta = {
                 />
               </div>
 
-              <p>
-                Je m'appelle Baptiste Clisson et je suis passionné par mon métier. Fort de mon expérience et de ma
-                maîtrise des techniques traditionnelles, je réalise toutes sortes de projets de charpente, d'ossature et
-                d'escalier sur mesure.
+              <p class="mb-5 pb-2 lg:pb-0">
+                Depuis 10 ans, je multiplie les expériences et acquiers des compétences en tant que charpentier. Un
+                brevet professionnel en poche, j'ai eu la chance de participer à des ouvrages ambitieux et variés au
+                sein d'entreprises de qualité et d'équipes passionnées. La restauration de bâtiments en pans de bois
+                dans le centre historique de Rennes, la réhabilitation d'une maison sur le Vieux Port de Montréal, mais
+                aussi la création de charpentes et d'escaliers sont autant de projets que j'ai menés et qui ont
+                confirmés ma passion de ce métier.
               </p>
 
-              <div class="mx-auto my-6 flex flex-col md:flex-row md:justify-around xl:justify-start">
-                <p class="mx-auto mb-4 flex items-center md:mx-0 md:mb-2 md:mr-16 lg:mb-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="mr-2 h-4 w-4">
-                    <path
-                      fill="currentColor"
-                      d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
-                    >
-                    </path>
-                  </svg>
-                  Écoute
-                </p>
+              <p class="mb-5 pb-2 lg:pb-0">
+                Aujourd'hui, de retour dans ma région natale à Saulgé, dans la Vienne, j'ai créé l'entreprise Bois
+                Debout afin de poursuivre ma carrière de manière indépendante. j'ai à cœur de travailler sur un
+                territoire rural et de mettre à profit mon expérience pour répondre aux demandes de tous.
+              </p>
 
-                <p class="mx-auto mb-4 flex items-center md:mx-0 md:mb-2 md:mr-16 lg:mb-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="mr-2 h-4 w-4">
-                    <path
-                      fill="currentColor"
-                      d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
-                    >
-                    </path>
-                  </svg>
-                  Méthodes traditionnelles
-                </p>
-
-                <p class="mx-auto mb-2 flex items-center md:mx-0 lg:mb-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="mr-2 h-4 w-4">
-                    <path
-                      fill="currentColor"
-                      d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
-                    >
-                    </path>
-                  </svg>
-                  Sur mesure
-                </p>
-              </div>
-
-              <p class="mb-6 pb-2 lg:pb-0">
+              <p>
                 J'accorde une grande importance à la préservation des méthodes traditionnelles tout en sélectionnant
                 avec soin les matériaux pour garantir un travail de qualité.
               </p>
-
-              <p>Je suis à votre écoute pour concevoir votre projet selon vos besoins.</p>
             </div>
           </div>
         </div>
@@ -158,7 +130,7 @@ const meta = {
 
   <div class="decale-ancre" id="avis-clients">
     <section data-aos="fade-up">
-      <Review />
+      <Reviews />
     </section>
   </div>
 
