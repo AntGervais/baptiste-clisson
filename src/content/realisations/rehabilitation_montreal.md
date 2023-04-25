@@ -3,6 +3,7 @@ title: Réhabilitation d'une maison
 image: /images/realisations/Rehabilitation_maison_montreal/1.jpg
 tags:
   - restauration
+  - charpente
 publishDate: '2023-04-24T00:00:00.000Z'
 accroche: Réhabilitation d'une maison en centre ancien de Montréal
 ---

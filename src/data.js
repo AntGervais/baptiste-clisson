@@ -40,13 +40,12 @@ export const footerData = {
     { text: 'Privacy Policy', href: getPermalink('/privacy') },
   ],
   socialLinks: [
-    { ariaLabel: 'Google Maps', icon: 'tabler:brand-google', href: '#' },
-    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
+    { ariaLabel: 'Google Maps', icon: 'tabler:brand-google', href: 'https://goo.gl/maps/mDJCT3EZbiL9QHvw8' },
+    // { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
     // { ariaLabel: 'Twitter', icon: 'tabler:brand-twitter', href: '#' },
     // { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
   ],
   footNote: `
-    
-    Made by <a class="text-primary hover:underline" href="https://linkedin.com/in/antoine-gervais">Antoine Gervais</a> · All rights reserved.
+    Site réalisé par <a class="text-primary hover:underline" href="https://linkedin.com/in/antoine-gervais">Antoine Gervais</a>.
   `,
 };

@@ -20,7 +20,7 @@ const { tags, class: className = 'text-base' } = Astro.props;
           {REALISATIONS?.tag?.disabled ? (
             tag
           ) : (
-            <a class="py-0.5 px-2" href={getPermalink(tag, 'tag')} title={tag}>
+            <a class="py-0.5 px-2 text-sm capitalize" href={getPermalink(tag, 'tag')} title={tag}>
               {tag}
             </a>
           )}
