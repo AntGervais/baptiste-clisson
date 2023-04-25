@@ -46,6 +46,7 @@ export default function Reviews({ initialReviews }: ReviewsProps) {
       }}
       modules={[Navigation]}
       navigation={true}
+      rewind={true}
     >
       {reviews ? <>
         {reviews.map((review) =>
