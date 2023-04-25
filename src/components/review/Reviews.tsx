@@ -51,7 +51,7 @@ export default function Reviews({ initialReviews }: ReviewsProps) {
       {reviews ? <>
         {reviews.map((review) =>
           <div key={review.author_url}>
-            <SwiperSlide >
+            <SwiperSlide>
               <Review review={review} />
             </SwiperSlide>
           </div>

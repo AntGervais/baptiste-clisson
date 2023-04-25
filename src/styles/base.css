@@ -107,6 +107,28 @@
   background-size: cover;
 }
 
+
+/* Swipper */
+.swiper-button-next,
+.swiper-button-prev  {
+  color: var(--aw-color-primary);
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  font-size: 35px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.swiper-button-next{
+  right: -2px;
+}
+.swiper-button-prev{
+  left: -2px; 
+}
+
 @keyframes activitesFadeIn {
   0% {
     opacity: 0;
@@ -127,42 +149,4 @@
   100% {
     transform: translateY(0%);
   }
-}
-
-/* Swipper */
-.swiper-button-next,
-.swiper-button-prev  {
-  color: var(--aw-color-primary);
-}
-
-
-.swiper-button-prev:after,
-.swiper-button-next:after {
-  font-size: 35px;
-  padding: 5px;
-  border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.7);
-}
-
-
-
-.swiper-button-next{
-  right: -2px;
-}
-.swiper-button-prev{
-  left: -2px; 
-}
-
-/* Review */
-.review-header {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-  position: relative;
-}
-
-.review-header::after {
-  background-image: url(https://cdn.trustindex.io/assets/platform/Google/icon.svg);
-  background-size: 100% 100%;
 }
