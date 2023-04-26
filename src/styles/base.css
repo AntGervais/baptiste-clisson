@@ -102,11 +102,15 @@
   animation-delay: 700ms;
 }
 
-.background_wood{
+.bg-wood{
   background: url(../images/images_stock/fond_ecorce.webp) #ffffff;
   background-size: cover;
 }
 
+.bg-planche{
+  background: url(../images/images_stock/tableau-realise-planches.webp) #ffffff;
+  background-size: cover;
+}
 
 /* Swipper */
 .swiper-button-next,

@@ -24,20 +24,20 @@ export const headerData = {
 };
 
 export const footerData = {
-  links: [
-    {
-      title: 'Plan du site',
-      links: [
-        { text: 'Présentation', href: SITE.basePathname + '#presentation' },
-        { text: 'Réalisations', href: SITE.basePathname + '#realisations' },
-        { text: 'Contact', href: SITE.basePathname + '#contact' },
-        { text: 'Avis clients', href: SITE.basePathname + '#avis-clients' },
-      ],
-    },
-  ],
+  // links: [
+  //   {
+  //     title: 'Plan du site',
+  //     links: [
+  //       { text: 'Présentation', href: SITE.basePathname + '#presentation' },
+  //       { text: 'Réalisations', href: SITE.basePathname + '#realisations' },
+  //       { text: 'Contact', href: SITE.basePathname + '#contact' },
+  //       { text: 'Avis clients', href: SITE.basePathname + '#avis-cltermients' },
+  //     ],
+  //   },
+  // ],
   secondaryLinks: [
-    { text: 'Terms', href: getPermalink('/terms') },
-    { text: 'Privacy Policy', href: getPermalink('/privacy') },
+    { text: 'CGV', href: getPermalink('/cgv') },
+    // { text: 'Privacy Policy', href: getPermalink('/privacy') },
   ],
   socialLinks: [
     { ariaLabel: 'Google Maps', icon: 'tabler:brand-google', href: 'https://goo.gl/maps/mDJCT3EZbiL9QHvw8' },

@@ -1,9 +1,9 @@
 ---
-title: 'Terms and Conditions'
+title: 'CGV'
 layout: '~/layouts/MarkdownLayout.astro'
 ---
 
-_Last updated_: January 06, 2023
+_Last updated_: January 01, 2023
 
 Please read these terms and conditions carefully before using Our Service.
 
