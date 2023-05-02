@@ -1,3 +1,10 @@
+interface Image {
+  src: string;
+  width?: number;
+  height?: number;
+  format?: string;
+}
+
 export interface Realisation {
   id: string;
   slug: string;
@@ -5,7 +12,7 @@ export interface Realisation {
   title: string;
   accroche: string;
   description: string;
-  image: string;
+  image: Image;
   permalink?: string;
   tags?: Array<string>;
   Content: unknown;

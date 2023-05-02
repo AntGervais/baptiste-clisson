@@ -1,0 +1,13 @@
+---
+import Lightbox from './lightbox.astro';
+
+export interface Props {
+  images: string[];
+}
+
+const { images } = Astro.props;
+---
+
+<div id="images" class="not-prose block w-full" itemscope itemtype="http://schema.org/ImageGallery">
+  <Lightbox id="images" images={images} />
+</div>

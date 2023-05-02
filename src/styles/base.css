@@ -46,7 +46,7 @@
 }
 
 .mur-rugeux {
-  background: url(../images/images_stock/paper_texture.webp) antiquewhite;
+  background: url(../images/images-stock/paper_texture.webp) antiquewhite;
 }
 
 #header.scroll {
@@ -103,12 +103,12 @@
 }
 
 .bg-wood{
-  background: url(../images/images_stock/fond_ecorce.webp) #ffffff;
+  background: url(../images/images-stock/fond_ecorce.webp) #ffffff;
   background-size: cover;
 }
 
 .bg-planche{
-  background: url(../images/images_stock/tableau-realise-planches.webp) #ffffff;
+  background: url(../images/images-stock/tableau-realise-planches.webp) #ffffff;
   background-size: cover;
 }
 

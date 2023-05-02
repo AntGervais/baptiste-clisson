@@ -1,5 +1,5 @@
 ---
-image: /images/realisations/realisations_restauration.webp
+image: /images/realisations/realisations-restauration.webp
 title: Restauration et réhabilitation
 tag: restauration
 ---

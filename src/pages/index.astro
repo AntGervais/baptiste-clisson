@@ -3,13 +3,9 @@ import { SITE } from '~/config.mjs';
 import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
-import Features from '~/components/widgets/Features.astro';
-import Steps from '~/components/widgets/Steps.astro';
-import Content from '~/components/widgets/Content.astro';
 import LatestRealisations from '~/components/realisations/LatestRealisations.astro';
 import Reviews from '~/components/review/Reviews.astro';
 import Contact from '~/components/contact/Contact.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
 import Gallery from '~/components/widgets/Gallery.astro';
 import Presentation from '~/components/widgets/Presentation.astro';
 
@@ -45,7 +41,7 @@ const meta = {
     </Fragment>
     @
     <Fragment slot="activities">
-      <div class="mt-10 mb-3">
+      <div class="mb-3 mt-10">
         <SwiperCategories categories={categories} />
       </div>
     </Fragment>
@@ -56,11 +52,11 @@ const meta = {
     <Presentation
       title="Baptiste Clisson, artisan charpentier"
       image={{
-        src: '/images/Baptiste Clisson/Baptiste Clisson 600px.webp',
+        src: '/images/baptiste-clisson/Baptiste Clisson 600px.webp',
         alt: 'Baptiste Clisson - Charpentier Traditionnel',
       }}
       imageSmall={{
-        src: '/images/Baptiste Clisson/Baptiste Clisson Small.webp',
+        src: '/images/baptiste-clisson/Baptiste Clisson Small.webp',
         alt: 'Baptiste Clisson - Charpentier Traditionnel',
       }}
     />

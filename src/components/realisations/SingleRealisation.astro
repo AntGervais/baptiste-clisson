@@ -5,6 +5,8 @@ import { Picture } from '@astrojs/image/components';
 import Tags from '~/components/realisations/Tags.astro';
 import SocialShare from '~/components/common/SocialShare.astro';
 
+import Gallery from '~/components/photoswipe/Gallery.astro';
+
 import { getFormattedDate } from '~/utils/utils';
 
 import type { Realisation } from '~/types';
@@ -15,59 +17,66 @@ export interface Props {
 }
 
 const { post, url } = Astro.props;
+
+// i want just the last folder of the post.image.src without the leading slash
+const folder = post.image ? post.image.src.split('/').slice(-2, -1)[0] : null;
 ---
 
 <section class="mx-auto py-8 sm:py-16 lg:py-20">
   <article>
     <header class={post.image ? '' : ''}>
-      <div class="mx-auto mt-0 mb-2 flex max-w-3xl flex-col justify-between px-4 sm:flex-row sm:items-center sm:px-6">
+      <div class="mx-auto mb-2 mt-0 flex max-w-4xl flex-col justify-between px-4 sm:flex-row sm:items-center sm:px-6">
         <!-- <p>
           <Icon name="tabler:clock" class="w-4 h-4 inline-block -mt-0.5" />
           <time datetime={String(post.publishDate)}>{getFormattedDate(post.publishDate)}</time>
         </p> -->
       </div>
-      <h1 class="leading-tighter mx-auto max-w-3xl px-4 font-heading text-4xl text-accent sm:px-6 md:text-5xl">
+      <h1 class="leading-tighter mx-auto max-w-4xl px-4 font-heading text-4xl text-accent sm:px-6 md:text-5xl">
         {post.title}
       </h1>
-      <p class="text-muted mx-auto mt-4 mb-8 max-w-3xl px-4 text-justify text-xl sm:px-6 md:text-2xl">
+      <p class="text-muted mx-auto mb-8 mt-4 max-w-4xl px-4 text-justify text-xl sm:px-6 md:text-2xl">
         {post.accroche}
       </p>
 
       {
         post.image ? (
           <Picture
-            src={post.image}
+            src={post.image.src}
             class="mx-auto mb-6 max-w-full bg-gray-400 sm:rounded-sm lg:max-w-6xl "
-            widths={[400, 900]}
-            sizes="(max-width: 900px) 400px, 900px"
+            widths={[800, 1060]}
+            sizes="(max-width: 1060px) 800px, 1060px"
             alt={post.title || post.accroche || ''}
             loading="eager"
             aspectRatio={16 / 9}
-            width={900}
-            height={506}
+            width={1060}
+            height={800}
             loading="eager"
             decoding="async"
             background={undefined}
           />
         ) : (
-          <div class="mx-auto max-w-3xl px-4 sm:px-6">
+          <div class="mx-auto max-w-4xl px-4 sm:px-6">
             <div class="border-t " />
           </div>
         )
       }
     </header>
     <div
-      class="prose-md prose-headings:leading-tighter prose prose-lg mx-auto mt-8 max-w-3xl px-6 lg:prose-xl prose-headings:font-heading prose-headings:font-bold prose-a:text-primary prose-img:rounded-sm prose-img:shadow-lg sm:px-6"
+      class="prose-md prose-headings:leading-tighter prose prose-lg mx-auto mt-8 max-w-4xl px-6 lg:prose-xl prose-headings:font-heading prose-headings:font-bold prose-a:text-primary prose-img:rounded-sm prose-img:shadow-lg sm:px-6"
     >
       <>
         {/* @ts-ignore */}
         <post.Content />
       </>
+
+      <div>
+        {folder ? <Gallery folder={folder} /> : null}
+      </div>
     </div>
   </article>
 
-  <div class="mx-auto mt-8 flex max-w-3xl flex-col justify-between px-6 sm:flex-row sm:px-6">
+  <div class="mx-auto mt-8 flex max-w-4xl flex-col justify-between px-6 sm:flex-row sm:px-6">
     <Tags tags={post.tags} class="mr-5" />
-    <SocialShare url={url} text={post.title} class="mt-5 sm:mt-1 align-middle text-gray-500" />
+    <SocialShare url={url} text={post.title} class="mt-5 align-middle text-gray-500 sm:mt-1" />
   </div>
 </section>
