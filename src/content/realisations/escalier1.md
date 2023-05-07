@@ -5,6 +5,7 @@ tags:
   - escalier
 publishDate: '2023-01-12T00:00:00.000Z'
 accroche: Escalier massif sur-mesure
+folder: Escalier1
 ---
 
 Fabrication des marches et contremarches

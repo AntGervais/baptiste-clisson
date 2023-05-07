@@ -79,6 +79,11 @@ export default defineConfig({
             label: 'Accroche',
           },
           {
+            type: 'string',
+            name: 'folder',
+            label: 'Dossier',
+          },
+          {
             type: 'rich-text',
             name: 'description',
             label: 'Description',

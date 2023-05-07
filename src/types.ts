@@ -11,6 +11,7 @@ export interface Realisation {
   publishDate: Date;
   title: string;
   accroche: string;
+  folder: string;
   description: string;
   image: Image;
   permalink?: string;

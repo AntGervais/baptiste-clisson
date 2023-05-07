@@ -18,8 +18,9 @@ export interface Props {
 
 const { post, url } = Astro.props;
 
-// i want just the last folder of the post.image.src without the leading slash
-const folder = post.image ? post.image.src.split('/').slice(-2, -1)[0] : null;
+// si post.folder est vide, on recupère le dossier de l'image
+// sinon on récupère le dossier de post.folder
+const folder = post.folder ? post.folder : post.image ? post.image.src.split('/').slice(-2, -1)[0] : null;
 ---
 
 <section class="mx-auto py-8 sm:py-16 lg:py-20">
