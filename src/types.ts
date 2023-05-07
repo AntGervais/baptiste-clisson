@@ -5,6 +5,15 @@ interface Image {
   format?: string;
 }
 
+export interface AccueilCategories {
+  id: string;
+  slug: string;
+  image: string;
+  title: string;
+  tag: string;
+  Content: unknown;
+}
+
 export interface Realisation {
   id: string;
   slug: string;
@@ -13,7 +22,7 @@ export interface Realisation {
   accroche: string;
   folder: string;
   description: string;
-  image: Image;
+  image: string;
   permalink?: string;
   tags?: Array<string>;
   Content: unknown;

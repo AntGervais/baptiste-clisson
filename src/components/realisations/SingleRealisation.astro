@@ -20,7 +20,7 @@ const { post, url } = Astro.props;
 
 // si post.folder est vide, on recupère le dossier de l'image
 // sinon on récupère le dossier de post.folder
-const folder = post.folder ? post.folder : post.image ? post.image.src.split('/').slice(-2, -1)[0] : null;
+const folder = post.folder ? post.folder : post.image ? post.image.split('/').slice(-2, -1)[0] : null;
 ---
 
 <section class="mx-auto py-8 sm:py-16 lg:py-20">
@@ -42,7 +42,7 @@ const folder = post.folder ? post.folder : post.image ? post.image.src.split('/'
       {
         post.image ? (
           <Picture
-            src={post.image.src}
+            src={post.image}
             class="mx-auto mb-6 max-w-full bg-gray-400 sm:rounded-sm lg:max-w-6xl "
             widths={[800, 1060]}
             sizes="(max-width: 1060px) 800px, 1060px"

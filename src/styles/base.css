@@ -112,6 +112,10 @@
   background-size: cover;
 }
 
+.categorie-content p{
+  margin-bottom: 20px;
+}
+
 /* Swipper */
 .swiper-button-next,
 .swiper-button-prev  {
