@@ -1,21 +1,19 @@
 ---
-import { AccueilCategories } from '~/types';
-
-export interface Props {
-  categorie: AccueilCategories;
-}
-
-const { categorie } = Astro.props;
+const {
+  title = await Astro.slots.render('default'),
+  subtitle = await Astro.slots.render('subtitle'),
+  category,
+} = Astro.props;
 ---
 
 <header class="mx-auto mb-8 max-w-3xl md:mb-16">
+  <h1 class="leading-tighter font-heading text-4xl capitalize text-accent md:text-5xl" set:html={title} />
+  {subtitle && <div class="categorie-content mx-auto mt-3 text-xl font-medium md:mt-6" set:html={subtitle} />}
   {
-    categorie && categorie.title && (
-      <h1 class="leading-tighter font-heading text-accent text-4xl capitalize md:text-5xl" set:html={categorie.title} />
+    category && (
+      <div class="categorie-content mx-auto mt-3 text-xl font-medium md:mt-6">
+        <category.Content />
+      </div>
     )
   }
-  <div class="categorie-content mx-auto mt-3 text-xl font-medium md:mt-6">
-    {/* @ts-ignore */}
-    <categorie.Content />
-  </div>
 </header>
