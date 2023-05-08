@@ -14,12 +14,8 @@ const { categorie } = Astro.props;
       <h1 class="leading-tighter font-heading text-accent text-4xl capitalize md:text-5xl" set:html={categorie.title} />
     )
   }
-  {
-    categorie.Content && (
-      <div class="categorie-content mx-auto mt-3 text-xl font-medium md:mt-6">
-        {/* @ts-ignore */}
-        <categorie.Content />
-      </div>
-    )
-  }
+  <div class="categorie-content mx-auto mt-3 text-xl font-medium md:mt-6">
+    {/* @ts-ignore */}
+    <categorie.Content />
+  </div>
 </header>
