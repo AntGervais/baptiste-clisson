@@ -1,5 +1,5 @@
 ---
-title: Debord de toit avec sa ferme d’apparat
+title: Débord de toit avec sa ferme d’apparat
 image: /images/realisations/Debord-de-toit-ferme-apparat/5.webp
 tags:
   - charpente
