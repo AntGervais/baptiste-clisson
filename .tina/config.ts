@@ -81,7 +81,7 @@ export default defineConfig({
           {
             type: 'string',
             name: 'folder',
-            label: 'Dossier',
+            label: 'Nom du dossier des images : Media Manager -> /realisations',
           },
           {
             type: 'rich-text',
