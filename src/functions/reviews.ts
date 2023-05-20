@@ -41,7 +41,7 @@ const handler: Handler = async ({ httpMethod }) => {
       return {
         statusCode: 500,
         body: JSON.stringify({
-          message: (err as Error).message,
+          error: err.message,
         }),
       };
     });
