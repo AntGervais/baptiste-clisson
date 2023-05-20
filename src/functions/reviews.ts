@@ -13,8 +13,6 @@ const headers = { 'Content-Type': 'application/json' };
 const placesUrl = 'https://maps.googleapis.com/maps/api/place/details/json';
 const placesQuery = `${placesUrl}?place_id=${GOOGLE_MAPS_PLACE_ID}&key=${GOOGLE_MAPS_API_KEY}&reviews_sort=newest&fields=reviews&reviews_no_translations=true`;
 
-console.log(`placesQuery:`, placesQuery);
-
 /**
  * Middleman function to fetch reviews from Google Places API because it
  * doesn't support CORS and this is much faster than using a proxy.
@@ -41,7 +39,7 @@ const handler: Handler = async ({ httpMethod }) => {
       return {
         statusCode: 500,
         body: JSON.stringify({
-          error: err.message,
+          message: (err as Error).message,
         }),
       };
     });
