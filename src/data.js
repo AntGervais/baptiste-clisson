@@ -40,8 +40,8 @@ export const footerData = {
     // { text: 'Privacy Policy', href: getPermalink('/privacy') },
   ],
   socialLinks: [
-    { ariaLabel: 'Google Maps', icon: 'tabler:brand-google', href: 'https://goo.gl/maps/mDJCT3EZbiL9QHvw8' },
-    // { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
+    { ariaLabel: 'Google Maps', icon: 'tabler:map-pin', href: 'https://goo.gl/maps/mDJCT3EZbiL9QHvw8' },
+    { ariaLabel: 'Administration', icon: 'tabler:settings', href: SITE.origin + '/admin/index.html' },
     // { ariaLabel: 'Twitter', icon: 'tabler:brand-twitter', href: '#' },
     // { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
   ],
