@@ -73,7 +73,7 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '' } = Ast
                   class="inline-flex items-center rounded-sm p-2.5 text-sm hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200"
                   aria-label={ariaLabel}
                   href={href}
-                  title="lien social"
+                  title={text}
                 >
                   {icon && <Icon name={icon} class="h-5 w-5" />}
                   <Fragment set:html={text} />
