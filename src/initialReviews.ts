@@ -1,5 +1,13 @@
 const data: Review[] = [
   {
+    author_name: 'Lucas Beaulieu',
+    author_url: '',
+    relative_time_description: 'il y a un mois',
+    profile_photo_url: '',
+    rating: 5,
+    text: "Nous avons sollicité Bois Debout pour la création d'un escalier sur mesure dans notre maison. Le résultat est superbe et s'intègre parfaitement à notre intérieur. Baptiste a été à l'écoute de nos besoins et a su nous conseiller tout au long du projet. Un grand merci à lui !",
+  },
+  {
     author_name: 'Mathieu Labarthe',
     author_url: '',
     relative_time_description: 'il y a un mois',
@@ -19,7 +27,7 @@ const data: Review[] = [
     author_name: 'Sophie Corbelin',
     author_url: '',
     profile_photo_url: '',
-    relative_time_description: 'il y a trois mois',
+    relative_time_description: 'il y a six mois',
     rating: 5,
     text: "Je tenais à remercier Baptiste et l'équipe de Bois Debout pour la construction de notre charpente traditionnelle. Le résultat est à la hauteur de nos attentes, et même au-delà. Le respect des délais, la qualité des matériaux utilisés et la finition impeccable témoignent du professionnalisme de cette entreprise. Je n'hésiterai pas à faire de nouveau appel à Bois Debout pour de futurs projets !",
   },
@@ -27,7 +35,7 @@ const data: Review[] = [
     author_name: 'Camille Gavard',
     author_url: '',
     profile_photo_url: '',
-    relative_time_description: 'il y a trois mois',
+    relative_time_description: 'il y a un an',
     rating: 5,
     text: "J'ai contacté Baptiste pour la restauration d'une maison à pans de bois. Son expertise et son amour du métier ont rendu cette expérience très agréable. Le travail effectué est de grande qualité et a redonné tout son charme à notre demeure. Merci à Bois Debout pour ce travail exceptionnel !",
   },
