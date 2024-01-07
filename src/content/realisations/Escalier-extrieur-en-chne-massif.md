@@ -5,5 +5,6 @@ accroche: Escalier extérieur en chêne massif
 folder: escalier-exterieur-comtois
 tags:
   - escalier
+publishDate: 2024-01-06T23:00:00.000Z
 ---
 
