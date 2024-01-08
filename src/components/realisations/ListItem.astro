@@ -1,5 +1,5 @@
 ---
-import { Picture } from '@astrojs/image/components';
+import { Picture } from 'astro:assets';
 import Tags from '~/components/realisations/Tags.astro';
 
 import { REALISATIONS } from '~/config.mjs';
@@ -33,7 +33,6 @@ const link = !REALISATIONS?.post?.disabled ? getPermalink(post.permalink, 'reali
               widths={[400, 900]}
               sizes="(max-width: 900px) 400px, 900px"
               alt={post.title || post.accroche || ''}
-              aspectRatio="16:9"
               loading="lazy"
               decoding="async"
             />
