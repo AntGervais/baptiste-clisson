@@ -48,15 +48,11 @@ export default function Reviews({ initialReviews }: ReviewsProps) {
       navigation={true}
       rewind={true}
     >
-      {reviews ? <>
-        {reviews.map((review) =>
-          <div key={review.author_name}>
-            <SwiperSlide>
-              <Review review={review} />
-            </SwiperSlide>
-          </div>
-        )}
-      </> : null}
+      {reviews.map((review, index) =>
+        <SwiperSlide key={index}>
+          <Review review={review} />
+        </SwiperSlide>
+      )}
     </Swiper>
-  </div>)
+  </div >)
 }
