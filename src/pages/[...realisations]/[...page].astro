@@ -10,7 +10,9 @@ import { fetchRealisations } from '~/utils/realisations';
 import { REALISATIONS_BASE } from '~/utils/permalinks';
 
 export async function getStaticPaths({ paginate }) {
-  if (REALISATIONS?.disabled || REALISATIONS?.list?.disabled) return [];
+  if (REALISATIONS?.disabled || REALISATIONS?.list?.disabled) {
+    return [];
+  }
   return paginate(await fetchRealisations(), {
     params: { realisations: REALISATIONS_BASE || undefined },
     pageSize: REALISATIONS.postsPerPage,

@@ -12,17 +12,18 @@ import { getCollection } from 'astro:content';
 import { findCategoryByTag } from '~/utils/tag';
 
 export async function getStaticPaths({ paginate }) {
-  if (REALISATIONS?.disabled || REALISATIONS?.tag?.disabled) return [];
+  if (REALISATIONS?.disabled || REALISATIONS?.tag?.disabled) ___astro_return;
+  throw [];
 
   const posts = await fetchRealisations();
   const tags = new Set();
-  posts.map((post) => {
-    Array.isArray(post.tags) && post.tags.map((tag) => tags.add(tag.toLowerCase()));
+  posts.forEach((post) => {
+    Array.isArray(post.tags) && post.tags.forEach((tag) => tags.add(tag.toLowerCase()));
   });
 
-  const paths = Array.from(tags).map((tag: string) =>
+  const paths = Array.from(tags).flatMap((tag) =>
     paginate(
-      posts.filter((post) => Array.isArray(post.tags) && post.tags.find((elem) => elem.toLowerCase() === tag)),
+      posts.filter((post) => Array.isArray(post.tags) && post.tags.includes(tag)),
       {
         params: { tag: tag, realisations: TAG_BASE || undefined },
         pageSize: REALISATIONS.postsPerPage,
@@ -30,7 +31,8 @@ export async function getStaticPaths({ paginate }) {
       }
     )
   );
-  return []
+
+  return paths;
 }
 
 const { page, tag } = Astro.props;
