@@ -153,8 +153,3 @@
     transform: translateY(0%);
   }
 }
-
-.swiper .swiper-button-next,
-.swiper .swiper-button-prev  {
-  color: var(--aw-color-primary);
-} 

@@ -1,5 +1,5 @@
 ---
-import { Picture } from 'astro:assets';
+import { Picture } from '@astrojs/image/components';
 import { ImagePath } from '~/types';
 import { findImage } from '~/utils/images';
 
@@ -23,6 +23,7 @@ const { images } = Astro.props;
               class="rounded-sm bg-gray-400 shadow-lg "
               widths={[400, 768]}
               sizes="(max-width: 767px) 400px, 768px"
+              aspectRatio="16:9"
               loading="eager"
               alt={image.alt || 'Image Hero'}
             />

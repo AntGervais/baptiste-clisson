@@ -1,10 +1,11 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-import { defineConfig, squooshImageService } from 'astro/config';
+import { defineConfig } from 'astro/config';
 
 import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
+import image from '@astrojs/image';
 import partytown from '@astrojs/partytown';
 import compress from 'astro-compress';
 import react from '@astrojs/react';
@@ -23,16 +24,6 @@ export default defineConfig({
 
   output: 'static',
 
-  image: {
-    service: squooshImageService(),
-  },
-
-  scopedStyleStrategy: "where",
-
-  build: {
-    inlineStylesheets: "never"
-  },
-
   markdown: {
     // remarkPlugins: [readingTimeRemarkPlugin],
   },
@@ -44,6 +35,9 @@ export default defineConfig({
       },
     }),
     sitemap(),
+    image({
+      serviceEntryPoint: '@astrojs/image/sharp',
+    }),
 
     ...whenExternalScripts(() =>
       partytown({
@@ -63,9 +57,7 @@ export default defineConfig({
       logger: 1,
     }),
 
-    react({
-      include: ['**/react/*']
-    }),
+    react(),
   ],
 
   vite: {

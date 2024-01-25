@@ -1,6 +1,5 @@
 /// <reference path="../.astro/types.d.ts" />
- /// <reference types="astro/client" />
-
+/// <reference types="@astrojs/image/client" />
 
 declare global {
   export type Review = {
