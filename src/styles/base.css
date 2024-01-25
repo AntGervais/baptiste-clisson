@@ -114,7 +114,7 @@
 /* Swipper */
 .swiper-button-next,
 .swiper-button-prev  {
-  color: var(--aw-color-primary) !important;
+  color: var(--aw-color-primary);
 }
 
 .swiper-button-prev:after,
@@ -153,3 +153,8 @@
     transform: translateY(0%);
   }
 }
+
+.swiper .swiper-button-next,
+.swiper .swiper-button-prev  {
+  color: var(--aw-color-primary);
+} 

@@ -52,7 +52,7 @@
     "@types/react-dom": "^18.2.4",
     "aos": "^2.3.4",
     "astro-google-fonts-optimizer": "^0.2.2",
-    "photoswipe": "^5.3.7",
+    "photoswipe": "^5.4.3",
     "photoswipe-dynamic-caption-plugin": "^1.2.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
