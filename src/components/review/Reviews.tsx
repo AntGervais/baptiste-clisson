@@ -5,6 +5,17 @@ import Review from './Review';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper';
 
+function stringToSlug(str) {
+  const slug = str
+    .toLowerCase()
+    .replace(/[\s_]+/g, '-') // Remplace les espaces et les underscores par des tirets
+    .replace(/[^\w-]+/g, '') // Supprime tous les caractères non alphanumériques sauf les tirets
+    .replace(/--+/g, '-') // Remplace les tirets multiples par un seul tiret
+    .replace(/^-+|-+$/g, ''); // Supprime les tirets en début et en fin de chaîne
+  console.log('slug:', slug)
+  return slug
+}
+
 type ReviewsProps = {
   initialReviews?: Review[]
 }
@@ -25,7 +36,7 @@ export default function Reviews({ initialReviews }: ReviewsProps) {
           });
         }
       } catch (err) {
-        throw new Error(err);
+        setReviews((initialReviews) => [...initialReviews]);
       }
     }
 
@@ -49,7 +60,7 @@ export default function Reviews({ initialReviews }: ReviewsProps) {
       rewind={true}
     >
       {reviews.map((review, index) =>
-        <SwiperSlide key={index}>
+        <SwiperSlide key={`${index}_${stringToSlug(review.author_name)}`}>
           <Review review={review} />
         </SwiperSlide>
       )}

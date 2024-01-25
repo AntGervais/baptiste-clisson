@@ -27,10 +27,11 @@ export default defineConfig({
     service: squooshImageService(),
   },
 
-  scopedStyleStrategy: "where",
+  scopedStyleStrategy: 'where',
 
   build: {
-    inlineStylesheets: "never"
+    inlineStylesheets: 'never',
+    functionPerRoute: true,
   },
 
   markdown: {
@@ -64,7 +65,7 @@ export default defineConfig({
     }),
 
     react({
-      include: ['**/react/*']
+      include: ['**/react/*'],
     }),
   ],
 
