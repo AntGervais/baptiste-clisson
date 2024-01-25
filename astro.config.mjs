@@ -24,13 +24,17 @@ export default defineConfig({
     config: {
       applyBaseStyles: false
     }
-  }), sitemap(), image({
+  }),
+  sitemap(),
+  image({
     serviceEntryPoint: '@astrojs/image/sharp'
-  }), ...whenExternalScripts(() => partytown({
+  }),
+  ...whenExternalScripts(() => partytown({
     config: {
       forward: ['dataLayer.push']
     }
-  })), compress({
+  })),
+  compress({
     css: true,
     html: {
       removeAttributeQuotes: false
@@ -39,7 +43,8 @@ export default defineConfig({
     js: true,
     svg: false,
     logger: 1
-  }), react()],
+  }),
+  react()],
   vite: {
     resolve: {
       alias: {

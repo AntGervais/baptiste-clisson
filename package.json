@@ -42,6 +42,10 @@
     "tailwindcss": "^3.3.2",
     "typescript": "^4.9.5"
   },
+  "resolutions": {
+    "astro/sharp": "0.31.3",
+    "astro-compress/sharp": "0.31.3"
+  },
   "engines": {
     "node": ">=16.12.0"
   },
