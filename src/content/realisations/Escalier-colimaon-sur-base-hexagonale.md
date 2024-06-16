@@ -7,8 +7,3 @@ tags:
 publishDate: 2024-06-15T22:00:00.000Z
 ---
 
-![](/images/realisations/Escalier-Frene/2.jpg)
-
-![](/images/realisations/Escalier-Frene/3.jpg)
-
-![](/images/realisations/Escalier-Frene/4.jpg)
