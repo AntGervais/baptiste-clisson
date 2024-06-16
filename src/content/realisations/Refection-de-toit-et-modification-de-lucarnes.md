@@ -1,5 +1,5 @@
 ---
-title: Refection de toit et modification de lucarnes
+title: Réfection complète de toit et modification de lucarnes
 image: /images/realisations/Macherie/16.jpg
 folder: Macherie/
 tags:
