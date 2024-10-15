@@ -15,17 +15,20 @@ const { tags, class: className = 'text-base' } = Astro.props;
 {
   tags && Array.isArray(tags) && (
     <div class={className}>
-      {tags.map((tag) => (
-        <div class="text-primary hover:bg-accent mr-2 mb-2 inline-block rounded-sm  bg-gray-100 font-medium lowercase hover:text-gray-100">
-          {REALISATIONS?.tag?.disabled ? (
-            tag
-          ) : (
-            <a class="py-0.5 px-2 text-sm capitalize" href={getPermalink(tag, 'tag')} title={tag}>
-              {tag}
-            </a>
-          )}
-        </div>
-      ))}
+      {tags.map(
+        (tag) =>
+          tag && (
+            <div class="mb-2 mr-2 inline-block rounded-sm bg-gray-100 font-medium  lowercase text-primary hover:bg-accent hover:text-gray-100">
+              {REALISATIONS?.tag?.disabled ? (
+                tag
+              ) : (
+                <a class="px-2 text-sm capitalize" href={getPermalink(tag, 'tag')} title={tag}>
+                  {tag}
+                </a>
+              )}
+            </div>
+          )
+      )}
     </div>
   )
 }
