@@ -1,7 +1,7 @@
 ---
 title: Réfection complète de toit et modification de lucarnes
 image: /images/realisations/Macherie/16.webp
-folder: Macherie/
+folder: Macherie
 tags:
   - charpente
   - restauration
