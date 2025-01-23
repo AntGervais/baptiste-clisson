@@ -36,7 +36,7 @@ export const footerData = {
   //   },
   // ],
   secondaryLinks: [
-    { text: 'CGV', href: getPermalink('/cgv') },
+    // { text: 'CGV', href: getPermalink('/cgv') },
     // { text: 'Privacy Policy', href: getPermalink('/privacy') },
   ],
   socialLinks: [
