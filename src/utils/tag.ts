@@ -9,13 +9,16 @@ const getNormalizedAccueilCategories = async (
   const { id, data } = categorie;
   // Derive slug from id (e.g., "charpente.md" → "charpente")
   const slug = cleanSlug(id.replace(/\.md$/, ''));
-  const { ...rest } = data;
+  const { title, description, image, tag } = data;
   const { Content } = await render(categorie);
 
   return {
     id: id,
     slug: slug,
-    ...rest,
+    title,
+    description,
+    image,
+    tag,
     Content: Content,
   };
 };

@@ -1,15 +1,9 @@
-interface Image {
-  src: string;
-  width?: number;
-  height?: number;
-  format?: string;
-}
-
 export interface AccueilCategories {
   id: string;
   slug: string;
-  image: string;
+  image?: string;
   title: string;
+  description?: string;
   tag: string;
   Content: unknown;
 }

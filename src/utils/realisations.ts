@@ -31,7 +31,15 @@ const getNormalizedRealisation = async (post: CollectionEntry<'realisations'>): 
   const { id, data } = post;
   const { Content } = await render(post);
 
-  const { tags: rawTags = [], publishDate: rawPublishDate = new Date(), ...rest } = data;
+  const {
+    tags: rawTags = [],
+    publishDate: rawPublishDate = new Date(),
+    title,
+    accroche,
+    folder,
+    description,
+    image,
+  } = data;
 
   // Derive slug from id (e.g., "abris_animaux.md" → "abris_animaux")
   const slug = cleanSlug(id.replace(/\.md$/, ''));
@@ -43,11 +51,12 @@ const getNormalizedRealisation = async (post: CollectionEntry<'realisations'>): 
     slug: slug,
     publishDate: publishDate,
     tags: tags,
-    ...rest,
-
+    title,
+    accroche,
+    folder,
+    description,
+    image,
     Content: Content,
-    // // or 'body' in case you consume from API
-
     permalink: await generatePermalink({ id, slug, publishDate }),
   };
 };
