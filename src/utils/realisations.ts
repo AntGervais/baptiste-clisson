@@ -1,4 +1,4 @@
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import type { Realisation } from '~/types';
 import { cleanSlug, trimSlash, POST_PERMALINK_PATTERN } from './permalinks';
@@ -28,12 +28,13 @@ const generatePermalink = async ({ id, slug, publishDate }) => {
 };
 
 const getNormalizedRealisation = async (post: CollectionEntry<'realisations'>): Promise<Realisation> => {
-  const { id, slug: rawSlug = '', data } = post;
-  const { Content } = await post.render();
+  const { id, data } = post;
+  const { Content } = await render(post);
 
   const { tags: rawTags = [], publishDate: rawPublishDate = new Date(), ...rest } = data;
 
-  const slug = cleanSlug(rawSlug.split('/').pop());
+  // Derive slug from id (e.g., "abris_animaux.md" → "abris_animaux")
+  const slug = cleanSlug(id.replace(/\.md$/, ''));
   const publishDate = new Date(rawPublishDate);
   const tags = rawTags.map((tag: string) => cleanSlug(tag));
 

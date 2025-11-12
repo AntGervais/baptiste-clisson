@@ -19,9 +19,9 @@ export interface Realisation {
   slug: string;
   publishDate: Date;
   title: string;
-  accroche: string;
+  accroche?: string;
   folder: string;
-  description: string;
+  description?: string;
   image: string;
   permalink?: string;
   tags?: Array<string>;
