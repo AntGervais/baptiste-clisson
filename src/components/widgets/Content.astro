@@ -1,6 +1,6 @@
 ---
 import { Icon } from 'astro-icon';
-import { Picture } from '@astrojs/image/components';
+import { Image } from 'astro:assets';
 import { findImage } from '~/utils/images';
 import { ImagePath } from '~/types';
 
@@ -79,7 +79,7 @@ const img = await findImage(image.src);
         {
           image && (
             <div class="relative m-auto max-w-4xl">
-              <Picture
+              <Image
                 src={img}
                 alt={title}
                 class="mx-auto w-full rounded-sm bg-gray-500 shadow-lg"
@@ -87,7 +87,6 @@ const img = await findImage(image.src);
                 height={500}
                 widths={[400, 768]}
                 sizes="(max-width: 768px) 100vw, 432px"
-                aspectRatio="500:500"
                 loading="lazy"
                 decoding="async"
               />

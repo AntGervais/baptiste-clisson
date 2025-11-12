@@ -1,5 +1,5 @@
 ---
-import { Picture } from '@astrojs/image/components';
+import { Image } from 'astro:assets';
 import { ImagePath } from '~/types';
 import { findImage } from '~/utils/images';
 
@@ -18,12 +18,13 @@ const { images } = Astro.props;
         if (!src) return;
         return (
           <div class="swiper-slide">
-            <Picture
+            <Image
               src={src}
               class="rounded-sm bg-gray-400 shadow-lg "
               widths={[400, 768]}
               sizes="(max-width: 767px) 400px, 768px"
-              aspectRatio="16:9"
+              width={768}
+              height={432}
               loading="eager"
               alt={image.alt || 'Image Hero'}
             />

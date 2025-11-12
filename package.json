@@ -14,10 +14,9 @@
     "subfont": "subfont -ir --no-fallbacks --silent --root dist"
   },
   "devDependencies": {
-    "@astrojs/image": "^0.13.1",
-    "@astrojs/partytown": "^1.2.3",
-    "@astrojs/sitemap": "^1.3.2",
-    "@astrojs/tailwind": "^3.1.3",
+    "@astrojs/partytown": "^2.1.2",
+    "@astrojs/sitemap": "^3.1.6",
+    "@astrojs/tailwind": "^5.1.1",
     "@astrolib/analytics": "^0.3.0",
     "@astrolib/seo": "^0.3.0",
     "@fontsource/inter": "^4.5.15",
@@ -26,7 +25,7 @@
     "@types/photoswipe": "^4.1.2",
     "@typescript-eslint/eslint-plugin": "^5.59.8",
     "@typescript-eslint/parser": "^5.59.8",
-    "astro": "^2.5.6",
+    "astro": "^3.6.5",
     "astro-icon": "^0.8.0",
     "eslint": "^8.41.0",
     "eslint-plugin-astro": "^0.23.0",
@@ -36,21 +35,22 @@
     "prettier": "^2.8.8",
     "prettier-plugin-astro": "^0.8.1",
     "prettier-plugin-tailwindcss": "^0.2.8",
-    "sharp": "^0.31.3",
+    "sharp": "^0.33.5",
     "subfont": "^6.12.5",
     "svgo": "^2.8.0",
     "tailwindcss": "^3.3.2",
-    "typescript": "^4.9.5"
+    "typescript": "^5.6.3"
   },
-  "resolutions": {
-    "astro/sharp": "0.31.3",
-    "astro-compress/sharp": "0.31.3"
+  "pnpm": {
+    "overrides": {
+      "sharp": "0.33.5"
+    }
   },
   "engines": {
     "node": ">=16.12.0"
   },
   "dependencies": {
-    "@astrojs/react": "^2.2.1",
+    "@astrojs/react": "^3.6.2",
     "astro-compress": "^2.2.8",
     "@tinacms/cli": "^1.5.14",
     "@types/react": "^18.2.7",

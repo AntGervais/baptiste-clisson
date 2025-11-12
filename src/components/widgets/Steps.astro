@@ -1,6 +1,6 @@
 ---
 import { Icon } from 'astro-icon';
-import { Picture } from '@astrojs/image/components';
+import { Image } from 'astro:assets';
 import { findImage } from '~/utils/images';
 
 interface Item {
@@ -64,13 +64,12 @@ const img = await findImage(image.src);
     <div class="relative">
       {
         img && (
-          <Picture
+          <Image
             alt={title}
             src={img}
             class="inset-0 w-full rounded-sm bg-gray-400 shadow-lg md:absolute md:h-full "
             widths={[400, 768]}
             sizes="(max-width: 768px) 100vw, 432px"
-            aspectRatio="432:768"
             width={432}
             height={768}
             loading="lazy"
