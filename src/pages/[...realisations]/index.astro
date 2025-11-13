@@ -4,11 +4,13 @@ import { REALISATIONS } from '~/config.mjs';
 import Layout from '~/layouts/PageLayout.astro';
 import SingleRealisation from '~/components/realisations/SingleRealisation.astro';
 import ToBlogLink from '~/components/realisations/ToBlogLink.astro';
+import RealisationPage from '../../../tina/pages/RealisationPage';
 
 import { getCanonical, getPermalink } from '~/utils/permalinks';
 import { fetchRealisations } from '~/utils/realisations';
 import { findImage } from '~/utils/images';
-import { Realisation } from '~/types';
+import type { Realisation } from '~/types';
+import client from '../../../tina/__generated__/client';
 
 export async function getStaticPaths() {
   if (REALISATIONS?.disabled || REALISATIONS?.post?.disabled) return [];
@@ -35,9 +37,35 @@ const meta = {
   noindex: REALISATIONS?.post?.noindex,
   ogType: 'article',
 };
+
+// Load data from TinaCMS for visual editing
+// Ensure relativePath has .md extension
+const relativePath = post.id.endsWith('.md') ? post.id : `${post.id}.md`;
+let tinaData = null;
+try {
+  tinaData = await client.queries.realisations({ relativePath });
+} catch (error) {
+  console.warn(`Could not load TinaCMS data for ${relativePath}:`, error);
+}
 ---
 
 <Layout {meta}>
-  <SingleRealisation post={{ ...post, image: meta.image }} url={url} />
+  {tinaData ? (
+    <>
+      {/* Visual editing mode with React component */}
+      <RealisationPage
+        data={tinaData.data}
+        query={tinaData.query}
+        variables={{ relativePath }}
+        url={String(url)}
+        client:tina
+      />
+    </>
+  ) : (
+    <>
+      {/* Fallback to original Astro component if TinaCMS fails */}
+      <SingleRealisation post={{ ...post, image: meta.image }} url={url} />
+    </>
+  )}
   <ToBlogLink />
 </Layout>

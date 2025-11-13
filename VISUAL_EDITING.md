@@ -87,9 +87,15 @@ Lorsque vous éditez via le visual editor :
 4. Les champs marqués avec `tinaField()` deviennent éditables en direct
 5. Les changements sont visibles en temps réel
 
-## Intégrer le visual editing dans les pages existantes
+## ✅ Visual Editing activé sur toutes les Réalisations
 
-Pour ajouter le visual editing à une page existante :
+Le visual editing a été intégré dans **toutes les pages de réalisations**. Chaque page charge automatiquement les données depuis TinaCMS et affiche le composant React avec les champs éditables.
+
+**Pages concernées :** Toutes les URLs de type `/nom-de-realisation` (ex: `/abris_animaux`, `/escalier-colimaon-sur-base-hexagonale`, etc.)
+
+## Intégrer le visual editing dans d'autres pages
+
+Pour ajouter le visual editing à une nouvelle page :
 
 ### Étape 1 : Créer un composant React
 Créez un fichier dans `tina/pages/` qui utilise `useTina` :
