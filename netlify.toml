@@ -4,8 +4,7 @@
 
 [build]
   publish = "dist"
-  command = "pnpm build"
-  # Utilisez "pnpm build:tina" une fois la branche mergée dans main
+  command = "pnpm build:tina"
 
 [build.environment]
   NODE_VERSION = "18"
