@@ -1,12 +1,5 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import client from '../../../tina/__generated__/client';
-import AccueilCategoryPage from '../../../tina/pages/AccueilCategoryPage';
-
-// Fetch data from TinaCMS
-const result = await client.queries.accueil_categories({
-  relativePath: 'charpente.md',
-});
 
 const meta = {
   title: 'Demo Visual Editing - Charpente',
@@ -17,19 +10,15 @@ const meta = {
 <Layout {meta}>
   <div class="container mx-auto py-8">
     <div class="mb-6 text-center">
-      <p class="text-sm text-gray-600">
-        Mode Visual Editing: Éditez cette page directement depuis l'interface TinaCMS
+      <p class="text-lg text-gray-600">
+        Cette page de démo est disponible uniquement en mode développement.
       </p>
-      <p class="text-xs text-gray-500 mt-2">
-        URL Admin: <a href="/admin/index.html#/collections/accueil_categories/charpente.md" class="text-blue-600 underline">/admin</a>
+      <p class="text-sm text-gray-500 mt-4">
+        Lancez <code class="bg-gray-100 px-2 py-1 rounded">pnpm dev</code> pour accéder au visual editing.
+      </p>
+      <p class="text-sm text-gray-500 mt-2">
+        En mode dev, vous pourrez éditer le contenu de <strong>charpente.md</strong> en temps réel.
       </p>
     </div>
-
-    <AccueilCategoryPage
-      data={result.data}
-      query={result.query}
-      variables={{ relativePath: 'charpente.md' }}
-      client:tina
-    />
   </div>
 </Layout>
