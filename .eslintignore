@@ -2,3 +2,6 @@ dist
 node_modules
 .github
 types.generated.d.ts
+public/admin
+tina/__generated__
+.tina/__generated__

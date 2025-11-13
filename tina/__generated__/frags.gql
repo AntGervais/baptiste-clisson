@@ -1,0 +1,18 @@
+fragment Accueil_categoriesParts on Accueil_categories {
+  __typename
+  image
+  title
+  description
+  tag
+}
+
+fragment RealisationsParts on Realisations {
+  __typename
+  title
+  image
+  accroche
+  folder
+  description
+  tags
+  publishDate
+}
