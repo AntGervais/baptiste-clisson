@@ -1,0 +1,31 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const meta = {
+  title: 'Demo Visual Editing',
+  description: 'Pages de démonstration pour l’édition visuelle TinaCMS',
+};
+---
+
+<Layout {meta}>
+  <section class="mx-auto max-w-3xl px-6 py-12 text-center">
+    <h1 class="text-3xl font-heading text-primary">Mode Visual Editing</h1>
+    <p class="mx-auto mt-4 text-lg text-gray-600">
+      Utilisez cette page pour accéder rapidement aux aperçus visuels TinaCMS.
+    </p>
+    <ol class="mx-auto mt-6 list-decimal space-y-3 text-left text-gray-700">
+      <li>
+        Lancez <code class="rounded bg-gray-100 px-2 py-1">pnpm dev</code> afin de démarrer Astro et TinaCMS (
+        <code>pnpm tinacms dev -c &quot;astro dev&quot;</code>).
+      </li>
+      <li>
+        Ouvrez <code>http://localhost:4321/admin</code>, choisissez une catégorie d&apos;accueil et cliquez sur
+        l&apos;icône &laquo; Visual editing &raquo;.
+      </li>
+      <li>
+        L&apos;iframe chargera automatiquement l&apos;URL <code>/demo/&lt;slug&gt;</code> correspondante (ex :
+        <code>/demo/charpente</code>).
+      </li>
+    </ol>
+  </section>
+</Layout>

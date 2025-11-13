@@ -1,3 +1,10 @@
+export interface TinaSystemInfo {
+  filename: string;
+  basename: string;
+  path: string;
+  relativePath: string;
+}
+
 export interface AccueilCategories {
   id: string;
   slug: string;
@@ -6,6 +13,7 @@ export interface AccueilCategories {
   description?: string;
   tag: string;
   Content: unknown;
+  tinaInfo?: TinaSystemInfo;
 }
 
 export interface Realisation {
@@ -21,6 +29,7 @@ export interface Realisation {
   tags?: Array<string>;
   Content: unknown;
   content?: string;
+  tinaInfo?: TinaSystemInfo;
 }
 
 export interface ImagePath {

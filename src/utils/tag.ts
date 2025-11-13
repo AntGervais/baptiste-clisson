@@ -1,6 +1,6 @@
 import { getCollection, render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
-import type { AccueilCategories } from '~/types';
+import type { AccueilCategories, TinaSystemInfo } from '~/types';
 import { cleanSlug } from './permalinks';
 
 const getNormalizedAccueilCategories = async (
@@ -9,6 +9,13 @@ const getNormalizedAccueilCategories = async (
   const { id, data } = categorie;
   // Derive slug from id (e.g., "charpente.md" → "charpente")
   const slug = cleanSlug(id.replace(/\.md$/, ''));
+  const relativePath = id.endsWith('.md') ? id : `${id}.md`;
+  const tinaInfo: TinaSystemInfo = {
+    filename: relativePath.split('/').pop() ?? relativePath,
+    basename: relativePath.replace(/\.mdx?$/, ''),
+    path: `src/content/accueil_categories/${relativePath}`,
+    relativePath,
+  };
   const { title, description, image, tag } = data;
   const { Content } = await render(categorie);
 
@@ -20,6 +27,7 @@ const getNormalizedAccueilCategories = async (
     image,
     tag,
     Content: Content,
+    tinaInfo,
   };
 };
 

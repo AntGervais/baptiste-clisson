@@ -1,6 +1,6 @@
 import { getCollection, render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
-import type { Realisation } from '~/types';
+import type { Realisation, TinaSystemInfo } from '~/types';
 import { cleanSlug, trimSlash, POST_PERMALINK_PATTERN } from './permalinks';
 
 const generatePermalink = async ({ id, slug, publishDate }) => {
@@ -31,6 +31,14 @@ const getNormalizedRealisation = async (post: CollectionEntry<'realisations'>): 
   const { id, data } = post;
   const { Content } = await render(post);
 
+  const relativePath = id.endsWith('.md') ? id : `${id}.md`;
+  const tinaInfo: TinaSystemInfo = {
+    filename: relativePath.split('/').pop() ?? relativePath,
+    basename: relativePath.replace(/\.mdx?$/, ''),
+    path: `src/content/realisations/${relativePath}`,
+    relativePath,
+  };
+
   const {
     tags: rawTags = [],
     publishDate: rawPublishDate = new Date(),
@@ -58,6 +66,7 @@ const getNormalizedRealisation = async (post: CollectionEntry<'realisations'>): 
     image,
     Content: Content,
     permalink: await generatePermalink({ id, slug, publishDate }),
+    tinaInfo,
   };
 };
 

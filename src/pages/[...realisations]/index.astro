@@ -12,21 +12,32 @@ import { findImage } from '~/utils/images';
 import type { Realisation } from '~/types';
 import client from '../../../tina/__generated__/client';
 
+type TinaRealisationsQuery = Awaited<ReturnType<typeof client.queries.realisations>>;
+
 export async function getStaticPaths() {
   if (REALISATIONS?.disabled || REALISATIONS?.post?.disabled) return [];
-  return (await fetchRealisations()).map((post) => ({
-    params: {
-      realisations: post.permalink,
-    },
-    props: { post },
-  }));
+  return (await fetchRealisations()).map((post) => {
+    const relativePath = post.id.endsWith('.md') ? post.id : `${post.id}.md`;
+    return {
+      params: {
+        realisations: post.permalink,
+      },
+      props: {
+        post,
+        relativePath,
+        getTinaProps: async () => client.queries.realisations({ relativePath }),
+      },
+    };
+  });
 }
 
 export interface Props {
   post: Realisation;
+  relativePath: string;
+  getTinaProps?: () => Promise<TinaRealisationsQuery>;
 }
 
-const { post } = Astro.props;
+const { post, getTinaProps, relativePath } = Astro.props;
 const url = getCanonical(getPermalink(post.permalink, 'realisations'));
 
 const meta = {
@@ -39,11 +50,9 @@ const meta = {
 };
 
 // Load data from TinaCMS for visual editing
-// Ensure relativePath has .md extension
-const relativePath = post.id.endsWith('.md') ? post.id : `${post.id}.md`;
 let tinaData = null;
 try {
-  tinaData = await client.queries.realisations({ relativePath });
+  tinaData = getTinaProps ? await getTinaProps() : await client.queries.realisations({ relativePath });
 } catch (error) {
   console.warn(`Could not load TinaCMS data for ${relativePath}:`, error);
 }

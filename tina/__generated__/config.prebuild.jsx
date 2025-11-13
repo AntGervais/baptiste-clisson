@@ -3,6 +3,9 @@ import { defineConfig } from "tinacms";
 var branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "main";
 var clientId = process.env.TINA_CLIENT_ID || "3f6b5893-f77a-4f93-a595-ec18a27e0dfc";
 var tinaToken = process.env.TINA_TOKEN || "6dc1d18b8713af2268f297e9e41d0e52dc169596";
+var normalizeSegment = (segment) => segment.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-zA-Z0-9_-]+/g, "-").replace(/-{2,}/g, "-").replace(/^-+|-+$/g, "").toLowerCase();
+var withTrailingSlash = (path) => path.endsWith("/") ? path : `${path}/`;
+var toSlug = (relativePath) => relativePath.replace(/\.(md|mdx)$/, "").split("/").map((segment) => normalizeSegment(segment)).filter(Boolean).join("/");
 var config_default = defineConfig({
   clientId,
   // Get this from tina.io
@@ -25,6 +28,12 @@ var config_default = defineConfig({
         name: "accueil_categories",
         label: "Cat\xE9gories Accueil",
         path: "src/content/accueil_categories",
+        ui: {
+          router({ document }) {
+            const slug = toSlug(document._sys.relativePath);
+            return withTrailingSlash(`/demo/${slug}`);
+          }
+        },
         fields: [
           {
             type: "image",
@@ -59,6 +68,12 @@ var config_default = defineConfig({
         name: "realisations",
         label: "Realisations",
         path: "src/content/realisations",
+        ui: {
+          router({ document }) {
+            const slug = toSlug(document._sys.relativePath);
+            return withTrailingSlash(`/${slug}`);
+          }
+        },
         fields: [
           {
             type: "string",

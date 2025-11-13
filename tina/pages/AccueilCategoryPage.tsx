@@ -1,4 +1,5 @@
 import { useTina, tinaField } from 'tinacms/dist/react';
+import { TinaMarkdown } from 'tinacms/dist/rich-text';
 import type { Accueil_CategoriesQuery } from '../__generated__/types';
 
 export interface AccueilCategoryPageProps {
@@ -10,7 +11,6 @@ export interface AccueilCategoryPageProps {
 }
 
 export default function AccueilCategoryPage(props: AccueilCategoryPageProps) {
-  // Use the useTina hook to enable visual editing
   const { data } = useTina({
     query: props.query,
     variables: props.variables,
@@ -20,42 +20,49 @@ export default function AccueilCategoryPage(props: AccueilCategoryPageProps) {
   const category = data.accueil_categories;
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
-      {/* Image */}
-      {category.image && (
-        <div className="mb-6" data-tina-field={tinaField(category, 'image')}>
-          <img
-            src={category.image}
-            alt={category.title}
-            className="w-full rounded-lg shadow-lg"
-          />
+    <section className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:py-16">
+      <article className="grid gap-8 lg:grid-cols-2 lg:items-center">
+        {category.image && (
+          <figure
+            className="overflow-hidden rounded-lg shadow-lg"
+            data-tina-field={tinaField(category, 'image')}
+          >
+            <img
+              src={category.image}
+              alt={category.title}
+              className="h-full w-full object-cover"
+              loading="lazy"
+            />
+          </figure>
+        )}
+
+        <div>
+          <div className="mb-4 flex flex-wrap gap-3">
+            <span
+              className="inline-flex items-center rounded-full bg-accent/10 px-4 py-1 text-sm font-semibold uppercase tracking-wide text-accent"
+              data-tina-field={tinaField(category, 'tag')}
+            >
+              {category.tag}
+            </span>
+          </div>
+
+          <h1
+            className="font-heading text-4xl font-bold text-primary sm:text-5xl"
+            data-tina-field={tinaField(category, 'title')}
+          >
+            {category.title}
+          </h1>
+
+          {category.description && (
+            <div
+              className="prose prose-lg mt-6 max-w-none text-gray-700 prose-headings:font-heading prose-headings:text-primary"
+              data-tina-field={tinaField(category, 'description')}
+            >
+              <TinaMarkdown content={category.description} />
+            </div>
+          )}
         </div>
-      )}
-
-      {/* Title */}
-      <h1
-        className="text-4xl font-bold text-primary mb-4"
-        data-tina-field={tinaField(category, 'title')}
-      >
-        {category.title}
-      </h1>
-
-      {/* Tag */}
-      <div className="mb-4" data-tina-field={tinaField(category, 'tag')}>
-        <span className="inline-block bg-accent text-white px-3 py-1 rounded">
-          {category.tag}
-        </span>
-      </div>
-
-      {/* Description - Rich text */}
-      <div
-        className="prose prose-lg max-w-none"
-        data-tina-field={tinaField(category, 'description')}
-      >
-        {/* Note: For proper rich text rendering, you would use TinaMarkdown here */}
-        {/* For now, this is a placeholder that shows the editing capability */}
-        <p>Description content (editable via TinaCMS)</p>
-      </div>
-    </div>
+      </article>
+    </section>
   );
 }

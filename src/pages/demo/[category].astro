@@ -1,0 +1,60 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Layout from '~/layouts/PageLayout.astro';
+import { cleanSlug } from '~/utils/permalinks';
+import AccueilCategoryPage from '../../../tina/pages/AccueilCategoryPage';
+import client from '../../../tina/__generated__/client';
+
+export async function getStaticPaths() {
+  const categories = await getCollection('accueil_categories');
+
+  return categories.map((category) => ({
+    params: {
+      category: cleanSlug(category.id.replace(/\.md$/, '')),
+    },
+    props: {
+      categoryEntry: category,
+      relativePath: category.id.endsWith('.md') ? category.id : `${category.id}.md`,
+    },
+  }));
+}
+
+interface Props {
+  categoryEntry: CollectionEntry<'accueil_categories'>;
+  relativePath: string;
+}
+
+const { categoryEntry, relativePath } = Astro.props as Props;
+
+const meta = {
+  title: `${categoryEntry.data.title} — Visual Editing`,
+  description: categoryEntry.data.description ?? 'Prévisualisation TinaCMS',
+  image: categoryEntry.data.image,
+};
+
+let tinaData = null;
+try {
+  tinaData = await client.queries.accueil_categories({ relativePath });
+} catch (error) {
+  console.warn(`Unable to load TinaCMS data for ${relativePath}`, error);
+}
+---
+
+<Layout {meta}>
+  {tinaData ? (
+    <AccueilCategoryPage
+      data={tinaData.data}
+      query={tinaData.query}
+      variables={{ relativePath }}
+      client:tina
+    />
+  ) : (
+    <section class="mx-auto max-w-3xl px-6 py-12 text-center">
+      <p class="text-lg text-gray-600">Impossible de charger les données TinaCMS.</p>
+      <p class="mt-2 text-sm text-gray-500">
+        Vérifiez que <code>pnpm tinacms dev</code> est lancé et que le fichier <strong>{relativePath}</strong> existe
+        encore.
+      </p>
+    </section>
+  )}
+</Layout>

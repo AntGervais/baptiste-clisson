@@ -5,6 +5,25 @@ const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || 'main';
 const clientId = process.env.TINA_CLIENT_ID || '3f6b5893-f77a-4f93-a595-ec18a27e0dfc';
 const tinaToken = process.env.TINA_TOKEN || '6dc1d18b8713af2268f297e9e41d0e52dc169596';
 
+const normalizeSegment = (segment: string) =>
+  segment
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-zA-Z0-9_-]+/g, '-')
+    .replace(/-{2,}/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .toLowerCase();
+
+const withTrailingSlash = (path: string) => (path.endsWith('/') ? path : `${path}/`);
+
+const toSlug = (relativePath: string) =>
+  relativePath
+    .replace(/\.(md|mdx)$/, '')
+    .split('/')
+    .map((segment) => normalizeSegment(segment))
+    .filter(Boolean)
+    .join('/');
+
 export default defineConfig({
   clientId: clientId, // Get this from tina.io
   token: tinaToken, // Get this from tina.io
@@ -25,6 +44,12 @@ export default defineConfig({
         name: 'accueil_categories',
         label: 'Catégories Accueil',
         path: 'src/content/accueil_categories',
+        ui: {
+          router({ document }) {
+            const slug = toSlug(document._sys.relativePath);
+            return withTrailingSlash(`/demo/${slug}`);
+          },
+        },
         fields: [
           {
             type: 'image',
@@ -59,6 +84,12 @@ export default defineConfig({
         name: 'realisations',
         label: 'Realisations',
         path: 'src/content/realisations',
+        ui: {
+          router({ document }) {
+            const slug = toSlug(document._sys.relativePath);
+            return withTrailingSlash(`/${slug}`);
+          },
+        },
         fields: [
           {
             type: 'string',
