@@ -5,7 +5,7 @@ const CONFIG = {
 
   origin: 'https://charpenteboisdebout.fr',
   basePathname: '/',
-  trailingSlash: false,
+  trailingSlash: true,
 
   title: 'Charpente Bois Debout — Artisan Charpentier à Saulgé (86) - Baptiste Clisson',
   description:

@@ -19,6 +19,12 @@ export default defineConfig({
       publicFolder: 'public',
     },
   },
+  ui: {
+    previewUrl: ({ branch }) => {
+      // URL de base du serveur de développement
+      return { url: `http://localhost:4321` }
+    }
+  },
   schema: {
     collections: [
       {
@@ -59,6 +65,11 @@ export default defineConfig({
         name: 'realisations',
         label: 'Realisations',
         path: 'src/content/realisations',
+        ui: {
+          router: ({ document }) => {
+            return `/${document._sys.filename}`
+          }
+        },
         fields: [
           {
             type: 'string',
