@@ -18,7 +18,7 @@ const { categories } = Astro.props;
 <div class="swiper p-5">
   <div class="swiper-wrapper">
     {
-      categories.map(async (cate: CategoryAccueil) => (
+      categories.map((cate: CategoryAccueil) => (
         <div class="swiper-slide">
           <Category title={cate.title} image={cate.image} link={getPermalink(cate.tag, 'tag')} />
         </div>
@@ -30,7 +30,8 @@ const { categories } = Astro.props;
 </div>
 
 <script>
-  import Swiper, { Navigation } from 'swiper';
+  import Swiper from 'swiper';
+  import { Navigation } from 'swiper/modules';
   import 'swiper/css';
   import 'swiper/css/navigation';
 

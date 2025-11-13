@@ -3,7 +3,7 @@ import Review from './Review';
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper';
+import { Navigation } from 'swiper/modules';
 
 type ReviewsProps = {
   initialReviews?: Review[]
@@ -50,11 +50,9 @@ export default function Reviews({ initialReviews }: ReviewsProps) {
     >
       {reviews ? <>
         {reviews.map((review) =>
-          <div key={review.author_name}>
-            <SwiperSlide>
-              <Review review={review} />
-            </SwiperSlide>
-          </div>
+          <SwiperSlide key={review.author_name}>
+            <Review review={review} />
+          </SwiperSlide>
         )}
       </> : null}
     </Swiper>
