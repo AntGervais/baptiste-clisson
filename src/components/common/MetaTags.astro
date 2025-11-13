@@ -1,11 +1,11 @@
 ---
 import { AstroSeo } from '@astrolib/seo';
 import { GoogleAnalytics } from '@astrolib/analytics';
-import { getImage } from '@astrojs/image';
+import { getImage } from 'astro:assets';
 
 import { SITE } from '~/config.mjs';
-import { MetaSEO } from '~/types';
-import { getCanonical, getAsset } from '~/utils/permalinks';
+import type { MetaSEO } from '~/types';
+import { getCanonical } from '~/utils/permalinks';
 import { getRelativeUrlByFilePath } from '~/utils/directories';
 
 import CustomStyles from '~/components/CustomStyles.astro';

@@ -1,4 +1,4 @@
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import type { AccueilCategories } from '~/types';
 import { cleanSlug } from './permalinks';
@@ -6,15 +6,19 @@ import { cleanSlug } from './permalinks';
 const getNormalizedAccueilCategories = async (
   categorie: CollectionEntry<'accueil_categories'>
 ): Promise<AccueilCategories> => {
-  const { id, slug: rawSlug = '', data } = categorie;
-  const slug = cleanSlug(rawSlug.split('/').pop());
-  const { ...rest } = data;
-  const { Content } = await categorie.render();
+  const { id, data } = categorie;
+  // Derive slug from id (e.g., "charpente.md" → "charpente")
+  const slug = cleanSlug(id.replace(/\.md$/, ''));
+  const { title, description, image, tag } = data;
+  const { Content } = await render(categorie);
 
   return {
     id: id,
     slug: slug,
-    ...rest,
+    title,
+    description,
+    image,
+    tag,
     Content: Content,
   };
 };

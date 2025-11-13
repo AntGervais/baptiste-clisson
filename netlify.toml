@@ -1,6 +1,14 @@
+# NOTE: Le plugin @netlify/plugin-lighthouse doit être désactivé dans l'UI Netlify
+# car il n'est pas compatible avec Node 18+
+# Allez sur : Site Settings → Plugins → Lighthouse → Remove
+
 [build]
   publish = "dist"
-  command = "npm run build"
+  command = "pnpm build"
+  # Utilisez "pnpm build:tina" une fois la branche mergée dans main
+
+[build.environment]
+  NODE_VERSION = "18"
 
 [functions]
   directory = './src/functions'

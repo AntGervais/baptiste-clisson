@@ -1,15 +1,9 @@
-interface Image {
-  src: string;
-  width?: number;
-  height?: number;
-  format?: string;
-}
-
 export interface AccueilCategories {
   id: string;
   slug: string;
-  image: string;
+  image?: string;
   title: string;
+  description?: string;
   tag: string;
   Content: unknown;
 }
@@ -19,9 +13,9 @@ export interface Realisation {
   slug: string;
   publishDate: Date;
   title: string;
-  accroche: string;
+  accroche?: string;
   folder: string;
-  description: string;
+  description?: string;
   image: string;
   permalink?: string;
   tags?: Array<string>;

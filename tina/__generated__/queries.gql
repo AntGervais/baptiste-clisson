@@ -1,0 +1,109 @@
+query accueil_categories($relativePath: String!) {
+  accueil_categories(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...Accueil_categoriesParts
+  }
+}
+
+query accueil_categoriesConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: Accueil_categoriesFilter) {
+  accueil_categoriesConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...Accueil_categoriesParts
+      }
+    }
+  }
+}
+
+query realisations($relativePath: String!) {
+  realisations(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...RealisationsParts
+  }
+}
+
+query realisationsConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: RealisationsFilter) {
+  realisationsConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...RealisationsParts
+      }
+    }
+  }
+}

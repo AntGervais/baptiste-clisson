@@ -1,5 +1,5 @@
 ---
-import { Picture } from '@astrojs/image/components';
+import { Image } from 'astro:assets';
 
 import { REALISATIONS } from '~/config.mjs';
 import type { Realisation } from '~/types';
@@ -24,7 +24,7 @@ const link = !REALISATIONS?.post?.disabled ? getPermalink(post.permalink, 'reali
       <a href={link} title={post.title || post.accroche || ''}>
         {
           image && (
-            <Picture
+            <Image
               src={image}
               class="max-h-80 w-full object-cover object-center"
               widths={[430]}

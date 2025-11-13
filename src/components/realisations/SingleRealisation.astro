@@ -1,6 +1,6 @@
 ---
 import { Icon } from 'astro-icon';
-import { Picture } from '@astrojs/image/components';
+import { Image } from 'astro:assets';
 
 import Tags from '~/components/realisations/Tags.astro';
 import SocialShare from '~/components/common/SocialShare.astro';
@@ -41,19 +41,16 @@ const folder = post.folder ? post.folder : post.image ? post.image.split('/').sl
 
       {
         post.image ? (
-          <Picture
+          <Image
             src={post.image}
             class="mx-auto mb-6 max-w-full bg-gray-400 sm:rounded-sm lg:max-w-6xl "
             widths={[800, 1060]}
             sizes="(max-width: 1060px) 800px, 1060px"
             alt={post.title || post.accroche || ''}
-            loading="eager"
-            aspectRatio={16 / 9}
             width={1060}
-            height={800}
+            height={596}
             loading="eager"
             decoding="async"
-            background={undefined}
           />
         ) : (
           <div class="mx-auto max-w-4xl px-4 sm:px-6">
