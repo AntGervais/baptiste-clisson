@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import initialReviews from '~/initialReviews';
-import Reviews from './Reviews';
+import ReviewsComponent from './Reviews';
 ---
 
 <div class="centered flex-col gap-32 py-8 lg:flex-row lg:py-10">
@@ -26,7 +26,7 @@ import Reviews from './Reviews';
       </div>
 
       <div class="w-full shrink-0 grow-0 basis-auto p-4 lg:w-2/3">
-        <Reviews initialReviews={initialReviews} client:load />
+        <ReviewsComponent initialReviews={initialReviews} client:load />
       </div>
     </div>
   </div>

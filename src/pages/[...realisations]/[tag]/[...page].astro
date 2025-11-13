@@ -8,8 +8,9 @@ import Pagination from '~/components/realisations/Pagination.astro';
 import { fetchRealisations } from '~/utils/realisations';
 import { TAG_BASE } from '~/utils/permalinks';
 import Headline from '~/components/realisations/Headline.astro';
-import { getCollection } from 'astro:content';
 import { findCategoryByTag } from '~/utils/tag';
+import type { Page } from 'astro';
+import type { Realisation } from '~/types';
 
 export async function getStaticPaths({ paginate }) {
   if (REALISATIONS?.disabled || REALISATIONS?.tag?.disabled) return [];
@@ -30,6 +31,11 @@ export async function getStaticPaths({ paginate }) {
       }
     )
   );
+}
+
+export interface Props {
+  page: Page<Realisation>;
+  tag: string;
 }
 
 const { page, tag } = Astro.props;

@@ -1,5 +1,10 @@
-/// <reference path="../.astro/types.d.ts" />
-/// <reference types="astro/client" />
+declare module '@astrolib/seo' {
+  import type { AstroComponentFactory } from 'astro/runtime/server/index.js';
+
+  const AstroSeo: AstroComponentFactory;
+  export { AstroSeo };
+  export default AstroSeo;
+}
 
 declare global {
   export type Review = {

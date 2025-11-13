@@ -8,6 +8,8 @@ import Pagination from '~/components/realisations/Pagination.astro';
 
 import { fetchRealisations } from '~/utils/realisations';
 import { REALISATIONS_BASE } from '~/utils/permalinks';
+import type { Page } from 'astro';
+import type { Realisation } from '~/types';
 
 export async function getStaticPaths({ paginate }) {
   if (REALISATIONS?.disabled || REALISATIONS?.list?.disabled) return [];
@@ -15,6 +17,10 @@ export async function getStaticPaths({ paginate }) {
     params: { realisations: REALISATIONS_BASE || undefined },
     pageSize: REALISATIONS.postsPerPage,
   });
+}
+
+export interface Props {
+  page: Page<Realisation>;
 }
 
 const { page } = Astro.props;
