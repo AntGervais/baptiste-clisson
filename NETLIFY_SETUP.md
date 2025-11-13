@@ -97,7 +97,7 @@ Build commands :
 Vérifiez que ces variables sont bien configurées :
 
 **TinaCMS :**
-- `TINA_CLIENT_ID` : dc844836-6c1e-4dc0-a9df-64ebe536212b
+- `TINA_CLIENT_ID` : 3f6b5893-f77a-4f93-a595-ec18a27e0dfc
 - `TINA_TOKEN` : (votre token Tina)
 
 **Autres :**
