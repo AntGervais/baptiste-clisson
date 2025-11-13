@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a website for "Charpente Bois Debout," a carpentry business run by Baptiste Clisson in Saulgé, France. The site showcases the craftsman's work in traditional timber framing, wood structures, custom stairs, and restoration of old buildings. Built with Astro 2.x + Tailwind CSS, based on the AstroWind template.
+This is a website for "Charpente Bois Debout," a carpentry business run by Baptiste Clisson in Saulgé, France. The site showcases the craftsman's work in traditional timber framing, wood structures, custom stairs, and restoration of old buildings. Built with Astro 5.x + Tailwind CSS 3.x, based on the AstroWind template.
 
 **Website**: https://charpenteboisdebout.fr
 
@@ -29,7 +29,22 @@ pnpm lint:eslint      # Run ESLint
 pnpm subfont          # Optimize fonts (run after build)
 ```
 
-**Note**: Node version 16.12.0+ required (see `.nvmrc` for exact version)
+**Note**: Node.js 18.x required (see `.nvmrc` for exact version), pnpm 8.x or higher
+
+## Technology Stack
+
+### Core Dependencies (from package.json)
+- **Astro**: 5.15.0 (static site generator)
+- **TinaCMS**: 2.9.3 (headless CMS)
+- **Tailwind CSS**: 3.3.2 (utility-first CSS framework)
+- **TypeScript**: 5.6.3
+- **React**: 18.2.0 (for TinaCMS admin interface)
+
+### Key Libraries
+- **PhotoSwipe**: 5.3.7 (image gallery/lightbox)
+- **Swiper**: 9.3.2 (carousels)
+- **Sharp**: 0.33.5 (image optimization)
+- **AOS**: 2.3.4 (scroll animations)
 
 ## Architecture
 

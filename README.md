@@ -8,7 +8,7 @@ Site web vitrine pour **Charpente Bois Debout**, entreprise de charpenterie trad
 
 ### Framework & Build
 
-- **[Astro 2.x](https://astro.build/)** - Framework moderne pour sites statiques haute performance
+- **[Astro 5.x](https://astro.build/)** (v5.15.0) - Framework moderne pour sites statiques haute performance
   - Génération de sites statiques (SSG)
   - Rendu côté serveur (SSR) optionnel
   - Islands Architecture pour hydratation partielle
@@ -16,14 +16,14 @@ Site web vitrine pour **Charpente Bois Debout**, entreprise de charpenterie trad
 
 ### Styling
 
-- **[Tailwind CSS](https://tailwindcss.com/)** - Framework CSS utility-first
+- **[Tailwind CSS](https://tailwindcss.com/)** (v3.3.2) - Framework CSS utility-first
   - Configuration personnalisée (`tailwind.config.cjs`)
   - Plugin typography pour le contenu markdown
   - Thème personnalisé avec variables de couleurs
 
 ### Gestion de Contenu
 
-- **[TinaCMS](https://tina.io/)** - Headless CMS git-based
+- **[TinaCMS](https://tina.io/)** (v2.9.3) - Headless CMS git-based
   - Interface d'édition visuelle accessible via `/admin`
   - Contenu stocké en Markdown dans `src/content/`
   - Schéma défini dans `.tina/config.ts`
@@ -33,25 +33,26 @@ Site web vitrine pour **Charpente Bois Debout**, entreprise de charpenterie trad
 
 ### Bibliothèques JavaScript
 
-- **[Swiper](https://swiperjs.com/)** - Carousels tactiles modernes
+- **[Swiper](https://swiperjs.com/)** (v9.3.2) - Carousels tactiles modernes
   - Galeries d'images
   - Carrousel de réalisations
   - Navigation entre catégories
-- **[PhotoSwipe](https://photoswipe.com/)** - Lightbox responsive pour galeries d'images
-- **[AOS (Animate On Scroll)](https://michalsnik.github.io/aos/)** - Animations au scroll
+- **[PhotoSwipe](https://photoswipe.com/)** (v5.3.7) - Lightbox responsive pour galeries d'images
+- **[AOS (Animate On Scroll)](https://michalsnik.github.io/aos/)** (v2.3.4) - Animations au scroll
+- **[React](https://react.dev/)** (v18.2.0) - Pour l'interface d'administration TinaCMS
 
 ### Optimisation
 
-- **Sharp** - Traitement et optimisation des images
-- **astro-compress** - Minification CSS/HTML/JS en production
-- **Partytown** - Exécution des scripts analytics en Web Worker
+- **Sharp** (v0.33.5) - Traitement et optimisation des images
+- **astro-compress** (v2.2.8) - Minification CSS/HTML/JS en production
+- **Partytown** (v2.1.4) - Exécution des scripts analytics en Web Worker
 
 ### Outils de Développement
 
-- **pnpm** - Gestionnaire de paquets rapide et efficace
-- **ESLint** - Linter JavaScript/TypeScript
-- **Prettier** - Formateur de code
-- **TypeScript** - Typage statique
+- **pnpm** (8.x+) - Gestionnaire de paquets rapide et efficace
+- **TypeScript** (v5.6.3) - Typage statique
+- **ESLint** (v8.41.0) - Linter JavaScript/TypeScript
+- **Prettier** (v2.8.8) - Formateur de code
 
 ## Prérequis
 
