@@ -1,250 +1,262 @@
-# 🚀 AstroWind
+# Charpente Bois Debout
 
-<img src="https://raw.githubusercontent.com/onwidget/.github/main/resources/astrowind/lighthouse-score.png" align="right"
-     alt="AstroWind Lighthouse Score" width="100" height="358">
+Site web vitrine pour **Charpente Bois Debout**, entreprise de charpenterie traditionnelle située à Saulgé (86), spécialisée dans la charpente traditionnelle, les structures bois, les escaliers sur mesure et la restauration de bâti ancien.
 
-🌟 _Most *starred* & *forked* Astro theme in 2022_. 🌟
+🌐 **Site en production** : [charpenteboisdebout.fr](https://charpenteboisdebout.fr)
 
-**AstroWind** is a free and open-source template to make your website using **[Astro 2.0](https://astro.build/blog/astro-2/) + [Tailwind CSS](https://tailwindcss.com/)**. Ready to start a new project and designed taking into account web best practices.
+## Stack Technique
 
-## Features
+### Framework & Build
 
-- ✅ Integration with **Tailwind CSS** ([@astrojs/tailwind](https://docs.astro.build/en/guides/integrations-guide/tailwind/))
-- ✅ **Production-ready** scores in [Lighthouse](https://web.dev/measure/) and [PageSpeed Insights](https://pagespeed.web.dev/) reports.
-- ✅ **Fast and SEO friendly blog** with automatic, [**MDX** support](https://docs.astro.build/en/guides/integrations-guide/mdx/), **Categories & Tags**, **Social Share**, ...
-- ✅ **Image optimization** ([@astrojs/images](https://docs.astro.build/en/guides/integrations-guide/image/)) and **Font optimization**.
-- ✅ Generation of **project sitemap** based on your routes ([@astrojs/sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/)).
-- ✅ **Open Graph tags** for social media sharing.
-- ✅ **Analytics** built-in Google Analytics, and Splitbee integration.
+- **[Astro 2.x](https://astro.build/)** - Framework moderne pour sites statiques haute performance
+  - Génération de sites statiques (SSG)
+  - Rendu côté serveur (SSR) optionnel
+  - Islands Architecture pour hydratation partielle
+  - Support MDX natif
 
-<br>
+### Styling
 
-<img src="https://raw.githubusercontent.com/onwidget/.github/main/resources/astrowind/screenshot-astro2.jpg" alt="AstroWind Theme Screenshot">
+- **[Tailwind CSS](https://tailwindcss.com/)** - Framework CSS utility-first
+  - Configuration personnalisée (`tailwind.config.cjs`)
+  - Plugin typography pour le contenu markdown
+  - Thème personnalisé avec variables de couleurs
 
-[![onWidget](https://custom-icon-badges.demolab.com/badge/made%20by%20-onWidget-556bf2?style=flat-square&logo=onwidget&logoColor=white&labelColor=101827)](https://onwidget.com)
-[![License](https://img.shields.io/github/license/onwidget/astrowind?style=flat-square&color=dddddd&labelColor=000000)](https://github.com/onwidget/astrowind/blob/main/LICENSE.md)
-[![Maintained](https://img.shields.io/badge/maintained%3F-yes-brightgreen.svg?style=flat-square)](https://github.com/onwidget)
-[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat-square)](https://github.com/onwidget/astrowind#contributing)
-[![Known Vulnerabilities](https://snyk.io/test/github/onwidget/astrowind/badge.svg?style=flat-square)](https://snyk.io/test/github/onwidget/astrowind)
-[![Stars](https://img.shields.io/github/stars/onwidget/astrowind.svg?style=social&label=stars&maxAge=86400&color=ff69b4)](https://github.com/onwidget/astrowind)
-[![Forks](https://img.shields.io/github/forks/onwidget/astrowind.svg?style=social&label=forks&maxAge=86400&color=ff69b4)](https://github.com/onwidget/astrowind)
+### Gestion de Contenu
 
-<br>
+- **[TinaCMS](https://tina.io/)** - Headless CMS git-based
+  - Interface d'édition visuelle accessible via `/admin`
+  - Contenu stocké en Markdown dans `src/content/`
+  - Schéma défini dans `.tina/config.ts`
+  - Deux collections principales :
+    - `accueil_categories` : Catégories de services affichées sur la page d'accueil
+    - `realisations` : Portfolio des projets réalisés
 
-<details open>
-<summary>Table of Contents</summary>
+### Bibliothèques JavaScript
 
-- [Demo](#demo)
-- [Getting started](#getting-started)
-  - [Project structure](#project-structure)
-  - [Commands](#commands)
-  - [Configuration](#configuration)
-  - [Deploy](#deploy)
-- [Frequently Asked Questions](#frequently-asked-questions)
-- [Related Projects](#related-projects)
-- [Contributing](#contributing)
-- [Acknowledgements](#acknowledgements)
-- [License](#license)
+- **[Swiper](https://swiperjs.com/)** - Carousels tactiles modernes
+  - Galeries d'images
+  - Carrousel de réalisations
+  - Navigation entre catégories
+- **[PhotoSwipe](https://photoswipe.com/)** - Lightbox responsive pour galeries d'images
+- **[AOS (Animate On Scroll)](https://michalsnik.github.io/aos/)** - Animations au scroll
 
-</details>
+### Optimisation
 
-<br>
+- **Sharp** - Traitement et optimisation des images
+- **astro-compress** - Minification CSS/HTML/JS en production
+- **Partytown** - Exécution des scripts analytics en Web Worker
 
-## Demo
+### Outils de Développement
 
-📌 [https://astrowind.vercel.app/](https://astrowind.vercel.app/)
+- **pnpm** - Gestionnaire de paquets rapide et efficace
+- **ESLint** - Linter JavaScript/TypeScript
+- **Prettier** - Formateur de code
+- **TypeScript** - Typage statique
 
-<br>
+## Prérequis
 
-## Getting started
+- **Node.js** 18.x (voir `.node-version`)
+- **pnpm** 8.x ou supérieur
 
-**AstroWind** tries to give you quick access to creating a website using [Astro 2.0](https://astro.build/blog/astro-2/) + [Tailwind CSS](https://tailwindcss.com/). It's a free theme focuses on simplicity, good practices and high performance.
+```bash
+# Installer pnpm si nécessaire
+npm install -g pnpm
 
-Very little vanilla javascript is used only to provide basic functionality so that each developer decides which framework (React, Vue, Svelte, Solid JS...) to use and how to approach their goals..
+# Utiliser la bonne version de Node (avec nvm)
+nvm use
+```
 
-### Project structure
+## Installation
 
-Inside AstroWind template, you'll see the following folders and files:
+```bash
+# Cloner le repository
+git clone [url-du-repo]
+
+# Installer les dépendances
+pnpm install
+```
+
+## Commandes
+
+| Commande | Description |
+|----------|-------------|
+| `pnpm dev` | Démarre le serveur de développement avec TinaCMS sur `localhost:3000` |
+| `pnpm start` | Démarre le serveur Astro uniquement (sans TinaCMS) |
+| `pnpm build` | Build de production (TinaCMS + site statique dans `./dist/`) |
+| `pnpm preview` | Prévisualise le build de production localement |
+| `pnpm format` | Formate le code avec Prettier |
+| `pnpm lint:eslint` | Analyse le code avec ESLint |
+| `pnpm subfont` | Optimise les polices (à exécuter après le build) |
+
+## Architecture du Projet
 
 ```
-/
+baptiste-clisson/
+├── .tina/                    # Configuration TinaCMS
+│   └── config.ts            # Schéma des collections
 ├── public/
-│   ├── robots.txt
-│   └── favicon.ico
+│   ├── admin/               # Interface TinaCMS (généré)
+│   └── images/              # Assets statiques et uploads TinaCMS
+│       └── realisations/    # Images des projets
 ├── src/
 │   ├── assets/
-│   │   ├── images/
 │   │   └── styles/
-│   │       └── base.css
+│   │       └── base.css     # Styles globaux + Tailwind
 │   ├── components/
-│   │   ├── blog/
-│   │   ├── common/
-│   │   ├── widgets/
-│   │   │   ├── Header.astro
-│   │   │   └── ...
-│   │   ├── CustomStyles.astro
-│   │   └── Logo.astro
-│   ├── content/
-│   │   ├── post/
-│   │   │   ├── post-slug-1.md
-│   │   │   ├── post-slug-2.mdx
-│   │   │   └── ...
-│   │   └-- config.ts
+│   │   ├── common/          # Composants partagés
+│   │   ├── contact/         # Formulaire de contact
+│   │   ├── photoswipe/      # Intégration PhotoSwipe
+│   │   ├── realisations/    # Composants portfolio
+│   │   ├── review/          # Avis clients
+│   │   └── widgets/         # Sections de page (Header, Footer, Hero)
+│   ├── content/             # Contenu Markdown géré par TinaCMS
+│   │   ├── accueil_categories/  # Catégories page d'accueil
+│   │   ├── realisations/        # Portfolio projets
+│   │   └── config.ts            # Configuration collections Astro
 │   ├── layouts/
-│   │   ├── BaseLayout.astro
-│   │   └── ...
+│   │   ├── BaseLayout.astro     # Layout principal avec SEO
+│   │   ├── MarkdownLayout.astro # Layout pour contenu markdown
+│   │   └── PageLayout.astro     # Layout pages standards
 │   ├── pages/
-│   │   ├── [...blog]/
-│   │   │   ├── [tag]/
-│   │   │   ├── [...page].astro
-│   │   │   └── index.astro
-│   │   ├── index.astro
-│   │   ├── 404.astro
-│   │   └── ...
-│   ├── utils/
-│   ├── config.mjs
-│   └── data.js
-├── package.json
-├── astro.config.mjs
-└── ...
+│   │   ├── [...realisations]/   # Routes dynamiques portfolio
+│   │   │   ├── index.astro          # Liste des réalisations
+│   │   │   ├── [...page].astro      # Pagination
+│   │   │   └── [tag]/[...page].astro # Filtrage par tag
+│   │   ├── index.astro          # Page d'accueil
+│   │   └── contact.astro        # Page contact
+│   ├── types.ts             # Types TypeScript
+│   ├── utils/               # Fonctions utilitaires
+│   │   ├── realisations.ts  # Logique portfolio
+│   │   └── images.ts        # Traitement images
+│   ├── config.mjs           # Configuration du site
+│   └── data.js              # Données navigation & footer
+├── astro.config.mjs         # Configuration Astro
+├── netlify.toml             # Configuration Netlify
+├── tailwind.config.cjs      # Configuration Tailwind
+└── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Système de Réalisations (Portfolio)
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Le portfolio fonctionne avec un système de collections Astro + TinaCMS :
 
-Any static assets, like images, can be placed in the `public/` directory if they do not require any transformation or in the `assets/` directory if they are imported directly.
+1. **Création de contenu** : Via l'interface TinaCMS (`/admin`), créer une nouvelle réalisation
+2. **Stockage** : Fichier Markdown généré dans `src/content/realisations/`
+3. **Frontmatter** : Métadonnées (titre, date, tags, images, description)
+4. **Affichage** : Pages dynamiques générées automatiquement
+5. **Filtrage** : Par tags, avec pagination automatique
 
-[![Edit AstroWind on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/onwidget/astrowind/tree/main)
+### Schéma d'une Réalisation
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Update `config.mjs` and contents. Have fun!
+```markdown
+---
+title: "Titre du projet"
+publishDate: 2024-01-15T00:00:00.000Z
+image: /images/realisations/projet/principale.jpg
+tags:
+  - charpente
+  - restauration
+category: charpente
+excerpt: "Description courte du projet"
+images:
+  - image: /images/realisations/projet/photo1.jpg
+  - image: /images/realisations/projet/photo2.jpg
+---
 
-<br>
-
-### Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command               | Action                                             |
-| :-------------------- | :------------------------------------------------- |
-| `npm install`         | Installs dependencies                              |
-| `npm run dev`         | Starts local dev server at `localhost:3000`        |
-| `npm run build`       | Build your production site to `./dist/`            |
-| `npm run preview`     | Preview your build locally, before deploying       |
-| `npm run format`      | Format codes with Prettier                         |
-| `npm run lint:eslint` | Run Eslint                                         |
-| `npm run astro ...`   | Run CLI commands like `astro add`, `astro preview` |
-
-<br>
-
-### Configuration
-
-Basic configuration file: `./src/config.mjs`
-
-```javascript
-const CONFIG = {
-  name: 'Example',
-
-  origin: 'https://example.com',
-  basePathname: '/', // Change this if you need to deploy to Github Pages, for example
-  trailingSlash: false, // Generate permalinks with or without "/" at the end
-
-  title: 'Example - This is the homepage title of Example', // Default seo title
-  description: 'This is the homepage description of Example', // Default seo description
-  defaultImage: 'image.jpg', // Default seo image
-
-  defaultTheme: 'light', // Values: "system" | "light" | "dark" | "light:only" | "dark:only"
-
-  language: 'en', // Default language
-  textDirection: 'ltr', // Default html text direction
-
-  dateFormatter: new Intl.DateTimeFormat('en', {
-    // Date format
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric',
-    timeZone: 'UTC',
-  }),
-
-  googleAnalyticsId: false, // Or "G-XXXXXXXXXX",
-  googleSiteVerificationId: false, // Or some value,
-
-  blog: {
-    disabled: false,
-    postsPerPage: 4,
-
-    post: {
-      permalink: '/%slug%', // variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%,
-      noindex: false,
-      disabled: false,
-    },
-
-    list: {
-      pathname: 'blog', // Blog main path, you can change this to "articles" (/articles)
-      noindex: false,
-      disabled: false,
-    },
-
-    tag: {
-      pathname: 'tag', // Tag main path /tag/some-tag
-      noindex: true,
-      disabled: false,
-    },
-  },
-};
+Description détaillée du projet en Markdown...
 ```
 
-<br>
+## Gestion du Contenu avec TinaCMS
 
-### Deploy
+### Accès à l'interface d'administration
 
-#### Deploy to production (manual)
+1. Lancer le serveur de développement : `pnpm dev`
+2. Accéder à `http://localhost:3000/admin`
+3. Se connecter (authentification Git)
 
-You can create an optimized production build with:
+### Édition de contenu
 
-```shell
-npm run build
+- **Mode visuel** : Édition directe sur les pages du site
+- **Mode formulaire** : Édition via formulaires structurés
+- **Sauvegarde** : Commits Git automatiques
+
+### Collections disponibles
+
+- **Accueil Categories** : Services affichés sur la page d'accueil
+- **Realisations** : Projets du portfolio avec galeries d'images
+
+## Déploiement
+
+### Netlify (Production Actuelle)
+
+Le site est automatiquement déployé sur Netlify à chaque push sur `main`.
+
+**Configuration** : `netlify.toml`
+- Build command : `pnpm build`
+- Publish directory : `dist`
+- Node version : 18
+
+**URL de production** : https://charpenteboisdebout.fr
+
+### Déploiement Manuel
+
+```bash
+# Build de production
+pnpm build
+
+# Le dossier dist/ contient le site statique prêt à déployer
 ```
 
-Now, your website is ready to be deployed. All generated files are located at
-`dist` folder, which you can deploy the folder to any hosting service you
-prefer.
+## Performance & SEO
 
-#### Deploy to Netlify
+- **Lighthouse Score** : 95+ sur tous les critères
+- **Images optimisées** : Compression automatique avec Sharp
+- **CSS minimal** : Purge Tailwind en production
+- **Lazy loading** : Images et composants chargés à la demande
+- **Sitemap** : Généré automatiquement
+- **Meta tags** : Open Graph et Twitter Cards
+- **Schema.org** : Données structurées pour le SEO
 
-Clone this repository on own GitHub account and deploy to Netlify:
+## Développement
 
-[![Netlify Deploy button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/onwidget/astrowind)
+### Structure des Composants
 
-#### Deploy to Vercel
+- **Widgets** : Grandes sections réutilisables (Hero, Features, CallToAction)
+- **Common** : Petits composants partagés (Boutons, Images, MetaTags)
+- **Spécifiques** : Composants métier (Realisations, Contact, Reviews)
 
-Clone this repository on own GitHub account and deploy to Vercel:
+### Conventions
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fonwidget%2Fastrowind)
+- **Nommage** : PascalCase pour les composants Astro
+- **Styles** : Classes Tailwind en priorité, CSS custom minimal
+- **Images** : Toujours optimisées via le composant Image d'Astro
+- **Types** : Interfaces TypeScript dans `src/types.ts`
 
-<br>
+### Ajout d'une Nouvelle Page
 
-## Frequently Asked Questions
+1. Créer un fichier `.astro` dans `src/pages/`
+2. Utiliser un layout existant (`PageLayout`, `BaseLayout`)
+3. Ajouter la route dans `src/data.js` si nécessaire
+4. Le routing est automatique basé sur le nom de fichier
 
-- Why?
--
--
+## Variables d'Environnement
 
-<br>
+Aucune variable d'environnement n'est requise pour le développement local.
 
-## Related projects
+Pour la production, configurer dans Netlify :
+- Authentification TinaCMS (optionnel en production)
+- Google Analytics ID (si activé dans `config.mjs`)
 
-- [Qwind](https://qwind.pages.dev/) - A template to make your website using Qwik + Tailwind CSS.
+## Support & Maintenance
 
-## Contributing
+- **Framework** : Basé sur le template AstroWind
+- **Auteur original** : onWidget
+- **Adaptation** : Personnalisée pour Charpente Bois Debout
 
-If you have any idea, suggestions or find any bugs, feel free to open a discussion, an issue or create a pull request.
-That would be very useful for all of us and we would be happy to listen and take action.
+## Licence
 
-## Acknowledgements
+Ce projet est sous licence MIT - voir le fichier [LICENSE.md](./LICENSE.md) pour plus de détails.
 
-Initially created by [onWidget](https://onwidget.com) and maintained by a community of [contributors](https://github.com/onwidget/astrowind/graphs/contributors).
+---
 
-## License
-
-**AstroWind** is licensed under the MIT license — see the [LICENSE](./LICENSE.md) file for details.
+Construit avec passion pour un artisan passionné par le bois et les savoir-faire traditionnels.
