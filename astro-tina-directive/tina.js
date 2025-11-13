@@ -12,6 +12,7 @@ export default (load, _opts, _el) => {
 
     // Load and hydrate the component
     (async () => {
+      document.body.dataset.tinaVisual = 'true';
       const hydrate = await load();
       await hydrate();
     })();

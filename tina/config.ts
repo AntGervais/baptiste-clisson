@@ -110,15 +110,15 @@ export default defineConfig({
             label: 'Accroche',
           },
           {
-            type: 'string',
-            name: 'folder',
-            label: 'Nom du dossier des images : Media Manager -> /realisations',
-          },
-          {
             type: 'rich-text',
             name: 'description',
             label: 'Description',
             isBody: true,
+          },
+          {
+            type: 'string',
+            name: 'folder',
+            label: 'Nom EXACT du dossier des images : Media Manager -> /realisations',
           },
           {
             type: 'string',

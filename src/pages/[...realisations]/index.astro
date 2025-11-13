@@ -58,10 +58,27 @@ try {
 }
 ---
 
+<style>
+  .tina-visual-only {
+    display: none;
+  }
+
+  body[data-tina-visual='true'] .tina-visual-only {
+    display: block;
+  }
+
+  body[data-tina-visual='true'] .tina-site-view {
+    display: none;
+  }
+</style>
+
 <Layout {meta}>
-  {tinaData ? (
-    <>
-      {/* Visual editing mode with React component */}
+  <div class="tina-site-view">
+    <SingleRealisation post={{ ...post, image: meta.image }} url={url} />
+  </div>
+
+  {tinaData && (
+    <div class="tina-visual-only" aria-hidden="true">
       <RealisationPage
         data={tinaData.data}
         query={tinaData.query}
@@ -69,12 +86,7 @@ try {
         url={String(url)}
         client:tina
       />
-    </>
-  ) : (
-    <>
-      {/* Fallback to original Astro component if TinaCMS fails */}
-      <SingleRealisation post={{ ...post, image: meta.image }} url={url} />
-    </>
+    </div>
   )}
   <ToBlogLink />
 </Layout>

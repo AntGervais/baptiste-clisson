@@ -239,8 +239,8 @@ export type Realisations = Node & Document & {
   title: Scalars['String']['output'];
   image: Scalars['String']['output'];
   accroche?: Maybe<Scalars['String']['output']>;
-  folder?: Maybe<Scalars['String']['output']>;
   description?: Maybe<Scalars['JSON']['output']>;
+  folder?: Maybe<Scalars['String']['output']>;
   tags?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
   publishDate?: Maybe<Scalars['String']['output']>;
   id: Scalars['ID']['output'];
@@ -260,8 +260,8 @@ export type RealisationsFilter = {
   title?: InputMaybe<StringFilter>;
   image?: InputMaybe<ImageFilter>;
   accroche?: InputMaybe<StringFilter>;
-  folder?: InputMaybe<StringFilter>;
   description?: InputMaybe<RichTextFilter>;
+  folder?: InputMaybe<StringFilter>;
   tags?: InputMaybe<StringFilter>;
   publishDate?: InputMaybe<DatetimeFilter>;
 };
@@ -371,15 +371,15 @@ export type RealisationsMutation = {
   title?: InputMaybe<Scalars['String']['input']>;
   image?: InputMaybe<Scalars['String']['input']>;
   accroche?: InputMaybe<Scalars['String']['input']>;
-  folder?: InputMaybe<Scalars['String']['input']>;
   description?: InputMaybe<Scalars['JSON']['input']>;
+  folder?: InputMaybe<Scalars['String']['input']>;
   tags?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   publishDate?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type Accueil_CategoriesPartsFragment = { __typename: 'Accueil_categories', image: string, title: string, description: any, tag: string };
 
-export type RealisationsPartsFragment = { __typename: 'Realisations', title: string, image: string, accroche?: string | null, folder?: string | null, description?: any | null, tags?: Array<string | null> | null, publishDate?: string | null };
+export type RealisationsPartsFragment = { __typename: 'Realisations', title: string, image: string, accroche?: string | null, description?: any | null, folder?: string | null, tags?: Array<string | null> | null, publishDate?: string | null };
 
 export type Accueil_CategoriesQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
@@ -405,7 +405,7 @@ export type RealisationsQueryVariables = Exact<{
 }>;
 
 
-export type RealisationsQuery = { __typename?: 'Query', realisations: { __typename: 'Realisations', id: string, title: string, image: string, accroche?: string | null, folder?: string | null, description?: any | null, tags?: Array<string | null> | null, publishDate?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+export type RealisationsQuery = { __typename?: 'Query', realisations: { __typename: 'Realisations', id: string, title: string, image: string, accroche?: string | null, description?: any | null, folder?: string | null, tags?: Array<string | null> | null, publishDate?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
 
 export type RealisationsConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -417,7 +417,7 @@ export type RealisationsConnectionQueryVariables = Exact<{
 }>;
 
 
-export type RealisationsConnectionQuery = { __typename?: 'Query', realisationsConnection: { __typename?: 'RealisationsConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'RealisationsConnectionEdges', cursor: string, node?: { __typename: 'Realisations', id: string, title: string, image: string, accroche?: string | null, folder?: string | null, description?: any | null, tags?: Array<string | null> | null, publishDate?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+export type RealisationsConnectionQuery = { __typename?: 'Query', realisationsConnection: { __typename?: 'RealisationsConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'RealisationsConnectionEdges', cursor: string, node?: { __typename: 'Realisations', id: string, title: string, image: string, accroche?: string | null, description?: any | null, folder?: string | null, tags?: Array<string | null> | null, publishDate?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
 
 export const Accueil_CategoriesPartsFragmentDoc = gql`
     fragment Accueil_categoriesParts on Accueil_categories {
@@ -434,8 +434,8 @@ export const RealisationsPartsFragmentDoc = gql`
   title
   image
   accroche
-  folder
   description
+  folder
   tags
   publishDate
 }

@@ -142,8 +142,8 @@ type Realisations implements Node & Document {
   title: String!
   image: String!
   accroche: String
-  folder: String
   description: JSON
+  folder: String
   tags: [String]
   publishDate: String
   id: ID!
@@ -163,8 +163,8 @@ input RealisationsFilter {
   title: StringFilter
   image: ImageFilter
   accroche: StringFilter
-  folder: StringFilter
   description: RichTextFilter
+  folder: StringFilter
   tags: StringFilter
   publishDate: DatetimeFilter
 }
@@ -214,8 +214,8 @@ input RealisationsMutation {
   title: String
   image: String
   accroche: String
-  folder: String
   description: JSON
+  folder: String
   tags: [String]
   publishDate: String
 }

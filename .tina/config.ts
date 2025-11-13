@@ -22,8 +22,8 @@ export default defineConfig({
   ui: {
     previewUrl: ({ branch }) => {
       // URL de base du serveur de développement
-      return { url: `http://localhost:4321` }
-    }
+      return { url: `http://localhost:4321` };
+    },
   },
   schema: {
     collections: [
@@ -67,8 +67,8 @@ export default defineConfig({
         path: 'src/content/realisations',
         ui: {
           router: ({ document }) => {
-            return `/${document._sys.filename}`
-          }
+            return `/${document._sys.filename}`;
+          },
         },
         fields: [
           {
@@ -90,15 +90,15 @@ export default defineConfig({
             label: 'Accroche',
           },
           {
-            type: 'string',
-            name: 'folder',
-            label: 'Nom du dossier des images : Media Manager -> /realisations',
-          },
-          {
             type: 'rich-text',
             name: 'description',
             label: 'Description',
             isBody: true,
+          },
+          {
+            type: 'string',
+            name: 'folder',
+            label: 'Nom EXACT du dossier des images : Media Manager -> /realisations',
           },
           {
             type: 'string',
