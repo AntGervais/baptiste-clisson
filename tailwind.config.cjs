@@ -1,6 +1,4 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
-const colors = require('tailwindcss/colors');
-const prettier = require('prettier-plugin-tailwindcss');
 const typo = require('@tailwindcss/typography');
 
 module.exports = {
@@ -26,5 +24,5 @@ module.exports = {
       },
     },
   },
-  plugins: [prettier, typo, colors],
+  plugins: [typo],
 };

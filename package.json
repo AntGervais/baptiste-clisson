@@ -3,6 +3,7 @@
   "description": "Website of Baptiste Clisson - Charpente Bois Debout — Artisan Charpentier à Saulgé (86)",
   "version": "1.0.0",
   "private": true,
+  "packageManager": "pnpm@8.15.0",
   "scripts": {
     "dev": "pnpm tinacms dev -c 'astro dev'",
     "start": "astro dev",
@@ -23,7 +24,7 @@
     "@astrolib/seo": "^0.3.0",
     "@fontsource/inter": "^4.5.15",
     "@netlify/functions": "^1.6.0",
-    "@tailwindcss/typography": "^0.5.9",
+    "@tailwindcss/typography": "^0.5.19",
     "@types/photoswipe": "^4.1.2",
     "@typescript-eslint/eslint-plugin": "^5.59.8",
     "@typescript-eslint/parser": "^5.59.8",
@@ -34,13 +35,13 @@
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "limax": "^2.1.0",
     "mdast-util-to-string": "^3.2.0",
-    "prettier": "^2.8.8",
-    "prettier-plugin-astro": "^0.8.1",
-    "prettier-plugin-tailwindcss": "^0.2.8",
+    "prettier": "^3.6.2",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.7.1",
     "sharp": "^0.33.5",
     "subfont": "^6.12.5",
     "svgo": "^2.8.0",
-    "tailwindcss": "^3.3.2",
+    "tailwindcss": "^3.4.18",
     "typescript": "^5.6.3"
   },
   "pnpm": {
@@ -49,21 +50,21 @@
     }
   },
   "engines": {
-    "node": ">=16.12.0"
+    "node": ">=20.19.0"
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",
     "@tinacms/cli": "^1.12.2",
-    "@types/react": "^18.2.7",
-    "@types/react-dom": "^18.2.4",
+    "@types/react": "^19.2.4",
+    "@types/react-dom": "^19.2.3",
     "aos": "^2.3.4",
     "astro-compress": "^2.2.8",
     "astro-google-fonts-optimizer": "^0.2.2",
-    "photoswipe": "^5.3.7",
+    "photoswipe": "^5.4.4",
     "photoswipe-dynamic-caption-plugin": "^1.2.7",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "swiper": "^9.3.2",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "swiper": "^12.0.3",
     "tinacms": "^2.9.3"
   }
 }
