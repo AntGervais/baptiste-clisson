@@ -10,7 +10,10 @@ const { folder } = Astro.props;
 const imageFiles = import.meta.glob('/public/images/realisations/**/*.{png,webp,jpg,jpeg}');
 const folderFiles = Object.keys(imageFiles).filter((image) => image.search(folder) >= 0);
 
-const gallery = 'gallery-' + folder;
+const gallery = `gallery-${folder}`
+  .replace(/[^A-Za-z0-9_-]/g, '-')
+  .replace(/-+/g, '-')
+  .replace(/^-|-$/g, '');
 ---
 
 <div
