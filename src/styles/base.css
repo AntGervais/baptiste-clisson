@@ -19,7 +19,7 @@
     @apply bg-slate-900;
   }
 
-  
+
   .btn {
     @apply inline-flex items-center justify-center rounded-full shadow-md border-gray-400 border bg-transparent font-medium text-center text-base text-page leading-snug transition py-3.5 px-6 md:px-8 ease-in duration-200 focus:ring-blue-500 focus:ring-offset-blue-200 focus:ring-2 focus:ring-offset-2 hover:bg-gray-100 hover:border-gray-600 ;
   }
@@ -111,25 +111,51 @@
   margin-bottom: 20px;
 }
 
-/* Swipper */
+/* Swiper */
 .swiper-button-next,
 .swiper-button-prev  {
   color: var(--aw-color-primary);
+  width: 60px;
+  height: 60px;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  transform: scale(1.15);
+}
+
+.swiper-button-next svg.swiper-navigation-icon,
+.swiper-button-prev svg.swiper-navigation-icon {
+  width: 35px;
+  height: 35px;
+}
+
+.swiper-button-prev svg.swiper-navigation-icon {
+  transform: rotate(180deg);
+}
+
+.swiper-button-next svg.swiper-navigation-icon {
+  transform: rotate(0deg);
 }
 
 .swiper-button-prev:after,
 .swiper-button-next:after {
-  font-size: 35px;
-  padding: 5px;
-  border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.7);
+  font-size: 55px;
+  font-weight: 900;
+  padding: 15px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 3px solid var(--aw-color-primary);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
 }
 
-.swiper-button-next{
-  right: -2px;
-}
-.swiper-button-prev{
-  left: -2px; 
+.swiper-button-prev:hover:after,
+.swiper-button-next:hover:after {
+  background-color: var(--aw-color-primary);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
 @keyframes activitesFadeIn {
