@@ -18,11 +18,11 @@ const { tags, class: className = 'text-base' } = Astro.props;
       {tags.map(
         (tag) =>
           tag && (
-            <div class="mb-2 mr-2 inline-block rounded-sm bg-gray-100 font-medium  lowercase text-primary hover:bg-accent hover:text-gray-100">
+            <div class="mb-2 mr-2 inline-block rounded-sm !bg-gray-100 font-medium lowercase !text-primary hover:!bg-accent hover:!text-gray-100">
               {REALISATIONS?.tag?.disabled ? (
                 tag
               ) : (
-                <a class="px-2 text-sm capitalize" href={getPermalink(tag, 'tag')} title={tag}>
+                <a class="block px-2 text-sm capitalize !text-inherit" href={getPermalink(tag, 'tag')} title={tag}>
                   {tag}
                 </a>
               )}
