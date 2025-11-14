@@ -29,20 +29,20 @@ pnpm lint:eslint      # Run ESLint
 pnpm subfont          # Optimize fonts (run after build)
 ```
 
-**Note**: Node.js 18.x required (see `.nvmrc` for exact version), pnpm 8.x or higher
+**Note**: Node.js >=20.19.0 required (see `package.json` engines), pnpm 8.x or higher
 
 ## Technology Stack
 
 ### Core Dependencies (from package.json)
 - **Astro**: 5.15.0 (static site generator)
 - **TinaCMS**: 2.9.3 (headless CMS)
-- **Tailwind CSS**: 3.3.2 (utility-first CSS framework)
+- **Tailwind CSS**: 3.4.18 (utility-first CSS framework)
 - **TypeScript**: 5.6.3
-- **React**: 18.2.0 (for TinaCMS admin interface)
+- **React**: 19.2.0 (for TinaCMS admin interface)
 
 ### Key Libraries
-- **PhotoSwipe**: 5.3.7 (image gallery/lightbox)
-- **Swiper**: 9.3.2 (carousels)
+- **PhotoSwipe**: 5.4.4 (image gallery/lightbox)
+- **Swiper**: 12.0.3 (carousels)
 - **Sharp**: 0.33.5 (image optimization)
 - **AOS**: 2.3.4 (scroll animations)
 
