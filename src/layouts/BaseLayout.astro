@@ -30,6 +30,37 @@ const { language = 'en', textDirection = 'ltr' } = SITE;
   <body class="text-page bg-light antialiased">
     <slot />
     <BasicScripts />
+
+    <button
+      id="scrollToTopBtn"
+      class="fixed bottom-8 right-8 z-50 hidden rounded-full bg-primary p-3 text-white shadow-lg transition-all hover:bg-secondary hover:scale-110 focus:outline-none"
+      aria-label="Retour en haut"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+      </svg>
+    </button>
+
+    <script>
+      const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+      if (scrollToTopBtn) {
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 300) {
+            scrollToTopBtn.classList.remove('hidden');
+          } else {
+            scrollToTopBtn.classList.add('hidden');
+          }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+          });
+        });
+      }
+    </script>
     <style is:global>
       img {
         content-visibility: auto;

@@ -25,7 +25,10 @@ const meta = {
 <Layout {meta}>
   <!-- Hero Widget ******************* -->
 
-  <Hero>
+  <Hero
+    callToAction={{ text: 'Demander un devis', href: '#contact', icon: 'tabler:mail' }}
+    callToAction2={{ text: 'Voir mes réalisations', href: '#realisations' }}
+  >
     <Fragment slot="title">
       <span class="leading-tight">
         <span class="text-primary">Bois Debout,</span>
@@ -36,6 +39,7 @@ const meta = {
     <Fragment slot="subtitle">
       <span class="subtitle">
         Expertise artisanale en charpente traditionnelle, ossature bois et escaliers sur-mesure.
+        <br />
         Intervention en neuf et rénovation dans la Vienne (86).
       </span>
     </Fragment>

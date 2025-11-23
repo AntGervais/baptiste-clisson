@@ -26,7 +26,7 @@ const {
 } = Astro.props;
 ---
 
-<section class="relative">
+<section class="relative z-10">
   <div class="pointer-events-none absolute inset-0" aria-hidden="true"></div>
   <div class="w">
     <div class="relative mx-auto max-w-6xl px-4 sm:px-6">
@@ -68,9 +68,6 @@ const {
                     <a
                       class="btn btn-primary w-full sm:mb-0"
                       href={callToAction?.href}
-                      target="_blank"
-                      rel="noopener"
-                      title={callToAction?.text || 'Call to action'}
                     >
                       {callToAction?.icon && (
                         <>
