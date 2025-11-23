@@ -2,6 +2,7 @@
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Contact from '~/components/contact/Contact.astro';
+import FilteredRealisations from '~/components/realisations/FilteredRealisations.astro';
 import { SITE } from '~/config.mjs';
 
 const meta = {
@@ -47,6 +48,11 @@ const meta = {
       </p>
     </div>
   </section>
+
+  <FilteredRealisations
+    title="Mes réalisations en Charpente & Rénovation"
+    tags={['charpente', 'restauration']}
+  />
 
   <section id="contact">
     <Contact />

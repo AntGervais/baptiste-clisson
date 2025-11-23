@@ -1,0 +1,51 @@
+---
+import { getRealisationsPermalink } from '~/utils/permalinks';
+import { fetchRealisations } from '~/utils/realisations';
+import SwiperRealisations from '../widgets/SwiperRealisations.astro';
+
+export interface Props {
+  title?: string;
+  tags?: string[]; // List of tags to filter by
+  count?: number;
+  allRealisationsText?: string;
+  allRealisationsLink?: string | URL;
+}
+
+const {
+  title = await Astro.slots.render('title'),
+  tags = [],
+  count = 6,
+  allRealisationsText = 'Voir toutes les réalisations',
+  allRealisationsLink = getRealisationsPermalink(),
+} = Astro.props;
+
+const allPosts = await fetchRealisations();
+
+// Filter posts by tags if tags are provided
+const posts = tags.length > 0
+  ? allPosts.filter((post) =>
+      post.tags && post.tags.some((tag) => tags.includes(tag))
+    ).slice(0, count)
+  : allPosts.slice(0, count);
+
+---
+
+{posts.length > 0 && (
+  <section class="mx-auto max-w-6xl py-12 lg:py-16">
+    <div class="mb-6 pl-6">
+      {title && <h2 class="font-heading text-accent text-3xl sm:text-4xl" set:html={title} />}
+    </div>
+
+    <SwiperRealisations posts={posts} />
+
+    <div class="mt-8 text-center">
+      <a
+        class="btn btn-primary"
+        href={allRealisationsLink}
+        title={allRealisationsText}
+      >
+        {allRealisationsText} »
+      </a>
+    </div>
+  </section>
+)}

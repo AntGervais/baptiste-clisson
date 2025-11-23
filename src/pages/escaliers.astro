@@ -2,6 +2,7 @@
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Contact from '~/components/contact/Contact.astro';
+import FilteredRealisations from '~/components/realisations/FilteredRealisations.astro';
 
 const meta = {
   title: 'Escaliers Sur-Mesure - Baptiste Clisson Menuisier Charpentier',
@@ -43,6 +44,11 @@ const meta = {
       </p>
     </div>
   </section>
+
+  <FilteredRealisations
+    title="Mes réalisations d'Escaliers"
+    tags={['escalier']}
+  />
 
   <section id="contact">
     <Contact />
