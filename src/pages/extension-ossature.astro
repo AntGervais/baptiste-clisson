@@ -1,0 +1,50 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Contact from '~/components/contact/Contact.astro';
+
+const meta = {
+  title: 'Extension & Ossature Bois - Baptiste Clisson Charpentier',
+  description: 'Agrandissement de maison et construction en ossature bois à Saulgé, Montmorillon, Chauvigny (86). Solutions écologiques et durables.',
+};
+---
+
+<Layout {meta}>
+  <Hero>
+    <Fragment slot="title">
+      <span class="text-primary">Extension</span> & <span class="text-accent">Ossature Bois</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="subtitle">
+        Agrandissez votre espace de vie avec des solutions durables, écologiques et performantes.
+      </span>
+    </Fragment>
+  </Hero>
+
+  <section class="container mx-auto px-6 py-10 text-lg text-page">
+    <div class="mx-auto max-w-4xl">
+      <h2 class="mb-6 font-heading text-3xl text-secondary">L'ossature bois : un choix naturel</h2>
+      <p class="mb-6">
+        La construction en <strong>ossature bois</strong> offre de nombreux avantages : rapidité de mise en œuvre, excellentes performances thermiques et respect de l'environnement. C'est la solution idéale pour vos projets d'extension ou de surélévation.
+      </p>
+
+      <h2 class="mb-6 font-heading text-3xl text-secondary">Nos prestations</h2>
+      <ul class="mb-6 list-inside list-disc space-y-2">
+        <li><strong>Extension de maison</strong> : Créez une nouvelle pièce, un garage ou un atelier.</li>
+        <li><strong>Surélévation</strong> : Gagnez de la surface habitable sans modifier l'emprise au sol.</li>
+        <li><strong>Auvent et préau</strong> : Aménagez vos extérieurs avec des structures en bois robustes.</li>
+        <li><strong>Terrasse bois</strong> : Pour profiter pleinement de votre jardin.</li>
+      </ul>
+
+      <h2 class="mb-6 font-heading text-3xl text-secondary">Un artisan à votre écoute</h2>
+      <p class="mb-6">
+        Je vous accompagne de la conception à la réalisation de votre projet d'extension bois. J'interviens sur le secteur de <strong>Saulgé</strong>, <strong>Montmorillon</strong>, <strong>Chauvigny</strong>, <strong>Lussac-les-Châteaux</strong> et dans tout le département de la <strong>Vienne (86)</strong>.
+      </p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <Contact />
+  </section>
+</Layout>

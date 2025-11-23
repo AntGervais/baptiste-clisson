@@ -20,7 +20,16 @@ const { categories } = Astro.props;
     {
       categories.map((cate: CategoryAccueil) => (
         <div class="swiper-slide">
-          <Category title={cate.title} image={cate.image} link={getPermalink(cate.tag, 'tag')} />
+          <Category
+            title={cate.title}
+            image={cate.image}
+            link={
+              cate.tag === 'escalier' ? getPermalink('/escaliers') :
+              cate.tag === 'charpente' ? getPermalink('/charpente-renovation') :
+              cate.tag === 'restauration' ? getPermalink('/charpente-renovation') :
+              getPermalink(cate.tag, 'tag')
+            }
+          />
         </div>
       ))
     }

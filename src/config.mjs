@@ -9,7 +9,7 @@ const CONFIG = {
 
   title: 'Charpente Bois Debout — Artisan Charpentier à Saulgé (86) - Baptiste Clisson',
   description:
-    'Entreprise de Charpentes traditionnelles - Ossatures et planchers bois - Escaliers massifs sur mesure. Restauration et réhabilitation du bâti ancien.',
+    'Entreprise de charpente traditionnelle, rénovation et escaliers sur-mesure à Saulgé, Montmorillon et Poitiers (86). Expertise artisanale pour vos projets bois.',
   defaultImage: defaultImage,
 
   defaultTheme: 'light', // Values: "system" | "light" | "dark" | "light:only" | "dark:only"

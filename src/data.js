@@ -24,20 +24,26 @@ export const headerData = {
 };
 
 export const footerData = {
-  // links: [
-  //   {
-  //     title: 'Plan du site',
-  //     links: [
-  //       { text: 'Présentation', href: SITE.basePathname + '#presentation' },
-  //       { text: 'Réalisations', href: SITE.basePathname + '#realisations' },
-  //       { text: 'Contact', href: SITE.basePathname + '#contact' },
-  //       { text: 'Avis clients', href: SITE.basePathname + '#avis-cltermients' },
-  //     ],
-  //   },
-  // ],
+  links: [
+    {
+      title: 'Services',
+      links: [
+        { text: 'Charpente & Rénovation', href: getPermalink('/charpente-renovation') },
+        { text: 'Escaliers sur-mesure', href: getPermalink('/escaliers') },
+        { text: 'Extension & Ossature', href: getPermalink('/extension-ossature') },
+      ],
+    },
+    {
+      title: 'Entreprise',
+      links: [
+        { text: 'Réalisations', href: getPermalink('/realisations') },
+        { text: 'Avis clients', href: getPermalink('/#avis-clients') },
+        { text: 'Contact', href: getPermalink('/#contact') },
+      ],
+    },
+  ],
   secondaryLinks: [
-    // { text: 'CGV', href: getPermalink('/cgv') },
-    // { text: 'Privacy Policy', href: getPermalink('/privacy') },
+    { text: 'Mentions Légales', href: getPermalink('/mentions-legales') },
   ],
   socialLinks: [
     { ariaLabel: 'Google Maps', icon: 'tabler:map-pin', href: 'https://goo.gl/maps/mDJCT3EZbiL9QHvw8' },

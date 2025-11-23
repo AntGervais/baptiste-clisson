@@ -1,0 +1,54 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Contact from '~/components/contact/Contact.astro';
+import { SITE } from '~/config.mjs';
+
+const meta = {
+  title: 'Charpente Traditionnelle & Rénovation - Baptiste Clisson',
+  description: 'Expert en charpente traditionnelle et rénovation de bâti ancien à Saulgé, Montmorillon et dans la Vienne (86). Restauration de fermettes, modifications de charpente.',
+};
+---
+
+<Layout {meta}>
+  <Hero>
+    <Fragment slot="title">
+      <span class="text-primary">Charpente Traditionnelle</span> & <span class="text-accent">Rénovation</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="subtitle">
+        Restauration de patrimoine et création de charpentes neuves dans le respect des traditions.
+      </span>
+    </Fragment>
+  </Hero>
+
+  <section class="container mx-auto px-6 py-10 text-lg text-page">
+    <div class="mx-auto max-w-4xl">
+      <h2 class="mb-6 font-heading text-3xl text-secondary">L'art du trait et du bois</h2>
+      <p class="mb-6">
+        Spécialisé dans la <strong>charpente traditionnelle</strong>, je mets mon savoir-faire au service de vos projets de construction et de rénovation. Que ce soit pour une maison neuve ou pour la restauration d'un bâtiment ancien, chaque pièce de bois est sélectionnée et taillée avec précision.
+      </p>
+
+      <h2 class="mb-6 font-heading text-3xl text-secondary">Rénovation de bâti ancien</h2>
+      <p class="mb-6">
+        La rénovation de charpentes anciennes demande une expertise particulière. J'interviens pour :
+      </p>
+      <ul class="mb-6 list-inside list-disc space-y-2">
+        <li>Le renforcement de structures existantes.</li>
+        <li>Le remplacement de pièces de bois abîmées (entraits, arbalétriers, pannes).</li>
+        <li>La modification de charpente pour l'aménagement de combles.</li>
+        <li>La restauration de fermettes et de toitures traditionnelles.</li>
+      </ul>
+
+      <h2 class="mb-6 font-heading text-3xl text-secondary">Zone d'intervention</h2>
+      <p class="mb-6">
+        Basé à <strong>Saulgé</strong>, j'interviens pour vos chantiers de charpente et de rénovation à <strong>Montmorillon</strong>, <strong>Lussac-les-Châteaux</strong>, <strong>Chauvigny</strong>, <strong>Poitiers</strong> et dans tout le département de la <strong>Vienne (86)</strong>.
+      </p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <Contact />
+  </section>
+</Layout>

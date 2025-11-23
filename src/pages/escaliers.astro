@@ -1,0 +1,50 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Contact from '~/components/contact/Contact.astro';
+
+const meta = {
+  title: 'Escaliers Sur-Mesure - Baptiste Clisson Menuisier Charpentier',
+  description: 'Conception et fabrication d\'escaliers en bois sur-mesure à Saulgé, Montmorillon et Poitiers (86). Escaliers droits, quart tournant, hélicoïdaux.',
+};
+---
+
+<Layout {meta}>
+  <Hero>
+    <Fragment slot="title">
+      <span class="text-primary">Escaliers</span> <span class="text-accent">Sur-Mesure</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="subtitle">
+        Des créations uniques pour sublimer votre intérieur, alliant esthétique et fonctionnalité.
+      </span>
+    </Fragment>
+  </Hero>
+
+  <section class="container mx-auto px-6 py-10 text-lg text-page">
+    <div class="mx-auto max-w-4xl">
+      <h2 class="mb-6 font-heading text-3xl text-secondary">Votre escalier, pièce maîtresse de votre intérieur</h2>
+      <p class="mb-6">
+        L'escalier n'est pas seulement un moyen de passer d'un étage à l'autre, c'est un élément central de votre décoration. Je conçois et fabrique des <strong>escaliers en bois massif sur-mesure</strong>, adaptés à vos goûts et aux contraintes de votre espace.
+      </p>
+
+      <h2 class="mb-6 font-heading text-3xl text-secondary">Types d'escaliers</h2>
+      <ul class="mb-6 list-inside list-disc space-y-2">
+        <li><strong>Escalier droit</strong> : L'élégance de la simplicité.</li>
+        <li><strong>Escalier quart tournant ou double quart tournant</strong> : Pour optimiser l'espace.</li>
+        <li><strong>Escalier hélicoïdal</strong> : Pour un gain de place et un style aérien.</li>
+        <li><strong>Escalier avec rangements intégrés</strong> : Pratique et esthétique.</li>
+      </ul>
+
+      <h2 class="mb-6 font-heading text-3xl text-secondary">Fabrication artisanale dans la Vienne</h2>
+      <p class="mb-6">
+        Tous les escaliers sont fabriqués dans mon atelier à <strong>Saulgé</strong>. Je me déplace pour la prise de côtes et l'installation à <strong>Montmorillon</strong>, <strong>Lussac-les-Châteaux</strong>, <strong>Civaux</strong>, <strong>Poitiers</strong> et leurs alentours.
+      </p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <Contact />
+  </section>
+</Layout>
