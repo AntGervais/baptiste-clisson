@@ -3,6 +3,7 @@ import '~/styles/base.css';
 
 import MetaTags from '~/components/common/MetaTags.astro';
 import BasicScripts from '~/components/common/BasicScripts.astro';
+import SchemaLD from '~/components/common/SchemaLD.astro';
 
 import type { MetaSEO } from '~/types';
 import { SITE } from '~/config.mjs';
@@ -21,6 +22,7 @@ const { language = 'en', textDirection = 'ltr' } = SITE;
 <html lang={language} dir={textDirection} class="2xl:text-[20px]">
   <head>
     <MetaTags {...meta} />
+    <SchemaLD />
     <GoogleFontsOptimizer url="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" />
     <GoogleFontsOptimizer url="https://fonts.googleapis.com/css2?family=Buenard:wght@400;700&display=swap" />
   </head>

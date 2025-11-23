@@ -1,0 +1,54 @@
+---
+import { SITE } from '~/config.mjs';
+import { getImage } from 'astro:assets';
+
+const defaultImage = SITE.defaultImage
+  ? (
+      await getImage({
+        src: SITE.defaultImage,
+        alt: 'Charpente Bois Debout',
+        width: 1200,
+        height: 628,
+      })
+    ).src
+  : '';
+
+const imageUrl = new URL(defaultImage, SITE.origin).toString();
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Charpente Bois Debout - Baptiste Clisson",
+  "image": imageUrl,
+  "@id": SITE.origin,
+  "url": SITE.origin,
+  "telephone": "+33630481737",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "17 Beumene",
+    "addressLocality": "Saulgé",
+    "postalCode": "86500",
+    "addressCountry": "FR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 46.3768,
+    "longitude": 0.8795
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday"
+    ],
+    "opens": "08:00",
+    "closes": "18:00"
+  },
+  "priceRange": "$$"
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
