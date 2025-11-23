@@ -9,6 +9,7 @@ const image = await findImage('/images/logo/BoisDebout-Creme.webp');
   src={image}
   class="logo block h-10 lg:h-14 w-auto transition ease-in duration-250"
   alt={'Bois Debout Logo'}
-  loading="lazy"
+  loading="eager"
+  fetchpriority="high"
   decoding="async"
 />
