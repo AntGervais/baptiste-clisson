@@ -23,7 +23,7 @@ const { post, url } = Astro.props;
 const folder = post.folder ? post.folder : post.image ? post.image.split('/').slice(-2, -1)[0] : null;
 ---
 
-<section class="mx-auto py-8 sm:py-16 lg:py-20">
+<section class="mx-auto py-8">
   <article>
     <header class={post.image ? '' : ''}>
       <div class="mx-auto mb-2 mt-0 flex max-w-4xl flex-col justify-between px-4 sm:flex-row sm:items-center sm:px-6">
