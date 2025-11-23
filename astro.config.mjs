@@ -31,16 +31,16 @@ export default defineConfig({
       forward: ['dataLayer.push']
     }
   })),
-  compress({
-    css: true,
-    html: {
-      removeAttributeQuotes: false
-    },
-    img: false,
-    js: true,
-    svg: false,
-    logger: 1
-  }),
+  // compress({
+  //   css: true,
+  //   html: {
+  //     removeAttributeQuotes: false
+  //   },
+  //   img: false,
+  //   js: true,
+  //   svg: false,
+  //   logger: 1
+  // }),
   react(),
   tinaDirective()],
   vite: {
