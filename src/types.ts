@@ -22,6 +22,7 @@ export interface Realisation {
   publishDate: Date;
   title: string;
   accroche?: string;
+  location?: string;
   folder: string;
   description?: string;
   image: string;

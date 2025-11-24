@@ -26,11 +26,13 @@ const folder = post.folder ? post.folder : post.image ? post.image.split('/').sl
 <section class="mx-auto py-8">
   <article>
     <header class={post.image ? '' : ''}>
-      <div class="mx-auto mb-2 mt-0 flex max-w-4xl flex-col justify-between px-4 sm:flex-row sm:items-center sm:px-6">
-        <!-- <p>
-          <Icon name="tabler:clock" class="w-4 h-4 inline-block -mt-0.5" />
-          <time datetime={String(post.publishDate)}>{getFormattedDate(post.publishDate)}</time>
-        </p> -->
+      <div class="mx-auto mb-4 mt-0 flex max-w-4xl flex-col px-4 sm:px-6">
+        {post.location && (
+          <p class="flex items-center text-primary font-heading font-medium tracking-wider uppercase">
+            <Icon name="tabler:map-pin" class="w-5 h-5 mr-1.5" />
+            <span>{post.location}</span>
+          </p>
+        )}
       </div>
       <h1 class="leading-tighter mx-auto max-w-4xl px-4 font-heading text-4xl text-accent sm:px-6 md:text-5xl">
         {post.title}

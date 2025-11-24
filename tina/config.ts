@@ -110,6 +110,11 @@ export default defineConfig({
             label: 'Accroche',
           },
           {
+            type: 'string',
+            name: 'location',
+            label: 'Ville / Lieu',
+          },
+          {
             type: 'rich-text',
             name: 'description',
             label: 'Description',

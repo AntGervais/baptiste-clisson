@@ -7,6 +7,7 @@ tags:
   - restauration
   - charpente
 publishDate: 2023-04-24T00:00:00.000Z
+location: Montréal
 ---
 
 Réhabilitation d'une maison en centre ancien de Montréal.

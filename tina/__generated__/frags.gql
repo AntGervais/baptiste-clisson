@@ -11,6 +11,7 @@ fragment RealisationsParts on Realisations {
   title
   image
   accroche
+  location
   description
   folder
   tags
