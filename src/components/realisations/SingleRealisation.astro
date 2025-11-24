@@ -43,7 +43,7 @@ const folder = post.folder ? post.folder : post.image ? post.image.split('/').sl
         post.image ? (
           <Image
             src={post.image}
-            class="mx-auto mb-6 max-w-full bg-gray-400 sm:rounded-sm lg:max-w-6xl "
+            class="mx-auto mb-6 max-w-full bg-gray-400 object-cover sm:rounded-sm lg:max-w-6xl max-h-[500px]"
             widths={[800, 1060]}
             sizes="(max-width: 1060px) 800px, 1060px"
             alt={post.title || post.accroche || ''}
