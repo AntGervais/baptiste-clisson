@@ -9,7 +9,7 @@ export interface Props {
 const { posts } = Astro.props;
 ---
 
-<div class="relative">
+<div class="relative lg:px-16">
   <div class="swiper p-5">
     <div class="swiper-wrapper">
       {
@@ -21,8 +21,8 @@ const { posts } = Astro.props;
       }
     </div>
   </div>
-  <div class="swiper-button-next"></div>
-  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next !hidden lg:!flex lg:!right-0"></div>
+  <div class="swiper-button-prev !hidden lg:!flex lg:!left-0"></div>
 </div>
 
 <script>
