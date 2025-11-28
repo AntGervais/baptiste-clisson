@@ -1,0 +1,53 @@
+---
+export interface Props {
+  class?: string;
+  'data-aos'?: string;
+  'data-aos-delay'?: string;
+  'data-aos-duration'?: string;
+  'data-aos-offset'?: string;
+  'data-aos-easing'?: string;
+  'data-aos-once'?: boolean;
+  [key: string]: any;
+}
+
+const { class: className, ...restProps } = Astro.props;
+---
+
+<div class={className} {...restProps}>
+  <slot />
+</div>
+
+<script>
+  // Lazy load AOS only when AnimatedSection is used
+  let aosInitialized = false;
+
+  async function initAOS() {
+    if (aosInitialized) return;
+
+    const AOS = await import('aos');
+    await import('aos/dist/aos.css');
+
+    AOS.default.init({
+      disable: 'mobile',
+      startEvent: 'DOMContentLoaded',
+      initClassName: 'aos-init',
+      animatedClassName: 'aos-animate',
+      useClassNames: false,
+      disableMutationObserver: false,
+      offset: 200,
+      delay: 100,
+      duration: 600,
+      easing: 'ease',
+      once: true,
+    });
+
+    aosInitialized = true;
+  }
+
+  // Initialize AOS when component is loaded
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAOS);
+  } else {
+    initAOS();
+  }
+</script>
