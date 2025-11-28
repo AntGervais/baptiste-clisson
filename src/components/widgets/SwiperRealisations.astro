@@ -26,20 +26,13 @@ const { posts } = Astro.props;
 </div>
 
 <script>
-  import Swiper from 'swiper';
-  import { Navigation } from 'swiper/modules';
-  import 'swiper/css';
-  import 'swiper/css/navigation';
+  import { Swiper, Navigation, defaultSwiperOptions } from '~/utils/swiper-config';
 
   new Swiper('.swiper', {
+    ...defaultSwiperOptions,
     slidesPerView: 1,
     spaceBetween: 20,
     modules: [Navigation],
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    rewind: true,
     breakpoints: {
       1024: {
         slidesPerView: 2,

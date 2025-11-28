@@ -38,24 +38,16 @@ const { images } = Astro.props;
 </div>
 
 <script>
-  import Swiper from 'swiper';
-  import { Navigation, Pagination } from 'swiper/modules';
-  import 'swiper/css';
-  import 'swiper/css/navigation';
-  import 'swiper/css/pagination';
+  import { Swiper, Navigation, Pagination, defaultSwiperOptions } from '~/utils/swiper-config';
 
   new Swiper('.swiper', {
+    ...defaultSwiperOptions,
     slidesPerView: 1,
     spaceBetween: 10,
     modules: [Navigation, Pagination],
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
     pagination: {
       clickable: true,
     },
-    rewind: true,
     breakpoints: {
       640: {
         slidesPerView: 2,

@@ -31,22 +31,34 @@ export default defineConfig({
       forward: ['dataLayer.push']
     }
   })),
-  // compress({
-  //   css: true,
-  //   html: {
-  //     removeAttributeQuotes: false
-  //   },
-  //   img: false,
-  //   js: true,
-  //   svg: false,
-  //   logger: 1
-  // }),
+  compress({
+    css: true,
+    html: {
+      removeAttributeQuotes: false
+    },
+    img: false,
+    js: true,
+    svg: false,
+    logger: 1
+  }),
   react(),
   tinaDirective()],
   vite: {
     resolve: {
       alias: {
         '~': path.resolve(__dirname, './src')
+      }
+    },
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            'swiper': ['swiper'],
+            'photoswipe': ['photoswipe', 'photoswipe-dynamic-caption-plugin'],
+            'react-vendor': ['react', 'react-dom'],
+            'tinacms': ['tinacms']
+          }
+        }
       }
     }
   }
