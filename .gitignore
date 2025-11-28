@@ -25,9 +25,6 @@ pnpm-lock.yaml
 .astro
 node_modules
 
-# pnpm cache
-.pnpm-store/
-
 # Images originales (on garde uniquement les WebP optimisées)
 # Décommenter ces lignes si vous voulez exclure les images originales du repo
 # public/images/**/*.jpg
