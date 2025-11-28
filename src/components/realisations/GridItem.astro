@@ -26,7 +26,7 @@ const link = !REALISATIONS?.post?.disabled ? getPermalink(post.permalink, 'reali
           image && (
             <Image
               src={image}
-              class="h-80 w-full object-cover object-center"
+              class="h-96 w-full object-cover object-center"
               widths={[430]}
               width={430}
               height={400}
@@ -38,7 +38,7 @@ const link = !REALISATIONS?.post?.disabled ? getPermalink(post.permalink, 'reali
           )
         }
 
-        <div class="p-6 pb-4">
+        <div class="p-4">
           <h2 class="mb-3 text-lg font-bold">
             {post.title}
           </h2>

@@ -41,25 +41,9 @@ const folder = post.folder ? post.folder : post.image ? post.image.split('/').sl
         {post.accroche}
       </p>
 
-      {
-        post.image ? (
-          <Image
-            src={post.image}
-            class="mx-auto mb-6 max-w-full bg-gray-400 object-cover sm:rounded-sm lg:max-w-6xl max-h-[500px]"
-            widths={[800, 1060]}
-            sizes="(max-width: 1060px) 800px, 1060px"
-            alt={post.title || post.accroche || ''}
-            width={1060}
-            height={596}
-            loading="eager"
-            decoding="async"
-          />
-        ) : (
-          <div class="mx-auto max-w-4xl px-4 sm:px-6">
-            <div class="border-t " />
-          </div>
-        )
-      }
+      <div class="mx-auto max-w-4xl px-4 sm:px-6">
+        <div class="border-t " />
+      </div>
     </header>
     <div
       class="prose-md prose-headings:leading-tighter prose prose-lg mx-auto mt-8 max-w-4xl px-6 lg:prose-xl prose-headings:font-heading prose-headings:font-bold prose-a:text-primary prose-img:rounded-sm prose-img:shadow-lg sm:px-6"
