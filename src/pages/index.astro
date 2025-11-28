@@ -8,6 +8,7 @@ import Reviews from '~/components/review/Reviews.astro';
 import Contact from '~/components/contact/Contact.astro';
 import Gallery from '~/components/widgets/Gallery.astro';
 import Presentation from '~/components/widgets/Presentation.astro';
+import AnimatedSection from '~/components/common/AnimatedSection.astro';
 
 import { getCollection } from 'astro:content';
 import SwiperCategories from '~/components/widgets/SwiperCategories.astro';
@@ -68,9 +69,11 @@ const meta = {
 
   <!-- HighlightedRealisations Widget ******* -->
   <div class="decale-ancre" id="realisations">
-    <section class="bg-wood" data-aos="fade-up">
-      <LatestRealisations title="Mes dernières réalisations" />
-    </section>
+    <AnimatedSection data-aos="fade-up">
+      <section class="bg-wood">
+        <LatestRealisations title="Mes dernières réalisations" />
+      </section>
+    </AnimatedSection>
   </div>
 
   <div class="decale-ancre" id="contact">
@@ -80,9 +83,11 @@ const meta = {
   </div>
 
   <div class="decale-ancre" id="avis-clients">
-    <section data-aos="fade-up">
-      <Reviews />
-    </section>
+    <AnimatedSection data-aos="fade-up">
+      <section>
+        <Reviews />
+      </section>
+    </AnimatedSection>
   </div>
 
   <!-- Container for demo purpose -->
