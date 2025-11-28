@@ -14,7 +14,8 @@
     "astro": "astro",
     "format": "prettier -w .",
     "lint:eslint": "eslint . --ext .js,.ts,.astro",
-    "subfont": "subfont -ir --no-fallbacks --silent --root dist"
+    "subfont": "subfont -ir --no-fallbacks --silent --root dist",
+    "optimize-images": "node scripts/optimize-images.js"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.5",

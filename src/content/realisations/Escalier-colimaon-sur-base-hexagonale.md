@@ -1,6 +1,6 @@
 ---
 title: Escalier colimaçon sur base hexagonale
-image: /images/realisations/Escalier-Frene/1.jpg
+image: /images/realisations/Escalier-Frene/1.webp
 folder: Escalier-Frene/
 tags:
   - escalier

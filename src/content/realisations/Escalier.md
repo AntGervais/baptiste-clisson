@@ -1,6 +1,6 @@
 ---
 title: Escalier chêne massif
-image: /images/realisations/escalier-droisy/6.png
+image: /images/realisations/escalier-droisy/6.webp
 accroche: Escalier deux quart tournant en chêne massif
 folder: escalier-droisy
 tags:

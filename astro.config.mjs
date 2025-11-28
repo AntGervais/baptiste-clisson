@@ -4,7 +4,6 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 import partytown from '@astrojs/partytown';
-import compress from "astro-compress";
 import react from '@astrojs/react';
 import { SITE } from './src/config.mjs';
 import tinaDirective from './astro-tina-directive/register.js';
@@ -31,16 +30,6 @@ export default defineConfig({
       forward: ['dataLayer.push']
     }
   })),
-  compress({
-    css: true,
-    html: {
-      removeAttributeQuotes: false
-    },
-    img: false,
-    js: true,
-    svg: false,
-    logger: 1
-  }),
   react(),
   tinaDirective()],
   vite: {
@@ -50,6 +39,9 @@ export default defineConfig({
       }
     },
     build: {
+      target: 'es2020',
+      minify: 'esbuild',
+      cssMinify: 'lightningcss',
       rollupOptions: {
         output: {
           manualChunks: {

@@ -1,6 +1,6 @@
 ---
 title: Escalier extérieur
-image: /images/realisations/Escalier-exterieur-comtois/8.png
+image: /images/realisations/Escalier-exterieur-comtois/8.webp
 accroche: Escalier extérieur en chêne massif
 folder: Escalier-exterieur-comtois
 tags:

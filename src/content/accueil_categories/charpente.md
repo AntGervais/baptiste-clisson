@@ -1,5 +1,5 @@
 ---
-image: /images/realisations/Rehabilitation-maison-montreal/1.jpg
+image: /images/realisations/Rehabilitation-maison-montreal/1.webp
 title: Charpentes traditionnelles
 tag: charpente
 ---

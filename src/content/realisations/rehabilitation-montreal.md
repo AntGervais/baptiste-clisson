@@ -1,6 +1,6 @@
 ---
 title: Réhabilitation d'une maison
-image: /images/realisations/Rehabilitation-maison-montreal/1.jpg
+image: /images/realisations/Rehabilitation-maison-montreal/1.webp
 accroche: Réhabilitation d'une maison en centre ancien de Montréal
 folder: Rehabilitation-maison-montreal
 tags:
