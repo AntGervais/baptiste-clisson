@@ -9,6 +9,10 @@
 [build.environment]
   NODE_VERSION = "20"
   NETLIFY_USE_PNPM = "true"
+  # Optimisations Node.js pour réduire l'utilisation mémoire et accélérer le build
+  NODE_OPTIONS = "--max-old-space-size=4096"
+  # Désactiver les telemetry pour accélérer le build
+  ASTRO_TELEMETRY_DISABLED = "1"
 
 [functions]
   directory = './src/functions'
