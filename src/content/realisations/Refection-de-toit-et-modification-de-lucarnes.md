@@ -5,5 +5,6 @@ folder: Macherie
 tags:
   - charpente
   - restauration
-publishDate: 2024-06-15T22:00:00.000Z
+publishDate: '2024-06-15T22:00:00.000Z'
+gallery:
 ---

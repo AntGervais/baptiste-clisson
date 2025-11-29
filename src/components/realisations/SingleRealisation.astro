@@ -18,6 +18,10 @@ export interface Props {
 
 const { post, url } = Astro.props;
 
+// Priority: use new gallery array if available
+const hasGallery = post.gallery && post.gallery.length > 0;
+
+// Fallback: use old folder system for backward compatibility
 // si post.folder est vide, on recupère le dossier de l'image
 // sinon on récupère le dossier de post.folder
 const folder = post.folder ? post.folder : post.image ? post.image.split('/').slice(-2, -1)[0] : null;
@@ -54,7 +58,11 @@ const folder = post.folder ? post.folder : post.image ? post.image.split('/').sl
       </>
 
       <div>
-        {folder ? <Gallery folder={folder} /> : null}
+        {hasGallery ? (
+          <Gallery images={post.gallery} />
+        ) : folder ? (
+          <Gallery folder={folder} />
+        ) : null}
       </div>
     </div>
   </article>
