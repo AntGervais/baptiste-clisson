@@ -123,15 +123,9 @@ export default defineConfig({
           {
             type: 'image',
             name: 'gallery',
-            label: 'Galerie d\'images (sélection multiple)',
+            label: 'Galerie d\'images',
             list: true,
             description: 'Sélectionnez les images à afficher dans le slider',
-          },
-          {
-            type: 'string',
-            name: 'folder',
-            label: '[DEPRECATED] Dossier images (utilisez plutôt la galerie ci-dessus)',
-            description: 'Ancien système - préférez la galerie d\'images',
           },
           {
             type: 'string',

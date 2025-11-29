@@ -2,53 +2,24 @@
 import Lightbox from './lightbox.astro';
 
 export interface Props {
-  folder?: string;
-  images?: string[];
+  images: string[];
 }
 
-const { folder, images } = Astro.props;
+const { images } = Astro.props;
 
-let folderFiles: string[] = [];
-let galleryId = '';
+// Convert image paths to the format expected by import.meta.glob
+const folderFiles = images.map(img => {
+  // If path starts with /images/, add /public prefix
+  if (img.startsWith('/images/')) {
+    return `/public${img}`;
+  }
+  return img;
+});
 
-// New mode: direct image list
-if (images && images.length > 0) {
-  // Convert image paths to the format expected by import.meta.glob
-  folderFiles = images.map(img => {
-    // If path starts with /images/, add /public prefix
-    if (img.startsWith('/images/')) {
-      return `/public${img}`;
-    }
-    return img;
-  });
-
-  galleryId = 'gallery-multi'
-    .replace(/[^A-Za-z0-9_-]/g, '-')
-    .replace(/-+/g, '-')
-    .replace(/^-|-$/g, '');
-}
-// Old mode: folder-based (backward compatibility)
-else if (folder) {
-  const imageFiles = import.meta.glob('/public/images/realisations/**/*.{png,webp,jpg,jpeg}');
-  const allFolderFiles = Object.keys(imageFiles).filter((image) => image.search(folder) >= 0);
-
-  // Prioritize WebP files - remove JPG/PNG if WebP version exists
-  folderFiles = allFolderFiles.filter((file) => {
-    const ext = file.substring(file.lastIndexOf('.'));
-    // Keep WebP files
-    if (ext === '.webp') return true;
-
-    // For JPG/PNG, only keep if no WebP version exists
-    const baseName = file.substring(0, file.lastIndexOf('.'));
-    const webpVersion = baseName + '.webp';
-    return !allFolderFiles.includes(webpVersion);
-  });
-
-  galleryId = `gallery-${folder}`
-    .replace(/[^A-Za-z0-9_-]/g, '-')
-    .replace(/-+/g, '-')
-    .replace(/^-|-$/g, '');
-}
+const galleryId = 'gallery-images'
+  .replace(/[^A-Za-z0-9_-]/g, '-')
+  .replace(/-+/g, '-')
+  .replace(/^-|-$/g, '');
 ---
 
 <div

@@ -80,17 +80,6 @@ export default function RealisationPage(props: RealisationPageProps) {
               </div>
             </div>
           )}
-
-          {/* Old folder system fallback */}
-          {!post.gallery && post.folder && (
-            <div className="mt-8 text-sm text-gray-500">
-              📁 Galerie d'images (ancien système) : {post.folder}
-              <br />
-              <em>
-                (Utilisez le champ "Galerie d'images" ci-dessus pour une meilleure expérience)
-              </em>
-            </div>
-          )}
         </div>
       </article>
 
