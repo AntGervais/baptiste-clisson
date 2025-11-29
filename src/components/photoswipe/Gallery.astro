@@ -2,37 +2,60 @@
 import Lightbox from './lightbox.astro';
 
 export interface Props {
-  folder: string;
+  folder?: string;
+  images?: string[];
 }
 
-const { folder } = Astro.props;
+const { folder, images } = Astro.props;
 
-const imageFiles = import.meta.glob('/public/images/realisations/**/*.{png,webp,jpg,jpeg}');
-const allFolderFiles = Object.keys(imageFiles).filter((image) => image.search(folder) >= 0);
+let folderFiles: string[] = [];
+let galleryId = '';
 
-// Prioritize WebP files - remove JPG/PNG if WebP version exists
-const folderFiles = allFolderFiles.filter((file) => {
-  const ext = file.substring(file.lastIndexOf('.'));
-  // Keep WebP files
-  if (ext === '.webp') return true;
+// New mode: direct image list
+if (images && images.length > 0) {
+  // Convert image paths to the format expected by import.meta.glob
+  folderFiles = images.map(img => {
+    // If path starts with /images/, add /public prefix
+    if (img.startsWith('/images/')) {
+      return `/public${img}`;
+    }
+    return img;
+  });
 
-  // For JPG/PNG, only keep if no WebP version exists
-  const baseName = file.substring(0, file.lastIndexOf('.'));
-  const webpVersion = baseName + '.webp';
-  return !allFolderFiles.includes(webpVersion);
-});
+  galleryId = 'gallery-multi'
+    .replace(/[^A-Za-z0-9_-]/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '');
+}
+// Old mode: folder-based (backward compatibility)
+else if (folder) {
+  const imageFiles = import.meta.glob('/public/images/realisations/**/*.{png,webp,jpg,jpeg}');
+  const allFolderFiles = Object.keys(imageFiles).filter((image) => image.search(folder) >= 0);
 
-const gallery = `gallery-${folder}`
-  .replace(/[^A-Za-z0-9_-]/g, '-')
-  .replace(/-+/g, '-')
-  .replace(/^-|-$/g, '');
+  // Prioritize WebP files - remove JPG/PNG if WebP version exists
+  folderFiles = allFolderFiles.filter((file) => {
+    const ext = file.substring(file.lastIndexOf('.'));
+    // Keep WebP files
+    if (ext === '.webp') return true;
+
+    // For JPG/PNG, only keep if no WebP version exists
+    const baseName = file.substring(0, file.lastIndexOf('.'));
+    const webpVersion = baseName + '.webp';
+    return !allFolderFiles.includes(webpVersion);
+  });
+
+  galleryId = `gallery-${folder}`
+    .replace(/[^A-Za-z0-9_-]/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '');
+}
 ---
 
 <div
-  id={gallery}
+  id={galleryId}
   class="not-prose mx-auto block w-full columns-1 gap-1 sm:columns-2 sm:gap-2 lg:columns-3"
   itemscope
   itemtype="http://schema.org/ImageGallery"
 >
-  <Lightbox id={gallery} images={folderFiles} />
+  <Lightbox id={galleryId} images={folderFiles} />
 </div>

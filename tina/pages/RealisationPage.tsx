@@ -64,14 +64,30 @@ export default function RealisationPage(props: RealisationPageProps) {
             </div>
           )}
 
-          {/* Gallery placeholder - folder info available but Gallery component is Astro-specific */}
-          {post.folder && (
+          {/* Gallery preview */}
+          {post.gallery && post.gallery.length > 0 && (
+            <div className="mt-8" data-tina-field={tinaField(post, 'gallery')}>
+              <h3 className="mb-4 text-lg font-semibold">Galerie d'images</h3>
+              <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
+                {post.gallery.map((img, index) => (
+                  <img
+                    key={index}
+                    src={img}
+                    alt={`Image ${index + 1}`}
+                    className="h-auto w-full rounded-sm object-cover shadow-md"
+                  />
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Old folder system fallback */}
+          {!post.gallery && post.folder && (
             <div className="mt-8 text-sm text-gray-500">
-              📁 Galerie d'images : {post.folder}
+              📁 Galerie d'images (ancien système) : {post.folder}
               <br />
               <em>
-                (La galerie complète est visible en mode aperçu, l'édition
-                visuelle se concentre sur le contenu textuel)
+                (Utilisez le champ "Galerie d'images" ci-dessus pour une meilleure expérience)
               </em>
             </div>
           )}

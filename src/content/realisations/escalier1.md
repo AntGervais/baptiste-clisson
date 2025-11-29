@@ -5,6 +5,7 @@ accroche: Escalier massif sur-mesure
 folder: Escalier1
 tags:
   - escalier
-publishDate: 2023-01-12T00:00:00.000Z
+publishDate: '2023-01-12T00:00:00.000Z'
+gallery:
 ---
 

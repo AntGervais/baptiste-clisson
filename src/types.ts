@@ -23,7 +23,8 @@ export interface Realisation {
   title: string;
   accroche?: string;
   location?: string;
-  folder: string;
+  folder?: string; // Deprecated: use gallery instead
+  gallery?: string[]; // New: list of image paths
   description?: string;
   image: string;
   permalink?: string;

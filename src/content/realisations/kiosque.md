@@ -6,6 +6,7 @@ tags:
 publishDate: '2023-01-12T00:00:00.000Z'
 accroche: Fabrication d'un kiosque
 folder: Kiosque
+gallery:
 ---
 
 Fabrication d'un kiosque
