@@ -1,11 +1,11 @@
 ---
 title: Abri pour animaux
 image: /images/realisations/Abris-Animaux/5.webp
-accroche: Demi-fermes avec tronc d'acacia - Assemblages traditionnels
+accroche: Fabrication d’une étable
 folder: Abris-Animaux
 tags:
   - charpente
 publishDate: 2023-01-12T00:00:00.000Z
 ---
 
-Demi-fermes avec tronc d'acacia - Assemblages traditionnels !
+Demi-fermes avec tronc d'acacia - Assemblages traditionnels
