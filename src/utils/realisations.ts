@@ -44,9 +44,10 @@ const getNormalizedRealisation = async (post: CollectionEntry<'realisations'>): 
     publishDate: rawPublishDate = new Date(),
     title,
     accroche,
-    folder,
+    gallery,
     description,
     image,
+    location,
   } = data;
 
   // Derive slug from id (e.g., "abris_animaux.md" → "abris_animaux")
@@ -61,9 +62,10 @@ const getNormalizedRealisation = async (post: CollectionEntry<'realisations'>): 
     tags: tags,
     title,
     accroche,
-    folder,
+    gallery,
     description,
     image,
+    location,
     Content: Content,
     permalink: await generatePermalink({ id, slug, publishDate }),
     tinaInfo,

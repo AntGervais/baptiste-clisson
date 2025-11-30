@@ -6,11 +6,12 @@ const realisations = defineCollection({
   schema: z.object({
     title: z.string(),
     accroche: z.string().optional(),
-    folder: z.string(),
+    gallery: z.array(z.string()).optional(),
     description: z.string().optional(),
     image: z.string(),
     tags: z.array(z.string()).optional(),
     publishDate: z.date().or(z.string()).optional(),
+    location: z.string().optional(),
   }),
 });
 
