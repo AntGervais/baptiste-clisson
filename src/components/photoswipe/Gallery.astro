@@ -2,37 +2,31 @@
 import Lightbox from './lightbox.astro';
 
 export interface Props {
-  folder: string;
+  images: string[];
 }
 
-const { folder } = Astro.props;
+const { images } = Astro.props;
 
-const imageFiles = import.meta.glob('/public/images/realisations/**/*.{png,webp,jpg,jpeg}');
-const allFolderFiles = Object.keys(imageFiles).filter((image) => image.search(folder) >= 0);
-
-// Prioritize WebP files - remove JPG/PNG if WebP version exists
-const folderFiles = allFolderFiles.filter((file) => {
-  const ext = file.substring(file.lastIndexOf('.'));
-  // Keep WebP files
-  if (ext === '.webp') return true;
-
-  // For JPG/PNG, only keep if no WebP version exists
-  const baseName = file.substring(0, file.lastIndexOf('.'));
-  const webpVersion = baseName + '.webp';
-  return !allFolderFiles.includes(webpVersion);
+// Convert image paths to the format expected by import.meta.glob
+const folderFiles = images.map(img => {
+  // If path starts with /images/, add /public prefix
+  if (img.startsWith('/images/')) {
+    return `/public${img}`;
+  }
+  return img;
 });
 
-const gallery = `gallery-${folder}`
+const galleryId = 'gallery-images'
   .replace(/[^A-Za-z0-9_-]/g, '-')
   .replace(/-+/g, '-')
   .replace(/^-|-$/g, '');
 ---
 
 <div
-  id={gallery}
+  id={galleryId}
   class="not-prose mx-auto block w-full columns-1 gap-1 sm:columns-2 sm:gap-2 lg:columns-3"
   itemscope
   itemtype="http://schema.org/ImageGallery"
 >
-  <Lightbox id={gallery} images={folderFiles} />
+  <Lightbox id={galleryId} images={folderFiles} />
 </div>

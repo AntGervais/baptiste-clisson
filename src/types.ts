@@ -23,7 +23,7 @@ export interface Realisation {
   title: string;
   accroche?: string;
   location?: string;
-  folder: string;
+  gallery?: string[];
   description?: string;
   image: string;
   permalink?: string;

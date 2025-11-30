@@ -121,9 +121,11 @@ export default defineConfig({
             isBody: true,
           },
           {
-            type: 'string',
-            name: 'folder',
-            label: 'Nom EXACT du dossier des images : Media Manager -> /realisations',
+            type: 'image',
+            name: 'gallery',
+            label: 'Galerie d\'images',
+            list: true,
+            description: 'Sélectionnez les images à afficher dans le slider',
           },
           {
             type: 'string',
