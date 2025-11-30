@@ -13,7 +13,7 @@ fragment RealisationsParts on Realisations {
   accroche
   location
   description
-  folder
+  gallery
   tags
   publishDate
 }

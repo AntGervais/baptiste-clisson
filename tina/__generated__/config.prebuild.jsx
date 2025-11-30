@@ -105,9 +105,11 @@ var config_default = defineConfig({
             isBody: true
           },
           {
-            type: "string",
-            name: "folder",
-            label: "Nom EXACT du dossier des images : Media Manager -> /realisations"
+            type: "image",
+            name: "gallery",
+            label: "Galerie d'images",
+            list: true,
+            description: "S\xE9lectionnez les images \xE0 afficher dans le slider"
           },
           {
             type: "string",
