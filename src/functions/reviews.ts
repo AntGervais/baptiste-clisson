@@ -1,5 +1,4 @@
 import type { Handler } from '@netlify/functions';
-import fetch from 'node-fetch';
 import type { Review } from '~/types';
 
 const { GOOGLE_MAPS_API_KEY, GOOGLE_MAPS_PLACE_ID } = process.env;
@@ -35,7 +34,7 @@ const handler: Handler = async ({ httpMethod }) => {
     };
   }
   return await fetch(placesQuery)
-    .then((res: { json: () => Promise<GooglePlacesResponse> }) => res.json())
+    .then((res) => res.json() as Promise<GooglePlacesResponse>)
     .then((data: GooglePlacesResponse) => ({
       headers,
       statusCode: 200,
