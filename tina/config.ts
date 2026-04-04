@@ -1,9 +1,18 @@
 import { defineConfig } from 'tinacms';
 
-// Your hosting provider likely exposes this as an environment variable
-const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || 'main';
-const clientId = process.env.TINA_CLIENT_ID || '3f6b5893-f77a-4f93-a595-ec18a27e0dfc';
-const tinaToken = process.env.TINA_TOKEN || '6dc1d18b8713af2268f297e9e41d0e52dc169596';
+const branch = process.env.TINA_BRANCH || process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || 'main';
+const clientId = process.env.TINA_CLIENT_ID || process.env.NEXT_PUBLIC_TINA_CLIENT_ID || '';
+const tinaToken = process.env.TINA_TOKEN || '';
+const isCiBuild = Boolean(process.env.CI || process.env.NETLIFY);
+
+const requireEnv = (name: string, value: string) => {
+  if (isCiBuild && !value) {
+    throw new Error(`Missing required Tina environment variable: ${name}`);
+  }
+};
+
+requireEnv('TINA_CLIENT_ID', clientId);
+requireEnv('TINA_TOKEN', tinaToken);
 
 const normalizeSegment = (segment: string) =>
   segment
@@ -25,8 +34,8 @@ const toSlug = (relativePath: string) =>
     .join('/');
 
 export default defineConfig({
-  clientId: clientId, // Get this from tina.io
-  token: tinaToken, // Get this from tina.io
+  clientId,
+  token: tinaToken,
   branch,
   build: {
     outputFolder: 'admin',

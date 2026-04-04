@@ -7,10 +7,9 @@ export type InputProps = {
   defaultValue?: string
   size?: 'sm' | 'md' | 'lg'
   bg?: string // The background color of the input's background
-  onChange?: (e?: any) => void
-  onBlur?: (e?: any) => void
+  onChange?: (e?: React.FormEvent<HTMLInputElement>) => void
+  onBlur?: (e?: React.FocusEvent<HTMLInputElement>) => void
   error?: string
-  color?: 'light' | 'dark'
 }
 
 export default function Input({
@@ -24,7 +23,6 @@ export default function Input({
   onChange,
   onBlur,
   error = '',
-  color = 'light',
   bg,
 }: InputProps) {
   return (

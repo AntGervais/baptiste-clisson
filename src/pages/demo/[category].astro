@@ -1,22 +1,22 @@
 ---
 import { getCollection, type CollectionEntry } from 'astro:content';
 import Layout from '~/layouts/PageLayout.astro';
-import { cleanSlug } from '~/utils/permalinks';
 import AccueilCategoryPage from '../../../tina/pages/AccueilCategoryPage';
 import client from '../../../tina/__generated__/client';
+import { resolveContentRelativePath } from '~/utils/content-paths';
 
 export async function getStaticPaths() {
   const categories = await getCollection('accueil_categories');
 
-  return categories.map((category) => ({
+  return Promise.all(categories.map(async (category) => ({
     params: {
-      category: cleanSlug(category.id.replace(/\.md$/, '')),
+      category: category.id,
     },
     props: {
       categoryEntry: category,
-      relativePath: category.id.endsWith('.md') ? category.id : `${category.id}.md`,
+      relativePath: await resolveContentRelativePath('src/content/accueil_categories', category.id),
     },
-  }));
+  })));
 }
 
 interface Props {

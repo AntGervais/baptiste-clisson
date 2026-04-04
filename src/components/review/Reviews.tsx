@@ -1,31 +1,36 @@
 import { useState, useEffect } from 'react';
 import Review from './Review';
+import type { Review as ReviewItem } from '~/types';
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 
 type ReviewsProps = {
-  initialReviews?: Review[]
+  initialReviews?: ReviewItem[]
+}
+
+type ReviewApiError = {
+  error_message: string
 }
 
 export default function Reviews({ initialReviews }: ReviewsProps) {
-  const [reviews, setReviews] = useState<Review[]>(initialReviews || [])
+  const [reviews, setReviews] = useState<ReviewItem[]>(initialReviews || [])
 
   useEffect(() => {
     const getReviews = async () => {
       try {
-        const result = await fetch('/.netlify/functions/reviews').then((res) => res.json())
+        const result: ReviewItem[] | ReviewApiError = await fetch('/.netlify/functions/reviews').then((res) => res.json())
         if ('error_message' in result) {
           console.error(result)
         } else {
           setReviews((initialReviews) => {
-            const filteredRes = result.filter((item) => item.text && item.text.trim() !== '');
+            const filteredRes = result.filter((item: ReviewItem) => item.text && item.text.trim() !== '');
             return [...filteredRes, ...initialReviews];
           });
         }
       } catch (err) {
-        throw new Error(err);
+        throw err instanceof Error ? err : new Error(String(err));
       }
     }
 

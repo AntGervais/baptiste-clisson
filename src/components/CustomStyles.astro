@@ -1,26 +1,7 @@
----
-// Fonts Buenard and Satisfy are loaded via TTF files below
----
-
 <style is:global>
-  @font-face {
-    font-family: 'Buenard';
-    src: url('/fonts/Buenard-Regular.ttf') format('ttf');
-    font-weight: normal;
-    font-style: normal;
-    font-display: block;
-  }
-
-  @font-face {
-    font-family: 'Satisfy';
-    src: url('/fonts/Satisfy-Regular.ttf') format('ttf');
-    font-weight: normal;
-    font-style: normal;
-    font-display: block;
-  }
   :root {
-    --aw-font-sans: 'Buenard';
-    --aw-font-serif: 'Satisfy';
+    --aw-font-sans: var(--font-buenard);
+    --aw-font-serif: var(--font-satisfy);
     --aw-font-heading: var(--aw-font-serif);
 
     --aw-color-primary: #135a4c;

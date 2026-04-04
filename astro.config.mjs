@@ -1,10 +1,11 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { defineConfig } from 'astro/config';
-import tailwind from '@astrojs/tailwind';
+import { defineConfig, fontProviders } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import partytown from '@astrojs/partytown';
 import react from '@astrojs/react';
+import icon from 'astro-icon';
+import tailwindcss from '@tailwindcss/vite';
 import { SITE } from './src/config.mjs';
 import tinaDirective from './astro-tina-directive/register.js';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -16,23 +17,40 @@ export default defineConfig({
   base: SITE.basePathname,
   trailingSlash: SITE.trailingSlash ? 'always' : 'never',
   output: 'static',
+  fonts: [
+    {
+      name: 'Buenard',
+      cssVariable: '--font-buenard',
+      provider: fontProviders.google(),
+      weights: [400, 700],
+      styles: ['normal'],
+      subsets: ['latin'],
+      fallbacks: ['serif'],
+    },
+    {
+      name: 'Satisfy',
+      cssVariable: '--font-satisfy',
+      provider: fontProviders.google(),
+      weights: [400],
+      styles: ['normal'],
+      subsets: ['latin'],
+      fallbacks: ['cursive'],
+    },
+  ],
   markdown: {
     // remarkPlugins: [readingTimeRemarkPlugin],
   },
-  integrations: [tailwind({
-    config: {
-      applyBaseStyles: false
-    }
-  }),
-  sitemap(),
+  integrations: [sitemap(),
   ...whenExternalScripts(() => partytown({
     config: {
       forward: ['dataLayer.push']
     }
   })),
+  icon(),
   react(),
   tinaDirective()],
   vite: {
+    plugins: [tailwindcss()],
     resolve: {
       alias: {
         '~': path.resolve(__dirname, './src')
@@ -40,18 +58,7 @@ export default defineConfig({
     },
     build: {
       target: 'es2020',
-      minify: 'esbuild',
-      cssMinify: 'lightningcss',
-      rollupOptions: {
-        output: {
-          manualChunks: {
-            'swiper': ['swiper'],
-            'photoswipe': ['photoswipe', 'photoswipe-dynamic-caption-plugin'],
-            'react-vendor': ['react', 'react-dom'],
-            'tinacms': ['tinacms']
-          }
-        }
-      }
+      minify: 'esbuild'
     }
   }
 });

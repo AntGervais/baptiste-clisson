@@ -24,6 +24,7 @@ pnpm-lock.yaml
 
 .astro
 node_modules
+tina/__generated__/.cache/
 
 # Images originales (on garde uniquement les WebP optimisées)
 # Décommenter ces lignes si vous voulez exclure les images originales du repo

@@ -11,8 +11,19 @@ export interface Props {
 
 const { id, images } = Astro.props;
 
-const imageSrcs = await Promise.all(images.map((image) => findImage(image)));
-const imagetitles = images.map((image) => image.slice(0, image.lastIndexOf('.')).slice(image.lastIndexOf('/') + 1));
+const resolvedImages = (
+  await Promise.all(
+    images.map(async (image) => {
+      const src = await findImage(image);
+      if (!src) return null;
+
+      return {
+        src,
+        title: image.slice(0, image.lastIndexOf('.')).slice(image.lastIndexOf('/') + 1),
+      };
+    })
+  )
+).filter(Boolean);
 ---
 
 <style>
@@ -23,22 +34,22 @@ const imagetitles = images.map((image) => image.slice(0, image.lastIndexOf('.'))
 
 <lightbox-inner data-id={id}>
   {
-    imageSrcs.map((image, i) => (
+    resolvedImages.map(({ src, title }) => (
       <figure
         itemscope
         itemtype="http://schema.org/ImageObject"
         class="inline-block rounded bg-gray-300 text-center text-gray-800 dark:bg-gray-800 dark:text-gray-300"
       >
-        <a href={image.src} itemprop="contentUrl" data-pswp-width={image.width} data-pswp-height={image.height}>
+        <a href={src.src} itemprop="contentUrl" data-pswp-width={src.width} data-pswp-height={src.height}>
           <Image
-            src={image}
-            alt={imagetitles[i]}
-            width={image.width}
-            height={image.height}
+            src={src}
+            alt={title}
+            width={src.width}
+            height={src.height}
             format="webp"
             class="rounded"
           />
-          <span class="pswp-caption-content">{imagetitles[i]}</span>
+          <span class="pswp-caption-content">{title}</span>
         </a>
       </figure>
     ))
@@ -59,17 +70,15 @@ const imagetitles = images.map((image) => image.slice(0, image.lastIndexOf('.'))
         gallerySelector: '#' + id,
         childSelector: 'a',
         pswpModule: () => import('photoswipe'),
-        paddingFn: (viewportSize) => {
-          return {
-            top: 0,
-            bottom: 0,
-            left: 0,
-            right: 0,
-          };
-        },
+        paddingFn: () => ({
+          top: 0,
+          bottom: 0,
+          left: 0,
+          right: 0,
+        }),
       });
 
-      const captionPlugin = new PhotoSwipeDynamicCaption(lightbox, {
+      new PhotoSwipeDynamicCaption(lightbox, {
         captionContent: '.pswp-caption-content',
         type: 'auto',
       });

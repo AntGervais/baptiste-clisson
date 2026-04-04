@@ -193,9 +193,10 @@ Description détaillée du projet en Markdown...
 Le site est automatiquement déployé sur Netlify à chaque push sur `main`.
 
 **Configuration** : `netlify.toml`
-- Build command : `pnpm build`
+- Build command : `pnpm build:prod`
 - Publish directory : `dist`
-- Node version : 18
+- Node version : 24
+- Variables d'environnement : `TINA_CLIENT_ID`, `TINA_TOKEN`, `TINA_BRANCH` (optionnel)
 
 **URL de production** : https://charpenteboisdebout.fr
 

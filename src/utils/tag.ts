@@ -1,15 +1,15 @@
 import { getCollection, render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import type { AccueilCategories, TinaSystemInfo } from '~/types';
-import { cleanSlug } from './permalinks';
+import { resolveContentRelativePath } from './content-paths';
+import { normalizeTag } from './permalinks';
 
 const getNormalizedAccueilCategories = async (
   categorie: CollectionEntry<'accueil_categories'>
 ): Promise<AccueilCategories> => {
   const { id, data } = categorie;
-  // Derive slug from id (e.g., "charpente.md" → "charpente")
-  const slug = cleanSlug(id.replace(/\.md$/, ''));
-  const relativePath = id.endsWith('.md') ? id : `${id}.md`;
+  const slug = id;
+  const relativePath = await resolveContentRelativePath('src/content/accueil_categories', id);
   const tinaInfo: TinaSystemInfo = {
     filename: relativePath.split('/').pop() ?? relativePath,
     basename: relativePath.replace(/\.mdx?$/, ''),
@@ -57,6 +57,6 @@ export const findCategoryByTag = async (tag: string): Promise<AccueilCategories>
   const categories = await fetchAccueilCategories();
 
   // on cherche la première categorie qui a le tag
-  const categorie = categories.find((categorie) => categorie.tag === tag);
+  const categorie = categories.find((categorie) => normalizeTag(categorie.tag) === normalizeTag(tag));
   return categorie;
 };

@@ -1,6 +1,7 @@
 import type { Handler } from '@netlify/functions';
 
 import fetch from 'node-fetch';
+import type { Contact } from '~/types';
 import sanitize from '~/utils/sanitize';
 import validations from '~/utils/validations';
 
@@ -72,8 +73,8 @@ const handler: Handler = async ({ httpMethod, body }) => {
   const data = JSON.parse(body) as Contact;
   const keysFound = Object.keys(data);
   // If we don't have all the required properties
-  if (!KEYS.every((key) => keysFound.includes(key as keyof Contact))) {
-    const missing = KEYS.filter((key) => !keysFound.includes(key));
+  if (!KEYS.every((key) => keysFound.includes(String(key)))) {
+    const missing = KEYS.filter((key) => !keysFound.includes(String(key)));
 
     console.error(`Missing keys: ${missing.join(', ')}`);
 
@@ -95,9 +96,9 @@ const handler: Handler = async ({ httpMethod, body }) => {
     const pattern = validations[key]?.pattern;
 
     if (required && !value) {
-      errors[key] = `Invalid ${key}: missing required field`;
+      errors[key] = `Invalid ${String(key)}: missing required field`;
     } else if (pattern && !pattern.value.test(value)) {
-      errors[key] = `Invalid ${key}: failed pattern test`;
+      errors[key] = `Invalid ${String(key)}: failed pattern test`;
     } else {
       result[key] = sanitize(value);
     }

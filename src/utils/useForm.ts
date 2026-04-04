@@ -60,7 +60,7 @@ export type FormOptions<T> = {
   debounceTime?: number;
 };
 
-export const useForm = <T extends Record<keyof T, any>>(options: FormOptions<T>) => {
+export const useForm = <T extends Record<string, any>>(options: FormOptions<T>) => {
   // Data will have the type of the object type we want from the form and
   // will set to the optional initialValues or an empty object, which we
   // will then have to assert the possible empty object to the generic type

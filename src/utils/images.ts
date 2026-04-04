@@ -1,5 +1,7 @@
-const load = async function () {
-  let images: Record<string, () => Promise<unknown>> | undefined = undefined;
+type LocalImageModules = Record<string, () => Promise<unknown>>;
+
+const load = async function (): Promise<LocalImageModules | undefined> {
+  let images: LocalImageModules | undefined = undefined;
   try {
     images = import.meta.glob('/public/images/**');
   } catch (e) {
@@ -8,7 +10,7 @@ const load = async function () {
   return images;
 };
 
-let _images;
+let _images: Promise<LocalImageModules | undefined> | undefined;
 
 /** */
 export const fetchLocalImages = async () => {
@@ -31,6 +33,8 @@ export const findImage = async (imagePath?: string) => {
     // add public folder to path
     path = `/public${imagePath}`;
   }
+
+  path = path.replace(/\/{2,}/g, '/');
 
   const images = await fetchLocalImages();
 

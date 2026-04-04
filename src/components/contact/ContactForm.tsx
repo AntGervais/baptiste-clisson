@@ -1,5 +1,6 @@
 
 import { useForm } from '~/utils/useForm';
+import type { Contact } from '~/types';
 import sanitize from '~/utils/sanitize';
 import validations from '~/utils/validations';
 import { useState } from 'react';

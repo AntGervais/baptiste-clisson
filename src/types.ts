@@ -5,6 +5,22 @@ export interface TinaSystemInfo {
   relativePath: string;
 }
 
+export interface Contact {
+  name: string;
+  email: string;
+  phone?: string;
+  message: string;
+}
+
+export interface Review {
+  author_name: string;
+  author_url: string;
+  profile_photo_url: string;
+  relative_time_description: string;
+  rating: number;
+  text: string;
+}
+
 export interface AccueilCategories {
   id: string;
   slug: string;

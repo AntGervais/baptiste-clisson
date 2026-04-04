@@ -6,8 +6,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Buenard', ...defaultTheme.fontFamily.sans],
-        serif: ['Satisfy', ...defaultTheme.fontFamily.serif],
+        sans: ['var(--aw-font-sans)', ...defaultTheme.fontFamily.sans],
+        serif: ['var(--aw-font-serif)', ...defaultTheme.fontFamily.serif],
         heading: ['var(--aw-font-heading)', ...defaultTheme.fontFamily.sans],
       },
       colors: {

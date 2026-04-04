@@ -1,37 +1,14 @@
 import { getCollection, render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import type { Realisation, TinaSystemInfo } from '~/types';
-import { cleanSlug, trimSlash, POST_PERMALINK_PATTERN } from './permalinks';
-
-const generatePermalink = async ({ id, slug, publishDate }) => {
-  const year = String(publishDate.getFullYear()).padStart(4, '0');
-  const month = String(publishDate.getMonth() + 1).padStart(2, '0');
-  const day = String(publishDate.getDate()).padStart(2, '0');
-  const hour = String(publishDate.getHours()).padStart(2, '0');
-  const minute = String(publishDate.getMinutes()).padStart(2, '0');
-  const second = String(publishDate.getSeconds()).padStart(2, '0');
-
-  const permalink = POST_PERMALINK_PATTERN.replace('%slug%', slug)
-    .replace('%id%', id)
-    .replace('%year%', year)
-    .replace('%month%', month)
-    .replace('%day%', day)
-    .replace('%hour%', hour)
-    .replace('%minute%', minute)
-    .replace('%second%', second);
-
-  return permalink
-    .split('/')
-    .map((el) => trimSlash(el))
-    .filter((el) => !!el)
-    .join('/');
-};
+import { resolveContentRelativePath } from './content-paths';
+import { normalizeTag } from './permalinks';
 
 const getNormalizedRealisation = async (post: CollectionEntry<'realisations'>): Promise<Realisation> => {
   const { id, data } = post;
   const { Content } = await render(post);
 
-  const relativePath = id.endsWith('.md') ? id : `${id}.md`;
+  const relativePath = await resolveContentRelativePath('src/content/realisations', id);
   const tinaInfo: TinaSystemInfo = {
     filename: relativePath.split('/').pop() ?? relativePath,
     basename: relativePath.replace(/\.mdx?$/, ''),
@@ -50,10 +27,9 @@ const getNormalizedRealisation = async (post: CollectionEntry<'realisations'>): 
     location,
   } = data;
 
-  // Derive slug from id (e.g., "abris_animaux.md" → "abris_animaux")
-  const slug = cleanSlug(id.replace(/\.md$/, ''));
+  const slug = id;
   const publishDate = new Date(rawPublishDate);
-  const tags = rawTags.map((tag: string) => cleanSlug(tag));
+  const tags = rawTags.map((tag: string) => normalizeTag(tag));
 
   return {
     id: id,
@@ -67,7 +43,7 @@ const getNormalizedRealisation = async (post: CollectionEntry<'realisations'>): 
     image,
     location,
     Content: Content,
-    permalink: await generatePermalink({ id, slug, publishDate }),
+    permalink: slug,
     tinaInfo,
   };
 };

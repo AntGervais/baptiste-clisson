@@ -17,7 +17,7 @@ type TinaRealisationsQuery = Awaited<ReturnType<typeof client.queries.realisatio
 export async function getStaticPaths() {
   if (REALISATIONS?.disabled || REALISATIONS?.post?.disabled) return [];
   return (await fetchRealisations()).map((post) => {
-    const relativePath = post.id.endsWith('.md') ? post.id : `${post.id}.md`;
+    const relativePath = post.tinaInfo?.relativePath ?? (post.id.endsWith('.md') ? post.id : `${post.id}.md`);
     return {
       params: {
         realisations: post.permalink,

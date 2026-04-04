@@ -1,6 +1,5 @@
 import { SITE, REALISATIONS } from '~/config.mjs';
 import { trim } from '~/utils/utils';
-import slugify from 'limax';
 
 export const trimSlash = (s: string) => trim(trim(s, '/'));
 const createPath = (...params: string[]) => {
@@ -11,42 +10,45 @@ const createPath = (...params: string[]) => {
   return '/' + paths + (SITE.trailingSlash && paths ? '/' : '');
 };
 
- const BASE_PATHNAME = SITE.basePathname;
+const BASE_PATHNAME = trimSlash(SITE.basePathname);
 
-export const cleanSlug = (text = '') =>
-  trimSlash(text)
-    .split('/')
-    .map((slug) => slugify(slug))
-    .join('/');
+const splitPathAndSuffix = (value = '') => {
+  const match = value.match(/([?#].*)$/);
+  return {
+    pathname: match ? value.slice(0, -match[1].length) : value,
+    suffix: match?.[1] ?? '',
+  };
+};
 
-export const POST_PERMALINK_PATTERN = trimSlash(REALISATIONS?.post?.permalink || '/%slug%');
+export const normalizeTag = (value = '') => trimSlash(value).toLowerCase();
 
-export const REALISATIONS_BASE = cleanSlug(REALISATIONS?.list?.pathname);
-export const TAG_BASE = cleanSlug(REALISATIONS?.tag?.pathname) || 'tag';
+export const REALISATIONS_BASE = trimSlash(REALISATIONS?.list?.pathname || 'realisations');
+export const TAG_BASE = trimSlash(REALISATIONS?.tag?.pathname || 'tag');
 
 /** */
 export const getCanonical = (path = ''): string | URL => new URL(path, SITE.origin);
 
 /** */
 export const getPermalink = (slug = '', type = 'page'): string => {
-  let permalink: string;
+  const { pathname, suffix } = splitPathAndSuffix(slug);
+  let permalinkPath: string;
 
   switch (type) {
     case 'tag':
-      permalink = createPath(TAG_BASE, trimSlash(slug));
+      permalinkPath = createPath(BASE_PATHNAME, TAG_BASE, normalizeTag(pathname));
       break;
 
     case 'realisations':
-      permalink = createPath(trimSlash(slug));
+      permalinkPath = createPath(BASE_PATHNAME, pathname);
       break;
 
     case 'page':
     default:
-      permalink = createPath(slug);
+      permalinkPath = createPath(BASE_PATHNAME, pathname);
       break;
   }
 
-  return definitivePermalink(permalink);
+  return `${permalinkPath}${suffix}`;
 };
 
 /** */
@@ -57,11 +59,4 @@ export const getRealisationsPermalink = (): string => getPermalink(REALISATIONS_
 
 /** */
 export const getAsset = (path: string): string =>
-  '/' +
-  [BASE_PATHNAME, path]
-    .map((el) => trimSlash(el))
-    .filter((el) => !!el)
-    .join('/');
-
-/** */
-const definitivePermalink = (permalink: string): string => createPath(BASE_PATHNAME, permalink);
+  createPath(BASE_PATHNAME, path);

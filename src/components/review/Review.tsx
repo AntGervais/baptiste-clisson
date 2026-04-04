@@ -1,4 +1,10 @@
-export default function Reviews({ review }) {
+import type { Review as ReviewItem } from '~/types';
+
+type ReviewProps = {
+  review: ReviewItem;
+}
+
+export default function Reviews({ review }: ReviewProps) {
   return (<div
     className="review flex flex-col gap-2 px-8 py-6 bg-gray-100 rounded-sm mb-6 review-header"
     key={`${review.text}${review.author_name}`}

@@ -1,5 +1,6 @@
 import { nameRegex, phoneRegex, emailRegex, messageRegex } from './regex';
 import type { Validations } from './useForm';
+import type { Contact } from '~/types';
 
 const validations: Validations<Contact> = {
   name: {

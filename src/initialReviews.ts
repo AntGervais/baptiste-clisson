@@ -1,3 +1,5 @@
+import type { Review } from '~/types';
+
 const data: Review[] = [
   {
     author_name: 'Lucas Beaulieu',

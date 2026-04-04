@@ -4,15 +4,19 @@
 
 [build]
   publish = "dist"
-  command = "pnpm build:tina"
+  command = "pnpm build:prod"
 
 [build.environment]
-  NODE_VERSION = "20"
+  NODE_VERSION = "24"
   NETLIFY_USE_PNPM = "true"
   # Optimisations Node.js pour réduire l'utilisation mémoire et accélérer le build
   NODE_OPTIONS = "--max-old-space-size=4096"
   # Désactiver les telemetry pour accélérer le build
   ASTRO_TELEMETRY_DISABLED = "1"
+  # Variables TinaCloud à définir dans l'UI Netlify:
+  # TINA_CLIENT_ID
+  # TINA_TOKEN
+  # TINA_BRANCH (optionnel, défaut: main)
 
 [functions]
   directory = './src/functions'
