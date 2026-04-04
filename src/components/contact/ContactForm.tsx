@@ -15,24 +15,23 @@ export default function ContactForm() {
     sanitizeFn: sanitize,
     onSubmit: async (data) => {
       try {
-        const res = await fetch('/.netlify/functions/contact', {
+        const body = new URLSearchParams({ 'form-name': 'contact', ...data }).toString();
+        const res = await fetch('/', {
           method: 'POST',
-          body: JSON.stringify(data),
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        })
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body,
+        });
 
         if (!res.ok) {
-          throw new Error(JSON.stringify(await res.json()))
+          throw new Error(`HTTP ${res.status}`);
         }
 
-        return true
+        return true;
       } catch (_err) {
-        const err = _err as Error
-        console.error(err)
-        setServerError('Something went wrong, please try again later')
-        return false
+        const err = _err as Error;
+        console.error(err);
+        setServerError('Something went wrong, please try again later');
+        return false;
       }
     },
   })
