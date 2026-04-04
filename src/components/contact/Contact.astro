@@ -5,6 +5,14 @@ import AnimatedSection from '~/components/common/AnimatedSection.astro';
 ---
 
 <div class="container mx-auto px-6 py-12">
+  {/* Formulaire caché pour que Netlify Forms détecte les champs au build */}
+  <form name="contact" netlify hidden>
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <input type="text" name="phone" />
+    <textarea name="message"></textarea>
+  </form>
+
   <div class="flex flex-wrap">
     <div class="w-full shrink-0 grow-0 basis-auto py-2 lg:w-2/3 lg:py-24">
       <div class="mur-rugeux rounded-sm shadow-lg">
