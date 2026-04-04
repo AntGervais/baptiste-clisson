@@ -1,6 +1,5 @@
 import type { Handler } from '@netlify/functions';
 
-import fetch from 'node-fetch';
 import type { Contact } from '~/types';
 import sanitize from '~/utils/sanitize';
 import validations from '~/utils/validations';
