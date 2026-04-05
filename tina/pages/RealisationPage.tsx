@@ -49,7 +49,7 @@ export default function RealisationPage(props: RealisationPageProps) {
             <img
               src={post.image}
               alt={post.title || post.accroche || ''}
-              className="mx-auto mb-6 max-w-full bg-gray-400 sm:rounded-sm lg:max-w-6xl"
+              className="mx-auto mb-6 max-w-full bg-gray-400 sm:rounded-sm lg:max-w-5xl"
               loading="eager"
               data-tina-field={tinaField(post, 'image')}
             />

@@ -95,14 +95,12 @@
 
 .subtitle{
   animation: titleFadeIn  0.5s ease-in-out forwards;
-  animation-delay: 300ms;
   transform: translateY(100%);
 }
 
 .activites{
   opacity: 0;
   animation: activitesFadeIn  0.5s ease-in-out forwards;
-  animation-delay: 700ms;
 }
 
 .bg-wood{
