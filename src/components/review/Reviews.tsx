@@ -41,6 +41,7 @@ export default function Reviews({ initialReviews }: ReviewsProps) {
     className="relative"
   >
     <Swiper
+      className="reviews-swiper"
       spaceBetween={20}
       slidesPerView={1}
       breakpoints={{

@@ -149,6 +149,25 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
+/* Specific styling for Reviews Swiper to move arrows outside */
+.reviews-swiper {
+  padding: 0 40px !important; /* Ajoute de l'espace pour les flèches */
+}
+
+.reviews-swiper .swiper-button-prev {
+  left: 2px !important;
+}
+
+.reviews-swiper .swiper-button-next {
+  right: 2px !important;
+}
+
+@media (max-width: 640px) {
+  .reviews-swiper {
+    padding: 0 35px !important;
+  }
+}
+
 /* Animations de révélation (Reveal) */
 .reveal {
   --tx: 0px;
