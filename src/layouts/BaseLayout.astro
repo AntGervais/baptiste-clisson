@@ -24,6 +24,17 @@ const { language = 'en', textDirection = 'ltr' } = SITE;
     <SchemaLD />
     <Font cssVariable="--font-buenard" preload />
     <Font cssVariable="--font-satisfy" preload />
+    <style is:inline>
+      /* Critical CSS for Reveal system: hide elements immediately to prevent FOUC */
+      .reveal, [data-reveal] { 
+        opacity: 0; 
+        visibility: hidden; 
+      }
+      .reveal.reveal-active, [data-reveal].reveal-active { 
+        opacity: 1; 
+        visibility: visible; 
+      }
+    </style>
   </head>
 
   <body class="text-page bg-light antialiased">

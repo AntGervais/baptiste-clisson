@@ -5,6 +5,7 @@ export interface Props {
   subtitle?: string;
   image?: string;
   link?: string;
+  loading?: 'lazy' | 'eager';
 }
 
 const {
@@ -12,6 +13,7 @@ const {
   subtitle = await Astro.slots.render('subtitle'),
   image = await Astro.slots.render('image'),
   link = await Astro.slots.render('link'),
+  loading = 'lazy',
 } = Astro.props;
 ---
 
@@ -23,10 +25,10 @@ const {
           src={image}
           alt={title}
           class="w-full aspect-3/4 object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-          loading="lazy"
+          loading={loading}
           decoding="async"
-          width={410}
-          height={400}
+          width={600}
+          height={800}
         />
       </div>
       <div class="w-full p-4 transition-colors duration-300 group-hover:bg-slate-50">

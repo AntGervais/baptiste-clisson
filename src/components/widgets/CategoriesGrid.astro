@@ -27,6 +27,7 @@ const { categories } = Astro.props;
         <Category
           title={cate.title}
           image={cate.image}
+          loading={index < 2 ? 'eager' : 'lazy'}
           link={
             cate.tag === 'escalier' ? getPermalink('/escaliers') :
             cate.tag === 'charpente' ? getPermalink('/charpente-renovation') :
