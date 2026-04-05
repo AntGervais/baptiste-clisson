@@ -1,6 +1,6 @@
 ---
 import { getRealisationsPermalink } from '~/utils/permalinks';
-import { findLatestRealisations } from '~/utils/realisations';
+import { fetchRealisations } from '~/utils/realisations';
 import SwiperRealisations from '../widgets/SwiperRealisations.astro';
 
 export interface Props {
@@ -8,7 +8,6 @@ export interface Props {
   allRealisationsText?: string;
   allRealisationsLink?: string | URL;
   information?: string;
-  count?: number;
 }
 
 const {
@@ -16,10 +15,9 @@ const {
   allRealisationsText = 'Voir mes autres réalisations',
   allRealisationsLink = getRealisationsPermalink(),
   information = await Astro.slots.render('information'),
-  count = 6,
 } = Astro.props;
 
-const posts = await findLatestRealisations({ count });
+const posts = await fetchRealisations();
 ---
 
 <section class="mx-auto max-w-6xl py-12 lg:py-18">
