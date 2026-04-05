@@ -4,14 +4,14 @@
  * Debounces or throttles a function. Any new calls to the function will reset
  * the timer and the function will be called after the timer has elapsed.
  */
-export default function debounce(func: (...args: any) => void, timeout = 10) {
+export default function debounce(func: (...args: unknown[]) => void, timeout = 10) {
   let timer: number;
   let time = Date.now();
 
   // If there is no timeout duration, just call the function
   if (timeout === 0) return func;
 
-  return (...args: any) => {
+  return (...args: unknown[]) => {
     if (timer) clearTimeout(timer);
 
     time = Date.now();

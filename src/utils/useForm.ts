@@ -29,7 +29,7 @@ export type ErrorRecord<T> = Partial<Record<keyof T, string>>;
 
 export type SubmitStatus = 'submitting' | 'success' | 'failure' | 'none';
 
-export type SubmitHandler = (data: any) => Promise<boolean>;
+export type SubmitHandler = (data: Record<string, unknown>) => Promise<boolean>;
 
 /**
  * @interface FormOptions
@@ -60,7 +60,7 @@ export type FormOptions<T> = {
   debounceTime?: number;
 };
 
-export const useForm = <T extends Record<string, any>>(options: FormOptions<T>) => {
+export const useForm = <T extends Record<string, unknown>>(options: FormOptions<T>) => {
   // Data will have the type of the object type we want from the form and
   // will set to the optional initialValues or an empty object, which we
   // will then have to assert the possible empty object to the generic type
@@ -120,6 +120,7 @@ export const useForm = <T extends Record<string, any>>(options: FormOptions<T>) 
    * @param key the key of the field to update
    */
   const handleChange = (key: keyof T) =>
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     debounce((e: any) => {
       // Access previous data to prevent race conditions
       setData((prevData) => ({
@@ -143,6 +144,7 @@ export const useForm = <T extends Record<string, any>>(options: FormOptions<T>) 
    * @param key the key of the field to validate
    * @returns void
    */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleBlur = (key: keyof T) => (e: any) => {
     // Need to set the data on blur for autocompleted values
     if (e.target.value) {
@@ -190,6 +192,7 @@ export const useForm = <T extends Record<string, any>>(options: FormOptions<T>) 
     onBlur: handleBlur(key),
   });
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleSubmit = async (e: any) => {
     e.preventDefault();
 

@@ -34,7 +34,6 @@ function parseFrontmatter(content) {
 function parseYaml(yamlString) {
   const lines = yamlString.split('\n');
   const result = {};
-  let currentKey = null;
   let currentArray = null;
 
   for (const line of lines) {
@@ -52,7 +51,6 @@ function parseYaml(yamlString) {
     const kvMatch = line.match(/^(\w+):\s*(.*)$/);
     if (kvMatch) {
       const [, key, value] = kvMatch;
-      currentKey = key;
 
       // Vérifier si c'est un array vide ou le début d'un array
       if (!value || value === '[]') {

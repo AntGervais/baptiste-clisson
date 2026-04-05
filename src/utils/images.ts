@@ -4,7 +4,7 @@ const load = async function (): Promise<LocalImageModules | undefined> {
   let images: LocalImageModules | undefined = undefined;
   try {
     images = import.meta.glob('/public/images/**');
-  } catch (e) {
+  } catch {
     // continue regardless of error
   }
   return images;

@@ -35,7 +35,6 @@ function parseFrontmatter(content) {
 function parseYaml(yamlString) {
   const lines = yamlString.split('\n');
   const result = {};
-  let currentKey = null;
   let currentArray = null;
 
   for (const line of lines) {
@@ -53,7 +52,6 @@ function parseYaml(yamlString) {
     const kvMatch = line.match(/^(\w+):\s*(.*)$/);
     if (kvMatch) {
       const [, key, value] = kvMatch;
-      currentKey = key;
 
       // Vérifier si c'est un array vide ou le début d'un array
       if (!value || value === '[]') {
@@ -129,7 +127,7 @@ async function listImagesInFolder(folderName) {
     // Pour chaque nom de base, garder uniquement le .webp s'il existe, sinon garder le premier
     const finalImages = [];
 
-    for (const [baseName, versions] of baseNames.entries()) {
+    for (const [, versions] of baseNames.entries()) {
       // Trier par priorité (webp en premier)
       versions.sort((a, b) => b.priority - a.priority);
       finalImages.push(versions[0].file);

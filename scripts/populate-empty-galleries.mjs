@@ -35,7 +35,6 @@ function parseFrontmatter(content) {
 function parseYaml(yamlString) {
   const lines = yamlString.split('\n');
   const result = {};
-  let currentKey = null;
   let currentArray = null;
 
   for (const line of lines) {
@@ -50,7 +49,6 @@ function parseYaml(yamlString) {
     const kvMatch = line.match(/^(\w+):\s*(.*)$/);
     if (kvMatch) {
       const [, key, value] = kvMatch;
-      currentKey = key;
 
       if (!value || value === '[]') {
         result[key] = [];
@@ -121,7 +119,7 @@ async function listImagesInFolder(folderName) {
 
     const finalImages = [];
 
-    for (const [baseName, versions] of baseNames.entries()) {
+    for (const [, versions] of baseNames.entries()) {
       versions.sort((a, b) => b.priority - a.priority);
       finalImages.push(versions[0].file);
     }
@@ -133,7 +131,7 @@ async function listImagesInFolder(folderName) {
     });
 
     return finalImages.map(f => `/images/realisations/${folderName}/${f}`);
-  } catch (error) {
+  } catch {
     console.warn(`  ⚠️  Impossible de lire le dossier ${folderName}`);
     return [];
   }
@@ -170,7 +168,7 @@ async function populateGalleryIfEmpty(filename) {
   }
 
   // L'image est au format /images/realisations/NomDossier/image.webp
-  const match = data.image.match(/\/images\/realisations\/([^\/]+)\//);
+  const match = data.image.match(/[/]images[/]realisations[/]([^/]+)[/]/);
   if (!match) {
     console.log(`  ⚠️  Format d'image non reconnu: ${data.image}`);
     return;
