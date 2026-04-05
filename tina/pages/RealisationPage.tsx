@@ -73,7 +73,7 @@ export default function RealisationPage(props: RealisationPageProps) {
                   <img
                     key={index}
                     src={img}
-                    alt={`Image ${index + 1}`}
+                    alt={`Vue ${index + 1}`}
                     className="h-auto w-full rounded-sm object-cover shadow-md"
                   />
                 ))}

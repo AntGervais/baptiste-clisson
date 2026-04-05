@@ -68,8 +68,11 @@ Site web vitrine pour **Charpente Bois Debout**, entreprise de charpenterie trad
 ### Outils de Développement
 
 - **pnpm** `10.33.0` - Gestionnaire de paquets rapide et efficace
-- **TypeScript** (`^5.6.3`) - Typage statique
-- **ESLint** (`^8.41.0`) - Linter JavaScript/TypeScript/Astro
+- **TypeScript** (`^6.0.2`) - Typage statique
+- **ESLint** (`^9.39.4`) - Linter JavaScript/TypeScript/Astro (flat config `eslint.config.js`)
+  - `typescript-eslint` `^8.58.0` - Intégration TypeScript
+  - `eslint-plugin-astro` `^1.6.0` - Support des fichiers `.astro`
+  - `eslint-plugin-jsx-a11y` `^6.10.2` - Accessibilité JSX
 - **Prettier** (`^3.8.1`) - Formateur de code (avec plugins Astro et Tailwind)
 
 ## Prérequis

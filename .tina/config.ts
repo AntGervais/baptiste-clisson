@@ -20,7 +20,7 @@ export default defineConfig({
     },
   },
   ui: {
-    previewUrl: ({ branch }) => {
+    previewUrl: ({ branch: _branch }) => {
       // URL de base du serveur de développement
       return { url: `http://localhost:4321` };
     },

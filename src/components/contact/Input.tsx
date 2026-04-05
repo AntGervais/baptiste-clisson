@@ -44,13 +44,13 @@ export default function Input({
             'rounded-sm',
             'border',
             'border-1',
-            Boolean(error) ? 'border-red-400' : 'border-gray-300',
+            error ? 'border-red-400' : 'border-gray-300',
             bg ? bg : 'bg-white', // The bg must be the color of the input's background
             'px-2.5',
             'pb-2.5',
             'pt-4',
             size === 'sm' ? 'text-sm' : size === 'md' ? 'text-md' : 'text-lg',
-            Boolean(error) ? 'focus:border-red-400' : 'focus:border-green-600',
+            error ? 'focus:border-red-400' : 'focus:border-green-600',
             'focus:outline-none',
             'focus:ring-0',
           ].join(' ')}
@@ -73,7 +73,7 @@ export default function Input({
             bg ? bg : 'bg-white', // The bg must be the color of the input's background
             'px-2', 'py-1',
             size === 'sm' ? 'text-sm' : size === 'md' ? 'text-md' : 'text-lg',
-            Boolean(error) ? 'text-red-400' : 'text-gray-500',
+            error ? 'text-red-400' : 'text-gray-500',
             'duration-300',
             'peer-placeholder-shown:top-1/2',
             'peer-placeholder-shown:-translate-y-1/2',
@@ -83,7 +83,7 @@ export default function Input({
             'peer-focus:scale-75',
             'peer-focus:px-2',
             'peer-focus:py-0',
-            Boolean(error) ? 'focus:text-red-400' : 'peer-focus:text-green-600',
+            error ? 'focus:text-red-400' : 'peer-focus:text-green-600',
           ].join(' ')}
         >
           {label + (required ? '*' : '')}
