@@ -9,7 +9,7 @@ export interface Props {
 const { posts } = Astro.props;
 ---
 
-<div class="relative lg:px-16">
+<div class="relative lg:px-8">
   <div class="swiper p-5">
     <div class="swiper-wrapper">
       {
@@ -31,16 +31,16 @@ const { posts } = Astro.props;
   new Swiper('.swiper', {
     ...defaultSwiperOptions,
     slidesPerView: 1,
-    spaceBetween: 20,
+    spaceBetween: 16,
     modules: [Navigation],
     breakpoints: {
       1024: {
         slidesPerView: 2,
-        spaceBetween: 30,
+        spaceBetween: 20,
       },
       1280: {
         slidesPerView: 3,
-        spaceBetween: 50,
+        spaceBetween: 24,
       },
     },
   });
