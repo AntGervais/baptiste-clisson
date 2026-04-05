@@ -1,0 +1,33 @@
+---
+import { getPermalink } from '~/utils/permalinks';
+import Category from './Category.astro';
+
+interface CategoryAccueil {
+  title?: string;
+  subtitle?: string;
+  image?: string;
+  tag?: string;
+}
+
+export interface Props {
+  categories: CategoryAccueil[];
+}
+const { categories } = Astro.props;
+---
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 py-5 w-full">
+  {
+    categories.map((cate: CategoryAccueil) => (
+      <Category
+        title={cate.title}
+        image={cate.image}
+        link={
+          cate.tag === 'escalier' ? getPermalink('/escaliers') :
+          cate.tag === 'charpente' ? getPermalink('/charpente-renovation') :
+          cate.tag === 'restauration' ? getPermalink('/charpente-renovation') :
+          getPermalink(cate.tag, 'tag')
+        }
+      />
+    ))
+  }
+</div>

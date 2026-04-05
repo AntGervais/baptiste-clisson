@@ -10,7 +10,7 @@ import Presentation from '~/components/widgets/Presentation.astro';
 import AnimatedSection from '~/components/common/AnimatedSection.astro';
 
 import { getCollection } from 'astro:content';
-import SwiperCategories from '~/components/widgets/SwiperCategories.astro';
+import CategoriesGrid from '~/components/widgets/CategoriesGrid.astro';
 
 const imagesAccueil = await getCollection('accueil_categories');
 const categories = imagesAccueil.map((accueil_categories) => accueil_categories.data);
@@ -46,7 +46,7 @@ const meta = {
 
     <Fragment slot="activities">
       <div class="mb-3 mt-10">
-        <SwiperCategories categories={categories} />
+        <CategoriesGrid categories={categories} />
       </div>
     </Fragment>
   </Hero>

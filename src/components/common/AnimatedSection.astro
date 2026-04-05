@@ -36,9 +36,10 @@ const { class: className, ...restProps } = Astro.props;
       disableMutationObserver: false,
       offset: 200,
       delay: 100,
-      duration: 600,
-      easing: 'ease',
+      duration: 500,
+      easing: 'ease-out-cubic',
       once: true,
+      mirror: false,
     });
 
     aosInitialized = true;
