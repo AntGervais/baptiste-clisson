@@ -2,69 +2,84 @@
 
 Site web vitrine pour **Charpente Bois Debout**, entreprise de charpenterie traditionnelle située à Saulgé (86), spécialisée dans la charpente traditionnelle, les structures bois, les escaliers sur mesure et la restauration de bâti ancien.
 
-🌐 **Site en production** : [charpenteboisdebout.fr](https://charpenteboisdebout.fr)
+**Site en production** : [charpenteboisdebout.fr](https://charpenteboisdebout.fr)
 
 ## Stack Technique
 
 ### Framework & Build
 
-- **[Astro 5.x](https://astro.build/)** (v5.15.0) - Framework moderne pour sites statiques haute performance
+- **[Astro 6.x](https://astro.build/)** (`^6.1.3`) - Framework moderne pour sites statiques haute performance
   - Génération de sites statiques (SSG)
-  - Rendu côté serveur (SSR) optionnel
   - Islands Architecture pour hydratation partielle
+  - Chargement de polices Google natif via l'API Astro Fonts
   - Support MDX natif
 
 ### Styling
 
-- **[Tailwind CSS](https://tailwindcss.com/)** (v3.3.2) - Framework CSS utility-first
-  - Configuration personnalisée (`tailwind.config.cjs`)
+- **[Tailwind CSS 4.x](https://tailwindcss.com/)** (`^4.2.2`) - Framework CSS utility-first
+  - Intégration via le plugin Vite `@tailwindcss/vite` (plus de `tailwind.config.cjs`)
   - Plugin typography pour le contenu markdown
-  - Thème personnalisé avec variables de couleurs
+  - Configuration CSS-first
+
+### Polices
+
+- **Buenard** (Google Fonts, 400 / 700) — titres
+- **Satisfy** (Google Fonts, 400) — textes d'accroche
+- Chargées nativement par Astro sans dépendance externe
 
 ### Gestion de Contenu
 
-- **[TinaCMS](https://tina.io/)** (v2.9.3) - Headless CMS git-based
+- **[TinaCMS 3.x](https://tina.io/)** (`tinacms ^3.7.1`) - Headless CMS git-based
   - Interface d'édition visuelle accessible via `/admin`
   - Contenu stocké en Markdown dans `src/content/`
-  - Schéma défini dans `.tina/config.ts`
+  - Schéma défini dans `tina/config.ts`
+  - Directive Astro personnalisée `astro-tina-directive` pour l'édition visuelle en contexte
   - Deux collections principales :
     - `accueil_categories` : Catégories de services affichées sur la page d'accueil
     - `realisations` : Portfolio des projets réalisés
 
 ### Bibliothèques JavaScript
 
-- **[Swiper](https://swiperjs.com/)** (v9.3.2) - Carousels tactiles modernes
+- **[Swiper 12.x](https://swiperjs.com/)** (`^12.1.3`) - Carousels tactiles modernes
   - Galeries d'images
   - Carrousel de réalisations
   - Navigation entre catégories
-- **[PhotoSwipe](https://photoswipe.com/)** (v5.3.7) - Lightbox responsive pour galeries d'images
-- **[AOS (Animate On Scroll)](https://michalsnik.github.io/aos/)** (v2.3.4) - Animations au scroll
-- **[React](https://react.dev/)** (v18.2.0) - Pour l'interface d'administration TinaCMS
+- **[PhotoSwipe 5.x](https://photoswipe.com/)** (`^5.4.4`) - Lightbox responsive pour galeries d'images, avec `photoswipe-dynamic-caption-plugin`
+- **[React 19.x](https://react.dev/)** (`^19.2.4`) - Pour l'interface d'administration TinaCMS
+
+### Icônes
+
+- **[astro-icon](https://github.com/natemoo-re/astro-icon)** (`^1.1.5`) avec les collections Iconify :
+  - `@iconify-json/ri` (Remix Icons)
+  - `@iconify-json/tabler` (Tabler Icons)
+
+### SEO & Analytics
+
+- **[@astrolib/seo](https://www.npmjs.com/package/@astrolib/seo)** (`^0.3.1`) - Meta tags, Open Graph, Twitter Cards
+- **[@astrolib/analytics](https://www.npmjs.com/package/@astrolib/analytics)** (`^0.3.0`) - Analytics (Google Analytics via Partytown)
+- **[@astrojs/sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/)** (`^3.7.2`) - Sitemap généré automatiquement
+- **[@astrojs/partytown](https://docs.astro.build/en/guides/integrations-guide/partytown/)** (`^2.1.6`) - Scripts analytics exécutés en Web Worker
 
 ### Optimisation
 
-- **Sharp** (v0.33.5) - Traitement et optimisation des images
-- **astro-compress** (v2.2.8) - Minification CSS/HTML/JS en production
-- **Partytown** (v2.1.4) - Exécution des scripts analytics en Web Worker
+- **Sharp** (`0.33.5`) - Traitement et optimisation des images (build-time)
+- **esbuild** (via Vite) - Minification JS/CSS en production (target ES2020)
 
 ### Outils de Développement
 
-- **pnpm** (8.x+) - Gestionnaire de paquets rapide et efficace
-- **TypeScript** (v5.6.3) - Typage statique
-- **ESLint** (v8.41.0) - Linter JavaScript/TypeScript
-- **Prettier** (v2.8.8) - Formateur de code
+- **pnpm** `10.33.0` - Gestionnaire de paquets rapide et efficace
+- **TypeScript** (`^5.6.3`) - Typage statique
+- **ESLint** (`^8.41.0`) - Linter JavaScript/TypeScript/Astro
+- **Prettier** (`^3.8.1`) - Formateur de code (avec plugins Astro et Tailwind)
 
 ## Prérequis
 
-- **Node.js** 18.x (voir `.node-version`)
-- **pnpm** 8.x ou supérieur
+- **Node.js** `>=22.12.0`
+- **pnpm** `10.x`
 
 ```bash
 # Installer pnpm si nécessaire
-npm install -g pnpm
-
-# Utiliser la bonne version de Node (avec nvm)
-nvm use
+npm install -g pnpm@10
 ```
 
 ## Installation
@@ -72,6 +87,7 @@ nvm use
 ```bash
 # Cloner le repository
 git clone [url-du-repo]
+cd baptiste-clisson
 
 # Installer les dépendances
 pnpm install
@@ -81,20 +97,22 @@ pnpm install
 
 | Commande | Description |
 |----------|-------------|
-| `pnpm dev` | Démarre le serveur de développement avec TinaCMS sur `localhost:3000` |
+| `pnpm dev` | Démarre le serveur de développement avec TinaCMS sur `localhost:4321` |
 | `pnpm start` | Démarre le serveur Astro uniquement (sans TinaCMS) |
-| `pnpm build` | Build de production (TinaCMS + site statique dans `./dist/`) |
+| `pnpm build` | Build Astro uniquement (`astro build` → `./dist/`) |
+| `pnpm build:prod` | Build complet : TinaCMS (`tina:build`) puis Astro |
 | `pnpm preview` | Prévisualise le build de production localement |
 | `pnpm format` | Formate le code avec Prettier |
 | `pnpm lint:eslint` | Analyse le code avec ESLint |
-| `pnpm subfont` | Optimise les polices (à exécuter après le build) |
 
 ## Architecture du Projet
 
 ```
 baptiste-clisson/
-├── .tina/                    # Configuration TinaCMS
-│   └── config.ts            # Schéma des collections
+├── astro-tina-directive/     # Directive Astro personnalisée pour TinaCMS
+├── tina/                     # Configuration TinaCMS
+│   ├── config.ts            # Schéma des collections
+│   └── __generated__/       # Fichiers générés par TinaCMS
 ├── public/
 │   ├── admin/               # Interface TinaCMS (généré)
 │   └── images/              # Assets statiques et uploads TinaCMS
@@ -109,11 +127,10 @@ baptiste-clisson/
 │   │   ├── photoswipe/      # Intégration PhotoSwipe
 │   │   ├── realisations/    # Composants portfolio
 │   │   ├── review/          # Avis clients
-│   │   └── widgets/         # Sections de page (Header, Footer, Hero)
+│   │   └── widgets/         # Sections de page (Header, Footer, Hero…)
 │   ├── content/             # Contenu Markdown géré par TinaCMS
 │   │   ├── accueil_categories/  # Catégories page d'accueil
-│   │   ├── realisations/        # Portfolio projets
-│   │   └── config.ts            # Configuration collections Astro
+│   │   └── realisations/        # Portfolio projets
 │   ├── layouts/
 │   │   ├── BaseLayout.astro     # Layout principal avec SEO
 │   │   ├── MarkdownLayout.astro # Layout pour contenu markdown
@@ -124,16 +141,18 @@ baptiste-clisson/
 │   │   │   ├── [...page].astro      # Pagination
 │   │   │   └── [tag]/[...page].astro # Filtrage par tag
 │   │   ├── index.astro          # Page d'accueil
-│   │   └── contact.astro        # Page contact
+│   │   ├── charpente-renovation.astro
+│   │   ├── escaliers.astro
+│   │   ├── extension-ossature.astro
+│   │   ├── mentions-legales.astro
+│   │   └── 404.astro
+│   ├── functions/           # Fonctions Netlify
 │   ├── types.ts             # Types TypeScript
 │   ├── utils/               # Fonctions utilitaires
-│   │   ├── realisations.ts  # Logique portfolio
-│   │   └── images.ts        # Traitement images
 │   ├── config.mjs           # Configuration du site
 │   └── data.js              # Données navigation & footer
 ├── astro.config.mjs         # Configuration Astro
 ├── netlify.toml             # Configuration Netlify
-├── tailwind.config.cjs      # Configuration Tailwind
 └── package.json
 ```
 
@@ -172,12 +191,12 @@ Description détaillée du projet en Markdown...
 ### Accès à l'interface d'administration
 
 1. Lancer le serveur de développement : `pnpm dev`
-2. Accéder à `http://localhost:3000/admin`
+2. Accéder à `http://localhost:4321/admin`
 3. Se connecter (authentification Git)
 
 ### Édition de contenu
 
-- **Mode visuel** : Édition directe sur les pages du site
+- **Mode visuel** : Édition directe sur les pages du site via la directive `tina:`
 - **Mode formulaire** : Édition via formulaires structurés
 - **Sauvegarde** : Commits Git automatiques
 
@@ -196,28 +215,28 @@ Le site est automatiquement déployé sur Netlify à chaque push sur `main`.
 - Build command : `pnpm build:prod`
 - Publish directory : `dist`
 - Node version : 24
-- Variables d'environnement : `TINA_CLIENT_ID`, `TINA_TOKEN`, `TINA_BRANCH` (optionnel)
+- `NODE_OPTIONS="--max-old-space-size=4096"` pour les builds volumineux
+- Variables d'environnement à configurer dans l'UI Netlify : `TINA_CLIENT_ID`, `TINA_TOKEN`, `TINA_BRANCH` (optionnel)
 
 **URL de production** : https://charpenteboisdebout.fr
 
 ### Déploiement Manuel
 
 ```bash
-# Build de production
-pnpm build
+# Build complet (TinaCMS + Astro)
+pnpm build:prod
 
 # Le dossier dist/ contient le site statique prêt à déployer
 ```
 
 ## Performance & SEO
 
-- **Lighthouse Score** : 95+ sur tous les critères
 - **Images optimisées** : Compression automatique avec Sharp
-- **CSS minimal** : Purge Tailwind en production
+- **Minification** : esbuild (JS/CSS) en production
 - **Lazy loading** : Images et composants chargés à la demande
-- **Sitemap** : Généré automatiquement
-- **Meta tags** : Open Graph et Twitter Cards
-- **Schema.org** : Données structurées pour le SEO
+- **Sitemap** : Généré automatiquement via `@astrojs/sitemap`
+- **Meta tags** : Open Graph et Twitter Cards via `@astrolib/seo`
+- **Analytics** : Google Analytics via Partytown (Web Worker)
 
 ## Développement
 
@@ -232,6 +251,7 @@ pnpm build
 - **Nommage** : PascalCase pour les composants Astro
 - **Styles** : Classes Tailwind en priorité, CSS custom minimal
 - **Images** : Toujours optimisées via le composant Image d'Astro
+- **Alias** : `~/*` pointe vers `src/*`
 - **Types** : Interfaces TypeScript dans `src/types.ts`
 
 ### Ajout d'une Nouvelle Page
@@ -246,8 +266,10 @@ pnpm build
 Aucune variable d'environnement n'est requise pour le développement local.
 
 Pour la production, configurer dans Netlify :
-- Authentification TinaCMS (optionnel en production)
-- Google Analytics ID (si activé dans `config.mjs`)
+- `TINA_CLIENT_ID` — ID client TinaCloud
+- `TINA_TOKEN` — Token d'accès TinaCloud
+- `TINA_BRANCH` — Branche Git (optionnel, défaut : `main`)
+- `GOOGLE_ANALYTICS_ID` — ID Google Analytics (si activé dans `config.mjs`)
 
 ## Support & Maintenance
 
