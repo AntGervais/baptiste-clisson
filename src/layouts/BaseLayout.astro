@@ -59,6 +59,33 @@ const { language = 'en', textDirection = 'ltr' } = SITE;
           });
         });
       }
+
+      // Simple and robust Scroll Reveal system using IntersectionObserver
+      const setupReveal = () => {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('reveal-active');
+              // On arrête d'observer une fois révélé pour plus de performance
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.1, // Déclenche quand 10% de l'élément est visible
+          rootMargin: '0px 0px -10% 0px' // Déclenche un peu plus tôt pour un effet plus fluide
+        });
+
+        document.querySelectorAll('.reveal, [data-reveal]').forEach((el) => {
+          observer.observe(el);
+        });
+      };
+
+      // Initialisation
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', setupReveal);
+      } else {
+        setupReveal();
+      }
     </script>
     <style is:global>
       img {

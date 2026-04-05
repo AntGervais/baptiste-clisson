@@ -15,23 +15,23 @@ const {
 } = Astro.props;
 ---
 
-<article class="mb-6 transition">
+<article class="group mb-6">
   <div class="flex justify-center">
-    <a href={link} class="transition hover:scale-105" title={title}>
-      <div class="block w-full max-w-sm rounded-sm bg-white shadow-lg">
+    <a href={link} class="block w-full max-w-sm rounded-sm bg-white shadow-md transition-all duration-500 ease-out hover:shadow-xl hover:-translate-y-1 group-hover:scale-[1.01]" title={title}>
+      <div class="overflow-hidden rounded-t-sm">
         <Image
           src={image}
           alt={title}
-          class="w-full aspect-3/4 rounded-t-sm object-cover"
+          class="w-full aspect-3/4 object-cover transition-transform duration-700 ease-out group-hover:scale-105"
           loading="lazy"
           decoding="async"
           width={410}
           height={400}
         />
-        <div class="w-full p-4">
-          <h2 class="text-xl">{title}</h2>
-          {subtitle && <p class="text-sm">{subtitle}</p>}
-        </div>
+      </div>
+      <div class="w-full p-4 transition-colors duration-300 group-hover:bg-slate-50">
+        <h2 class="text-xl transition-transform duration-500 ease-out group-hover:translate-x-0.5">{title}</h2>
+        {subtitle && <p class="text-sm text-muted transition-transform duration-500 ease-out group-hover:translate-x-0.5">{subtitle}</p>}
       </div>
     </a>
   </div>

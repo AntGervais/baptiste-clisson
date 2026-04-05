@@ -5,6 +5,11 @@
 @import "tailwindcss/preflight.css" layer(base);
 @import "tailwindcss/utilities.css" layer(utilities);
 
+:root {
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 @utility text-page {
   color: var(--aw-color-text-page);
 }
@@ -87,21 +92,6 @@
   @apply rotate-45 translate-y-[-8px] translate-x-[14px];
 }
 
-.title{
-  line-height: 1.1;
-  animation: titleFadeIn  0.5s ease-in-out forwards;
-  transform: translateY(130%);
-}
-
-.subtitle{
-  animation: titleFadeIn  0.5s ease-in-out forwards;
-  transform: translateY(100%);
-}
-
-.activites{
-  opacity: 0;
-  animation: activitesFadeIn  0.5s ease-in-out forwards;
-}
 
 .bg-wood{
   background: url(../images/images-stock/fond_ecorce.webp) #ffffff;
@@ -159,24 +149,37 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
-@keyframes activitesFadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(10%);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0%);
-  }
+/* Animations de révélation (Reveal) */
+.reveal {
+  --tx: 0px;
+  --ty: 30px;
+  opacity: 0;
+  transform: translate(var(--tx), var(--ty));
+  transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition-delay: var(--delay, 0ms);
+  will-change: opacity, transform;
 }
 
-@keyframes titleFadeIn {
-  0% {
-    transform: translateY(100%);
-  }
+.reveal-left {
+  --tx: 40px;
+  --ty: 0px;
+}
 
-  100% {
-    transform: translateY(0%);
+.reveal-right {
+  --tx: -40px;
+  --ty: 0px;
+}
+
+.reveal-active {
+  --tx: 0px !important;
+  --ty: 0px !important;
+  opacity: 1 !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
 }

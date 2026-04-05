@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import type { ImagePath } from '~/types';
+import AnimatedSection from '~/components/common/AnimatedSection.astro';
 
 export interface Props {
   title?: string;
@@ -15,15 +16,17 @@ const { title = await Astro.slots.render('title'), image, imageSmall } = Astro.p
   <div class="flex flex-wrap">
     <div class="w-full shrink-0 grow-0 basis-auto lg:w-1/3">
       <div class="flex">
-        <Image
-          src={image.src}
-          class="hidden w-full rounded-sm shadow-lg lg:ml-12 lg:block"
-          alt={image.alt}
-          width={492}
-          height={656}
-          loading="lazy"
-          decoding="async"
-        />
+        <AnimatedSection reveal="fade-right">
+          <Image
+            src={image.src}
+            class="hidden w-full rounded-sm shadow-lg lg:ml-12 lg:block"
+            alt={image.alt}
+            width={492}
+            height={656}
+            loading="lazy"
+            decoding="async"
+          />
+        </AnimatedSection>
       </div>
     </div>
     <div class="w-full shrink-0 grow-0 basis-auto py-0 lg:w-2/3 lg:py-8">
@@ -36,15 +39,17 @@ const { title = await Astro.slots.render('title'), image, imageSmall } = Astro.p
           </p> -->
 
           <div class="flex h-full w-full items-center justify-center">
-            <Image
-              src={imageSmall.src}
-              class="mb-6 block w-96 rounded-sm shadow-lg lg:hidden"
-              alt={imageSmall.alt}
-              width={384}
-              height={270}
-              loading="lazy"
-              decoding="async"
-            />
+            <AnimatedSection reveal="fade-up">
+              <Image
+                src={imageSmall.src}
+                class="mb-6 block w-96 rounded-sm shadow-lg lg:hidden"
+                alt={imageSmall.alt}
+                width={384}
+                height={270}
+                loading="lazy"
+                decoding="async"
+              />
+            </AnimatedSection>
           </div>
 
           <p class="mb-5 pb-2 lg:pb-0">

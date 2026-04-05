@@ -1,54 +1,35 @@
 ---
 export interface Props {
   class?: string;
-  'data-aos'?: string;
-  'data-aos-delay'?: string;
-  'data-aos-duration'?: string;
-  'data-aos-offset'?: string;
-  'data-aos-easing'?: string;
-  'data-aos-once'?: boolean;
+  reveal?: string;
+  delay?: string | number;
+  duration?: string;
+  offset?: string;
+  easing?: string;
+  once?: boolean;
   [key: string]: any;
 }
 
-const { class: className, ...restProps } = Astro.props;
+const { 
+  class: className, 
+  reveal, 
+  delay,
+  ...restProps 
+} = Astro.props;
+
+// Traduction des types de révélation vers nos classes CSS
+const revealClass = 
+  reveal === 'fade-left' ? 'reveal-left' : 
+  reveal === 'fade-right' ? 'reveal-right' : 
+  '';
 ---
 
-<div class={className} {...restProps}>
+<div 
+  class:list={['reveal', revealClass, className]} 
+  style={delay ? `--delay: ${delay}ms` : ''}
+  data-reveal={reveal}
+  data-reveal-delay={delay}
+  {...restProps}
+>
   <slot />
 </div>
-
-<script>
-  // Lazy load AOS only when AnimatedSection is used
-  let aosInitialized = false;
-
-  async function initAOS() {
-    if (aosInitialized) return;
-
-    const AOS = await import('aos');
-    await import('aos/dist/aos.css');
-
-    AOS.default.init({
-      disable: 'mobile',
-      startEvent: 'DOMContentLoaded',
-      initClassName: 'aos-init',
-      animatedClassName: 'aos-animate',
-      useClassNames: false,
-      disableMutationObserver: false,
-      offset: 200,
-      delay: 100,
-      duration: 500,
-      easing: 'ease-out-cubic',
-      once: true,
-      mirror: false,
-    });
-
-    aosInitialized = true;
-  }
-
-  // Initialize AOS when component is loaded
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initAOS);
-  } else {
-    initAOS();
-  }
-</script>
