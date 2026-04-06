@@ -5,7 +5,7 @@ import { findImage } from '~/utils/images';
 const GALLERY_ID = 'home-gallery';
 
 const imagePaths = [
-  '/images/realisations/Macherie/93-min.webp',
+  '/images/realisations/Escalier-exterieur-comtois/7.webp',
   '/images/realisations/Escalier1/1.webp',
   '/images/realisations/Kiosque/1.webp',
   '/images/realisations/Debord-de-toit-ferme-apparat/1.webp',
@@ -24,38 +24,40 @@ const resolvedImages = (
 ---
 
 <style>
+  /* ── Mobile : portrait + horizontal à gauche / 3 empilées à droite ── */
   .home-gallery-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
+    grid-template-rows: 1fr 1fr 1fr;
     gap: 6px;
+    height: 500px;
   }
 
-  .home-gallery-grid .gallery-item-featured {
-    grid-column: 1;
-    grid-row: 1 / 3;
-  }
+  /* img1 — grand portrait, col gauche, rows 1-2 */
+  .home-gallery-grid .gallery-link:nth-child(1) { grid-column: 1; grid-row: 1 / 3; }
 
-  .home-gallery-grid .gallery-item {
-    grid-column: 2;
-  }
+  /* img2, img3, img4 — empilées col droite */
+  .home-gallery-grid .gallery-link:nth-child(2) { grid-column: 2; grid-row: 1; }
+  .home-gallery-grid .gallery-link:nth-child(3) { grid-column: 2; grid-row: 2; }
+  .home-gallery-grid .gallery-link:nth-child(4) { grid-column: 2; grid-row: 3; }
 
+  /* img5 — horizontale, col gauche, row 3 */
+  .home-gallery-grid .gallery-link:nth-child(5) { grid-column: 1; grid-row: 3; }
+
+  /* ── Desktop : grande image gauche + 2×2 à droite ── */
   @media (min-width: 768px) {
     .home-gallery-grid {
       grid-template-columns: 2fr 1fr 1fr;
       grid-template-rows: 1fr 1fr;
       gap: 8px;
+      height: 520px;
     }
 
-    .home-gallery-grid .gallery-item-featured {
-      grid-column: 1;
-      grid-row: 1 / 3;
-    }
-
-    .home-gallery-grid .gallery-item:nth-child(2) { grid-column: 2; grid-row: 1; }
-    .home-gallery-grid .gallery-item:nth-child(3) { grid-column: 3; grid-row: 1; }
-    .home-gallery-grid .gallery-item:nth-child(4) { grid-column: 2; grid-row: 2; }
-    .home-gallery-grid .gallery-item:nth-child(5) { grid-column: 3; grid-row: 2; }
+    .home-gallery-grid .gallery-link:nth-child(1) { grid-column: 1; grid-row: 1 / 3; }
+    .home-gallery-grid .gallery-link:nth-child(2) { grid-column: 2; grid-row: 1; }
+    .home-gallery-grid .gallery-link:nth-child(3) { grid-column: 3; grid-row: 1; }
+    .home-gallery-grid .gallery-link:nth-child(4) { grid-column: 2; grid-row: 2; }
+    .home-gallery-grid .gallery-link:nth-child(5) { grid-column: 3; grid-row: 2; }
   }
 
   .gallery-link {
@@ -76,16 +78,6 @@ const resolvedImages = (
   .gallery-link:hover img {
     transform: scale(1.04);
   }
-
-  .home-gallery-grid {
-    height: 420px;
-  }
-
-  @media (min-width: 768px) {
-    .home-gallery-grid {
-      height: 520px;
-    }
-  }
 </style>
 
 <div id={GALLERY_ID} class="home-gallery-grid">
@@ -93,7 +85,7 @@ const resolvedImages = (
     resolvedImages.map(({ src }, index) => (
       <a
         href={src.src}
-        class:list={['gallery-link', index === 0 ? 'gallery-item-featured' : 'gallery-item']}
+        class="gallery-link"
         data-pswp-width={src.width}
         data-pswp-height={src.height}
       >
