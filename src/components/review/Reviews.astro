@@ -1,33 +1,94 @@
 ---
 import { Image } from 'astro:assets';
-import initialReviews from '~/initialReviews';
-import ReviewsComponent from './Reviews';
+import { Icon } from 'astro-icon/components';
+
+const googleReviewUrl = "https://www.google.com/search?q=Charpente+Bois+Debout+Avis#lrd=0xa64bcd0721f60adb:0xcc29862531448a27,3,1";
+const address = "17 Beumene, 86500 Saulgé";
+const phone = "06 30 48 17 37";
 ---
 
-<div class="centered flex-col gap-32 py-8 lg:flex-row lg:py-10">
-  <div class="flex flex-col lg:gap-8">
-    <div class="text-center">
-      <h2 class="mb-4 font-heading text-4xl text-secondary">Vos avis</h2>
+<section class="bg-gray-50/50 py-16 lg:py-24">
+  <div class="container mx-auto px-4">
+    <div class="mb-12 text-center">
+      <h2 class="font-heading text-4xl font-bold tracking-tight text-secondary sm:text-5xl">
+        Votre avis compte
+      </h2>
+      <p class="mx-auto mt-4 max-w-2xl text-lg text-gray-600">
+        La satisfaction de nos clients est au cœur de notre métier de charpentier.
+      </p>
     </div>
-  </div>
 
-  <div class="container mx-auto">
-    <div class="flex flex-wrap">
-      <div class="w-full shrink-0 grow-0 basis-auto p-5 lg:w-1/3">
-        <Image
-          src="/images/images-stock/menuisier-travaillant-studio-crayon.webp"
-          class="rounded-sm object-cover"
-          alt="menuisier travaillant studio crayon"
-          width={590}
-          height={443}
-          loading="lazy"
-          decoding="async"
-        />
+    <div class="flex flex-col items-stretch justify-center gap-12 lg:flex-row">
+      <div class="relative w-full max-w-md shrink-0 lg:w-1/3">
+        <div class="group relative h-[400px] overflow-hidden rounded-sm shadow-xl transition-all duration-500 hover:shadow-2xl lg:absolute lg:inset-0 lg:h-auto">
+          <Image
+            src="/images/realisations/Escalier-exterieur-comtois/8.webp"
+            class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+            alt="Artisan charpentier au travail"
+            width={590}
+            height={700}
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="absolute inset-0 bg-linear-to-t from-secondary/40 to-transparent"></div>
+        </div>
       </div>
 
-      <div class="w-full shrink-0 grow-0 basis-auto p-2 lg:p-4 lg:w-2/3">
-        <ReviewsComponent initialReviews={initialReviews} client:load />
+      <div class="flex w-full max-w-xl flex-col lg:w-2/3">
+        <div class="h-full rounded-sm border border-gray-100 bg-white p-8 shadow-sm transition-all duration-300 hover:border-primary/20 hover:shadow-md lg:p-12">
+          <div class="mb-8 flex items-center justify-between border-b border-gray-50">
+            <div class="flex items-center gap-4">
+              <div class="flex h-14 w-14 items-center justify-center rounded-sm bg-primary/10 text-primary">
+                <Icon name="tabler:brand-google" class="h-8 w-8" />
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold text-secondary">Charpente Bois Debout</h3>
+                <div class="mt-1 flex items-center gap-1 text-yellow-500">
+                  {Array.from({ length: 5 }).map(() => (
+                    <Icon name="tabler:star-filled" class="h-5 w-5" />
+                  ))}
+                  <span class="ml-2 font-medium text-gray-600">5.0 sur Google</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <Icon name="tabler:map-pin" class="mt-1 h-6 w-6 shrink-0 text-primary" />
+              <div>
+                <p class="font-semibold text-secondary">Adresse</p>
+                <p class="text-gray-600">{address}</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <Icon name="tabler:phone" class="mt-1 h-6 w-6 shrink-0 text-primary" />
+              <div>
+                <p class="font-semibold text-secondary">Téléphone</p>
+                <a href={`tel:${phone.replace(/\s/g, '')}`} class="text-gray-600 hover:text-primary transition-colors">
+                  {phone}
+                </a>
+              </div>
+            </div>
+
+            <div class="pt-2">
+              <a
+                href={googleReviewUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group inline-flex items-center justify-center gap-3 rounded-full bg-secondary px-8 py-4 text-center font-bold text-white transition-all duration-300 hover:bg-primary hover:shadow-lg"
+              >
+                Laisser un avis sur Google
+                <Icon name="tabler:external-link" class="h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </a>
+              <p class="mt-4 text-sm text-gray-500 italic">
+                Récompensez notre travail en partageant votre expérience.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</section>
