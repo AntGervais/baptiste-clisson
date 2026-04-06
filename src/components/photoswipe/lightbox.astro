@@ -1,7 +1,6 @@
 ---
 import 'photoswipe/style.css';
 import 'photoswipe-dynamic-caption-plugin/photoswipe-dynamic-caption-plugin.css';
-import { Image } from 'astro:assets';
 import { findImage } from '~/utils/images';
 
 export interface Props {
@@ -11,19 +10,32 @@ export interface Props {
 
 const { id, images } = Astro.props;
 
-const resolvedImages = (
+type ResolvedImage = {
+  url: string;
+  width?: number;
+  height?: number;
+  title: string;
+};
+
+const resolvedImages: ResolvedImage[] = (
   await Promise.all(
     images.map(async (image) => {
       const src = await findImage(image);
       if (!src) return null;
 
-      return {
-        src,
-        title: image.slice(0, image.lastIndexOf('.')).slice(image.lastIndexOf('/') + 1),
-      };
+      const title = image.slice(0, image.lastIndexOf('.')).slice(image.lastIndexOf('/') + 1);
+
+      if (typeof src === 'string') {
+        // Public folder image: findImage returns a URL string
+        return { url: src, width: undefined, height: undefined, title };
+      } else {
+        // src/ folder image: findImage returns ImageMetadata with src, width, height
+        const meta = src as { src: string; width: number; height: number };
+        return { url: meta.src, width: meta.width, height: meta.height, title };
+      }
     })
   )
-).filter(Boolean);
+).filter((img): img is ResolvedImage => img !== null);
 ---
 
 <style>
@@ -34,19 +46,23 @@ const resolvedImages = (
 
 <lightbox-inner data-id={id}>
   {
-    resolvedImages.map(({ src, title }) => (
+    resolvedImages.map(({ url, width, height, title }) => (
       <figure
         itemscope
         itemtype="http://schema.org/ImageObject"
         class="inline-block rounded bg-gray-300 text-center text-gray-800 dark:bg-gray-800 dark:text-gray-300"
       >
-        <a href={src.src} itemprop="contentUrl" data-pswp-width={src.width} data-pswp-height={src.height}>
-          <Image
-            src={src}
+        <a
+          href={url}
+          itemprop="contentUrl"
+          data-pswp-width={width}
+          data-pswp-height={height}
+        >
+          <img
+            src={url}
             alt={title}
-            width={src.width}
-            height={src.height}
-            format="webp"
+            loading="lazy"
+            decoding="async"
             class="rounded"
           />
           <span class="pswp-caption-content">{title}</span>
