@@ -6,7 +6,7 @@ type ReviewProps = {
 
 export default function Reviews({ review }: ReviewProps) {
   return (<div
-    className="review flex flex-col gap-2 px-8 py-6 bg-gray-100 rounded-sm mb-6 review-header"
+    className="review flex flex-col gap-2 px-5 py-6 bg-gray-100 rounded-sm mb-6 review-header"
     key={`${review.text}${review.author_name}`}
   >
     <div className="flex gap-4 items-center review-header ">
