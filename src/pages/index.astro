@@ -8,6 +8,7 @@ import Reviews from '~/components/review/Reviews.astro';
 import Contact from '~/components/contact/Contact.astro';
 import Presentation from '~/components/widgets/Presentation.astro';
 import AnimatedSection from '~/components/common/AnimatedSection.astro';
+import HomeGallery from '~/components/photoswipe/HomeGallery.astro';
 
 import { getCollection } from 'astro:content';
 import CategoriesGrid from '~/components/widgets/CategoriesGrid.astro';
@@ -64,6 +65,13 @@ const meta = {
         alt: 'Baptiste Clisson - Charpentier Traditionnel',
       }}
     />
+  </div>
+
+  <!-- Home Gallery PhotoSwipe ******* -->
+  <div class="container mx-auto px-4 py-8 sm:px-6">
+    <AnimatedSection reveal="fade-up">
+      <HomeGallery />
+    </AnimatedSection>
   </div>
 
   <!-- HighlightedRealisations Widget ******* -->
