@@ -19,7 +19,7 @@ const link = !REALISATIONS?.post?.disabled ? getPermalink(post.permalink, 'reali
 ---
 
 <article
-  class={`max-w-md mx-auto md:max-w-none grid gap-6 md:gap-8 hover:scale-105 transition
+  class={`max-w-md mx-auto md:max-w-none grid gap-6 transition duration-200 hover:-translate-y-1 md:gap-8
   ${image ? 'md:grid-cols-2' : ''}`}
 >
   {
@@ -55,12 +55,12 @@ const link = !REALISATIONS?.post?.disabled ? getPermalink(post.permalink, 'reali
       {post.accroche && <p class="text-muted text-lg">{post.accroche}</p>}
     </section>
     <footer class="">
-      <div class="flex flex-row justify-between">
-        <div class="flex w-full">
+      <div class="flex flex-nowrap items-center gap-4">
+        <div class="flex min-w-0 flex-1 justify-start">
           <Tags tags={post.tags} />
         </div>
-        <div class="flex w-full justify-end">
-          <a class="mb-2 inline-flex items-center text-primary" href={link} title="Voir les détails">
+        <div class="flex shrink-0 justify-end">
+          <a class="inline-flex items-center whitespace-nowrap text-primary" href={link} title="Voir les détails">
             Détails
             <svg
               class="ml-2 h-4 w-4"

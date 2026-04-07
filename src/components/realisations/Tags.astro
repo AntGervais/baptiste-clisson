@@ -10,15 +10,16 @@ export interface Props {
 }
 
 const { tags, class: className = 'text-base' } = Astro.props;
+const containerClass = ['flex w-full flex-wrap justify-start gap-2 text-left', className].filter(Boolean).join(' ');
 ---
 
 {
   tags && Array.isArray(tags) && (
-    <div class={className}>
+    <div class={containerClass}>
       {tags.map(
         (tag) =>
           tag && (
-            <div class="mb-2 mr-2 inline-block rounded-sm bg-gray-100! font-medium lowercase text-primary! hover:bg-accent! hover:text-gray-100! transition-all duration-200 hover:scale-105">
+            <div class="inline-flex rounded-sm bg-gray-100! font-medium lowercase text-primary! transition-all duration-200 hover:scale-105 hover:bg-accent! hover:text-gray-100!">
               {REALISATIONS?.tag?.disabled ? (
                 tag
               ) : (

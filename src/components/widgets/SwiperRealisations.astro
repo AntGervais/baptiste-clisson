@@ -11,10 +11,10 @@ const { posts } = Astro.props;
 
 <div class="relative lg:px-8">
   <div class="swiper p-5">
-    <div class="swiper-wrapper">
+    <div class="swiper-wrapper items-stretch">
       {
         posts.map(async (post) => (
-          <div class="swiper-slide">
+          <div class="swiper-slide flex h-auto">
             <GridItem post={post} />
           </div>
         ))
@@ -45,3 +45,18 @@ const { posts } = Astro.props;
     },
   });
 </script>
+
+<style>
+  .swiper-wrapper {
+    align-items: stretch;
+  }
+
+  .swiper-slide {
+    display: flex;
+    height: auto;
+  }
+
+  .swiper-slide > :global(*) {
+    width: 100%;
+  }
+</style>
