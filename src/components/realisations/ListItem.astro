@@ -19,7 +19,7 @@ const link = !REALISATIONS?.post?.disabled ? getPermalink(post.permalink, 'reali
 ---
 
 <article
-  class={`max-w-md mx-auto md:max-w-none grid gap-6 md:gap-8 hover:scale-105 transition 
+  class={`max-w-md mx-auto md:max-w-none grid gap-6 md:gap-8 hover:scale-105 transition
   ${image ? 'md:grid-cols-2' : ''}`}
 >
   {
@@ -45,14 +45,14 @@ const link = !REALISATIONS?.post?.disabled ? getPermalink(post.permalink, 'reali
   }
   <div class="flex flex-col justify-between">
     <header>
-      <a href={link} title="Voir les photos">
+      <a href={link} title="Voir les détails">
         <h2 class="mb-2 font-heading text-xl leading-tight sm:text-2xl">
           {link ? <span class="hover:text-primary">{post.title}</span> : post.title}
         </h2>
       </a>
     </header>
     <section class="h-full">
-      {post.accroche && <p class="text-muted flex-grow text-lg">{post.accroche}</p>}
+      {post.accroche && <p class="text-muted text-lg">{post.accroche}</p>}
     </section>
     <footer class="">
       <div class="flex flex-row justify-between">
@@ -60,8 +60,8 @@ const link = !REALISATIONS?.post?.disabled ? getPermalink(post.permalink, 'reali
           <Tags tags={post.tags} />
         </div>
         <div class="flex w-full justify-end">
-          <a class="mb-2 inline-flex items-center text-primary" href={link} title="Voir les photos">
-            Plus de photos
+          <a class="mb-2 inline-flex items-center text-primary" href={link} title="Voir les détails">
+            Détails
             <svg
               class="ml-2 h-4 w-4"
               viewBox="0 0 24 24"
