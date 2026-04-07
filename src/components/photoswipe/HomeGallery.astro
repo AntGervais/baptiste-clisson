@@ -12,6 +12,7 @@ const imagePaths = [
   '/images/realisations/Rehabilitation-maison-montreal/4.webp',
   '/images/realisations/Debord-de-toit-ferme-apparat/1.webp',
   '/images/realisations/Charpente-Manoir-Bel-Noe/1.webp',
+  '/images/realisations/Abris-Animaux/2.webp',
 ];
 
 const resolvedImages = (
@@ -46,10 +47,10 @@ const resolvedImages = (
   /* img5 — horizontale, col gauche, row 3 */
   .home-gallery-grid .gallery-link:nth-child(5) { grid-column: 1; grid-row: 3; }
 
-  /* ── Desktop : grande image gauche + 2×2 à droite ── */
+  /* ── Desktop : grande image gauche + 2×2 au centre + portrait à droite ── */
   @media (min-width: 768px) {
     .home-gallery-grid {
-      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
       grid-template-rows: 1fr 1fr;
       gap: 8px;
       height: 520px;
@@ -60,6 +61,17 @@ const resolvedImages = (
     .home-gallery-grid .gallery-link:nth-child(3) { grid-column: 3; grid-row: 1; }
     .home-gallery-grid .gallery-link:nth-child(4) { grid-column: 2; grid-row: 2; }
     .home-gallery-grid .gallery-link:nth-child(5) { grid-column: 3; grid-row: 2; }
+    .home-gallery-grid .gallery-link:nth-child(6) { grid-column: 4; grid-row: 1 / 3; }
+  }
+
+  /* L'image 6 est cachée sur mobile (colonne extra non présente) */
+  .home-gallery-grid .gallery-link:nth-child(6) {
+    display: none;
+  }
+  @media (min-width: 768px) {
+    .home-gallery-grid .gallery-link:nth-child(6) {
+      display: block;
+    }
   }
 
   .gallery-link {
@@ -82,7 +94,7 @@ const resolvedImages = (
   }
 </style>
 
-<div id={GALLERY_ID} class="home-gallery-grid">
+<div id={GALLERY_ID} class="home-gallery-grid pb-12 py-8">
   {
     resolvedImages.map(({ src }, index) => (
       <a
