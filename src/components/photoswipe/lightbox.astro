@@ -1,6 +1,8 @@
 ---
 import 'photoswipe/style.css';
 import 'photoswipe-dynamic-caption-plugin/photoswipe-dynamic-caption-plugin.css';
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 import { findImage } from '~/utils/images';
 
 export interface Props {
@@ -12,26 +14,26 @@ const { id, images } = Astro.props;
 
 type ResolvedImage = {
   url: string;
-  width?: number;
-  height?: number;
+  imageMeta: ImageMetadata | null;
+  width: number | undefined;
+  height: number | undefined;
   title: string;
 };
 
-const resolvedImages: ResolvedImage[] = (
+const resolvedImages = (
   await Promise.all(
-    images.map(async (image) => {
+    images.map(async (image): Promise<ResolvedImage | null> => {
       const src = await findImage(image);
       if (!src) return null;
 
       const title = image.slice(0, image.lastIndexOf('.')).slice(image.lastIndexOf('/') + 1);
 
       if (typeof src === 'string') {
-        // Public folder image: findImage returns a URL string
-        return { url: src, width: undefined, height: undefined, title };
+        // HTTP URL: no ImageMetadata available, use raw <img>
+        return { url: src, imageMeta: null, width: undefined, height: undefined, title };
       } else {
-        // src/ folder image: findImage returns ImageMetadata with src, width, height
-        const meta = src as { src: string; width: number; height: number };
-        return { url: meta.src, width: meta.width, height: meta.height, title };
+        const meta = src as ImageMetadata;
+        return { url: meta.src, imageMeta: meta, width: meta.width, height: meta.height, title };
       }
     })
   )
@@ -46,7 +48,7 @@ const resolvedImages: ResolvedImage[] = (
 
 <lightbox-inner data-id={id}>
   {
-    resolvedImages.map(({ url, width, height, title }) => (
+    resolvedImages.map(({ url, imageMeta, width, height, title }) => (
       <figure
         itemscope
         itemtype="http://schema.org/ImageObject"
@@ -58,13 +60,24 @@ const resolvedImages: ResolvedImage[] = (
           data-pswp-width={width}
           data-pswp-height={height}
         >
-          <img
-            src={url}
-            alt={title}
-            loading="lazy"
-            decoding="async"
-            class="rounded"
-          />
+          {imageMeta ? (
+            <Image
+              src={imageMeta}
+              alt={title}
+              width={600}
+              loading="lazy"
+              decoding="async"
+              class="rounded"
+            />
+          ) : (
+            <img
+              src={url}
+              alt={title}
+              loading="lazy"
+              decoding="async"
+              class="rounded"
+            />
+          )}
           <span class="pswp-caption-content">{title}</span>
         </a>
       </figure>

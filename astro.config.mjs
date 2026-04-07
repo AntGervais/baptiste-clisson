@@ -17,6 +17,9 @@ export default defineConfig({
   base: SITE.basePathname,
   trailingSlash: SITE.trailingSlash ? 'always' : 'never',
   output: 'static',
+  image: {
+    defaultQuality: 85,
+  },
   fonts: [
     {
       name: 'Buenard',
