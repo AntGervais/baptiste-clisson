@@ -1,6 +1,8 @@
 ---
 import type { Realisation } from '~/types';
 import GridItem from '../realisations/GridItem.astro';
+import { Swiper, SwiperWrapper, SwiperSlide, SwiperButtonPrev, SwiperButtonNext } from 'astro-swiper';
+import { defaultSwiperOptions } from '~/utils/swiper-config';
 
 export interface Props {
   posts: Array<Realisation>;
@@ -10,41 +12,36 @@ const { posts } = Astro.props;
 ---
 
 <div class="relative lg:px-8">
-  <div class="swiper p-5">
-    <div class="swiper-wrapper items-stretch">
-      {
-        posts.map(async (post) => (
-          <div class="swiper-slide flex h-auto">
-            <GridItem post={post} />
-          </div>
-        ))
-      }
-    </div>
-  </div>
-  <div class="swiper-button-next lg:-right-4!"></div>
-  <div class="swiper-button-prev lg:-left-4!"></div>
+  <Swiper
+    options={{
+      ...defaultSwiperOptions,
+      slidesPerView: 1,
+      spaceBetween: 16,
+      breakpoints: {
+        1024: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        1280: {
+          slidesPerView: 3,
+          spaceBetween: 24,
+        },
+      },
+    }}
+    class="p-5">
+      <SwiperWrapper class="items-stretch">
+        {
+          posts.map(async (post) => (
+            <SwiperSlide class="flex h-auto">
+              <GridItem post={post} />
+            </SwiperSlide>
+          ))
+        }
+      </SwiperWrapper>
+  </Swiper>
+  <SwiperButtonNext class="lg:-right-4!" />
+  <SwiperButtonPrev class="lg:-left-4!" />
 </div>
-
-<script>
-  import { Swiper, Navigation, defaultSwiperOptions } from '~/utils/swiper-config';
-
-  new Swiper('.swiper', {
-    ...defaultSwiperOptions,
-    slidesPerView: 1,
-    spaceBetween: 16,
-    modules: [Navigation],
-    breakpoints: {
-      1024: {
-        slidesPerView: 2,
-        spaceBetween: 20,
-      },
-      1280: {
-        slidesPerView: 3,
-        spaceBetween: 24,
-      },
-    },
-  });
-</script>
 
 <style>
   .swiper-wrapper {

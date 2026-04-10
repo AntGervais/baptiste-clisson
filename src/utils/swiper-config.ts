@@ -1,14 +1,7 @@
-import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import type { AstroSwiperOptions } from 'astro-swiper';
 
-export { Swiper, Navigation, Pagination };
-
-export const defaultSwiperOptions = {
+export const defaultSwiperOptions: AstroSwiperOptions = {
   rewind: true,
-  modules: [Navigation, Pagination],
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
