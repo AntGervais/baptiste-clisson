@@ -3,10 +3,11 @@ import { trim } from '~/utils/utils';
 
 export const trimSlash = (s: string) => trim(trim(s, '/'));
 const createPath = (...params: string[]) => {
-  const paths = params
-    .map((el) => trimSlash(el))
-    .filter((el) => !!el)
-    .join('/');
+  const paths = params.reduce<string[]>((acc, el) => {
+    const t = trimSlash(el);
+    if (t) acc.push(t);
+    return acc;
+  }, []).join('/');
   return '/' + paths + (SITE.trailingSlash && paths ? '/' : '');
 };
 

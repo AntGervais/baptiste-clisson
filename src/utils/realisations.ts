@@ -6,9 +6,10 @@ import { normalizeTag } from './permalinks';
 
 const getNormalizedRealisation = async (post: CollectionEntry<'realisations'>): Promise<Realisation> => {
   const { id, data } = post;
-  const { Content } = await render(post);
-
-  const relativePath = await resolveContentRelativePath('src/content/realisations', id);
+  const [{ Content }, relativePath] = await Promise.all([
+    render(post),
+    resolveContentRelativePath('src/content/realisations', id),
+  ]);
   const tinaInfo: TinaSystemInfo = {
     filename: relativePath.split('/').pop() ?? relativePath,
     basename: relativePath.replace(/\.mdx?$/, ''),
@@ -50,9 +51,7 @@ const getNormalizedRealisation = async (post: CollectionEntry<'realisations'>): 
 
 const loadRealisations = async function (): Promise<Array<Realisation>> {
   const realisations = await getCollection('realisations');
-  const normalizedRealisations = realisations.map(async (realisation) => await getNormalizedRealisation(realisation));
-
-  const results = (await Promise.all(normalizedRealisations)).sort(
+  const results = (await Promise.all(realisations.map((realisation) => getNormalizedRealisation(realisation)))).sort(
     (a, b) => b.publishDate.valueOf() - a.publishDate.valueOf()
   );
   // .filter((post) => !post.draft)

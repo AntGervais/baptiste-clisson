@@ -593,8 +593,7 @@ const generateRequester = (
        * through to underlying fetch request
        */
       fetchOptions?: Omit<Parameters<typeof fetch>[1], 'body' | 'method'>,
-    },
-    client
+    }
   ) => Promise<any> = async (doc, vars, options) => {
     let url = client.apiUrl
     if (options?.branch) {

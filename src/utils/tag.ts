@@ -33,12 +33,7 @@ const getNormalizedAccueilCategories = async (
 
 const loadAccueilCategories = async function (): Promise<Array<AccueilCategories>> {
   const categories = await getCollection('accueil_categories');
-  const normalizedAccueilCategories = categories.map(
-    async (categorie) => await getNormalizedAccueilCategories(categorie)
-  );
-
-  const results = await Promise.all(normalizedAccueilCategories);
-  return results;
+  return Promise.all(categories.map((categorie) => getNormalizedAccueilCategories(categorie)));
 };
 
 let _accueilCategories: Array<AccueilCategories>;

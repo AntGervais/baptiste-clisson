@@ -47,7 +47,7 @@ export default function AccueilCategoryPage(props: AccueilCategoryPageProps) {
           </div>
 
           <h1
-            className="font-heading text-4xl font-bold text-primary sm:text-5xl"
+            className="font-heading text-4xl font-semibold text-primary sm:text-5xl"
             data-tina-field={tinaField(category, 'title')}
           >
             {category.title}
@@ -55,7 +55,7 @@ export default function AccueilCategoryPage(props: AccueilCategoryPageProps) {
 
           {category.description && (
             <div
-              className="prose prose-lg mt-6 max-w-none text-gray-700 prose-headings:font-heading prose-headings:text-primary"
+              className="prose prose-lg mt-6 max-w-none text-zinc-700 prose-headings:font-heading prose-headings:text-primary"
               data-tina-field={tinaField(category, 'description')}
             >
               <TinaMarkdown content={category.description} />

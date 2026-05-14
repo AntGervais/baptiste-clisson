@@ -49,7 +49,7 @@ export default function RealisationPage(props: RealisationPageProps) {
             <img
               src={post.image}
               alt={post.title || post.accroche || ''}
-              className="mx-auto mb-6 max-w-full bg-gray-400 sm:rounded-sm lg:max-w-5xl"
+              className="mx-auto mb-6 max-w-full bg-zinc-400 sm:rounded-sm lg:max-w-5xl"
               loading="eager"
               data-tina-field={tinaField(post, 'image')}
             />
@@ -71,7 +71,7 @@ export default function RealisationPage(props: RealisationPageProps) {
               <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
                 {post.gallery.map((img, index) => (
                   <img
-                    key={index}
+                    key={img}
                     src={img}
                     alt={`Vue ${index + 1}`}
                     className="h-auto w-full rounded-sm object-cover shadow-md"
@@ -88,9 +88,9 @@ export default function RealisationPage(props: RealisationPageProps) {
         {/* Tags */}
         {post.tags && post.tags.length > 0 && (
           <div className="mr-5 flex flex-wrap gap-2" data-tina-field={tinaField(post, 'tags')}>
-            {post.tags.map((tag, index) => (
+            {post.tags.map((tag) => (
               <span
-                key={index}
+                key={tag}
                 className="inline-block rounded-full bg-accent px-3 py-1 text-sm text-white"
               >
                 {tag}
@@ -101,7 +101,7 @@ export default function RealisationPage(props: RealisationPageProps) {
 
         {/* Social Share placeholder */}
         {props.url && (
-          <div className="mt-5 align-middle text-gray-500 sm:mt-1">
+          <div className="mt-5 align-middle text-zinc-500 sm:mt-1">
             <span className="text-sm">Partager : {post.title}</span>
           </div>
         )}
