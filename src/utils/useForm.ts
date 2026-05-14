@@ -130,7 +130,7 @@ export const useForm = <T extends Record<string, unknown>>(options: FormOptions<
       // If we can validate without a form submission or if the form has been submitted
       // then we can always validate on change
       if (options?.validateChangeWithoutSubmit || attempted) {
-        setErrors({ ...errors, [key]: validate(key, e.target.value).error });
+        setErrors((prev) => ({ ...prev, [key]: validate(key, e.target.value).error }));
       }
     }, options.debounceTime);
 
@@ -148,10 +148,10 @@ export const useForm = <T extends Record<string, unknown>>(options: FormOptions<
   const handleBlur = (key: keyof T) => (e: any) => {
     // Need to set the data on blur for autocompleted values
     if (e.target.value) {
-      setData({
-        ...data,
+      setData((prev) => ({
+        ...prev,
         [key]: options?.sanitizeFn ? options.sanitizeFn(e.target.value) : e.target.value,
-      });
+      }));
     }
 
     // If no validations
@@ -172,10 +172,10 @@ export const useForm = <T extends Record<string, unknown>>(options: FormOptions<
     const { valid, error } = validate(key, e.target.value);
     // If the field is valid, remove the error
     if (valid) {
-      setErrors({ ...errors });
+      setErrors((prev) => ({ ...prev }));
       // Otherwise, set the error
     } else {
-      setErrors({ ...errors, [key]: error });
+      setErrors((prev) => ({ ...prev, [key]: error }));
     }
   };
 

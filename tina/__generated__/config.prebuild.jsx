@@ -13,7 +13,7 @@ requireEnv("TINA_CLIENT_ID", clientId);
 requireEnv("TINA_TOKEN", tinaToken);
 var normalizeSegment = (segment) => segment.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-zA-Z0-9_-]+/g, "-").replace(/-{2,}/g, "-").replace(/^-+|-+$/g, "").toLowerCase();
 var withTrailingSlash = (path) => path.endsWith("/") ? path : `${path}/`;
-var toSlug = (relativePath) => relativePath.replace(/\.(md|mdx)$/, "").split("/").map((segment) => normalizeSegment(segment)).filter(Boolean).join("/");
+var toSlug = (relativePath) => relativePath.replace(/\.(md|mdx)$/, "").split("/").flatMap((segment) => { const s = normalizeSegment(segment); return s ? [s] : []; }).join("/");
 var config_default = defineConfig({
   clientId,
   token: tinaToken,

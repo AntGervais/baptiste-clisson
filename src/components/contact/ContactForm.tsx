@@ -38,7 +38,7 @@ export default function ContactForm() {
 
   return (
     <div className='lg:absolute lg:right-12 w-full'>
-      <div className="bg-gray-100 rounded-sm">
+      <div className="bg-zinc-100 rounded-sm">
         <div className="form-container relative w-full rounded-sm shadow-lg bg-blackAlpha-600">
           <div
             className={[
@@ -103,7 +103,7 @@ export default function ContactForm() {
               <button
                 type="submit"
                 disabled={submitting || submitted}
-                className="btn w-full px-2 py-2 rounded-sm bg-primary hover:text-primary text-beige font-semibold uppercase  disabled:text-gray-300"
+                className="btn w-full p-2 rounded-sm bg-primary hover:text-primary text-beige font-semibold uppercase  disabled:text-zinc-300"
               >
                 Envoyer !
               </button>

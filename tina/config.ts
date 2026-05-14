@@ -29,8 +29,7 @@ const toSlug = (relativePath: string) =>
   relativePath
     .replace(/\.(md|mdx)$/, '')
     .split('/')
-    .map((segment) => normalizeSegment(segment))
-    .filter(Boolean)
+    .flatMap((segment) => { const s = normalizeSegment(segment); return s ? [s] : []; })
     .join('/');
 
 export default defineConfig({
