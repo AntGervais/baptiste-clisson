@@ -2,6 +2,8 @@
 import { Image } from 'astro:assets';
 import type { ImagePath } from '~/types';
 import { findImage } from '~/utils/images';
+import { Swiper, SwiperWrapper, SwiperSlide, SwiperButtonPrev, SwiperButtonNext } from 'astro-swiper';
+import { defaultSwiperOptions } from '~/utils/swiper-config';
 
 export interface Props {
   images: ImagePath[];
@@ -9,54 +11,49 @@ export interface Props {
 const { images } = Astro.props;
 ---
 
-<div class="swiper p-5">
-  <div class="swiper-wrapper">
-    {
-      images.map(async (image: ImagePath) => {
-        if (!image) return;
-        const src = await findImage(image.src);
-        if (!src) return;
-        return (
-          <div class="swiper-slide">
-            <Image
-              src={src}
-              class="rounded-sm bg-gray-400 shadow-lg "
-              widths={[400, 768]}
-              sizes="(max-width: 767px) 400px, 768px"
-              width={768}
-              height={432}
-              loading="eager"
-              alt={image.alt || 'Image Hero'}
-            />
-          </div>
-        );
-      })
-    }
-  </div>
-  <div class="swiper-button-next"></div>
-  <div class="swiper-button-prev"></div>
-</div>
-
-<script>
-  import { Swiper, Navigation, Pagination, defaultSwiperOptions } from '~/utils/swiper-config';
-
-  new Swiper('.swiper', {
-    ...defaultSwiperOptions,
-    slidesPerView: 1,
-    spaceBetween: 10,
-    modules: [Navigation, Pagination],
-    pagination: {
-      clickable: true,
-    },
-    breakpoints: {
-      640: {
-        slidesPerView: 2,
-        spaceBetween: 20,
+<Swiper
+    options={{
+      ...defaultSwiperOptions,
+      slidesPerView: 1,
+      spaceBetween: 10,
+      pagination: {
+        clickable: true,
       },
-      1024: {
-        slidesPerView: 3,
-        spaceBetween: 20,
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
       },
-    },
-  });
-</script>
+    }}
+    class="p-5">
+    <SwiperWrapper>
+      {
+        images.map(async (image: ImagePath) => {
+          if (!image) return;
+          const src = await findImage(image.src);
+          if (!src) return;
+          return (
+            <SwiperSlide>
+              <Image
+                src={src}
+                class="rounded-sm bg-gray-400 shadow-lg "
+                widths={[400, 768]}
+                sizes="(max-width: 767px) 400px, 768px"
+                width={768}
+                height={432}
+                loading="eager"
+                alt={image.alt || 'Image Hero'}
+              />
+            </SwiperSlide>
+          );
+        })
+      }
+    </SwiperWrapper>
+    <SwiperButtonNext />
+    <SwiperButtonPrev />
+</Swiper>
