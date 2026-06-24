@@ -8,11 +8,13 @@ Site web vitrine pour **Charpente Bois Debout**, entreprise de charpenterie trad
 
 ### Framework & Build
 
-- **[Astro 6.x](https://astro.build/)** (`^6.1.3`) - Framework moderne pour sites statiques haute performance
+- **[Astro 7.x](https://astro.build/)** (`^7.0.2`) - Framework moderne pour sites statiques haute performance
   - Génération de sites statiques (SSG)
   - Islands Architecture pour hydratation partielle
   - Chargement de polices Google natif via l'API Astro Fonts
   - Support MDX natif
+  - Propulsé par **Vite 8** (bundler Rolldown) pour des builds plus rapides
+  - Pipeline Markdown par défaut **Sätteri** (GFM + SmartyPants) — aucun plugin remark/rehype utilisé
 
 ### Styling
 
@@ -63,7 +65,7 @@ Site web vitrine pour **Charpente Bois Debout**, entreprise de charpenterie trad
 ### Optimisation
 
 - **Sharp** (`0.33.5`) - Traitement et optimisation des images (build-time)
-- **esbuild** (via Vite) - Minification JS/CSS en production (target ES2020)
+- **Vite 8 / Rolldown** - Bundling et minification JS/CSS en production (minify `esbuild`, target ES2020)
 
 ### Outils de Développement
 
@@ -235,7 +237,7 @@ pnpm build:prod
 ## Performance & SEO
 
 - **Images optimisées** : Compression automatique avec Sharp
-- **Minification** : esbuild (JS/CSS) en production
+- **Minification** : esbuild via Vite 8 / Rolldown (JS/CSS) en production
 - **Lazy loading** : Images et composants chargés à la demande
 - **Sitemap** : Généré automatiquement via `@astrojs/sitemap`
 - **Meta tags** : Open Graph et Twitter Cards via `@astrolib/seo`
