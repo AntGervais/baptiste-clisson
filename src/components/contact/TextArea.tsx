@@ -47,7 +47,7 @@ export default function TextArea({
             'pb-2.5',
             'pt-4',
             'text-gray-900',
-            error ? 'focus:border-red-500' : 'focus:border-green-600',
+            error ? 'focus:border-red-500' : 'focus:border-primary',
             'focus:outline-none',
             'focus:ring-0',
           ].join(' ')}
@@ -80,7 +80,7 @@ export default function TextArea({
             'peer-focus:scale-75',
             'peer-focus:px-2',
             'peer-focus:py-0',
-            error ? 'focus:text-red-500' : 'peer-focus:text-green-600',
+            error ? 'focus:text-red-500' : 'peer-focus:text-primary',
           ].join(' ')}
         >
           {label + (required ? '*' : '')}

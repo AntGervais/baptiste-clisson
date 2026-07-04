@@ -50,7 +50,7 @@ export default function Input({
             'pb-2.5',
             'pt-4',
             size === 'sm' ? 'text-sm' : size === 'md' ? 'text-md' : 'text-lg',
-            error ? 'focus:border-red-400' : 'focus:border-green-600',
+            error ? 'focus:border-red-400' : 'focus:border-primary',
             'focus:outline-none',
             'focus:ring-0',
           ].join(' ')}
@@ -83,7 +83,7 @@ export default function Input({
             'peer-focus:scale-75',
             'peer-focus:px-2',
             'peer-focus:py-0',
-            error ? 'focus:text-red-400' : 'peer-focus:text-green-600',
+            error ? 'focus:text-red-400' : 'peer-focus:text-primary',
           ].join(' ')}
         >
           {label + (required ? '*' : '')}

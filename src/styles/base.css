@@ -10,6 +10,16 @@ body {
   overflow-x: hidden;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 :root {
   --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
@@ -31,10 +41,24 @@ body {
   background-color: var(--color-slate-900);
 }
 
+/* Ombre teintée dans la palette (vert forêt + terre) plutôt que noir générique */
+@utility shadow-warm {
+  box-shadow:
+    0 14px 34px -16px rgba(19, 90, 76, 0.3),
+    0 4px 12px -6px rgba(60, 45, 30, 0.16);
+}
+
+/* Halo chaud d'ambiance derrière le hero */
+.hero-glow {
+  background:
+    radial-gradient(58% 52% at 50% -6%, rgba(19, 90, 76, 0.08), transparent 70%),
+    radial-gradient(40% 40% at 82% 8%, rgba(188, 108, 37, 0.06), transparent 72%);
+}
+
 @layer components {
 
   .btn {
-    @apply inline-flex items-center justify-center rounded-full shadow-lg border-gray-400 border bg-transparent font-medium text-center text-base text-page leading-snug transition py-3.5 px-6 md:px-8 ease-in duration-200 focus:ring-blue-500 focus:ring-offset-blue-200 focus:ring-2 focus:ring-offset-2 hover:bg-gray-100 hover:border-gray-600 hover:scale-105;
+    @apply inline-flex items-center justify-center rounded-full shadow-lg border-gray-400 border bg-transparent font-medium text-center text-base text-page leading-snug transition py-3.5 px-6 md:px-8 ease-in duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-2 hover:bg-gray-100 hover:border-gray-600 hover:scale-105 active:scale-[0.98];
   }
 
   .btn-ghost {

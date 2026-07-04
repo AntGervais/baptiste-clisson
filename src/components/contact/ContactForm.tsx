@@ -30,7 +30,7 @@ export default function ContactForm() {
       } catch (_err) {
         const err = _err as Error;
         console.error(err);
-        setServerError('Something went wrong, please try again later');
+        setServerError("L'envoi a échoué. Merci de réessayer.");
         return false;
       }
     },
@@ -39,7 +39,7 @@ export default function ContactForm() {
   return (
     <div className='lg:absolute lg:right-12 w-full'>
       <div className="bg-zinc-100 rounded-sm">
-        <div className="form-container relative w-full rounded-sm shadow-lg bg-blackAlpha-600">
+        <div className="form-container relative w-full rounded-sm shadow-lg bg-white">
           <div
             className={[
               'form-overlay',
@@ -62,13 +62,13 @@ export default function ContactForm() {
             className="relative w-full p-4 sm:py-6 md:py-8 md:px-10 rounded-sm"
           >
             {serverError && (
-              <div className="mb-4 sm:mb-6 bg-red-500 py-4 rounded-sm text-center">
-                <h3 className="text2xl text-white">{serverError}</h3>
+              <div className="mb-4 sm:mb-6 bg-red-600 py-4 rounded-sm text-center">
+                <p className="text-lg text-white">{serverError}</p>
               </div>
             )}
             {submitted && (
-              <div className="mb-4 sm:mb-6 bg-green-500 py-4 rounded-sm text-center">
-                <h3 className="text2xl text-white">Message successfully sent!</h3>
+              <div className="mb-4 sm:mb-6 bg-primary py-4 rounded-sm text-center">
+                <p className="text-lg text-white">Message envoyé — je vous recontacte au plus vite.</p>
               </div>
             )}
             <div className="flex flex-col gap-2">
@@ -103,16 +103,11 @@ export default function ContactForm() {
               <button
                 type="submit"
                 disabled={submitting || submitted}
-                className="btn w-full p-2 rounded-sm bg-primary hover:text-primary text-beige font-semibold uppercase  disabled:text-zinc-300"
+                className="btn w-full p-2 rounded-sm bg-primary hover:bg-accent hover:border-accent hover:text-white text-beige font-semibold uppercase tracking-wide disabled:opacity-60 disabled:text-zinc-300"
               >
-                Envoyer !
+                Envoyer
               </button>
             </div>
-            {submitted && (
-              <div className="mb-4 sm:mb-6 bg-green-500 py-4 rounded-sm text-center">
-                <h3 className="text2xl text-white">Message successfully sent!</h3>
-              </div>
-            )}
           </form>
         </div>
       </div>
