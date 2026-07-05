@@ -13,7 +13,7 @@ En production sur [charpenteboisdebout.fr](https://charpenteboisdebout.fr), dép
 - **Tailwind CSS 4.x** via le plugin Vite `@tailwindcss/vite` (config CSS-first, pas de `tailwind.config` actif pour le thème).
 - **TinaCMS 3.x** — CMS git-based ; contenu Markdown dans `src/content/`, schéma dans `tina/config.ts`, interface sur `/admin`.
 - **React 19** — uniquement pour l'admin TinaCMS (`@astrojs/react`).
-- **pnpm 10** comme gestionnaire de paquets. **Node >= 22.12.0** (Netlify build sur Node 24).
+- **pnpm 10** comme gestionnaire de paquets. **Node >= 24** (Netlify build sur Node 24).
 - Pipeline Markdown par défaut **Sätteri** : aucun plugin remark/rehype n'est utilisé.
 
 ## Commandes
