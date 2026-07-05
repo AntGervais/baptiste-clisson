@@ -79,7 +79,7 @@ Site web vitrine pour **Charpente Bois Debout**, entreprise de charpenterie trad
 
 ## Prérequis
 
-- **Node.js** `>=22.12.0`
+- **Node.js** `>=24`
 - **pnpm** `10.x`
 
 ```bash
