@@ -10,22 +10,14 @@ export interface Props {
   [key: string]: any;
 }
 
-const { 
-  class: className, 
-  reveal, 
-  delay,
-  ...restProps 
-} = Astro.props;
+const { class: className, reveal, delay, ...restProps } = Astro.props;
 
 // Traduction des types de révélation vers nos classes CSS
-const revealClass = 
-  reveal === 'fade-left' ? 'reveal-left' : 
-  reveal === 'fade-right' ? 'reveal-right' : 
-  '';
+const revealClass = reveal === 'fade-left' ? 'reveal-left' : reveal === 'fade-right' ? 'reveal-right' : '';
 ---
 
-<div 
-  class:list={['reveal', revealClass, className]} 
+<div
+  class:list={['reveal', revealClass, className]}
   style={delay ? `--delay: ${delay}ms` : ''}
   data-reveal={reveal}
   data-reveal-delay={delay}

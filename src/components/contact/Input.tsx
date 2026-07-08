@@ -1,16 +1,16 @@
 export type InputProps = {
-  name: string
-  label: string
-  type?: 'text' | 'email' | 'password'
-  placeholder?: boolean
-  required?: boolean
-  defaultValue?: string
-  size?: 'sm' | 'md' | 'lg'
-  bg?: string // The background color of the input's background
-  onChange?: (e?: React.FormEvent<HTMLInputElement>) => void
-  onBlur?: (e?: React.FocusEvent<HTMLInputElement>) => void
-  error?: string
-}
+  name: string;
+  label: string;
+  type?: 'text' | 'email' | 'password';
+  placeholder?: boolean;
+  required?: boolean;
+  defaultValue?: string;
+  size?: 'sm' | 'md' | 'lg';
+  bg?: string; // The background color of the input's background
+  onChange?: (e?: React.FormEvent<HTMLInputElement>) => void;
+  onBlur?: (e?: React.FocusEvent<HTMLInputElement>) => void;
+  error?: string;
+};
 
 export default function Input({
   name,
@@ -71,7 +71,8 @@ export default function Input({
             'select-none',
             'rounded-sm',
             bg ? bg : 'bg-white', // The bg must be the color of the input's background
-            'px-2', 'py-1',
+            'px-2',
+            'py-1',
             size === 'sm' ? 'text-sm' : size === 'md' ? 'text-md' : 'text-lg',
             error ? 'text-red-400' : 'text-gray-500',
             'duration-300',
@@ -96,5 +97,5 @@ export default function Input({
         </div>
       )}
     </div>
-  )
+  );
 }

@@ -19,21 +19,31 @@ const {
 
 <article class="group mb-6">
   <div class="flex justify-center">
-    <a href={link} class="shadow-warm block w-full max-w-sm rounded-sm bg-white transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-xl group-hover:scale-[1.01] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-2" title={title}>
+    <a
+      href={link}
+      class="shadow-warm focus-visible:ring-primary/60 block w-full max-w-sm rounded-sm bg-white transition-all duration-500 ease-out group-hover:scale-[1.01] hover:-translate-y-1 hover:shadow-xl focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
+      title={title}
+    >
       <div class="overflow-hidden rounded-t-sm">
         <Image
           src={image}
           alt={title}
-          class="w-full aspect-3/4 object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+          class="aspect-3/4 w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
           loading={loading}
           decoding="async"
           width={600}
           height={800}
         />
       </div>
-      <div class="w-full p-4 transition-colors duration-300 group-hover:bg-beige">
+      <div class="group-hover:bg-beige w-full p-4 transition-colors duration-300">
         <h2 class="text-xl transition-transform duration-500 ease-out group-hover:translate-x-0.5">{title}</h2>
-        {subtitle && <p class="text-sm text-muted transition-transform duration-500 ease-out group-hover:translate-x-0.5">{subtitle}</p>}
+        {
+          subtitle && (
+            <p class="text-muted text-sm transition-transform duration-500 ease-out group-hover:translate-x-0.5">
+              {subtitle}
+            </p>
+          )
+        }
       </div>
     </a>
   </div>

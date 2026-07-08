@@ -77,16 +77,18 @@ try {
     <SingleRealisation post={{ ...post, image: meta.image }} url={url} />
   </div>
 
-  {tinaData && (
-    <div class="tina-visual-only" aria-hidden="true">
-      <RealisationPage
-        data={tinaData.data}
-        query={tinaData.query}
-        variables={{ relativePath }}
-        url={String(url)}
-        client:tina
-      />
-    </div>
-  )}
+  {
+    tinaData && (
+      <div class="tina-visual-only" aria-hidden="true">
+        <RealisationPage
+          data={tinaData.data}
+          query={tinaData.query}
+          variables={{ relativePath }}
+          url={String(url)}
+          client:tina
+        />
+      </div>
+    )
+  }
   <ToBlogLink />
 </Layout>

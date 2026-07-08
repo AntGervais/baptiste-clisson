@@ -20,34 +20,36 @@ const { post, url } = Astro.props;
 <section class="mx-auto py-8">
   <article>
     <header class={post.image ? '' : ''}>
-      <div class="mx-auto mb-4 mt-0 flex max-w-4xl flex-col px-4 sm:px-6">
-        {post.location && (
-          <AnimatedSection reveal="fade-up">
-            <p class="flex items-center text-primary font-heading font-medium tracking-wider uppercase">
-              <Icon name="tabler:map-pin" class="w-5 h-5 mr-1.5" />
-              <span>{post.location}</span>
-            </p>
-          </AnimatedSection>
-        )}
+      <div class="mx-auto mt-0 mb-4 flex max-w-4xl flex-col px-4 sm:px-6">
+        {
+          post.location && (
+            <AnimatedSection reveal="fade-up">
+              <p class="text-primary font-heading flex items-center font-medium tracking-wider uppercase">
+                <Icon name="tabler:map-pin" class="mr-1.5 h-5 w-5" />
+                <span>{post.location}</span>
+              </p>
+            </AnimatedSection>
+          )
+        }
       </div>
       <AnimatedSection reveal="fade-up" delay="100">
-        <h1 class="leading-tighter mx-auto max-w-4xl px-4 font-heading text-4xl text-accent sm:px-6 md:text-5xl">
+        <h1 class="leading-tighter font-heading text-accent mx-auto max-w-4xl px-4 text-4xl sm:px-6 md:text-5xl">
           {post.title}
         </h1>
       </AnimatedSection>
 
       <AnimatedSection reveal="fade-up" delay="200">
-        <p class="text-muted mx-auto mb-8 mt-4 max-w-4xl px-4 text-justify text-xl sm:px-6 md:text-2xl">
+        <p class="text-muted mx-auto mt-4 mb-8 max-w-4xl px-4 text-justify text-xl sm:px-6 md:text-2xl">
           {post.accroche}
         </p>
       </AnimatedSection>
 
       <div class="mx-auto max-w-4xl px-4 sm:px-6">
-        <div class="border-t " />
+        <div class="border-t"></div>
       </div>
     </header>
     <AnimatedSection
-      class="prose-md prose-headings:leading-tighter prose prose-lg mx-auto mt-8 max-w-4xl px-6 lg:prose-xl prose-headings:font-heading prose-headings:font-bold prose-a:text-primary prose-img:rounded-sm prose-img:shadow-lg sm:px-6"
+      class="prose-md prose-headings:leading-tighter prose prose-lg lg:prose-xl prose-headings:font-heading prose-headings:font-bold prose-a:text-primary prose-img:rounded-sm prose-img:shadow-lg mx-auto mt-8 max-w-4xl px-6 sm:px-6"
       reveal="fade-up"
       delay="300"
     >
@@ -57,9 +59,7 @@ const { post, url } = Astro.props;
       </>
 
       <div>
-        {post.gallery && post.gallery.length > 0 && (
-          <Gallery images={post.gallery} />
-        )}
+        {post.gallery && post.gallery.length > 0 && <Gallery images={post.gallery} />}
       </div>
     </AnimatedSection>
   </article>

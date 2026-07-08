@@ -42,9 +42,7 @@ export const footerData = {
       ],
     },
   ],
-  secondaryLinks: [
-    { text: 'Mentions Légales', href: getPermalink('/mentions-legales') },
-  ],
+  secondaryLinks: [{ text: 'Mentions Légales', href: getPermalink('/mentions-legales') }],
   socialLinks: [
     { ariaLabel: 'Google Maps', icon: 'tabler:map-pin', href: 'https://goo.gl/maps/mDJCT3EZbiL9QHvw8' },
     { ariaLabel: 'Administration', icon: 'tabler:settings', href: SITE.origin + '/admin/index.html' },

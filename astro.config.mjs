@@ -9,7 +9,8 @@ import tailwindcss from '@tailwindcss/vite';
 import { SITE } from './src/config.mjs';
 import tinaDirective from './astro-tina-directive/register.js';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const whenExternalScripts = (items = []) => SITE.googleAnalyticsId ? Array.isArray(items) ? items.map(item => item()) : [items()] : [];
+const whenExternalScripts = (items = []) =>
+  SITE.googleAnalyticsId ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
 // https://astro.build/config
 export default defineConfig({
@@ -43,25 +44,29 @@ export default defineConfig({
   markdown: {
     // remarkPlugins: [readingTimeRemarkPlugin],
   },
-  integrations: [sitemap(),
-  ...whenExternalScripts(() => partytown({
-    config: {
-      forward: ['dataLayer.push']
-    }
-  })),
-  icon(),
-  react(),
-  tinaDirective()],
+  integrations: [
+    sitemap(),
+    ...whenExternalScripts(() =>
+      partytown({
+        config: {
+          forward: ['dataLayer.push'],
+        },
+      })
+    ),
+    icon(),
+    react(),
+    tinaDirective(),
+  ],
   vite: {
     plugins: [tailwindcss()],
     resolve: {
       alias: {
-        '~': path.resolve(__dirname, './src')
-      }
+        '~': path.resolve(__dirname, './src'),
+      },
     },
     build: {
       target: 'es2020',
-      minify: 'esbuild'
-    }
-  }
+      minify: 'esbuild',
+    },
+  },
 });

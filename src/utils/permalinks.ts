@@ -3,11 +3,13 @@ import { trim } from '~/utils/utils';
 
 export const trimSlash = (s: string) => trim(trim(s, '/'));
 const createPath = (...params: string[]) => {
-  const paths = params.reduce<string[]>((acc, el) => {
-    const t = trimSlash(el);
-    if (t) acc.push(t);
-    return acc;
-  }, []).join('/');
+  const paths = params
+    .reduce<string[]>((acc, el) => {
+      const t = trimSlash(el);
+      if (t) acc.push(t);
+      return acc;
+    }, [])
+    .join('/');
   return '/' + paths + (SITE.trailingSlash && paths ? '/' : '');
 };
 
@@ -59,5 +61,4 @@ export const getHomePermalink = (): string => getPermalink('/');
 export const getRealisationsPermalink = (): string => getPermalink(REALISATIONS_BASE);
 
 /** */
-export const getAsset = (path: string): string =>
-  createPath(BASE_PATHNAME, path);
+export const getAsset = (path: string): string => createPath(BASE_PATHNAME, path);

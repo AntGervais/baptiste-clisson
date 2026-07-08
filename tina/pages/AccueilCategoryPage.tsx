@@ -23,23 +23,15 @@ export default function AccueilCategoryPage(props: AccueilCategoryPageProps) {
     <section className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:py-16">
       <article className="grid gap-8 lg:grid-cols-2 lg:items-center">
         {category.image && (
-          <figure
-            className="overflow-hidden rounded-lg shadow-lg"
-            data-tina-field={tinaField(category, 'image')}
-          >
-            <img
-              src={category.image}
-              alt={category.title}
-              className="h-full w-full object-cover"
-              loading="lazy"
-            />
+          <figure className="overflow-hidden rounded-lg shadow-lg" data-tina-field={tinaField(category, 'image')}>
+            <img src={category.image} alt={category.title} className="h-full w-full object-cover" loading="lazy" />
           </figure>
         )}
 
         <div>
           <div className="mb-4 flex flex-wrap gap-3">
             <span
-              className="inline-flex items-center rounded-full bg-accent/10 px-4 py-1 text-sm font-semibold uppercase tracking-wide text-accent"
+              className="bg-accent/10 text-accent inline-flex items-center rounded-full px-4 py-1 text-sm font-semibold tracking-wide uppercase"
               data-tina-field={tinaField(category, 'tag')}
             >
               {category.tag}
@@ -47,7 +39,7 @@ export default function AccueilCategoryPage(props: AccueilCategoryPageProps) {
           </div>
 
           <h1
-            className="font-heading text-4xl font-semibold text-primary sm:text-5xl"
+            className="font-heading text-primary text-4xl font-semibold sm:text-5xl"
             data-tina-field={tinaField(category, 'title')}
           >
             {category.title}
@@ -55,7 +47,7 @@ export default function AccueilCategoryPage(props: AccueilCategoryPageProps) {
 
           {category.description && (
             <div
-              className="prose prose-lg mt-6 max-w-none text-zinc-700 prose-headings:font-heading prose-headings:text-primary"
+              className="prose prose-lg prose-headings:font-heading prose-headings:text-primary mt-6 max-w-none text-zinc-700"
               data-tina-field={tinaField(category, 'description')}
             >
               <TinaMarkdown content={category.description} />

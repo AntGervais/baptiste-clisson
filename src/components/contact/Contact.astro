@@ -17,14 +17,14 @@ import AnimatedSection from '~/components/common/AnimatedSection.astro';
     <div class="w-full shrink-0 grow-0 basis-auto py-2 lg:w-2/3 lg:py-24">
       <div class="mur-rugeux rounded-sm shadow-lg">
         <div class="flex flex-wrap p-6 lg:p-12">
-          <p class="mb-5 font-heading text-3xl text-secondary">Me contacter</p>
+          <p class="font-heading text-secondary mb-5 text-3xl">Me contacter</p>
           <p class="mb-5">
             Vous pouvez me faire part de votre projet par téléphone ou en remplissant le formulaire ci-joint.
           </p>
           <p class="mb-5">Je réalise une visite pour effectuer un devis sur mesure.</p>
           <div class="w-full pt-2">
             <a
-              class="btn-tel btn relative border-none bg-primary py-2.5 px-6 text-beige transition duration-150 ease-in-out hover:bg-beige hover:text-primary"
+              class="btn-tel btn bg-primary text-beige hover:bg-beige hover:text-primary relative border-none px-6 py-2.5 transition duration-150 ease-in-out"
               href="tel:+33630481737"
               title="lien téléphone"
             >
@@ -38,11 +38,7 @@ import AnimatedSection from '~/components/common/AnimatedSection.astro';
 
     <div class="w-full shrink-0 grow-0 basis-auto lg:w-1/3">
       <div class="flex">
-        <AnimatedSection
-          class="mt-5 w-full rounded-sm shadow-lg lg:mt-0"
-          reveal="fade-left"
-          offset="0"
-        >
+        <AnimatedSection class="mt-5 w-full rounded-sm shadow-lg lg:mt-0" reveal="fade-left" offset="0">
           <ContactForm client:visible />
         </AnimatedSection>
       </div>

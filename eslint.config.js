@@ -14,6 +14,7 @@ export default [
       'public/admin/**',
       'tina/__generated__/**',
       '.tina/__generated__/**',
+      '.astro/**',
     ],
   },
   js.configs.recommended,
@@ -50,10 +51,7 @@ export default [
   {
     files: ['**/*.ts', '**/*.tsx'],
     rules: {
-      '@typescript-eslint/no-unused-vars': [
-        'error',
-        { argsIgnorePattern: '^_', destructuredArrayIgnorePattern: '^_' },
-      ],
+      '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_', destructuredArrayIgnorePattern: '^_' }],
       '@typescript-eslint/no-non-null-assertion': 'off',
     },
   },

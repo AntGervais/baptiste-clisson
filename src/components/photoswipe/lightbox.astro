@@ -54,29 +54,11 @@ const resolvedImages = (
         itemtype="http://schema.org/ImageObject"
         class="inline-block rounded bg-gray-300 text-center text-gray-800 dark:bg-gray-800 dark:text-gray-300"
       >
-        <a
-          href={url}
-          itemprop="contentUrl"
-          data-pswp-width={width}
-          data-pswp-height={height}
-        >
+        <a href={url} itemprop="contentUrl" data-pswp-width={width} data-pswp-height={height}>
           {imageMeta ? (
-            <Image
-              src={imageMeta}
-              alt={title}
-              width={600}
-              loading="lazy"
-              decoding="async"
-              class="rounded"
-            />
+            <Image src={imageMeta} alt={title} width={600} loading="lazy" decoding="async" class="rounded" />
           ) : (
-            <img
-              src={url}
-              alt={title}
-              loading="lazy"
-              decoding="async"
-              class="rounded"
-            />
+            <img src={url} alt={title} loading="lazy" decoding="async" class="rounded" />
           )}
           <span class="pswp-caption-content">{title}</span>
         </a>

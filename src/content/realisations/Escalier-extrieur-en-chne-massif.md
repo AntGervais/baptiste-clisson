@@ -15,4 +15,3 @@ gallery:
   - /images/realisations/Escalier-exterieur-comtois/7.webp
   - /images/realisations/Escalier-exterieur-comtois/8.webp
 ---
-

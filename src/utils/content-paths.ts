@@ -31,7 +31,10 @@ export const relativePathToSlug = (relativePath: string) =>
   relativePath
     .replace(/\.(md|mdx)$/, '')
     .split('/')
-    .flatMap((segment) => { const s = normalizeSegment(segment); return s ? [s] : []; })
+    .flatMap((segment) => {
+      const s = normalizeSegment(segment);
+      return s ? [s] : [];
+    })
     .join('/');
 
 const loadRelativePathMap = (contentDir: string) => {

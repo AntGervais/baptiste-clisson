@@ -1,4 +1,4 @@
-import '~/styles/pulseSpinner.css'
+import '~/styles/pulseSpinner.css';
 
 export default function PulseSpinner() {
   return (
@@ -7,5 +7,5 @@ export default function PulseSpinner() {
       <span></span>
       <span></span>
     </div>
-  )
+  );
 }

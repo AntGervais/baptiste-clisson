@@ -40,12 +40,10 @@ const img = await findImage(image.src);
     {
       (title || subtitle || highlight) && (
         <div class="mb-10 max-w-3xl text-center md:mx-auto md:mb-12">
-          {highlight && (
-            <p class="text-primary text-base  font-semibold uppercase tracking-wide" set:html={highlight} />
-          )}
+          {highlight && <p class="text-primary text-base font-semibold tracking-wide uppercase" set:html={highlight} />}
           {title && <h2 class="leading-tighter font-heading mb-4 text-4xl font-bold md:text-5xl" set:html={title} />}
 
-          {subtitle && <p class="text-muted mx-auto max-w-3xl text-xl sm:text-center " set:html={subtitle} />}
+          {subtitle && <p class="text-muted mx-auto max-w-3xl text-xl sm:text-center" set:html={subtitle} />}
         </div>
       )
     }
@@ -53,7 +51,7 @@ const img = await findImage(image.src);
   <div class="mx-auto max-w-5xl p-4 md:px-8">
     <div class={`md:flex ${isReversed ? 'md:flex-row-reverse' : ''} md:gap-16`}>
       <div class="self-center md:basis-1/2">
-        {content && <div class="mb-12 text-lg " set:html={content} />}
+        {content && <div class="mb-12 text-lg" set:html={content} />}
 
         {
           items && (
@@ -66,8 +64,8 @@ const img = await findImage(image.src);
                     </div>
                   </div>
                   <div class="ml-4">
-                    {title2 && <h3 class="text-lg font-medium leading-6 ">{title2}</h3>}
-                    {description && <p class="text-muted mt-2 " set:html={description} />}
+                    {title2 && <h3 class="text-lg leading-6 font-medium">{title2}</h3>}
+                    {description && <p class="text-muted mt-2" set:html={description} />}
                   </div>
                 </div>
               ))}

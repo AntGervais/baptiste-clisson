@@ -17,7 +17,7 @@ const { meta = {} } = Astro.props;
 const { language = 'en', textDirection = 'ltr' } = SITE;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang={language} dir={textDirection} class="2xl:text-[20px]">
   <head>
     <MetaTags {...meta} />
@@ -26,28 +26,30 @@ const { language = 'en', textDirection = 'ltr' } = SITE;
     <Font cssVariable="--font-satisfy" preload />
     <style is:inline>
       /* Critical CSS for Reveal system: hide elements immediately to prevent FOUC */
-      .reveal, [data-reveal] { 
-        opacity: 0; 
-        visibility: hidden; 
+      .reveal,
+      [data-reveal] {
+        opacity: 0;
+        visibility: hidden;
       }
-      .reveal.reveal-active, [data-reveal].reveal-active { 
-        opacity: 1; 
-        visibility: visible; 
+      .reveal.reveal-active,
+      [data-reveal].reveal-active {
+        opacity: 1;
+        visibility: visible;
       }
     </style>
   </head>
 
-  <body class="text-page bg-light antialiased overflow-x-hidden">
+  <body class="text-page bg-light overflow-x-hidden antialiased">
     <slot />
     <BasicScripts />
 
     <button
       id="scrollToTopBtn"
-      class="fixed bottom-8 right-8 z-50 hidden rounded-full bg-primary p-3 text-white shadow-lg transition-all hover:bg-secondary hover:scale-110 focus:outline-none"
+      class="bg-primary hover:bg-secondary fixed right-8 bottom-8 z-50 hidden rounded-full p-3 text-white shadow-lg transition-all hover:scale-110 focus:outline-none"
       aria-label="Retour en haut"
     >
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
       </svg>
     </button>
 
@@ -73,18 +75,21 @@ const { language = 'en', textDirection = 'ltr' } = SITE;
 
       // Simple and robust Scroll Reveal system using IntersectionObserver
       const setupReveal = () => {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('reveal-active');
-              // On arrête d'observer une fois révélé pour plus de performance
-              observer.unobserve(entry.target);
-            }
-          });
-        }, {
-          threshold: 0.1, // Déclenche quand 10% de l'élément est visible
-          rootMargin: '0px 0px -10% 0px' // Déclenche un peu plus tôt pour un effet plus fluide
-        });
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('reveal-active');
+                // On arrête d'observer une fois révélé pour plus de performance
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          {
+            threshold: 0.1, // Déclenche quand 10% de l'élément est visible
+            rootMargin: '0px 0px -10% 0px', // Déclenche un peu plus tôt pour un effet plus fluide
+          }
+        );
 
         document.querySelectorAll('.reveal, [data-reveal]').forEach((el) => {
           observer.observe(el);

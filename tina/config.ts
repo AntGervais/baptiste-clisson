@@ -29,7 +29,10 @@ const toSlug = (relativePath: string) =>
   relativePath
     .replace(/\.(md|mdx)$/, '')
     .split('/')
-    .flatMap((segment) => { const s = normalizeSegment(segment); return s ? [s] : []; })
+    .flatMap((segment) => {
+      const s = normalizeSegment(segment);
+      return s ? [s] : [];
+    })
     .join('/');
 
 export default defineConfig({
@@ -131,7 +134,7 @@ export default defineConfig({
           {
             type: 'image',
             name: 'gallery',
-            label: 'Galerie d\'images',
+            label: "Galerie d'images",
             list: true,
             description: 'Sélectionnez les images à afficher dans le slider',
           },

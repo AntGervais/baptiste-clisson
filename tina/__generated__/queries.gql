@@ -16,7 +16,14 @@ query accueil_categories($relativePath: String!) {
   }
 }
 
-query accueil_categoriesConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: Accueil_categoriesFilter) {
+query accueil_categoriesConnection(
+  $before: String
+  $after: String
+  $first: Float
+  $last: Float
+  $sort: String
+  $filter: Accueil_categoriesFilter
+) {
   accueil_categoriesConnection(
     before: $before
     after: $after
@@ -71,15 +78,15 @@ query realisations($relativePath: String!) {
   }
 }
 
-query realisationsConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: RealisationsFilter) {
-  realisationsConnection(
-    before: $before
-    after: $after
-    first: $first
-    last: $last
-    sort: $sort
-    filter: $filter
-  ) {
+query realisationsConnection(
+  $before: String
+  $after: String
+  $first: Float
+  $last: Float
+  $sort: String
+  $filter: RealisationsFilter
+) {
+  realisationsConnection(before: $before, after: $after, first: $first, last: $last, sort: $sort, filter: $filter) {
     pageInfo {
       hasPreviousPage
       hasNextPage

@@ -1,4 +1,3 @@
-
 import { useForm } from '~/utils/useForm';
 import type { Contact } from '~/types';
 import sanitize from '~/utils/sanitize';
@@ -9,7 +8,7 @@ import PulseSpinner from '../common/PulseSpinner';
 import TextArea from './TextArea';
 
 export default function ContactForm() {
-  const [serverError, setServerError] = useState('')
+  const [serverError, setServerError] = useState('');
   const { submitting, submitted, register, handleSubmit } = useForm<Contact>({
     validations,
     sanitizeFn: sanitize,
@@ -34,12 +33,12 @@ export default function ContactForm() {
         return false;
       }
     },
-  })
+  });
 
   return (
-    <div className='lg:absolute lg:right-12 w-full'>
-      <div className="bg-zinc-100 rounded-sm">
-        <div className="form-container relative w-full rounded-sm shadow-lg bg-white">
+    <div className="w-full lg:absolute lg:right-12">
+      <div className="rounded-sm bg-zinc-100">
+        <div className="form-container relative w-full rounded-sm bg-white shadow-lg">
           <div
             className={[
               'form-overlay',
@@ -56,54 +55,29 @@ export default function ContactForm() {
             <PulseSpinner />
           </div>
 
-          <form
-            onSubmit={handleSubmit}
-            noValidate
-            className="relative w-full p-4 sm:py-6 md:py-8 md:px-10 rounded-sm"
-          >
+          <form onSubmit={handleSubmit} noValidate className="relative w-full rounded-sm p-4 sm:py-6 md:px-10 md:py-8">
             {serverError && (
-              <div className="mb-4 sm:mb-6 bg-red-600 py-4 rounded-sm text-center">
+              <div className="mb-4 rounded-sm bg-red-600 py-4 text-center sm:mb-6">
                 <p className="text-lg text-white">{serverError}</p>
               </div>
             )}
             {submitted && (
-              <div className="mb-4 sm:mb-6 bg-primary py-4 rounded-sm text-center">
+              <div className="bg-primary mb-4 rounded-sm py-4 text-center sm:mb-6">
                 <p className="text-lg text-white">Message envoyé — je vous recontacte au plus vite.</p>
               </div>
             )}
             <div className="flex flex-col gap-2">
-
-              <Input
-                name="name"
-                label="Nom"
-                required
-                {...register('name')}
-              />
-              <Input
-                name="email"
-                label="Email"
-                required
-                {...register('email')}
-              />
-              <Input
-                name="phone"
-                label="Numéro de téléphone"
-                {...register('phone')}
-              />
-              <TextArea
-                name="message"
-                label="Message"
-                height="h-40"
-                required
-                {...register('message')}
-              />
+              <Input name="name" label="Nom" required {...register('name')} />
+              <Input name="email" label="Email" required {...register('email')} />
+              <Input name="phone" label="Numéro de téléphone" {...register('phone')} />
+              <TextArea name="message" label="Message" height="h-40" required {...register('message')} />
             </div>
 
             <div className="mt-4">
               <button
                 type="submit"
                 disabled={submitting || submitted}
-                className="btn w-full p-2 rounded-sm bg-primary hover:bg-accent hover:border-accent hover:text-white text-beige font-semibold uppercase tracking-wide disabled:opacity-60 disabled:text-zinc-300"
+                className="btn bg-primary hover:bg-accent hover:border-accent text-beige w-full rounded-sm p-2 font-semibold tracking-wide uppercase hover:text-white disabled:text-zinc-300 disabled:opacity-60"
               >
                 Envoyer
               </button>
@@ -112,5 +86,5 @@ export default function ContactForm() {
         </div>
       </div>
     </div>
-  )
+  );
 }

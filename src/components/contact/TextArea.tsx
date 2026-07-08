@@ -1,15 +1,15 @@
 export type TextAreaProps = {
-  name: string
-  label: string
-  height?: string
-  placeholder?: string
-  required?: boolean
-  size?: 'sm' | 'md' | 'lg'
-  onChange?: (e?: React.FormEvent<HTMLTextAreaElement>) => void
-  onBlur?: (e?: React.FocusEvent<HTMLTextAreaElement>) => void
-  error?: string
-  bg?: string
-}
+  name: string;
+  label: string;
+  height?: string;
+  placeholder?: string;
+  required?: boolean;
+  size?: 'sm' | 'md' | 'lg';
+  onChange?: (e?: React.FormEvent<HTMLTextAreaElement>) => void;
+  onBlur?: (e?: React.FocusEvent<HTMLTextAreaElement>) => void;
+  error?: string;
+  bg?: string;
+};
 
 export default function TextArea({
   name,
@@ -68,7 +68,8 @@ export default function TextArea({
             'select-none',
             'rounded-sm',
             bg ? bg : 'bg-white', // The bg must be the color of the input's background
-            'px-2', 'py-2',
+            'px-2',
+            'py-2',
             size === 'sm' ? 'text-sm' : size === 'md' ? 'text-md' : 'text-lg',
             error ? 'text-red-500' : 'text-gray-500',
             'duration-300',
@@ -93,5 +94,5 @@ export default function TextArea({
         </div>
       )}
     </div>
-  )
+  );
 }

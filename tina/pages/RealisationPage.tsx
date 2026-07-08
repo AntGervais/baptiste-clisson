@@ -24,13 +24,13 @@ export default function RealisationPage(props: RealisationPageProps) {
     <section className="mx-auto py-8 sm:py-16 lg:py-20">
       <article>
         <header>
-          <div className="mx-auto mb-2 mt-0 flex max-w-4xl flex-col justify-between px-4 sm:flex-row sm:items-center sm:px-6">
+          <div className="mx-auto mt-0 mb-2 flex max-w-4xl flex-col justify-between px-4 sm:flex-row sm:items-center sm:px-6">
             {/* Publish date commented out as in original */}
           </div>
 
           {/* Title */}
           <h1
-            className="leading-tighter mx-auto max-w-4xl px-4 font-heading text-4xl text-accent sm:px-6 md:text-5xl"
+            className="leading-tighter font-heading text-accent mx-auto max-w-4xl px-4 text-4xl sm:px-6 md:text-5xl"
             data-tina-field={tinaField(post, 'title')}
           >
             {post.title}
@@ -38,7 +38,7 @@ export default function RealisationPage(props: RealisationPageProps) {
 
           {/* Accroche */}
           <p
-            className="text-muted mx-auto mb-8 mt-4 max-w-4xl px-4 text-justify text-xl sm:px-6 md:text-2xl"
+            className="text-muted mx-auto mt-4 mb-8 max-w-4xl px-4 text-justify text-xl sm:px-6 md:text-2xl"
             data-tina-field={tinaField(post, 'accroche')}
           >
             {post.accroche}
@@ -57,7 +57,7 @@ export default function RealisationPage(props: RealisationPageProps) {
         </header>
 
         {/* Description - Rich text content */}
-        <div className="prose-md prose-headings:leading-tighter prose prose-lg mx-auto mt-8 max-w-4xl px-6 lg:prose-xl prose-headings:font-heading prose-headings:font-bold prose-a:text-primary prose-img:rounded-sm prose-img:shadow-lg sm:px-6">
+        <div className="prose-md prose-headings:leading-tighter prose prose-lg lg:prose-xl prose-headings:font-heading prose-headings:font-bold prose-a:text-primary prose-img:rounded-sm prose-img:shadow-lg mx-auto mt-8 max-w-4xl px-6 sm:px-6">
           {post.description && (
             <div data-tina-field={tinaField(post, 'description')}>
               <TinaMarkdown content={post.description} />
@@ -89,10 +89,7 @@ export default function RealisationPage(props: RealisationPageProps) {
         {post.tags && post.tags.length > 0 && (
           <div className="mr-5 flex flex-wrap gap-2" data-tina-field={tinaField(post, 'tags')}>
             {post.tags.map((tag) => (
-              <span
-                key={tag}
-                className="inline-block rounded-full bg-accent px-3 py-1 text-sm text-white"
-              >
+              <span key={tag} className="bg-accent inline-block rounded-full px-3 py-1 text-sm text-white">
                 {tag}
               </span>
             ))}

@@ -1,9 +1,9 @@
-@config "../../tailwind.config.cjs";
+@config '../../tailwind.config.cjs';
 
 @layer theme, base, components, utilities;
-@import "tailwindcss/theme.css" layer(theme);
-@import "tailwindcss/preflight.css" layer(base);
-@import "tailwindcss/utilities.css" layer(utilities);
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/preflight.css' layer(base);
+@import 'tailwindcss/utilities.css' layer(utilities);
 
 html,
 body {
@@ -56,17 +56,16 @@ html {
 }
 
 @layer components {
-
   .btn {
-    @apply inline-flex items-center justify-center rounded-full shadow-lg border-gray-400 border bg-transparent font-medium text-center text-base text-page leading-snug transition py-3.5 px-6 md:px-8 ease-in duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-2 hover:bg-gray-100 hover:border-gray-600 hover:scale-105 active:scale-[0.98];
+    @apply text-page focus-visible:ring-primary/60 inline-flex items-center justify-center rounded-full border border-gray-400 bg-transparent px-6 py-3.5 text-center text-base leading-snug font-medium shadow-lg transition duration-200 ease-in hover:scale-105 hover:border-gray-600 hover:bg-gray-100 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none active:scale-[0.98] md:px-8;
   }
 
   .btn-ghost {
-    @apply border-none shadow-none text-muted hover:text-gray-900  ;
+    @apply text-muted border-none shadow-none hover:text-gray-900;
   }
 
   .btn-primary {
-    @apply font-semibold bg-primary text-white border-primary hover:bg-accent hover:border-accent hover:text-white ;
+    @apply bg-primary border-primary hover:bg-accent hover:border-accent font-semibold text-white hover:text-white;
   }
 }
 
@@ -75,7 +74,7 @@ html {
 }
 
 .decale-ancre::before {
-  content: "";
+  content: '';
   display: block;
   height: 60px; /* Hauteur de décalage souhaitée */
   margin-top: -60px; /* Négation de la hauteur de décalage */
@@ -87,15 +86,15 @@ html {
 }
 
 #header.scroll {
-  @apply shadow-md md:shadow-lg bg-primary md:backdrop-blur-sm py-2 lg:py-1;
+  @apply bg-primary py-2 shadow-md md:shadow-lg md:backdrop-blur-sm lg:py-1;
 }
 
-#header.scroll .btn-tel{
-  @apply lg:top-auto top-1.5 py-2;
+#header.scroll .btn-tel {
+  @apply top-1.5 py-2 lg:top-auto;
 }
 
-#header.scroll .logo{
-  @apply lg:h-10 transition-all h-8;
+#header.scroll .logo {
+  @apply h-8 transition-all lg:h-10;
 }
 
 .dropdown:hover .dropdown-menu {
@@ -114,26 +113,25 @@ html {
   @apply transition;
 }
 [data-aw-toggle-menu].expanded g > path:first-child {
-  @apply -rotate-45 translate-y-[15px] translate-x-[-3px];
+  @apply translate-x-[-3px] translate-y-[15px] -rotate-45;
 }
 
 [data-aw-toggle-menu].expanded g > path:last-child {
-  @apply rotate-45 translate-y-[-8px] translate-x-[14px];
+  @apply translate-x-[14px] translate-y-[-8px] rotate-45;
 }
 
-
-.bg-wood{
+.bg-wood {
   background: url(../images/images-stock/fond_ecorce.webp) #ffffff;
   background-size: cover;
 }
 
-.categorie-content p{
+.categorie-content p {
   margin-bottom: 20px;
 }
 
 /* Swiper */
 .swiper-button-next,
-.swiper-button-prev  {
+.swiper-button-prev {
   color: var(--aw-color-primary);
   width: 60px;
   height: 60px;
@@ -203,7 +201,9 @@ html {
   --ty: 30px;
   opacity: 0;
   transform: translate(var(--tx), var(--ty));
-  transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition:
+    opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1),
+    transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
   transition-delay: var(--delay, 0ms);
   will-change: opacity, transform;
 }

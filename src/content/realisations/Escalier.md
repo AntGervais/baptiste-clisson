@@ -13,4 +13,3 @@ gallery:
   - /images/realisations/escalier-droisy/5.webp
   - /images/realisations/escalier-droisy/6.webp
 ---
-

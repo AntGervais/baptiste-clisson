@@ -16,23 +16,22 @@ export interface Props {
 const { categories } = Astro.props;
 ---
 
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6 py-5 w-full">
+<div class="grid w-full grid-cols-1 gap-6 py-5 md:grid-cols-3">
   {
     categories.map((cate: CategoryAccueil, index: number) => (
-      <AnimatedSection
-        reveal="fade-up"
-        delay={index * 150}
-        offset="0"
-      >
+      <AnimatedSection reveal="fade-up" delay={index * 150} offset="0">
         <Category
           title={cate.title}
           image={cate.image}
           loading={index < 2 ? 'eager' : 'lazy'}
           link={
-            cate.tag === 'escalier' ? getPermalink('/escaliers') :
-            cate.tag === 'charpente' ? getPermalink('/charpente-renovation') :
-            cate.tag === 'restauration' ? getPermalink('/charpente-renovation') :
-            getPermalink(cate.tag, 'tag')
+            cate.tag === 'escalier'
+              ? getPermalink('/escaliers')
+              : cate.tag === 'charpente'
+                ? getPermalink('/charpente-renovation')
+                : cate.tag === 'restauration'
+                  ? getPermalink('/charpente-renovation')
+                  : getPermalink(cate.tag, 'tag')
           }
         />
       </AnimatedSection>

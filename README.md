@@ -100,15 +100,15 @@ pnpm install
 
 ## Commandes
 
-| Commande | Description |
-|----------|-------------|
-| `pnpm dev` | Démarre le serveur de développement avec TinaCMS sur `localhost:4321` |
-| `pnpm start` | Démarre le serveur Astro uniquement (sans TinaCMS) |
-| `pnpm build` | Build Astro uniquement (`astro build` → `./dist/`) |
-| `pnpm build:prod` | Build complet : TinaCMS (`tina:build`) puis Astro |
-| `pnpm preview` | Prévisualise le build de production localement |
-| `pnpm format` | Formate le code avec Prettier |
-| `pnpm lint:eslint` | Analyse le code avec ESLint |
+| Commande           | Description                                                           |
+| ------------------ | --------------------------------------------------------------------- |
+| `pnpm dev`         | Démarre le serveur de développement avec TinaCMS sur `localhost:4321` |
+| `pnpm start`       | Démarre le serveur Astro uniquement (sans TinaCMS)                    |
+| `pnpm build`       | Build Astro uniquement (`astro build` → `./dist/`)                    |
+| `pnpm build:prod`  | Build complet : TinaCMS (`tina:build`) puis Astro                     |
+| `pnpm preview`     | Prévisualise le build de production localement                        |
+| `pnpm format`      | Formate le code avec Prettier                                         |
+| `pnpm lint:eslint` | Analyse le code avec ESLint                                           |
 
 ## Architecture du Projet
 
@@ -175,14 +175,14 @@ Le portfolio fonctionne avec un système de collections Astro + TinaCMS :
 
 ```markdown
 ---
-title: "Titre du projet"
+title: 'Titre du projet'
 publishDate: 2024-01-15T00:00:00.000Z
 image: /images/realisations/projet/principale.jpg
 tags:
   - charpente
   - restauration
 category: charpente
-excerpt: "Description courte du projet"
+excerpt: 'Description courte du projet'
 images:
   - image: /images/realisations/projet/photo1.jpg
   - image: /images/realisations/projet/photo2.jpg
@@ -217,6 +217,7 @@ Description détaillée du projet en Markdown...
 Le site est automatiquement déployé sur Netlify à chaque push sur `main`.
 
 **Configuration** : `netlify.toml`
+
 - Build command : `pnpm build:prod`
 - Publish directory : `dist`
 - Node version : 24
@@ -271,6 +272,7 @@ pnpm build:prod
 Aucune variable d'environnement n'est requise pour le développement local.
 
 Pour la production, configurer dans Netlify :
+
 - `TINA_CLIENT_ID` — ID client TinaCloud
 - `TINA_TOKEN` — Token d'accès TinaCloud
 - `TINA_BRANCH` — Branche Git (optionnel, défaut : `main`)

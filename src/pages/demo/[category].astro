@@ -8,15 +8,17 @@ import { resolveContentRelativePath } from '~/utils/content-paths';
 export async function getStaticPaths() {
   const categories = await getCollection('accueil_categories');
 
-  return Promise.all(categories.map(async (category) => ({
-    params: {
-      category: category.id,
-    },
-    props: {
-      categoryEntry: category,
-      relativePath: await resolveContentRelativePath('src/content/accueil_categories', category.id),
-    },
-  })));
+  return Promise.all(
+    categories.map(async (category) => ({
+      params: {
+        category: category.id,
+      },
+      props: {
+        categoryEntry: category,
+        relativePath: await resolveContentRelativePath('src/content/accueil_categories', category.id),
+      },
+    }))
+  );
 }
 
 interface Props {
@@ -41,20 +43,17 @@ try {
 ---
 
 <Layout {meta}>
-  {tinaData ? (
-    <AccueilCategoryPage
-      data={tinaData.data}
-      query={tinaData.query}
-      variables={{ relativePath }}
-      client:tina
-    />
-  ) : (
-    <section class="mx-auto max-w-3xl px-6 py-12 text-center">
-      <p class="text-lg text-gray-600">Impossible de charger les données TinaCMS.</p>
-      <p class="mt-2 text-sm text-gray-500">
-        Vérifiez que <code>pnpm tinacms dev</code> est lancé et que le fichier <strong>{relativePath}</strong> existe
-        encore.
-      </p>
-    </section>
-  )}
+  {
+    tinaData ? (
+      <AccueilCategoryPage data={tinaData.data} query={tinaData.query} variables={{ relativePath }} client:tina />
+    ) : (
+      <section class="mx-auto max-w-3xl px-6 py-12 text-center">
+        <p class="text-lg text-gray-600">Impossible de charger les données TinaCMS.</p>
+        <p class="mt-2 text-sm text-gray-500">
+          Vérifiez que <code>pnpm tinacms dev</code> est lancé et que le fichier <strong>{relativePath}</strong> existe
+          encore.
+        </p>
+      </section>
+    )
+  }
 </Layout>

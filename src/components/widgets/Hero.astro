@@ -41,11 +41,7 @@ const {
             )
           }
           <div class="mx-auto">
-            {
-              subtitle && (
-                <p class="text-muted mx-auto max-w-2xl text-lg text-pretty sm:text-xl" set:html={subtitle} />
-              )
-            }
+            {subtitle && <p class="text-muted mx-auto max-w-2xl text-lg text-pretty sm:text-xl" set:html={subtitle} />}
           </div>
 
           {
@@ -63,10 +59,7 @@ const {
                   {typeof callToAction === 'string' ? (
                     <Fragment set:html={callToAction} />
                   ) : (
-                    <a
-                      class="btn btn-primary w-full sm:mb-0"
-                      href={callToAction?.href}
-                    >
+                    <a class="btn btn-primary w-full sm:mb-0" href={callToAction?.href}>
                       {callToAction?.icon && (
                         <>
                           <Icon name={callToAction.icon} class="mr-1 -ml-1.5 h-5 w-5" />{' '}
