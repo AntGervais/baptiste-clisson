@@ -72,7 +72,7 @@ export default function RealisationPage(props: RealisationPageProps) {
                 {post.gallery.map((img, index) => (
                   <img
                     key={img}
-                    src={img}
+                    src={img ?? undefined}
                     alt={`Vue ${index + 1}`}
                     className="h-auto w-full rounded-sm object-cover shadow-md"
                   />

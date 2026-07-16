@@ -6,6 +6,7 @@ export interface TinaSystemInfo {
 }
 
 export interface Contact {
+  [key: string]: unknown;
   name: string;
   email: string;
   phone?: string;
