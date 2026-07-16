@@ -5,7 +5,7 @@ export type TextAreaProps = {
   placeholder?: string;
   required?: boolean;
   size?: 'sm' | 'md' | 'lg';
-  onChange?: (e?: React.FormEvent<HTMLTextAreaElement>) => void;
+  onChange?: (e?: React.ChangeEvent<HTMLTextAreaElement>) => void;
   onBlur?: (e?: React.FocusEvent<HTMLTextAreaElement>) => void;
   error?: string;
   bg?: string;
@@ -89,7 +89,7 @@ export default function TextArea({
       </div>
 
       {error && (
-        <div className="ml-2">
+        <div className="field-error ml-2">
           <span className="text-sm text-red-500">{error}</span>
         </div>
       )}

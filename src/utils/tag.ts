@@ -48,7 +48,7 @@ export const fetchAccueilCategories = async (): Promise<Array<AccueilCategories>
 };
 
 /** */
-export const findCategoryByTag = async (tag: string): Promise<AccueilCategories> => {
+export const findCategoryByTag = async (tag: string): Promise<AccueilCategories | undefined> => {
   const categories = await fetchAccueilCategories();
 
   // on cherche la première categorie qui a le tag

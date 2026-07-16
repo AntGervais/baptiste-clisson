@@ -7,7 +7,7 @@ export type InputProps = {
   defaultValue?: string;
   size?: 'sm' | 'md' | 'lg';
   bg?: string; // The background color of the input's background
-  onChange?: (e?: React.FormEvent<HTMLInputElement>) => void;
+  onChange?: (e?: React.ChangeEvent<HTMLInputElement>) => void;
   onBlur?: (e?: React.FocusEvent<HTMLInputElement>) => void;
   error?: string;
 };
@@ -92,7 +92,7 @@ export default function Input({
       </div>
 
       {error && (
-        <div className="ml-2">
+        <div className="field-error ml-2">
           <span className="text-sm text-red-400">{error}</span>
         </div>
       )}

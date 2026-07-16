@@ -24,7 +24,9 @@ pnpm-lock.yaml
 
 .astro
 node_modules
-tina/__generated__/.cache/
+
+# TinaCMS : fichiers régénérés à chaque build (tinacms build / build:prod)
+tina/__generated__/
 
 # Images originales (on garde uniquement les WebP optimisées)
 # Décommenter ces lignes si vous voulez exclure les images originales du repo

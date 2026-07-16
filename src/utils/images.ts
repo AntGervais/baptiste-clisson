@@ -1,9 +1,10 @@
-type LocalImageModules = Record<string, () => Promise<unknown>>;
+type LocalImageModule = { default: string };
+type LocalImageModules = Record<string, () => Promise<LocalImageModule>>;
 
 const load = async function (): Promise<LocalImageModules | undefined> {
   let images: LocalImageModules | undefined = undefined;
   try {
-    images = import.meta.glob('/public/images/**');
+    images = import.meta.glob<LocalImageModule>('/public/images/**');
   } catch {
     // continue regardless of error
   }
@@ -20,7 +21,6 @@ export const fetchLocalImages = async () => {
 
 /** */
 export const findImage = async (imagePath?: string) => {
-  let path = imagePath;
   if (typeof imagePath !== 'string') {
     return null;
   }
@@ -29,14 +29,14 @@ export const findImage = async (imagePath?: string) => {
     return imagePath;
   }
 
-  if (imagePath.startsWith('/images/')) {
-    // add public folder to path
-    path = `/public${imagePath}`;
-  }
+  // add public folder to path for local images
+  let path = imagePath.startsWith('/images/') ? `/public${imagePath}` : imagePath;
 
   path = path.replace(/\/{2,}/g, '/');
 
   const images = await fetchLocalImages();
+  if (!images) return null;
 
-  return typeof images[path] === 'function' ? (await images[path]())['default'] : null;
+  const loader = images[path];
+  return typeof loader === 'function' ? (await loader())['default'] : null;
 };
