@@ -18,7 +18,7 @@ const image = await findImage(post.image);
 const link = !REALISATIONS?.post?.disabled ? getPermalink(post.permalink, 'realisations') : '';
 ---
 
-<article class="mb-6 h-full w-full transition duration-200 hover:-translate-y-1">
+<article class="hoverable:-translate-y-1 mb-6 h-full w-full transition duration-200 ease-out">
   <div class="flex h-full justify-center">
     <div class="flex h-full w-full max-w-sm flex-col rounded-sm bg-white shadow-lg">
       <a href={link} title={post.title || post.accroche || ''}>

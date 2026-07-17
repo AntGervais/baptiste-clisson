@@ -19,11 +19,11 @@ const containerClass = ['flex w-full flex-wrap justify-start gap-2 text-left', c
       {tags.map(
         (tag) =>
           tag && (
-            <div class="text-primary! hover:bg-accent! inline-flex rounded-sm bg-gray-100! font-medium lowercase transition-all duration-200 hover:scale-105 hover:text-gray-100!">
+            <div class="text-primary! hover:bg-accent! hoverable:scale-105 bg-primary/10! inline-flex items-center rounded-sm font-medium lowercase transition duration-200 ease-out hover:text-white!">
               {REALISATIONS?.tag?.disabled ? (
                 tag
               ) : (
-                <a class="block px-2 text-sm text-inherit! capitalize" href={getPermalink(tag, 'tag')} title={tag}>
+                <a class="block px-2.5 pt-[3px] pb-1 text-sm leading-none text-inherit! capitalize" href={getPermalink(tag, 'tag')} title={tag}>
                   {tag}
                 </a>
               )}

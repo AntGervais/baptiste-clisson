@@ -7,36 +7,36 @@ export interface Props {
   class?: string;
 }
 
-const { text, url, class: className = 'inline-block' } = Astro.props;
+const { text, url, class: className = '' } = Astro.props;
 ---
 
-<div class={className}>
-  <span class="align-super font-bold text-gray-400">Share:</span>
-  <button class="ml-2" title="Twitter Share" data-aw-social-share="twitter" data-aw-url={url} data-aw-text={text}
+<div class:list={['flex flex-nowrap items-center gap-x-2', className]}>
+  <span class="font-bold text-gray-400">Share:</span>
+  <button class="shrink-0" title="Twitter Share" data-aw-social-share="twitter" data-aw-url={url} data-aw-text={text}
     ><Icon
       name="ri:twitter-fill"
       class="h-6 w-6 text-gray-400 transition-all duration-200 hover:scale-110 hover:text-black"
     />
   </button>
-  <button class="ml-2" title="Facebook Share" data-aw-social-share="facebook" data-aw-url={url}
+  <button class="shrink-0" title="Facebook Share" data-aw-social-share="facebook" data-aw-url={url}
     ><Icon
       name="ri:facebook-box-fill"
       class="h-6 w-6 text-gray-400 transition-all duration-200 hover:scale-110 hover:text-black"
     />
   </button>
-  <button class="ml-2" title="Linkedin Share" data-aw-social-share="linkedin" data-aw-url={url} data-aw-text={text}
+  <button class="shrink-0" title="Linkedin Share" data-aw-social-share="linkedin" data-aw-url={url} data-aw-text={text}
     ><Icon
       name="ri:linkedin-box-fill"
       class="h-6 w-6 text-gray-400 transition-all duration-200 hover:scale-110 hover:text-black"
     />
   </button>
-  <button class="ml-2" title="Whatsapp Share" data-aw-social-share="whatsapp" data-aw-url={url} data-aw-text={text}
+  <button class="shrink-0" title="Whatsapp Share" data-aw-social-share="whatsapp" data-aw-url={url} data-aw-text={text}
     ><Icon
       name="ri:whatsapp-fill"
       class="h-6 w-6 text-gray-400 transition-all duration-200 hover:scale-110 hover:text-black"
     />
   </button>
-  <button class="ml-2" title="Email Share" data-aw-social-share="mail" data-aw-url={url} data-aw-text={text}
+  <button class="shrink-0" title="Email Share" data-aw-social-share="mail" data-aw-url={url} data-aw-text={text}
     ><Icon
       name="ri:mail-fill"
       class="h-6 w-6 text-gray-400 transition-all duration-200 hover:scale-110 hover:text-black"

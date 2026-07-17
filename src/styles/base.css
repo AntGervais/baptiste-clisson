@@ -27,6 +27,24 @@ html {
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* Motion au survol réservé aux vrais pointeurs : évite le collage au tap sur tactile.
+   Usage : `hoverable:scale-105`, `hoverable:-translate-y-1`, `group-hoverable:scale-105`. */
+@custom-variant hoverable {
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @slot;
+    }
+  }
+}
+
+@custom-variant group-hoverable {
+  @media (hover: hover) and (pointer: fine) {
+    &:is(:where(.group):hover *) {
+      @slot;
+    }
+  }
+}
+
 @utility text-page {
   color: var(--aw-color-text-page);
 }
@@ -59,7 +77,7 @@ html {
 
 @layer components {
   .btn {
-    @apply text-page focus-visible:ring-primary/60 inline-flex items-center justify-center rounded-full border border-gray-400 bg-transparent px-6 py-3.5 text-center text-base leading-snug font-medium shadow-lg transition duration-200 ease-in hover:scale-105 hover:border-gray-600 hover:bg-gray-100 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none active:scale-[0.98] md:px-8;
+    @apply text-page focus-visible:ring-primary/60 hoverable:scale-105 inline-flex items-center justify-center rounded-full border border-gray-400 bg-transparent px-6 py-3.5 text-center text-base leading-snug font-medium shadow-lg transition duration-200 ease-out hover:border-gray-600 hover:bg-gray-100 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none active:scale-[0.98] md:px-8;
   }
 
   .btn-ghost {
@@ -160,13 +178,15 @@ html {
   color: var(--aw-color-primary);
   width: 60px;
   height: 60px;
-  transition: all 0.3s ease;
+  transition: transform 0.2s var(--ease-out-quart);
   z-index: 10;
 }
 
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-  transform: scale(1.15);
+@media (hover: hover) and (pointer: fine) {
+  .swiper-button-next:hover,
+  .swiper-button-prev:hover {
+    transform: scale(1.15);
+  }
 }
 
 .swiper-button-next svg.swiper-navigation-icon,
@@ -192,13 +212,17 @@ html {
   background-color: #ffffff;
   border: 3px solid var(--aw-color-primary);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
+  transition:
+    background-color 0.2s var(--ease-out-quart),
+    box-shadow 0.2s var(--ease-out-quart);
 }
 
-.swiper-button-prev:hover:after,
-.swiper-button-next:hover:after {
-  background-color: var(--aw-color-primary);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+@media (hover: hover) and (pointer: fine) {
+  .swiper-button-prev:hover:after,
+  .swiper-button-next:hover:after {
+    background-color: var(--aw-color-primary);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  }
 }
 
 /* Specific styling for Reviews Swiper to move arrows outside */
@@ -227,10 +251,15 @@ html {
   opacity: 0;
   transform: translate(var(--tx), var(--ty));
   transition:
-    opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1),
-    transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+    opacity 320ms var(--ease-out-quart),
+    transform 320ms var(--ease-out-quart);
   transition-delay: var(--delay, 0ms);
   will-change: opacity, transform;
+}
+
+/* Une fois révélé, on relâche la couche GPU : plus de motion à venir */
+.reveal-active {
+  will-change: auto;
 }
 
 .reveal-left {

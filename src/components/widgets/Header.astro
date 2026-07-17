@@ -35,7 +35,7 @@ const { links = [], actions = [], isSticky = false, showToggleTheme = false, pos
 <header
   class:list={[
     { sticky: isSticky, relative: !isSticky },
-    'bg-primary text-beige top-0 z-40 mx-auto w-full flex-none px-3 py-3 transition-all duration-250 ease-in md:px-4 md:py-3.5',
+    'bg-primary text-beige top-0 z-40 mx-auto w-full flex-none px-3 py-3 transition-[padding,background-color,box-shadow] duration-250 ease-out md:px-4 md:py-3.5',
   ]}
   id="header"
 >
@@ -59,7 +59,7 @@ const { links = [], actions = [], isSticky = false, showToggleTheme = false, pos
             <li class={links?.length ? 'dropdown' : ''}>
               {links?.length ? (
                 <>
-                  <button class="flex items-center px-4 py-3 font-medium transition duration-150 ease-in-out hover:text-gray-900">
+                  <button class="flex items-center px-4 py-3 font-medium transition duration-150 ease-out hover:text-gray-900">
                     {text} <Icon name="tabler:chevron-down" class="ml-0.5 hidden h-3.5 w-3.5 md:inline" />
                   </button>
                   <ul class="dropdown-menu rounded pl-4 font-medium drop-shadow-xl md:absolute md:hidden md:min-w-[200px] md:bg-white/90 md:pl-0 md:backdrop-blur-md">
@@ -78,7 +78,7 @@ const { links = [], actions = [], isSticky = false, showToggleTheme = false, pos
                 </>
               ) : (
                 <a
-                  class="flex items-center px-8 py-3 font-medium transition duration-150 ease-in-out hover:scale-105 hover:text-white md:px-4"
+                  class="hoverable:scale-105 flex items-center px-8 py-3 font-medium transition duration-150 ease-out hover:text-white md:px-4"
                   href={href}
                   title={text}
                 >
@@ -100,7 +100,7 @@ const { links = [], actions = [], isSticky = false, showToggleTheme = false, pos
               {actions.map(({ text, href, type, icon }) => (
                 <a
                   class:list={[
-                    'btn-tel btn bg-beige text-primary absolute top-3 right-2 ml-2 border-none px-5.5 py-2.5 text-sm transition duration-150 ease-in-out hover:scale-105 hover:bg-white md:relative md:top-auto md:right-auto md:px-6',
+                    'btn-tel btn bg-beige text-primary absolute top-3 right-2 ml-2 border-none px-5.5 py-2.5 text-sm transition duration-150 ease-out hover:bg-white md:relative md:top-auto md:right-auto md:px-6',
                     { 'btn-ghost': type === 'ghost', 'btn-primary': type === 'primary' },
                   ]}
                   href={href}

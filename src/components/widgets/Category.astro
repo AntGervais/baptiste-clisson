@@ -21,14 +21,14 @@ const {
   <div class="flex justify-center">
     <a
       href={link}
-      class="shadow-warm focus-visible:ring-primary/60 block w-full max-w-sm rounded-sm bg-white transition-all duration-500 ease-out group-hover:scale-[1.01] hover:-translate-y-1 hover:shadow-xl focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
+      class="shadow-warm focus-visible:ring-primary/60 group-hoverable:scale-[1.01] hoverable:-translate-y-1 block w-full max-w-sm rounded-sm bg-white transition-[transform,box-shadow] duration-500 ease-out hover:shadow-xl focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
       title={title}
     >
       <div class="overflow-hidden rounded-t-sm">
         <Image
           src={image}
           alt={title}
-          class="aspect-3/4 w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+          class="aspect-3/4 w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
           loading={loading}
           decoding="async"
           width={600}
